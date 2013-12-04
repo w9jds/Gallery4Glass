@@ -2,7 +2,6 @@ package com.w9jds.glassshare;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -16,9 +15,6 @@ import android.provider.MediaStore.Images;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,15 +29,9 @@ public class MainActivity extends Activity
 	private ArrayList<String> mlsPaths = new ArrayList<String>();
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
-		
-//		Card card1 = new Card(this);
-//		card1.setText("This card has a footer.");
-//		card1.setInfo("I'm the footer!");
-//		View card1View = card1.toView();
-//		
-//		setContentView(card1View);
 		
 		mlsPaths = getCameraImages(this);
 		
