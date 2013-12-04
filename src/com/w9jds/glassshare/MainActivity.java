@@ -2,6 +2,7 @@ package com.w9jds.glassshare;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -48,7 +49,7 @@ public class MainActivity extends Activity
 		csvCardsView.setAdapter(cvAdapter);
 		csvCardsView.activate();
 		setContentView(csvCardsView);
-			
+//		csaAdapter.setItemOnCard(mlcCards.get(0), mlcCards.get(0).toView());
 	}
 	
 	public static String getBucketId(String path) 
@@ -85,6 +86,22 @@ public class MainActivity extends Activity
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(android.view.MenuItem item) 
+	{
+		switch (item.getItemId()) 
+		{
+	        case R.id.delete_menu_item:
+	            return true;
+	        case R.id.share_menu_item:
+	        	return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+		}
+	};
+	
+	
 
     private class csaAdapter extends CardScrollAdapter 
     {

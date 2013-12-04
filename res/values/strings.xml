@@ -3,6 +3,9 @@
 
     <string name="app_name">GlassShare</string>
     
-    <string name="glass_voice_trigger">Manage Pictures</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    
+    <string name="glass_voice_trigger">Pictures</string>
 
 </resources>

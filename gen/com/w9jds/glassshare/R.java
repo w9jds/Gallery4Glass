@@ -21,10 +21,86 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_add_person_50=0x7f020000;
+        public static final int ic_angle_50=0x7f020001;
+        public static final int ic_archive_50=0x7f020002;
+        public static final int ic_arrow_left_50=0x7f020003;
+        public static final int ic_arrow_right_50=0x7f020004;
+        public static final int ic_attachment_50=0x7f020005;
+        public static final int ic_beamed_note_50=0x7f020006;
+        public static final int ic_bed_50=0x7f020007;
+        public static final int ic_bike_50=0x7f020008;
+        public static final int ic_bluetooth_50=0x7f020009;
+        public static final int ic_bus_50=0x7f02000a;
+        public static final int ic_calendar_50=0x7f02000b;
+        public static final int ic_camera_50=0x7f02000c;
+        public static final int ic_compass_50=0x7f02000d;
+        public static final int ic_computer_50=0x7f02000e;
+        public static final int ic_delete_50=0x7f02000f;
+        public static final int ic_directions_50=0x7f020010;
+        public static final int ic_document_50=0x7f020011;
+        public static final int ic_done_150=0x7f020012;
+        public static final int ic_done_50=0x7f020013;
+        public static final int ic_drive_50=0x7f020014;
+        public static final int ic_eighth_note_50=0x7f020015;
+        public static final int ic_email_50=0x7f020016;
+        public static final int ic_forward_50=0x7f020017;
+        public static final int ic_game_50=0x7f020018;
+        public static final int ic_gear_50=0x7f020019;
+        public static final int ic_help_50=0x7f02001a;
+        public static final int ic_launcher=0x7f02001b;
+        public static final int ic_location_50=0x7f02001c;
+        public static final int ic_message_50=0x7f02001d;
+        public static final int ic_microphone_off_50=0x7f02001e;
+        public static final int ic_microphone_on_50=0x7f02001f;
+        public static final int ic_mobile_phone_50=0x7f020020;
+        public static final int ic_music_move_to_end_50=0x7f020021;
+        public static final int ic_music_move_to_front_50=0x7f020022;
+        public static final int ic_music_next_50=0x7f020023;
+        public static final int ic_music_pause_50=0x7f020024;
+        public static final int ic_music_play_50=0x7f020025;
+        public static final int ic_music_previous_50=0x7f020026;
+        public static final int ic_no_50=0x7f020027;
+        public static final int ic_note_50=0x7f020028;
+        public static final int ic_pen_50=0x7f020029;
+        public static final int ic_people_50=0x7f02002a;
+        public static final int ic_person_50=0x7f02002b;
+        public static final int ic_phone_50=0x7f02002c;
+        public static final int ic_phone_hang_50=0x7f02002d;
+        public static final int ic_phone_in_50=0x7f02002e;
+        public static final int ic_phone_out_50=0x7f02002f;
+        public static final int ic_photo_50=0x7f020030;
+        public static final int ic_placeholder_attachment_50=0x7f020031;
+        public static final int ic_placeholder_photo_150=0x7f020032;
+        public static final int ic_placeholder_video_150=0x7f020033;
+        public static final int ic_plus_50=0x7f020034;
+        public static final int ic_question_150=0x7f020035;
+        public static final int ic_read_aloud_50=0x7f020036;
+        public static final int ic_reply_50=0x7f020037;
+        public static final int ic_reply_all_50=0x7f020038;
+        public static final int ic_run_50=0x7f020039;
+        public static final int ic_search_50=0x7f02003a;
+        public static final int ic_select_link_50=0x7f02003b;
+        public static final int ic_share_50=0x7f02003c;
+        public static final int ic_star_50=0x7f02003d;
+        public static final int ic_storefront_50=0x7f02003e;
+        public static final int ic_sync_50=0x7f02003f;
+        public static final int ic_timer_50=0x7f020040;
+        public static final int ic_transit_50=0x7f020041;
+        public static final int ic_unstar_50=0x7f020042;
+        public static final int ic_video_50=0x7f020043;
+        public static final int ic_video_off_50=0x7f020044;
+        public static final int ic_volume_full_50=0x7f020045;
+        public static final int ic_volume_half_50=0x7f020046;
+        public static final int ic_volume_muted_50=0x7f020047;
+        public static final int ic_walk_50=0x7f020048;
+        public static final int ic_warning_150=0x7f020049;
+        public static final int ic_warning_50=0x7f02004a;
+        public static final int ic_world_50=0x7f02004b;
     }
     public static final class id {
-        public static final int action_settings=0x7f090000;
+        public static final int delete_menu_item=0x7f090000;
+        public static final int share_menu_item=0x7f090001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -34,7 +110,9 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int glass_voice_trigger=0x7f060001;
+        public static final int delete=0x7f060001;
+        public static final int glass_voice_trigger=0x7f060003;
+        public static final int share=0x7f060002;
     }
     public static final class style {
         /** 
