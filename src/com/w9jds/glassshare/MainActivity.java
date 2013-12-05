@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import com.google.android.glass.app.Card;
+import com.google.android.glass.timeline.LiveCard;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 
@@ -44,12 +45,11 @@ public class MainActivity extends Activity
 		
 		mlsPaths = getCameraImages(this);
 		
-		testView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(0)), 640, 360, true));
-		
+		testView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(0)), 640, 470, true));
 		
 //		for (int i = 0; i < mlsPaths.size(); i++)
 //		{
-//			Bitmap bImg = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(i)), 640, 360, true);
+//			Bitmap bImg = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(i)), 640, 470, true);
 //			Card newCard = new Card(this);
 //			newCard.setFullScreenImages(true);
 //			newCard.addImage(getImageUri(this, bImg));
@@ -73,7 +73,7 @@ public class MainActivity extends Activity
 	{
 	    return String.valueOf(path.toLowerCase().hashCode());
 	}
-	
+
 	public static ArrayList<String> getCameraImages(Context context) 
 	{
 	    final String[] projection = { MediaStore.Images.Media.DATA };
