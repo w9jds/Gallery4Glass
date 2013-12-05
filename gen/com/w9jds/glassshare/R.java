@@ -99,8 +99,9 @@ public final class R {
         public static final int ic_world_50=0x7f02004b;
     }
     public static final class id {
-        public static final int delete_menu_item=0x7f090000;
-        public static final int share_menu_item=0x7f090001;
+        public static final int delete_menu_item=0x7f090001;
+        public static final int share_menu_item=0x7f090002;
+        public static final int testImage=0x7f090000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -115,7 +116,8 @@ public final class R {
         public static final int share=0x7f060002;
     }
     public static final class style {
-        /** 
+        /**  <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault"/> 
+
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -127,10 +129,8 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070001;
-        /**  Theme customization goes here. 
-         */
-        public static final int CustomTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppTheme=0x7f070001;
     }
     public static final class xml {
         public static final int my_voice_trigger=0x7f040000;

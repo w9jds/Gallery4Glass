@@ -1,5 +1,6 @@
 package com.w9jds.glassshare;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -16,9 +17,12 @@ import android.provider.MediaStore.Images;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity 
 {
@@ -34,23 +38,36 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		
+		setContentView(R.layout.activity_main);
+		
+		ImageView testView = (ImageView) findViewById(R.id.testImage);
+		
 		mlsPaths = getCameraImages(this);
 		
-		for (int i = 0; i < mlsPaths.size(); i++)
-		{
-			Card newCard = new Card(this);
-			newCard.setFullScreenImages(true);
-			newCard.addImage(Uri.fromFile(new File(mlsPaths.get(i))));
-			mlcCards.add(newCard);
-		}
+		testView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(0)), 640, 360, true));
 		
-		CardScrollView csvCardsView = new CardScrollView(this);
-		csaAdapter cvAdapter = new csaAdapter();
-		csvCardsView.setAdapter(cvAdapter);
-		csvCardsView.activate();
-		setContentView(csvCardsView);
-//		csaAdapter.setItemOnCard(mlcCards.get(0), mlcCards.get(0).toView());
+		
+//		for (int i = 0; i < mlsPaths.size(); i++)
+//		{
+//			Bitmap bImg = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(i)), 640, 360, true);
+//			Card newCard = new Card(this);
+//			newCard.setFullScreenImages(true);
+//			newCard.addImage(getImageUri(this, bImg));
+//			mlcCards.add(newCard);
+//		}
+		
+//		CardScrollView csvCardsView = new CardScrollView(this);
+//		csaAdapter cvAdapter = new csaAdapter();
+//		csvCardsView.setAdapter(cvAdapter);
+//		csvCardsView.activate();
+//		setContentView(csvCardsView);
 	}
+	
+//	public Uri getImageUri(Context cContext, Bitmap bImage) 
+//	{
+//		  String path = Images.Media.insertImage(cContext.getContentResolver(), bImage, null, null);
+//		  return Uri.parse(path);
+//	}
 	
 	public static String getBucketId(String path) 
 	{
@@ -101,8 +118,6 @@ public class MainActivity extends Activity
 		}
 	};
 	
-	
-
     private class csaAdapter extends CardScrollAdapter 
     {
 	    @Override
