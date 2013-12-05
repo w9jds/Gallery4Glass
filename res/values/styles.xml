@@ -3,7 +3,6 @@
     <!-- <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault"/> -->
     
     <style name="AppBaseTheme" parent="android:Theme"/>
-
     <style name="AppTheme" parent="AppBaseTheme"/>
 
 </resources>

@@ -117,7 +117,7 @@ public class MainActivity extends Activity
 	            return super.onOptionsItemSelected(item);
 		}
 	};
-	
+
     private class csaAdapter extends CardScrollAdapter 
     {
 	    @Override
