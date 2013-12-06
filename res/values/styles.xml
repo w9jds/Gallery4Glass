@@ -1,8 +1,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault"/> -->
+	<style name="CustomTheme" parent="@android:style/Theme.DeviceDefault"/>
     
-    <style name="AppBaseTheme" parent="android:Theme"/>
-    <style name="AppTheme" parent="AppBaseTheme"/>
+<!--     <style name="AppBaseTheme" parent="android:Theme"/>
+    <style name="AppTheme" parent="AppBaseTheme"/> -->
 
 </resources>

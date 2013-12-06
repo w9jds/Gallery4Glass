@@ -1,73 +1,47 @@
 package com.w9jds.glassshare;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Locale;
 
-import com.google.android.glass.app.Card;
-import com.google.android.glass.timeline.LiveCard;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+@SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
 {
-
 	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStorageDirectory().toString() + "/DCIM/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 	
-	private ArrayList<Card> mlcCards = new ArrayList<Card>();
 	private ArrayList<String> mlsPaths = new ArrayList<String>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		
-		setContentView(R.layout.activity_main);
-		
-		ImageView testView = (ImageView) findViewById(R.id.testImage);
-		
+			
 		mlsPaths = getCameraImages(this);
 		
-		testView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(0)), 640, 470, true));
-		
-//		for (int i = 0; i < mlsPaths.size(); i++)
-//		{
-//			Bitmap bImg = Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(i)), 640, 470, true);
-//			Card newCard = new Card(this);
-//			newCard.setFullScreenImages(true);
-//			newCard.addImage(getImageUri(this, bImg));
-//			mlcCards.add(newCard);
-//		}
-		
-//		CardScrollView csvCardsView = new CardScrollView(this);
-//		csaAdapter cvAdapter = new csaAdapter();
-//		csvCardsView.setAdapter(cvAdapter);
-//		csvCardsView.activate();
-//		setContentView(csvCardsView);
+		CardScrollView csvCardsView = new CardScrollView(this);
+		csaAdapter cvAdapter = new csaAdapter(this);
+		csvCardsView.setAdapter(cvAdapter);
+		csvCardsView.activate();
+		setContentView(csvCardsView);
 	}
-	
-//	public Uri getImageUri(Context cContext, Bitmap bImage) 
-//	{
-//		  String path = Images.Media.insertImage(cContext.getContentResolver(), bImage, null, null);
-//		  return Uri.parse(path);
-//	}
 	
 	public static String getBucketId(String path) 
 	{
@@ -118,8 +92,26 @@ public class MainActivity extends Activity
 		}
 	};
 
+//	private class ClickListener implements OnItemClickListener
+//	{
+//		@Override
+//		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) 
+//		{
+//			// TODO Auto-generated method stub
+//			openOptionsMenu();
+//			
+//		}
+//	}
+
     private class csaAdapter extends CardScrollAdapter 
-    {
+    {	
+    	private Context mcContext;
+    	
+    	public csaAdapter(Context cContext)
+    	{
+    		mcContext = cContext;
+    	}
+    	
 	    @Override
 	    public int findIdPosition(Object id) 
 	    {
@@ -129,26 +121,32 @@ public class MainActivity extends Activity
 	    @Override
 	    public int findItemPosition(Object item) 
 	    {
-	        return mlcCards.indexOf(item);
+	        return mlsPaths.indexOf(item);
 	    }
 
 	    @Override
 	    public int getCount() 
 	    {
-	        return mlcCards.size();
+	        return mlsPaths.size();
 	    }
 
 	    @Override
 	    public Object getItem(int position) 
 	    {
-	        return mlcCards.get(position);
+	        return mlsPaths.get(position);
 	    }
 
 	    @Override
 	    public View getView(int position, View convertView, ViewGroup parent) 
 	    {
-	        return mlcCards.get(position).toView();
+	        LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	        View vCard = inflater.inflate(R.layout.card_layout, parent, false);
+
+	        ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
+	        ivPic.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(position)), 640, 470, true));
+
+	        return vCard;
 	    }
+    }
 }
-	
-}
+
