@@ -19,6 +19,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 
 @SuppressLint("DefaultLocale")
@@ -37,9 +39,20 @@ public class MainActivity extends Activity
 		mlsPaths = getCameraImages(this);
 		
 		CardScrollView csvCardsView = new CardScrollView(this);
+
 		csaAdapter cvAdapter = new csaAdapter(this);
 		csvCardsView.setAdapter(cvAdapter);
 		csvCardsView.activate();
+		
+        csvCardsView.setOnItemClickListener(new OnItemClickListener() 
+        {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+			{
+				openOptionsMenu();
+			}
+        });
+		
 		setContentView(csvCardsView);
 	}
 	
@@ -92,18 +105,7 @@ public class MainActivity extends Activity
 		}
 	};
 
-//	private class ClickListener implements OnItemClickListener
-//	{
-//		@Override
-//		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) 
-//		{
-//			// TODO Auto-generated method stub
-//			openOptionsMenu();
-//			
-//		}
-//	}
-
-    private class csaAdapter extends CardScrollAdapter 
+    private class csaAdapter extends CardScrollAdapter
     {	
     	private Context mcContext;
     	
@@ -142,8 +144,16 @@ public class MainActivity extends Activity
 	        LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	        View vCard = inflater.inflate(R.layout.card_layout, parent, false);
 
-	        ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
-	        ivPic.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(mlsPaths.get(position)), 640, 470, true));
+            Bitmap bImage = BitmapFactory.decodeFile(mlsPaths.get(position));
+            ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
+            
+            if (bImage.getWidth() > 640)
+            {
+                double dRatio = ((double)bImage.getWidth()) / 640;
+                ivPic.setImageBitmap(Bitmap.createScaledBitmap(bImage, 640, (int) Math.round(bImage.getHeight() / dRatio) , true));
+            }
+            else
+                ivPic.setImageBitmap(bImage);
 
 	        return vCard;
 	    }
