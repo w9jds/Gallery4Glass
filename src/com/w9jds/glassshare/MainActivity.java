@@ -60,7 +60,7 @@ public class MainActivity extends Activity
 				//open the menu
 				openOptionsMenu();
 			}
-        });
+         });
 		
         //set the view of this activity
 		setContentView(csvCardsView);
