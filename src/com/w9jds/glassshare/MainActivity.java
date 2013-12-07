@@ -1,9 +1,10 @@
 package com.w9jds.glassshare;
 
+import java.io.File;
 import java.util.ArrayList;
 
-import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.w9jds.glassshare.Adapters.csaAdapter;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,23 +14,19 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
 {
-	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStorageDirectory().toString() + "/DCIM/Camera";
+	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 	
 	private ArrayList<String> mlsPaths = new ArrayList<String>();
+	private int iPosition;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -40,7 +37,7 @@ public class MainActivity extends Activity
 		
 		CardScrollView csvCardsView = new CardScrollView(this);
 
-		csaAdapter cvAdapter = new csaAdapter(this);
+		csaAdapter cvAdapter = new csaAdapter(this, mlsPaths);
 		csvCardsView.setAdapter(cvAdapter);
 		csvCardsView.activate();
 		
@@ -49,6 +46,7 @@ public class MainActivity extends Activity
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
 			{
+				iPosition = position;
 				openOptionsMenu();
 			}
         });
@@ -97,6 +95,8 @@ public class MainActivity extends Activity
 		switch (item.getItemId()) 
 		{
 	        case R.id.delete_menu_item:
+//	        	File fPic = new File(mlsPaths.get(iPosition));
+//	        	fPic.delete();
 	            return true;
 	        case R.id.share_menu_item:
 	        	return true;
@@ -104,59 +104,5 @@ public class MainActivity extends Activity
 	            return super.onOptionsItemSelected(item);
 		}
 	};
-
-    private class csaAdapter extends CardScrollAdapter
-    {	
-    	private Context mcContext;
-    	
-    	public csaAdapter(Context cContext)
-    	{
-    		mcContext = cContext;
-    	}
-    	
-	    @Override
-	    public int findIdPosition(Object id) 
-	    {
-	        return -1;
-	    }
-
-	    @Override
-	    public int findItemPosition(Object item) 
-	    {
-	        return mlsPaths.indexOf(item);
-	    }
-
-	    @Override
-	    public int getCount() 
-	    {
-	        return mlsPaths.size();
-	    }
-
-	    @Override
-	    public Object getItem(int position) 
-	    {
-	        return mlsPaths.get(position);
-	    }
-
-	    @Override
-	    public View getView(int position, View convertView, ViewGroup parent) 
-	    {
-	        LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-	        View vCard = inflater.inflate(R.layout.card_layout, parent, false);
-
-            Bitmap bImage = BitmapFactory.decodeFile(mlsPaths.get(position));
-            ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
-            
-            if (bImage.getWidth() > 640)
-            {
-                double dRatio = ((double)bImage.getWidth()) / 640;
-                ivPic.setImageBitmap(Bitmap.createScaledBitmap(bImage, 640, (int) Math.round(bImage.getHeight() / dRatio) , true));
-            }
-            else
-                ivPic.setImageBitmap(bImage);
-
-	        return vCard;
-	    }
-    }
 }
 
