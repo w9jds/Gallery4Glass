@@ -12,126 +12,13 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="GlassShareUploadTask" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="82357320-88b9-46d7-89b9-291ba56debae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/google_api_services_drive_v2_rev108_1_17_0_rc.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/drive.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_asl_1_9_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_1_3_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/protobuf_java_2_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/GlassShare.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/Adapters/csaAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/MainActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/w9jds/glassshare/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-62f38a42289f0234f69ec73c486e65c7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-7b5d342be31bdc680acc88c0eeeb1d94.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/dexedLibs/annotations-af46fc2daa4c4b0b836da1693f61f74f.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_add_person_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_angle_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_archive_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_arrow_left_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_arrow_right_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_attachment_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_beamed_note_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_bed_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_bike_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_bluetooth_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_bus_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_calendar_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_camera_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_compass_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_computer_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_delete_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_directions_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_document_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_done_150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_done_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_drive_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_eighth_note_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_email_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_forward_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_game_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_gear_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_help_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_location_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_message_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_microphone_off_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_microphone_on_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_mobile_phone_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_move_to_end_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_move_to_front_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_next_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_pause_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_play_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_music_previous_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_no_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_note_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_pen_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_people_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_person_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_phone_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_phone_hang_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_phone_in_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_phone_out_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_photo_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_placeholder_attachment_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_placeholder_photo_150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_placeholder_video_150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_plus_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_question_150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_read_aloud_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_reply_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_reply_all_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_run_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_search_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_select_link_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_share_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_star_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_storefront_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_sync_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_timer_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_transit_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_unstar_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_video_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_video_off_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_volume_full_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_volume_half_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_volume_muted_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_walk_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_warning_150.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_warning_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-hdpi/ic_world_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/crunch/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proguard_logs/dump.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proguard_logs/mapping.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proguard_logs/seeds.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/proguard_logs/usage.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/UploadtoDrive.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/google_http_client_gson_1_17_0_rc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GlassShare.iml" afterPath="$PROJECT_DIR$/GlassShare.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_client_1_17_0_rc.xml" afterPath="$PROJECT_DIR$/.idea/libraries/google_api_client_1_17_0_rc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java" afterPath="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GlassShare.iws" />
@@ -188,7 +75,82 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="163" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="179" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="226" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="221" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="216" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="210" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="207" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -216,26 +178,13 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="0" selection-start="5992" selection-end="5992" vertical-scroll-proportion="0.3317757" vertical-offset="1508" max-vertical-offset="2565">
+            <state line="207" column="49" selection-start="7825" selection-end="7830" vertical-scroll-proportion="0.8224299" vertical-offset="1853" max-vertical-offset="2820">
               <folding>
-                <element signature="e#1847#1855#0" expanded="true" />
-                <element signature="e#2606#2878#0" expanded="true" />
-                <element signature="e#2866#2867#0" expanded="true" />
+                <element signature="e#1871#1879#0" expanded="true" />
                 <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#6387#7568#0" expanded="true" />
-                <element signature="e#7557#7558#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="66" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -261,11 +210,11 @@
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/BitmapWorkerTask.java" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/AsyncDrawable.java" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/BitmapWorkerTask.java" />
-        <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/UploadtoDrive.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" />
       </list>
     </option>
@@ -336,6 +285,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="glassshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glassshare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adapters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -556,7 +527,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="792" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -577,9 +548,32 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21459228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21459228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21459228" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21459228" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -602,38 +596,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="60" selection-start="4356" selection-end="4356" vertical-scroll-proportion="0.0" vertical-offset="1875" max-vertical-offset="2205">
-          <folding>
-            <element signature="e#1847#1855#0" expanded="true" />
-            <element signature="e#2606#2878#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6387#7568#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="9" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2070">
-          <folding>
-            <element signature="e#1847#1855#0" expanded="true" />
-            <element signature="e#2606#2878#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
-            <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6387#7568#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="180" column="95" selection-start="5982" selection-end="5982" vertical-scroll-proportion="0.0" vertical-offset="2700" max-vertical-offset="3420">
@@ -645,14 +607,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="9" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2070">
           <folding>
-            <element signature="e#1847#1855#0" expanded="true" />
-            <element signature="e#2606#2878#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
+            <element signature="e#1871#1879#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6387#7568#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -662,26 +620,6 @@
         <state line="180" column="95" selection-start="5982" selection-end="5982" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="3420">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/view/ContextThemeWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.0" vertical-offset="738" max-vertical-offset="1440" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4003" column="0" selection-start="167243" selection-end="167243" vertical-scroll-proportion="0.0" vertical-offset="58383" max-vertical-offset="68310" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/app/ContextImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="478" column="0" selection-start="19882" selection-end="19882" vertical-scroll-proportion="0.31519273" vertical-offset="4946" max-vertical-offset="22170" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/content/ContextWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.31519273" vertical-offset="566" max-vertical-offset="6945" />
       </provider>
     </entry>
     <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/view/LayoutInflater.java">
@@ -735,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="106" selection-start="6435" selection-end="6435" vertical-scroll-proportion="0.9321267" vertical-offset="2183" max-vertical-offset="3105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/card_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="37" selection-start="413" selection-end="413" vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="390">
@@ -762,38 +693,267 @@
     <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="36" selection-start="385" selection-end="385" vertical-scroll-proportion="0.4676259" vertical-offset="0" max-vertical-offset="417">
-          <folding>
-            <element signature="e#273#289#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="37" selection-start="6205" selection-end="6205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3135">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="66" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+        <state line="21" column="46" selection-start="863" selection-end="863" vertical-scroll-proportion="0.5782313" vertical-offset="60" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/content/ContextWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.33333334" vertical-offset="393" max-vertical-offset="6945">
+          <folding>
+            <element signature="e#2278#2279#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/app/ContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1176" column="0" selection-start="44457" selection-end="44457" vertical-scroll-proportion="0.31519273" vertical-offset="15296" max-vertical-offset="22140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/view/ContextThemeWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.31519273" vertical-offset="746" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/accounts/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="374" column="0" selection-start="16158" selection-end="16158" vertical-scroll-proportion="0.0" vertical-offset="4856" max-vertical-offset="28170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/os/Parcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1768" column="0" selection-start="60160" selection-end="60160" vertical-scroll-proportion="0.0" vertical-offset="25886" max-vertical-offset="31695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2519" column="0" selection-start="107301" selection-end="107301" vertical-scroll-proportion="0.0" vertical-offset="36236" max-vertical-offset="68310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/policy/impl/PhoneWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="957" column="0" selection-start="33722" selection-end="33722" vertical-scroll-proportion="0.0" vertical-offset="12761" max-vertical-offset="51690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/view/menu/MenuItemImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="0" selection-start="9847" selection-end="9847" vertical-scroll-proportion="0.31519273" vertical-offset="4166" max-vertical-offset="9180">
+          <folding>
+            <element signature="e#0#19279#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/view/menu/MenuBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1219" column="0" selection-start="41739" selection-end="41739" vertical-scroll-proportion="0.31519273" vertical-offset="17186" max-vertical-offset="18075">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="783" column="64" selection-start="26609" selection-end="26609" vertical-scroll-proportion="0.2857143" vertical-offset="11019" max-vertical-offset="11460">
+        <state line="786" column="0" selection-start="26708" selection-end="26708" vertical-scroll-proportion="6.340136" vertical-offset="8394" max-vertical-offset="11460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/http/AbstractInputStreamContent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="342" selection-end="342" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/http/FileContent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="11" selection-start="300" selection-end="300" vertical-scroll-proportion="0.28846154" vertical-offset="0" max-vertical-offset="416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../drive/google-api-services-drive-v2-rev108-1.17.0-rc.jar!/com/google/api/services/drive/Drive.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1713" column="22" selection-start="99575" selection-end="99575" vertical-scroll-proportion="-5.36" vertical-offset="25546" max-vertical-offset="39645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../drive/google-api-services-drive-v2-rev108-1.17.0-rc.jar!/com/google/api/services/drive/DriveRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="836" selection-end="836" vertical-scroll-proportion="-5.68" vertical-offset="173" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/Charsets.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="12" selection-start="316" selection-end="316" vertical-scroll-proportion="-5.4" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/json/Json.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="11" selection-start="241" selection-end="241" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/http/HttpMediaType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="769" selection-end="769" vertical-scroll-proportion="-5.24" vertical-offset="124" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/http/AbstractHttpContent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="14" selection-start="362" selection-end="362" vertical-scroll-proportion="-5.04" vertical-offset="9" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-api-client-1.17.0-rc.jar!/com/google/api/client/googleapis/services/AbstractGoogleClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="51" selection-start="1532" selection-end="1532" vertical-scroll-proportion="-5.4" vertical-offset="315" max-vertical-offset="1515">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-api-client-1.17.0-rc.jar!/com/google/api/client/googleapis/services/json/AbstractGoogleJsonClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="55" selection-start="504" selection-end="504" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/json/JsonObjectParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="43" selection-start="1380" selection-end="1380" vertical-scroll-proportion="-5.4" vertical-offset="210" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/http/json/JsonHttpContent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="59" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-11.0" vertical-offset="55" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-api-client-1.17.0-rc.jar!/com/google/api/client/googleapis/services/json/AbstractGoogleJsonClientRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="381" selection-end="381" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-api-client-1.17.0-rc.jar!/com/google/api/client/googleapis/services/AbstractGoogleClientRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="14" selection-start="1028" selection-end="1028" vertical-scroll-proportion="-5.4" vertical-offset="150" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/ArrayMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="52" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.31490386" vertical-offset="784" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/GenericData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="11" selection-start="467" selection-end="467" vertical-scroll-proportion="-5.24" vertical-offset="34" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/org/apache/harmony/lang/annotation/AnnotationMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="347" column="0" selection-start="13272" selection-end="13272" vertical-scroll-proportion="0.33333334" vertical-offset="4713" max-vertical-offset="5550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/Data.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="26" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.36724564" vertical-offset="332" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/repackaged/com/google/common/base/Preconditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="23" selection-start="888" selection-end="888" vertical-scroll-proportion="0.3325062" vertical-offset="121" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/Preconditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="23" selection-start="647" selection-end="647" vertical-scroll-proportion="0.36724564" vertical-offset="62" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/ClassInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="12" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.6754808" vertical-offset="154" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../google-api-java-client/libs/google-http-client-1.17.0-rc.jar!/com/google/api/client/util/FieldInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="55" selection-start="586" selection-end="586" vertical-scroll-proportion="-5.52" vertical-offset="57" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/org/apache/harmony/lang/annotation/AnnotationFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="79" selection-start="4863" selection-end="4863" vertical-scroll-proportion="0.50340134" vertical-offset="1113" max-vertical-offset="4425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="0" selection-start="5992" selection-end="5992" vertical-scroll-proportion="0.3317757" vertical-offset="1508" max-vertical-offset="2565">
+        <state line="207" column="49" selection-start="7825" selection-end="7830" vertical-scroll-proportion="0.8224299" vertical-offset="1853" max-vertical-offset="2820">
           <folding>
-            <element signature="e#1847#1855#0" expanded="true" />
-            <element signature="e#2606#2878#0" expanded="true" />
-            <element signature="e#2866#2867#0" expanded="true" />
+            <element signature="e#1871#1879#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6387#7568#0" expanded="true" />
-            <element signature="e#7557#7558#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import android.accounts.*;
+import android.util.Log;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountManager;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.client.http.FileContent;
@@ -34,14 +36,12 @@ import android.widget.AdapterView.OnItemClickListener;
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
 {
-    static final int REQUEST_ACCOUNT_PICKER = 1;
-    static final int REQUEST_AUTHORIZATION = 2;
 
 	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
-    private static Drive service;
-    private GoogleAccountCredential credential;
+    private static Drive mdService;
+    private GoogleAccountCredential mgacCredential;
 	
 	//custom adapter
 	private csaAdapter mcvAdapter;
@@ -82,29 +82,30 @@ public class MainActivity extends Activity
 		setContentView(csvCardsView);
 	}
 
-    @Override
-    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-        switch (requestCode) {
-            case REQUEST_ACCOUNT_PICKER:
-                if (resultCode == RESULT_OK && data != null && data.getExtras() != null)
-                {
-                    String accountName = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-                    if (accountName != null)
-                    {
-                        credential.setSelectedAccountName(accountName);
-                        service = getDriveService(credential);
-                    }
-                }
-                break;
-            case REQUEST_AUTHORIZATION:
-                if (resultCode == Activity.RESULT_OK)
-                    saveFileToDrive(mlsPaths.get(iPosition));
-                else
-                    startActivityForResult(credential.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
-
-                break;
-        }
-    }
+//    @Override
+//    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+//        switch (requestCode)
+//        {
+//            case REQUEST_ACCOUNT_PICKER:
+//                if (resultCode == RESULT_OK && data != null && data.getExtras() != null)
+//                {
+//                    String accountName = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
+//                    if (accountName != null)
+//                    {
+//                        credential.setSelectedAccountName(accountName);
+//                        service = getDriveService(credential);
+//                    }
+//                }
+//                break;
+//            case REQUEST_AUTHORIZATION:
+//                if (resultCode == Activity.RESULT_OK)
+//                    saveFileToDrive(mlsPaths.get(iPosition));
+//                else
+//                    startActivityForResult(credential.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
+//
+//                break;
+//        }
+//    }
 
 	
 	public static String getBucketId(String path) 
@@ -161,8 +162,22 @@ public class MainActivity extends Activity
 	        	//handled
 	            return true;
 	        case R.id.upload_menu_item:
-                credential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-                startActivityForResult(credential.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
+                //get google account credentials and store to member variable
+                mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+                //get a list of all the accounts on the device
+                Account[] myAccounts = AccountManager.get(this).getAccounts();
+                //for each account
+                for(int i = 0; i < myAccounts.length; i++)
+                {
+                    //if the account type is google
+                    if (myAccounts[i].type.equals("com.google"))
+                        //set this as the selected Account
+                        mgacCredential.setSelectedAccountName(myAccounts[i].name);
+                }
+                //get the drive service
+                mdService = getDriveService(mgacCredential);
+                //save the selected item to google drive
+                saveFileToDrive(mlsPaths.get(iPosition));
 	        	return true;
             case R.id.share_menu_item:
                 return true;
@@ -175,11 +190,12 @@ public class MainActivity extends Activity
     {
         final String msPath = sPath;
 
-        Thread t = new Thread(new Runnable()
-        {
-            @Override
-            public void run() {
-                try {
+//        Thread t = new Thread(new Runnable()
+//        {
+//            @Override
+//            public void run() {
+                try
+                {
                     // File's binary content
                     File fContent = new File(msPath);
                     FileContent mediaContent = new FileContent("image/jpeg", fContent);
@@ -189,23 +205,30 @@ public class MainActivity extends Activity
                     gdfBody.setTitle(fContent.getName());
                     gdfBody.setMimeType("image/jpeg");
 
-                    com.google.api.services.drive.model.File gdfFile = service.files().insert(gdfBody, mediaContent).execute();
+                    com.google.api.services.drive.model.File gdfFile = mdService.files().insert(gdfBody, mediaContent).execute();
                     if (gdfFile != null)
                     {
+                        Log.d("GlassShareUploadTask", "Uploaded");
 //                        showToast("Photo uploaded: " + file.getTitle());
                     }
                 }
                 catch (UserRecoverableAuthIOException e)
                 {
-                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
+                    Log.d("GlassShareUploadTask", e.toString());
+//                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
                 }
                 catch (IOException e)
                 {
-                    e.printStackTrace();
+                    Log.d("GlassShareUploadTask", e.toString());
+//                    e.printStackTrace();
                 }
-            }
-        });
-        t.start();
+                catch (Exception e)
+                {
+                    Log.d("GlassShareUploadTask", e.toString());
+                }
+//            }
+//        });
+//        t.start();
     }
 
     private Drive getDriveService(GoogleAccountCredential credential)

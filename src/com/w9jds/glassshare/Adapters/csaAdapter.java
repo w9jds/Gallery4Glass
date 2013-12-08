@@ -70,6 +70,7 @@ public class csaAdapter extends CardScrollAdapter
             final BitmapWorkerTask task = new BitmapWorkerTask(ivPic, mlsPaths, position);
 
             final AsyncDrawable asyncDrawable = new AsyncDrawable(mcContext.getResources(), mPlaceHolderBitmap, task);
+            ivPic.setScaleType(ImageView.ScaleType.CENTER);
             ivPic.setImageDrawable(asyncDrawable);
 
             task.execute();
@@ -209,6 +210,7 @@ public class csaAdapter extends CardScrollAdapter
                 final BitmapWorkerTask bitmapWorkerTask = getBitmapWorkerTask(ivCard);
                 if (this == bitmapWorkerTask && ivCard != null)
                 {
+                    ivCard.setScaleType(ImageView.ScaleType.CENTER_CROP);
                     ivCard.setImageBitmap(bPic);
                 }
             }
