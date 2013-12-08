@@ -1,6 +1,6 @@
 package com.w9jds.glassshare;
 
-import java.io.File;
+//import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,13 +9,13 @@ import android.accounts.*;
 import android.util.Log;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountManager;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
+import com.google.api.services.drive.model.File;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 
 import android.net.Uri;
@@ -150,7 +150,7 @@ public class MainActivity extends Activity
 		{
 	        case R.id.delete_menu_item:
 	        	//pull the file from the path of the selected item
-	        	File fPic = new File(mlsPaths.get(iPosition));
+	        	java.io.File fPic = new java.io.File(mlsPaths.get(iPosition));
 	        	//delete the image
 	        	fPic.delete();
 	        	//refresh the folder
@@ -190,27 +190,24 @@ public class MainActivity extends Activity
     {
         final String msPath = sPath;
 
-//        Thread t = new Thread(new Runnable()
-//        {
-//            @Override
-//            public void run() {
+        Thread t = new Thread(new Runnable()
+        {
+            @Override
+            public void run() {
                 try
                 {
                     // File's binary content
-                    File fContent = new File(msPath);
-                    FileContent mediaContent = new FileContent("image/jpeg", fContent);
+                    java.io.File fImage = new java.io.File(msPath);
+                    FileContent fcContent = new FileContent("image/jpeg", fImage);
 
                     // File's metadata.
-                    com.google.api.services.drive.model.File gdfBody = new com.google.api.services.drive.model.File();
-                    gdfBody.setTitle(fContent.getName());
+                    File gdfBody = new File();
+                    gdfBody.setTitle(fImage.getName());
                     gdfBody.setMimeType("image/jpeg");
 
-                    com.google.api.services.drive.model.File gdfFile = mdService.files().insert(gdfBody, mediaContent).execute();
+                    com.google.api.services.drive.model.File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
                     if (gdfFile != null)
-                    {
                         Log.d("GlassShareUploadTask", "Uploaded");
-//                        showToast("Photo uploaded: " + file.getTitle());
-                    }
                 }
                 catch (UserRecoverableAuthIOException e)
                 {
@@ -226,9 +223,10 @@ public class MainActivity extends Activity
                 {
                     Log.d("GlassShareUploadTask", e.toString());
                 }
-//            }
-//        });
-//        t.start();
+            }
+        });
+        t.start();
+
     }
 
     private Drive getDriveService(GoogleAccountCredential credential)

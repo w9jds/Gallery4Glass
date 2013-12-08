@@ -22,6 +22,7 @@
     <orderEntry type="library" exported="" name="google-http-client-gson-1.17.0-rc" level="project" />
     <orderEntry type="library" exported="" name="google-oauth-client-1.17.0-rc" level="project" />
     <orderEntry type="library" exported="" name="google-api-services-drive-v2-rev108-1.17.0-rc" level="project" />
+    <orderEntry type="library" exported="" name="google-play-services" level="project" />
   </component>
 </module>
 
