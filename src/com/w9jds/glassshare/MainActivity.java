@@ -3,6 +3,7 @@ package com.w9jds.glassshare;
 import java.io.File;
 import java.util.ArrayList;
 
+import android.accounts.*;
 import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 
@@ -120,6 +121,14 @@ public class MainActivity extends Activity
 	        	//handled
 	            return true;
 	        case R.id.share_menu_item:
+//                Account[] accounts = AccountManager.get(this).getAccounts();
+
+                Account[] accounts = AccountManager.get(this).getAccounts();
+                String[] names = new String[accounts.length];
+
+                for (int i = 0; i < names.length; i++)
+                    names[i] = accounts[i].name;
+
 	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);

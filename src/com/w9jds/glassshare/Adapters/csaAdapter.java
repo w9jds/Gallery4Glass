@@ -164,13 +164,10 @@ public class csaAdapter extends CardScrollAdapter
 
                 double dRatio = ((double)bImage.getWidth()) / 640;
                 return Bitmap.createScaledBitmap(bImage, 640, (int) Math.round(bImage.getHeight() / dRatio), true);
-
-//            mivCard.setImageBitmap(BitmapFactory.decodeFile(mlsPaths.get(position), bfoOptions));
             }
             else
                 return BitmapFactory.decodeFile(mlsPaths.get(miPosition));
 
-//        return decodeSampledBitmapFromResource(getResources(), data, 100, 100));
         }
 
         public int calculateInSampleSize( BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)
@@ -191,10 +188,8 @@ public class csaAdapter extends CardScrollAdapter
 
                 //white both half dimensions divided by the sample size are still greater than the requested dimensions
                 while ((halfHeight / inSampleSize) > iReqHeight && (halfWidth / inSampleSize) > iReqWidth)
-                {
                     //multiply the sample size by 2
                     inSampleSize *= 2;
-                }
             }
 
             //once the loop is done return the sample size
