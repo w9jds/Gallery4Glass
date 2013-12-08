@@ -4,6 +4,11 @@
 	    android:id="@+id/share_menu_item"
 	    android:title="@string/share"
 	    android:icon="@drawable/ic_share_50" />
+
+    <item
+        android:id="@+id/upload_menu_item"
+        android:title="@string/upload"
+        android:icon="@drawable/ic_sync_50" />
     
 	<item
         android:id="@+id/delete_menu_item"
