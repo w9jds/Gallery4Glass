@@ -1,12 +1,12 @@
 package com.w9jds.glassshare;
 
-//import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import android.accounts.*;
 import android.util.Log;
+import com.facebook.internal.SessionTracker;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -17,6 +17,8 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.w9jds.glassshare.Adapters.csaAdapter;
+import com.facebook.*;
+import com.facebook.model.*;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -155,6 +157,10 @@ public class MainActivity extends Activity
                 saveFileToDrive(mlsPaths.get(iPosition));
 	        	return true;
             case R.id.share_menu_item:
+
+                // start Facebook Login
+                Account[] Accounts = AccountManager.get(this).getAccounts();
+
                 return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
