@@ -1,0 +1,354 @@
+android.support.v4.app.BackStackState
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.Fragment$SavedState
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentManagerState
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost: void setOnTabChangedListener(android.widget.TabHost$OnTabChangeListener)
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColor(int)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColorResource(int)
+android.support.v4.view.PagerTabStrip: int getTabIndicatorColor()
+android.support.v4.view.PagerTabStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.PagerTabStrip: void setBackgroundColor(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundResource(int)
+android.support.v4.view.PagerTabStrip: void setDrawFullUnderline(boolean)
+android.support.v4.view.PagerTabStrip: boolean getDrawFullUnderline()
+android.support.v4.view.PagerTabStrip: int getMinHeight()
+android.support.v4.view.PagerTitleStrip: void setSingleLineAllCaps(android.widget.TextView)
+android.support.v4.view.PagerTitleStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTitleStrip: int getTextSpacing()
+android.support.v4.view.PagerTitleStrip: void setNonPrimaryAlpha(float)
+android.support.v4.view.PagerTitleStrip: void setTextColor(int)
+android.support.v4.view.PagerTitleStrip: void setGravity(int)
+android.support.v4.view.PagerTitleStrip: int getMinHeight()
+android.support.v4.view.ViewPager: void setScrollState(int)
+android.support.v4.view.ViewPager: void setAdapter(android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager: android.support.v4.view.PagerAdapter getAdapter()
+android.support.v4.view.ViewPager: void setOnAdapterChangeListener(android.support.v4.view.ViewPager$OnAdapterChangeListener)
+android.support.v4.view.ViewPager: int getClientWidth()
+android.support.v4.view.ViewPager: void setCurrentItem(int)
+android.support.v4.view.ViewPager: int getCurrentItem()
+android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+android.support.v4.view.ViewPager: void setChildrenDrawingOrderEnabledCompat(boolean)
+android.support.v4.view.ViewPager: int getOffscreenPageLimit()
+android.support.v4.view.ViewPager: void setOffscreenPageLimit(int)
+android.support.v4.view.ViewPager: void setPageMargin(int)
+android.support.v4.view.ViewPager: int getPageMargin()
+android.support.v4.view.ViewPager: void setPageMarginDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
+android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.DrawerLayout: void setScrimColor(int)
+android.support.v4.widget.DrawerLayout: void setDrawerListener(android.support.v4.widget.DrawerLayout$DrawerListener)
+android.support.v4.widget.DrawerLayout: void setDrawerLockMode(int)
+android.support.v4.widget.DrawerLayout$SavedState
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout: void setParallaxDistance(int)
+android.support.v4.widget.SlidingPaneLayout: int getParallaxDistance()
+android.support.v4.widget.SlidingPaneLayout: void setSliderFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getSliderFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
+android.support.v4.widget.SlidingPaneLayout$SavedState
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+com.fasterxml.jackson.core.JsonEncoding: com.fasterxml.jackson.core.JsonEncoding[] values()
+com.fasterxml.jackson.core.JsonEncoding: com.fasterxml.jackson.core.JsonEncoding valueOf(java.lang.String)
+com.fasterxml.jackson.core.JsonFactory$Feature: com.fasterxml.jackson.core.JsonFactory$Feature[] values()
+com.fasterxml.jackson.core.JsonFactory$Feature: com.fasterxml.jackson.core.JsonFactory$Feature valueOf(java.lang.String)
+com.fasterxml.jackson.core.JsonGenerator$Feature: com.fasterxml.jackson.core.JsonGenerator$Feature[] values()
+com.fasterxml.jackson.core.JsonGenerator$Feature: com.fasterxml.jackson.core.JsonGenerator$Feature valueOf(java.lang.String)
+com.fasterxml.jackson.core.JsonParser$Feature: com.fasterxml.jackson.core.JsonParser$Feature[] values()
+com.fasterxml.jackson.core.JsonParser$Feature: com.fasterxml.jackson.core.JsonParser$Feature valueOf(java.lang.String)
+com.fasterxml.jackson.core.JsonParser$NumberType: com.fasterxml.jackson.core.JsonParser$NumberType[] values()
+com.fasterxml.jackson.core.JsonParser$NumberType: com.fasterxml.jackson.core.JsonParser$NumberType valueOf(java.lang.String)
+com.fasterxml.jackson.core.JsonToken: com.fasterxml.jackson.core.JsonToken[] values()
+com.fasterxml.jackson.core.JsonToken: com.fasterxml.jackson.core.JsonToken valueOf(java.lang.String)
+com.fasterxml.jackson.core.format.MatchStrength: com.fasterxml.jackson.core.format.MatchStrength[] values()
+com.fasterxml.jackson.core.format.MatchStrength: com.fasterxml.jackson.core.format.MatchStrength valueOf(java.lang.String)
+com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType: com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType[] values()
+com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType: com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType valueOf(java.lang.String)
+com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType: com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType[] values()
+com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType: com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType valueOf(java.lang.String)
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
+com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
+com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
+com.google.android.gms.ads.AdView: com.google.android.gms.ads.AdListener getAdListener()
+com.google.android.gms.ads.AdView: com.google.android.gms.ads.AdSize getAdSize()
+com.google.android.gms.ads.AdView: java.lang.String getAdUnitId()
+com.google.android.gms.ads.AdView: void setAdListener(com.google.android.gms.ads.AdListener)
+com.google.android.gms.ads.AdView: void setAdSize(com.google.android.gms.ads.AdSize)
+com.google.android.gms.ads.AdView: void setAdUnitId(java.lang.String)
+com.google.android.gms.auth.RecoveryDecision
+com.google.android.gms.common.SignInButton: void setSize(int)
+com.google.android.gms.common.SignInButton: void setColorScheme(int)
+com.google.android.gms.common.SignInButton: void setOnClickListener(android.view.View$OnClickListener)
+com.google.android.gms.common.SignInButton: void setEnabled(boolean)
+com.google.android.gms.common.data.d
+com.google.android.gms.common.images.ImageManager$ImageReceiver
+com.google.android.gms.common.internal.safeparcel.SafeParcelable
+com.google.android.gms.games.Game
+com.google.android.gms.games.GameEntity
+com.google.android.gms.games.GameEntity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.Player
+com.google.android.gms.games.PlayerEntity
+com.google.android.gms.games.PlayerEntity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.b
+com.google.android.gms.games.d
+com.google.android.gms.games.multiplayer.Invitation
+com.google.android.gms.games.multiplayer.InvitationEntity
+com.google.android.gms.games.multiplayer.InvitationEntity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.multiplayer.Participant
+com.google.android.gms.games.multiplayer.ParticipantEntity
+com.google.android.gms.games.multiplayer.ParticipantEntity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.multiplayer.b
+com.google.android.gms.games.multiplayer.d
+com.google.android.gms.games.multiplayer.realtime.RealTimeMessage
+com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.multiplayer.realtime.Room
+com.google.android.gms.games.multiplayer.realtime.RoomEntity
+com.google.android.gms.games.multiplayer.realtime.RoomEntity: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.games.multiplayer.realtime.c
+com.google.android.gms.internal.be
+com.google.android.gms.internal.bh
+com.google.android.gms.internal.bu
+com.google.android.gms.internal.bw
+com.google.android.gms.internal.co
+com.google.android.gms.internal.cq: void setContext(android.content.Context)
+com.google.android.gms.internal.dd
+com.google.android.gms.internal.dr
+com.google.android.gms.internal.dt
+com.google.android.gms.internal.dt$a
+com.google.android.gms.internal.dw$a
+com.google.android.gms.internal.dz
+com.google.android.gms.internal.dz$a
+com.google.android.gms.internal.dz$b
+com.google.android.gms.internal.ec
+com.google.android.gms.internal.en
+com.google.android.gms.internal.fa
+com.google.android.gms.internal.fn
+com.google.android.gms.internal.fq
+com.google.android.gms.internal.fs
+com.google.android.gms.internal.fv
+com.google.android.gms.internal.fv$a
+com.google.android.gms.internal.fv$b
+com.google.android.gms.internal.fv$b$a
+com.google.android.gms.internal.fv$b$b
+com.google.android.gms.internal.fv$c
+com.google.android.gms.internal.fv$d
+com.google.android.gms.internal.fv$f
+com.google.android.gms.internal.fv$g
+com.google.android.gms.internal.fv$h
+com.google.android.gms.internal.v
+com.google.android.gms.internal.x
+com.google.android.gms.location.ActivityRecognitionResult
+com.google.android.gms.location.DetectedActivity
+com.google.android.gms.location.LocationRequest
+com.google.android.gms.maps.GoogleMapOptions
+com.google.android.gms.maps.MapView: com.google.android.gms.maps.GoogleMap getMap()
+com.google.android.gms.maps.model.CameraPosition
+com.google.android.gms.maps.model.CircleOptions
+com.google.android.gms.maps.model.GroundOverlayOptions
+com.google.android.gms.maps.model.LatLng
+com.google.android.gms.maps.model.LatLngBounds
+com.google.android.gms.maps.model.MarkerOptions
+com.google.android.gms.maps.model.PolygonOptions
+com.google.android.gms.maps.model.PolylineOptions
+com.google.android.gms.maps.model.Tile
+com.google.android.gms.maps.model.TileOverlayOptions
+com.google.android.gms.maps.model.VisibleRegion
+com.google.android.gms.plus.PlusOneButton: void setOnPlusOneClickListener(com.google.android.gms.plus.PlusOneButton$OnPlusOneClickListener)
+com.google.android.gms.plus.PlusOneButton: void setAnnotation(int)
+com.google.android.gms.plus.PlusOneButton: void setSize(int)
+com.google.android.gms.plus.PlusOneButtonWithPopup: void setOnClickListener(android.view.View$OnClickListener)
+com.google.android.gms.plus.PlusOneButtonWithPopup: void setAnnotation(int)
+com.google.android.gms.plus.PlusOneButtonWithPopup: void setSize(int)
+com.google.android.gms.plus.PlusOneButtonWithPopup: android.app.PendingIntent getResolution()
+com.google.android.gms.wallet.Address
+com.google.android.gms.wallet.Address: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.Cart
+com.google.android.gms.wallet.Cart: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.FullWallet
+com.google.android.gms.wallet.FullWallet: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.FullWalletRequest
+com.google.android.gms.wallet.FullWalletRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.LineItem
+com.google.android.gms.wallet.LineItem: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.LoyaltyWalletObject
+com.google.android.gms.wallet.LoyaltyWalletObject: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.MaskedWallet
+com.google.android.gms.wallet.MaskedWallet: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.MaskedWalletRequest
+com.google.android.gms.wallet.MaskedWalletRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.NotifyTransactionStatusRequest
+com.google.android.gms.wallet.NotifyTransactionStatusRequest: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.OfferWalletObject
+com.google.android.gms.wallet.OfferWalletObject: android.os.Parcelable$Creator CREATOR
+com.google.android.gms.wallet.ProxyCard
+com.google.android.gms.wallet.ProxyCard: android.os.Parcelable$Creator CREATOR
+com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState: com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState[] values()
+com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState: com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState valueOf(java.lang.String)
+com.google.api.client.googleapis.media.MediaHttpUploader$UploadState: com.google.api.client.googleapis.media.MediaHttpUploader$UploadState[] values()
+com.google.api.client.googleapis.media.MediaHttpUploader$UploadState: com.google.api.client.googleapis.media.MediaHttpUploader$UploadState valueOf(java.lang.String)
+com.google.api.client.http.UriTemplate$CompositeOutput: com.google.api.client.http.UriTemplate$CompositeOutput[] values()
+com.google.api.client.http.UriTemplate$CompositeOutput: com.google.api.client.http.UriTemplate$CompositeOutput valueOf(java.lang.String)
+com.google.api.client.json.JsonToken: com.google.api.client.json.JsonToken[] values()
+com.google.api.client.json.JsonToken: com.google.api.client.json.JsonToken valueOf(java.lang.String)
+com.google.api.client.util.GenericData$Flags: com.google.api.client.util.GenericData$Flags[] values()
+com.google.api.client.util.GenericData$Flags: com.google.api.client.util.GenericData$Flags valueOf(java.lang.String)
+com.google.gson.FieldNamingPolicy: com.google.gson.FieldNamingPolicy[] values()
+com.google.gson.FieldNamingPolicy: com.google.gson.FieldNamingPolicy valueOf(java.lang.String)
+com.google.gson.LongSerializationPolicy: com.google.gson.LongSerializationPolicy[] values()
+com.google.gson.LongSerializationPolicy: com.google.gson.LongSerializationPolicy valueOf(java.lang.String)
+com.google.gson.stream.JsonScope: com.google.gson.stream.JsonScope[] values()
+com.google.gson.stream.JsonScope: com.google.gson.stream.JsonScope valueOf(java.lang.String)
+com.google.gson.stream.JsonToken: com.google.gson.stream.JsonToken[] values()
+com.google.gson.stream.JsonToken: com.google.gson.stream.JsonToken valueOf(java.lang.String)
+com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Label: com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Label[] values()
+com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Label: com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Label valueOf(java.lang.String)
+com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Type: com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Type[] values()
+com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Type: com.google.protobuf.DescriptorProtos$FieldDescriptorProto$Type valueOf(java.lang.String)
+com.google.protobuf.DescriptorProtos$FieldOptions$CType: com.google.protobuf.DescriptorProtos$FieldOptions$CType[] values()
+com.google.protobuf.DescriptorProtos$FieldOptions$CType: com.google.protobuf.DescriptorProtos$FieldOptions$CType valueOf(java.lang.String)
+com.google.protobuf.DescriptorProtos$FileOptions$OptimizeMode: com.google.protobuf.DescriptorProtos$FileOptions$OptimizeMode[] values()
+com.google.protobuf.DescriptorProtos$FileOptions$OptimizeMode: com.google.protobuf.DescriptorProtos$FileOptions$OptimizeMode valueOf(java.lang.String)
+com.google.protobuf.Descriptors$FieldDescriptor$JavaType: com.google.protobuf.Descriptors$FieldDescriptor$JavaType[] values()
+com.google.protobuf.Descriptors$FieldDescriptor$JavaType: com.google.protobuf.Descriptors$FieldDescriptor$JavaType valueOf(java.lang.String)
+com.google.protobuf.Descriptors$FieldDescriptor$Type: com.google.protobuf.Descriptors$FieldDescriptor$Type[] values()
+com.google.protobuf.Descriptors$FieldDescriptor$Type: com.google.protobuf.Descriptors$FieldDescriptor$Type valueOf(java.lang.String)
+com.google.protobuf.WireFormat$FieldType: com.google.protobuf.WireFormat$FieldType[] values()
+com.google.protobuf.WireFormat$FieldType: com.google.protobuf.WireFormat$FieldType valueOf(java.lang.String)
+com.google.protobuf.WireFormat$JavaType: com.google.protobuf.WireFormat$JavaType[] values()
+com.google.protobuf.WireFormat$JavaType: com.google.protobuf.WireFormat$JavaType valueOf(java.lang.String)
+com.w9jds.glassshare.MainActivity
+com.w9jds.glassshare.MainActivity: MainActivity()
+com.w9jds.glassshare.R$dimen: int activity_horizontal_margin
+com.w9jds.glassshare.R$dimen: int activity_vertical_margin
+com.w9jds.glassshare.R$drawable: int ic_add_person_50
+com.w9jds.glassshare.R$drawable: int ic_angle_50
+com.w9jds.glassshare.R$drawable: int ic_archive_50
+com.w9jds.glassshare.R$drawable: int ic_arrow_left_50
+com.w9jds.glassshare.R$drawable: int ic_arrow_right_50
+com.w9jds.glassshare.R$drawable: int ic_attachment_50
+com.w9jds.glassshare.R$drawable: int ic_beamed_note_50
+com.w9jds.glassshare.R$drawable: int ic_bed_50
+com.w9jds.glassshare.R$drawable: int ic_bike_50
+com.w9jds.glassshare.R$drawable: int ic_bluetooth_50
+com.w9jds.glassshare.R$drawable: int ic_bus_50
+com.w9jds.glassshare.R$drawable: int ic_calendar_50
+com.w9jds.glassshare.R$drawable: int ic_camera_50
+com.w9jds.glassshare.R$drawable: int ic_compass_50
+com.w9jds.glassshare.R$drawable: int ic_computer_50
+com.w9jds.glassshare.R$drawable: int ic_delete_50
+com.w9jds.glassshare.R$drawable: int ic_directions_50
+com.w9jds.glassshare.R$drawable: int ic_document_50
+com.w9jds.glassshare.R$drawable: int ic_done_150
+com.w9jds.glassshare.R$drawable: int ic_done_50
+com.w9jds.glassshare.R$drawable: int ic_drive_50
+com.w9jds.glassshare.R$drawable: int ic_eighth_note_50
+com.w9jds.glassshare.R$drawable: int ic_email_50
+com.w9jds.glassshare.R$drawable: int ic_forward_50
+com.w9jds.glassshare.R$drawable: int ic_game_50
+com.w9jds.glassshare.R$drawable: int ic_gear_50
+com.w9jds.glassshare.R$drawable: int ic_help_50
+com.w9jds.glassshare.R$drawable: int ic_launcher
+com.w9jds.glassshare.R$drawable: int ic_location_50
+com.w9jds.glassshare.R$drawable: int ic_message_50
+com.w9jds.glassshare.R$drawable: int ic_microphone_off_50
+com.w9jds.glassshare.R$drawable: int ic_microphone_on_50
+com.w9jds.glassshare.R$drawable: int ic_mobile_phone_50
+com.w9jds.glassshare.R$drawable: int ic_music_move_to_end_50
+com.w9jds.glassshare.R$drawable: int ic_music_move_to_front_50
+com.w9jds.glassshare.R$drawable: int ic_music_next_50
+com.w9jds.glassshare.R$drawable: int ic_music_pause_50
+com.w9jds.glassshare.R$drawable: int ic_music_play_50
+com.w9jds.glassshare.R$drawable: int ic_music_previous_50
+com.w9jds.glassshare.R$drawable: int ic_no_50
+com.w9jds.glassshare.R$drawable: int ic_note_50
+com.w9jds.glassshare.R$drawable: int ic_pen_50
+com.w9jds.glassshare.R$drawable: int ic_people_50
+com.w9jds.glassshare.R$drawable: int ic_person_50
+com.w9jds.glassshare.R$drawable: int ic_phone_50
+com.w9jds.glassshare.R$drawable: int ic_phone_hang_50
+com.w9jds.glassshare.R$drawable: int ic_phone_in_50
+com.w9jds.glassshare.R$drawable: int ic_phone_out_50
+com.w9jds.glassshare.R$drawable: int ic_photo_50
+com.w9jds.glassshare.R$drawable: int ic_placeholder_attachment_50
+com.w9jds.glassshare.R$drawable: int ic_placeholder_photo_150
+com.w9jds.glassshare.R$drawable: int ic_placeholder_video_150
+com.w9jds.glassshare.R$drawable: int ic_plus_50
+com.w9jds.glassshare.R$drawable: int ic_question_150
+com.w9jds.glassshare.R$drawable: int ic_read_aloud_50
+com.w9jds.glassshare.R$drawable: int ic_reply_50
+com.w9jds.glassshare.R$drawable: int ic_reply_all_50
+com.w9jds.glassshare.R$drawable: int ic_run_50
+com.w9jds.glassshare.R$drawable: int ic_search_50
+com.w9jds.glassshare.R$drawable: int ic_select_link_50
+com.w9jds.glassshare.R$drawable: int ic_share_50
+com.w9jds.glassshare.R$drawable: int ic_star_50
+com.w9jds.glassshare.R$drawable: int ic_storefront_50
+com.w9jds.glassshare.R$drawable: int ic_sync_50
+com.w9jds.glassshare.R$drawable: int ic_timer_50
+com.w9jds.glassshare.R$drawable: int ic_transit_50
+com.w9jds.glassshare.R$drawable: int ic_unstar_50
+com.w9jds.glassshare.R$drawable: int ic_video_50
+com.w9jds.glassshare.R$drawable: int ic_video_off_50
+com.w9jds.glassshare.R$drawable: int ic_volume_full_50
+com.w9jds.glassshare.R$drawable: int ic_volume_half_50
+com.w9jds.glassshare.R$drawable: int ic_volume_muted_50
+com.w9jds.glassshare.R$drawable: int ic_walk_50
+com.w9jds.glassshare.R$drawable: int ic_warning_150
+com.w9jds.glassshare.R$drawable: int ic_warning_50
+com.w9jds.glassshare.R$drawable: int ic_world_50
+com.w9jds.glassshare.R$id: int cardImage
+com.w9jds.glassshare.R$id: int delete_menu_item
+com.w9jds.glassshare.R$id: int share_menu_item
+com.w9jds.glassshare.R$id: int upload_menu_item
+com.w9jds.glassshare.R$integer: int google_play_services_version
+com.w9jds.glassshare.R$layout: int card_layout
+com.w9jds.glassshare.R$menu: int main
+com.w9jds.glassshare.R$string: int app_name
+com.w9jds.glassshare.R$string: int delete
+com.w9jds.glassshare.R$string: int glass_voice_trigger
+com.w9jds.glassshare.R$string: int share
+com.w9jds.glassshare.R$string: int upload
+com.w9jds.glassshare.R$style: int AppBaseTheme
+com.w9jds.glassshare.R$style: int CustomTheme
+com.w9jds.glassshare.R$xml: int my_voice_trigger
+javax.annotation.meta.When: javax.annotation.meta.When[] values()
+javax.annotation.meta.When: javax.annotation.meta.When valueOf(java.lang.String)
+org.codehaus.jackson.JsonEncoding: org.codehaus.jackson.JsonEncoding[] values()
+org.codehaus.jackson.JsonEncoding: org.codehaus.jackson.JsonEncoding valueOf(java.lang.String)
+org.codehaus.jackson.JsonGenerator$Feature: org.codehaus.jackson.JsonGenerator$Feature[] values()
+org.codehaus.jackson.JsonGenerator$Feature: org.codehaus.jackson.JsonGenerator$Feature valueOf(java.lang.String)
+org.codehaus.jackson.JsonParser$Feature: org.codehaus.jackson.JsonParser$Feature[] values()
+org.codehaus.jackson.JsonParser$Feature: org.codehaus.jackson.JsonParser$Feature valueOf(java.lang.String)
+org.codehaus.jackson.JsonParser$NumberType: org.codehaus.jackson.JsonParser$NumberType[] values()
+org.codehaus.jackson.JsonParser$NumberType: org.codehaus.jackson.JsonParser$NumberType valueOf(java.lang.String)
+org.codehaus.jackson.JsonToken: org.codehaus.jackson.JsonToken[] values()
+org.codehaus.jackson.JsonToken: org.codehaus.jackson.JsonToken valueOf(java.lang.String)
+org.codehaus.jackson.annotate.JsonAutoDetect$Visibility: org.codehaus.jackson.annotate.JsonAutoDetect$Visibility[] values()
+org.codehaus.jackson.annotate.JsonAutoDetect$Visibility: org.codehaus.jackson.annotate.JsonAutoDetect$Visibility valueOf(java.lang.String)
+org.codehaus.jackson.annotate.JsonMethod: org.codehaus.jackson.annotate.JsonMethod[] values()
+org.codehaus.jackson.annotate.JsonMethod: org.codehaus.jackson.annotate.JsonMethod valueOf(java.lang.String)
+org.codehaus.jackson.annotate.JsonTypeInfo$As: org.codehaus.jackson.annotate.JsonTypeInfo$As[] values()
+org.codehaus.jackson.annotate.JsonTypeInfo$As: org.codehaus.jackson.annotate.JsonTypeInfo$As valueOf(java.lang.String)
+org.codehaus.jackson.annotate.JsonTypeInfo$Id: org.codehaus.jackson.annotate.JsonTypeInfo$Id[] values()
+org.codehaus.jackson.annotate.JsonTypeInfo$Id: org.codehaus.jackson.annotate.JsonTypeInfo$Id valueOf(java.lang.String)
+org.codehaus.jackson.format.MatchStrength: org.codehaus.jackson.format.MatchStrength[] values()
+org.codehaus.jackson.format.MatchStrength: org.codehaus.jackson.format.MatchStrength valueOf(java.lang.String)
+org.codehaus.jackson.util.BufferRecycler$ByteBufferType: org.codehaus.jackson.util.BufferRecycler$ByteBufferType[] values()
+org.codehaus.jackson.util.BufferRecycler$ByteBufferType: org.codehaus.jackson.util.BufferRecycler$ByteBufferType valueOf(java.lang.String)
+org.codehaus.jackson.util.BufferRecycler$CharBufferType: org.codehaus.jackson.util.BufferRecycler$CharBufferType[] values()
+org.codehaus.jackson.util.BufferRecycler$CharBufferType: org.codehaus.jackson.util.BufferRecycler$CharBufferType valueOf(java.lang.String)

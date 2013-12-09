@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SDKs/facebook-android-sdk-3.5.2/facebook/FacebookSDK.iml" filepath="$PROJECT_DIR$/../SDKs/facebook-android-sdk-3.5.2/facebook/FacebookSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/GlassShare.iml" filepath="$PROJECT_DIR$/GlassShare.iml" />
     </modules>
   </component>

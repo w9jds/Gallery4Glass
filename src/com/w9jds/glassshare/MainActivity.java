@@ -80,32 +80,7 @@ public class MainActivity extends Activity
 		
         //set the view of this activity
 		setContentView(csvCardsView);
-	}
-
-//    @Override
-//    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-//        switch (requestCode)
-//        {
-//            case REQUEST_ACCOUNT_PICKER:
-//                if (resultCode == RESULT_OK && data != null && data.getExtras() != null)
-//                {
-//                    String accountName = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-//                    if (accountName != null)
-//                    {
-//                        credential.setSelectedAccountName(accountName);
-//                        service = getDriveService(credential);
-//                    }
-//                }
-//                break;
-//            case REQUEST_AUTHORIZATION:
-//                if (resultCode == Activity.RESULT_OK)
-//                    saveFileToDrive(mlsPaths.get(iPosition));
-//                else
-//                    startActivityForResult(credential.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
-//
-//                break;
-//        }
-//    }
+    }
 
 	
 	public static String getBucketId(String path) 
