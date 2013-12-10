@@ -63,48 +63,6 @@ android.support.v4.app.BackStackRecord:
     783:783:public int getTransitionStyle()
     787:787:public boolean isEmpty()
 android.support.v4.app.DialogFragment
-android.support.v4.app.Fragment:
-    static final int INITIALIZING
-    static final int CREATED
-    static final int ACTIVITY_CREATED
-    static final int STOPPED
-    static final int STARTED
-    static final int RESUMED
-    511:511:public final int getId()
-    518:518:public final java.lang.String getTag()
-    529:533:public void setArguments(android.os.Bundle)
-    540:540:public final android.os.Bundle getArguments()
-    552:557:public void setInitialSavedState(android.support.v4.app.Fragment$SavedState)
-    571:573:public void setTargetFragment(android.support.v4.app.Fragment,int)
-    579:579:public final android.support.v4.app.Fragment getTargetFragment()
-    586:586:public final int getTargetRequestCode()
-    613:613:public final java.lang.CharSequence getText(int)
-    623:623:public final java.lang.String getString(int)
-    636:636:public final varargs java.lang.String getString(int,java.lang.Object[])
-    650:650:public final android.support.v4.app.FragmentManager getFragmentManager()
-    658:670:public final android.support.v4.app.FragmentManager getChildFragmentManager()
-    678:678:public final android.support.v4.app.Fragment getParentFragment()
-    685:685:public final boolean isAdded()
-    703:703:public final boolean isRemoving()
-    714:714:public final boolean isInLayout()
-    722:722:public final boolean isResumed()
-    731:731:public final boolean isVisible()
-    743:743:public final boolean isHidden()
-    748:748:public final boolean hasOptionsMenu()
-    753:753:public final boolean isMenuVisible()
-    781:786:public void setRetainInstance(boolean)
-    789:789:public final boolean getRetainInstance()
-    800:806:public void setHasOptionsMenu(boolean)
-    818:824:public void setMenuVisibility(boolean)
-    840:845:public void setUserVisibleHint(boolean)
-    852:852:public boolean getUserVisibleHint()
-    859:867:public android.support.v4.app.LoaderManager getLoaderManager()
-    875:879:public void startActivity(android.content.Intent)
-    886:890:public void startActivityForResult(android.content.Intent,int)
-    1041:1041:public android.view.View getView()
-    1328:1329:public void registerForContextMenu(android.view.View)
-    1339:1340:public void unregisterForContextMenu(android.view.View)
-    1450:1456:android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
 android.support.v4.app.Fragment$SavedState:
     309:311:Fragment$SavedState(android.os.Bundle)
 android.support.v4.app.FragmentActivity:
@@ -116,7 +74,6 @@ android.support.v4.app.FragmentActivity:
     75:134:public FragmentActivity()
     632:634:public java.lang.Object getLastCustomNonConfigurationInstance()
     827:827:public android.support.v4.app.FragmentManager getSupportFragmentManager()
-    847:855:public void startActivityFromFragment(android.support.v4.app.Fragment,android.content.Intent,int)
     876:881:public android.support.v4.app.LoaderManager getSupportLoaderManager()
 android.support.v4.app.FragmentActivity$1
 android.support.v4.app.FragmentActivity$2
@@ -170,7 +127,6 @@ android.support.v4.app.FragmentManagerImpl:
     549:552:public void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
     583:583:public java.util.List getFragments()
     588:596:public android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
-    1330:1338:public android.support.v4.app.Fragment findFragmentByWho(java.lang.String)
 android.support.v4.app.FragmentManagerImpl$2
 android.support.v4.app.FragmentManagerImpl$3
 android.support.v4.app.FragmentManagerImpl$4
@@ -221,7 +177,6 @@ android.support.v4.app.ListFragment
 android.support.v4.app.ListFragment$1
 android.support.v4.app.ListFragment$2
 android.support.v4.app.LoaderManager:
-    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     public abstract android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     public abstract void destroyLoader(int)
     public abstract android.support.v4.content.Loader getLoader(int)
@@ -230,17 +185,9 @@ android.support.v4.app.LoaderManager:
 android.support.v4.app.LoaderManagerImpl:
     static final java.lang.String TAG
     boolean mRetainingStarted
-    boolean mCreatingLoader
-    489:492:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    498:503:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    508:515:void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo)
-    543:565:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     593:647:public android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
     658:678:public void destroyLoader(int)
     686:697:public android.support.v4.content.Loader getLoader(int)
-android.support.v4.app.LoaderManagerImpl$LoaderInfo:
-    228:232:public LoaderManagerImpl$LoaderInfo(android.support.v4.app.LoaderManagerImpl,int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
-    362:415:public void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
 android.support.v4.app.NavUtils
 android.support.v4.app.NavUtils$NavUtilsImpl
 android.support.v4.app.NavUtils$NavUtilsImplBase
@@ -297,30 +244,12 @@ android.support.v4.content.IntentCompat$IntentCompatImplHC
 android.support.v4.content.IntentCompat$IntentCompatImplIcsMr1
 android.support.v4.content.IntentCompatHoneycomb
 android.support.v4.content.IntentCompatIcsMr1
-android.support.v4.content.Loader:
-    android.content.Context mContext
-    91:93:public Loader(android.content.Context)
-    103:106:public void deliverResult(java.lang.Object)
-    112:112:public android.content.Context getContext()
-    119:119:public int getId()
-    158:158:public boolean isStarted()
-    167:167:public boolean isAbandoned()
-    176:176:public boolean isReset()
-    218:219:public void forceLoad()
-    226:226:protected void onForceLoad()
-    262:264:public void abandon()
-    276:276:protected void onAbandon()
-    314:317:public boolean takeContentChanged()
-    328:329:public void commitContentChanged()
-    339:342:public void rollbackContentChanged()
-    353:361:public void onContentChanged()
 android.support.v4.content.Loader$ForceLoadContentObserver
-android.support.v4.content.Loader$OnLoadCompleteListener:
-    public abstract void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
-android.support.v4.content.LocalBroadcastManager
-android.support.v4.content.LocalBroadcastManager$1
-android.support.v4.content.LocalBroadcastManager$BroadcastRecord
-android.support.v4.content.LocalBroadcastManager$ReceiverRecord
+android.support.v4.content.LocalBroadcastManager:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    static final int MSG_EXEC_PENDING_BROADCASTS
+    277:280:public void sendBroadcastSync(android.content.Intent)
 android.support.v4.content.ModernAsyncTask
 android.support.v4.content.ModernAsyncTask$1
 android.support.v4.content.ModernAsyncTask$2
@@ -432,13 +361,8 @@ android.support.v4.util.SimpleArrayMap:
     231:235:public SimpleArrayMap(android.support.v4.util.SimpleArrayMap)
     419:432:public void putAll(android.support.v4.util.SimpleArrayMap)
 android.support.v4.util.SparseArrayCompat:
-    76:76:public java.lang.Object get(int)
-    85:90:public java.lang.Object get(int,java.lang.Object)
-    98:106:public void delete(int)
-    112:113:public void remove(int)
     119:123:public void removeAt(int)
     132:136:public void removeAtRange(int,int)
-    172:216:public void put(int,java.lang.Object)
     263:268:public void setValueAt(int,java.lang.Object)
     276:280:public int indexOfKey(int)
     294:302:public int indexOfValue(java.lang.Object)
@@ -3959,6 +3883,72 @@ com.google.api.services.drive.model.User:
     144:144:public com.google.api.services.drive.model.User$Picture getPicture()
     152:153:public com.google.api.services.drive.model.User setPicture(com.google.api.services.drive.model.User$Picture)
 com.google.api.services.drive.model.User$Picture
+com.google.api.services.plus.Plus
+com.google.api.services.plus.Plus$Activities
+com.google.api.services.plus.Plus$Activities$Get
+com.google.api.services.plus.Plus$Activities$List
+com.google.api.services.plus.Plus$Activities$Search
+com.google.api.services.plus.Plus$Builder
+com.google.api.services.plus.Plus$Comments
+com.google.api.services.plus.Plus$Comments$Get
+com.google.api.services.plus.Plus$Comments$List
+com.google.api.services.plus.Plus$Moments
+com.google.api.services.plus.Plus$Moments$Insert
+com.google.api.services.plus.Plus$Moments$List
+com.google.api.services.plus.Plus$Moments$Remove
+com.google.api.services.plus.Plus$People
+com.google.api.services.plus.Plus$People$Get
+com.google.api.services.plus.Plus$People$List
+com.google.api.services.plus.Plus$People$ListByActivity
+com.google.api.services.plus.Plus$People$Search
+com.google.api.services.plus.PlusRequest
+com.google.api.services.plus.PlusRequestInitializer
+com.google.api.services.plus.PlusScopes
+com.google.api.services.plus.model.Acl
+com.google.api.services.plus.model.Activity
+com.google.api.services.plus.model.Activity$Actor
+com.google.api.services.plus.model.Activity$Actor$Image
+com.google.api.services.plus.model.Activity$Actor$Name
+com.google.api.services.plus.model.Activity$PlusObject
+com.google.api.services.plus.model.Activity$PlusObject$Actor
+com.google.api.services.plus.model.Activity$PlusObject$Actor$Image
+com.google.api.services.plus.model.Activity$PlusObject$Attachments
+com.google.api.services.plus.model.Activity$PlusObject$Attachments$Embed
+com.google.api.services.plus.model.Activity$PlusObject$Attachments$FullImage
+com.google.api.services.plus.model.Activity$PlusObject$Attachments$Image
+com.google.api.services.plus.model.Activity$PlusObject$Attachments$Thumbnails
+com.google.api.services.plus.model.Activity$PlusObject$Attachments$Thumbnails$Image
+com.google.api.services.plus.model.Activity$PlusObject$Plusoners
+com.google.api.services.plus.model.Activity$PlusObject$Replies
+com.google.api.services.plus.model.Activity$PlusObject$Resharers
+com.google.api.services.plus.model.Activity$Provider
+com.google.api.services.plus.model.ActivityFeed
+com.google.api.services.plus.model.Comment
+com.google.api.services.plus.model.Comment$Actor
+com.google.api.services.plus.model.Comment$Actor$Image
+com.google.api.services.plus.model.Comment$InReplyTo
+com.google.api.services.plus.model.Comment$PlusObject
+com.google.api.services.plus.model.Comment$Plusoners
+com.google.api.services.plus.model.CommentFeed
+com.google.api.services.plus.model.ItemScope
+com.google.api.services.plus.model.Moment
+com.google.api.services.plus.model.MomentsFeed
+com.google.api.services.plus.model.PeopleFeed
+com.google.api.services.plus.model.Person
+com.google.api.services.plus.model.Person$AgeRange
+com.google.api.services.plus.model.Person$Cover
+com.google.api.services.plus.model.Person$Cover$CoverInfo
+com.google.api.services.plus.model.Person$Cover$CoverPhoto
+com.google.api.services.plus.model.Person$Emails
+com.google.api.services.plus.model.Person$Image
+com.google.api.services.plus.model.Person$Name
+com.google.api.services.plus.model.Person$Organizations
+com.google.api.services.plus.model.Person$PlacesLived
+com.google.api.services.plus.model.Person$Urls
+com.google.api.services.plus.model.Place
+com.google.api.services.plus.model.Place$Address
+com.google.api.services.plus.model.Place$Position
+com.google.api.services.plus.model.PlusAclentryResource
 com.google.gson.DefaultDateTypeAdapter
 com.google.gson.ExclusionStrategy
 com.google.gson.FieldAttributes
@@ -4333,6 +4323,7 @@ com.google.protobuf.WireFormat$JavaType
 com.w9jds.glassshare.BuildConfig
 com.w9jds.glassshare.R
 com.w9jds.glassshare.R$attr
+com.w9jds.glassshare.R$color
 com.w9jds.glassshare.R$dimen
 com.w9jds.glassshare.R$drawable
 com.w9jds.glassshare.R$id
@@ -4341,6 +4332,7 @@ com.w9jds.glassshare.R$layout
 com.w9jds.glassshare.R$menu
 com.w9jds.glassshare.R$string
 com.w9jds.glassshare.R$style
+com.w9jds.glassshare.R$styleable
 com.w9jds.glassshare.R$xml
 javax.annotation.CheckForNull
 javax.annotation.CheckForSigned

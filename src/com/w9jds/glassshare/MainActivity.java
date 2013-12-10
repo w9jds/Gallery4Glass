@@ -3,10 +3,12 @@ package com.w9jds.glassshare;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 import android.accounts.*;
+import android.graphics.Path;
 import android.util.Log;
-import com.facebook.internal.SessionTracker;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -17,8 +19,6 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.facebook.*;
-import com.facebook.model.*;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,6 +59,8 @@ public class MainActivity extends Activity
 		
 		//get all the images from the camera folder (paths)
 		mlsPaths = getCameraImages(this);
+        //sort the paths of pictures
+        sortPaths();
 		//create a new card scroll viewer for this context
 		CardScrollView csvCardsView = new CardScrollView(this);
 		//create a new adapter for the scroll viewer
@@ -83,6 +85,29 @@ public class MainActivity extends Activity
         //set the view of this activity
 		setContentView(csvCardsView);
     }
+
+    private void sortPaths()
+    {
+        java.io.File[] fPics = new java.io.File[mlsPaths.size()];
+
+        for (int i = 0; i < mlsPaths.size(); i++)
+            fPics[i] = new java.io.File(mlsPaths.get(i));
+
+        mlsPaths.clear();
+
+        Arrays.sort(fPics, new Comparator<java.io.File>()
+        {
+            @Override
+            public int compare(java.io.File o1, java.io.File o2)
+            {
+                return Long.valueOf(o1.lastModified()).compareTo(o2.lastModified());
+            }
+        });
+
+        for (int i = fPics.length - 1; i >= 0; i--)
+            mlsPaths.add(fPics[i].getAbsolutePath());
+    }
+
 
 	
 	public static String getBucketId(String path) 
@@ -159,7 +184,7 @@ public class MainActivity extends Activity
             case R.id.share_menu_item:
 
                 // start Facebook Login
-                Account[] Accounts = AccountManager.get(this).getAccounts();
+//                Account[] Accounts = AccountManager.get(this).getAccounts();
 
                 return true;
 	        default:
