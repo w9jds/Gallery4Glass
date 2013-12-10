@@ -8897,6 +8897,7 @@ com.w9jds.glassshare.MainActivity -> com.w9jds.glassshare.MainActivity:
     java.util.ArrayList mlsPaths -> f
     int iPosition -> g
     void onCreate(android.os.Bundle) -> onCreate
+    void sortPaths() -> b
     java.lang.String getBucketId(java.lang.String) -> a
     java.util.ArrayList getCameraImages(android.content.Context) -> a
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
@@ -8909,6 +8910,10 @@ com.w9jds.glassshare.MainActivity$1 -> com.w9jds.glassshare.a:
     com.w9jds.glassshare.MainActivity this$0 -> a
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
 com.w9jds.glassshare.MainActivity$2 -> com.w9jds.glassshare.b:
+    com.w9jds.glassshare.MainActivity this$0 -> a
+    int compare(java.io.File,java.io.File) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+com.w9jds.glassshare.MainActivity$3 -> com.w9jds.glassshare.c:
     java.lang.String val$msPath -> a
     com.w9jds.glassshare.MainActivity this$0 -> b
     void run() -> run

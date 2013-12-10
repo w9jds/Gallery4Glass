@@ -1,13 +1,15 @@
 package com.w9jds.glassshare;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 import android.accounts.*;
-import android.graphics.Path;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -34,10 +36,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import com.w9jds.glassshare.Classses.ConnectedThread;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
 {
+    private BluetoothAdapter mBluetoothAdapter;
+    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
 
 	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
@@ -187,6 +192,29 @@ public class MainActivity extends Activity
 //                Account[] Accounts = AccountManager.get(this).getAccounts();
 
                 return true;
+            case R.id.phone_menu_item:
+                mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+                if(mBluetoothAdapter.isEnabled())
+                {
+                    Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+
+                    // If there are paired devices
+//                    if (pairedDevices.size() > 0)
+//                    {
+//                        // Loop through paired devices
+//                        for (BluetoothDevice device : pairedDevices)
+//                        {
+//                            // Add the name and address to an array adapter to show in a ListView
+//                            mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+//                        }
+//                    }
+
+                    ConnectThread test = new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]);
+                }
+
+                return true;
+
 	        default:
 	            return super.onOptionsItemSelected(item);
 		}
@@ -240,6 +268,75 @@ public class MainActivity extends Activity
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
     }
 
+
+    private class ConnectThread extends Thread
+    {
+        private final BluetoothSocket mmSocket;
+        private final BluetoothDevice mmDevice;
+
+        public ConnectThread(BluetoothDevice device)
+        {
+            // Use a temporary object that is later assigned to mmSocket,
+            // because mmSocket is final
+            BluetoothSocket tmp = null;
+            mmDevice = device;
+
+            // Get a BluetoothSocket to connect with the given BluetoothDevice
+            try
+            {
+                // MY_UUID is the app's UUID string, also used by the server code
+                tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
+            }
+
+            catch (IOException e) { }
+            mmSocket = tmp;
+        }
+
+        public void run()
+        {
+            // Cancel discovery because it will slow down the connection
+            mBluetoothAdapter.cancelDiscovery();
+
+            try
+            {
+                // Connect the device through the socket. This will block
+                // until it succeeds or throws an exception
+                mmSocket.connect();
+            }
+            catch (IOException connectException)
+            {
+                // Unable to connect; close the socket and get out
+                try
+                {
+                    mmSocket.close();
+                }
+
+                catch (IOException closeException) { }
+                return;
+            }
+
+            // Do work to manage the connection (in a separate thread)
+            ConnectedThread ctThread = new ConnectedThread(mmSocket);
+
+            Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            ctThread.write(byteArray);
+        }
+
+        /** Will cancel an in-progress connection, and close the socket */
+        public void cancel()
+        {
+            try
+            {
+                mmSocket.close();
+            }
+
+            catch (IOException e) { }
+        }
+    }
 }
 
 

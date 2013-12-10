@@ -9,10 +9,17 @@
         android:id="@+id/upload_menu_item"
         android:title="@string/upload"
         android:icon="@drawable/ic_archive_50" />
+
+    <item
+        android:id="@+id/phone_menu_item"
+        android:title="@string/send_label"
+        android:icon="@drawable/ic_bluetooth_50"/>
     
 	<item
         android:id="@+id/delete_menu_item"
         android:title="@string/delete"
         android:icon="@drawable/ic_delete_50" />
+
+
 	
 </menu>
