@@ -84,7 +84,7 @@ public class MainActivity extends Activity
 				iPosition = position;
 				//open the menu
 				openOptionsMenu();
-	    		}
+            }
          });
 		
         //set the view of this activity
@@ -199,18 +199,11 @@ public class MainActivity extends Activity
                 {
                     Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
 
-                    // If there are paired devices
-//                    if (pairedDevices.size() > 0)
-//                    {
-//                        // Loop through paired devices
-//                        for (BluetoothDevice device : pairedDevices)
-//                        {
-//                            // Add the name and address to an array adapter to show in a ListView
-//                            mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-//                        }
-//                    }
+                    Thread btThread = new Thread(new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]));
+                    btThread.run();
 
-                    ConnectThread test = new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]);
+//                    ConnectThread test = new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]);
+//                    test.run();
                 }
 
                 return true;
@@ -272,14 +265,12 @@ public class MainActivity extends Activity
     private class ConnectThread extends Thread
     {
         private final BluetoothSocket mmSocket;
-        private final BluetoothDevice mmDevice;
 
         public ConnectThread(BluetoothDevice device)
         {
             // Use a temporary object that is later assigned to mmSocket,
             // because mmSocket is final
             BluetoothSocket tmp = null;
-            mmDevice = device;
 
             // Get a BluetoothSocket to connect with the given BluetoothDevice
             try
@@ -324,6 +315,7 @@ public class MainActivity extends Activity
             byte[] byteArray = stream.toByteArray();
 
             ctThread.write(byteArray);
+            ctThread.cancel();
         }
 
         /** Will cancel an in-progress connection, and close the socket */

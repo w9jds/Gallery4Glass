@@ -8,7 +8,7 @@
     <string name="upload">Save to Drive</string>
     <string name="deleted_label">Deleted</string>
     <string name="deleting_label">Deleting</string>
-    <string name="send_label">Send to Phone</string>
+    <string name="send_label">Push to Phone</string>
 
     <integer name="google_play_services_version">4030500</integer>
 
