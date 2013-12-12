@@ -10,7 +10,9 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.MenuItem;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -36,13 +38,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import com.w9jds.glassshare.Classses.ConnectedThread;
+//import com.w9jds.glassshare.Classses.ConnectedThread;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
 {
-    private BluetoothAdapter mBluetoothAdapter;
-    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+//    private BluetoothAdapter mBluetoothAdapter;
+//    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
 
 	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
@@ -149,13 +151,22 @@ public class MainActivity extends Activity
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
+
 	@Override
-	public boolean onOptionsItemSelected(android.view.MenuItem item) 
+	public boolean onOptionsItemSelected(android.view.MenuItem iItem)
 	{
-		switch (item.getItemId()) 
+		switch (iItem.getItemId())
 		{
 	        case R.id.delete_menu_item:
+                //set the text as deleting
+
+                iItem.setTitle(R.string.deleting_label);
+
+
+                iItem.notifyAll();
+
+
+
 	        	//pull the file from the path of the selected item
 	        	java.io.File fPic = new java.io.File(mlsPaths.get(iPosition));
 	        	//delete the image
@@ -167,6 +178,10 @@ public class MainActivity extends Activity
 	        	//let the adapter know that the list of images has changed
 	        	mcvAdapter.notifyDataSetChanged();
 	        	//handled
+
+                iItem.setChecked(true);
+//                iDelete.setIcon(R.drawable.ic_done_50);
+                iItem.setTitle(R.string.deleted_label);
 	            return true;
 	        case R.id.upload_menu_item:
                 //get google account credentials and store to member variable
@@ -192,24 +207,24 @@ public class MainActivity extends Activity
 //                Account[] Accounts = AccountManager.get(this).getAccounts();
 
                 return true;
-            case R.id.phone_menu_item:
-                mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-                if(mBluetoothAdapter.isEnabled())
-                {
-                    Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-
-                    Thread btThread = new Thread(new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]));
-                    btThread.run();
-
+//            case R.id.phone_menu_item:
+//                mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+//
+//                if(mBluetoothAdapter.isEnabled())
+//                {
+//                    Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+//
+//                    Thread btThread = new Thread(new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]));
+//                    btThread.run();
+//
 //                    ConnectThread test = new ConnectThread((BluetoothDevice)pairedDevices.toArray()[0]);
 //                    test.run();
-                }
-
-                return true;
+//                }
+//
+//                return true;
 
 	        default:
-	            return super.onOptionsItemSelected(item);
+	            return super.onOptionsItemSelected(iItem);
 		}
 	};
 
@@ -262,73 +277,73 @@ public class MainActivity extends Activity
     }
 
 
-    private class ConnectThread extends Thread
-    {
-        private final BluetoothSocket mmSocket;
-
-        public ConnectThread(BluetoothDevice device)
-        {
-            // Use a temporary object that is later assigned to mmSocket,
-            // because mmSocket is final
-            BluetoothSocket tmp = null;
-
-            // Get a BluetoothSocket to connect with the given BluetoothDevice
-            try
-            {
-                // MY_UUID is the app's UUID string, also used by the server code
-                tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
-            }
-
-            catch (IOException e) { }
-            mmSocket = tmp;
-        }
-
-        public void run()
-        {
-            // Cancel discovery because it will slow down the connection
-            mBluetoothAdapter.cancelDiscovery();
-
-            try
-            {
-                // Connect the device through the socket. This will block
-                // until it succeeds or throws an exception
-                mmSocket.connect();
-            }
-            catch (IOException connectException)
-            {
-                // Unable to connect; close the socket and get out
-                try
-                {
-                    mmSocket.close();
-                }
-
-                catch (IOException closeException) { }
-                return;
-            }
-
-            // Do work to manage the connection (in a separate thread)
-            ConnectedThread ctThread = new ConnectedThread(mmSocket);
-
-            Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-
-            ctThread.write(byteArray);
-            ctThread.cancel();
-        }
-
-        /** Will cancel an in-progress connection, and close the socket */
-        public void cancel()
-        {
-            try
-            {
-                mmSocket.close();
-            }
-
-            catch (IOException e) { }
-        }
-    }
+//    private class ConnectThread extends Thread
+//    {
+//        private final BluetoothSocket mmSocket;
+//
+//        public ConnectThread(BluetoothDevice device)
+//        {
+//            // Use a temporary object that is later assigned to mmSocket,
+//            // because mmSocket is final
+//            BluetoothSocket tmp = null;
+//
+//            // Get a BluetoothSocket to connect with the given BluetoothDevice
+//            try
+//            {
+//                // MY_UUID is the app's UUID string, also used by the server code
+//                tmp = device.createRfcommSocketToServiceRecord(MY_UUID);
+//            }
+//
+//            catch (IOException e) { }
+//            mmSocket = tmp;
+//        }
+//
+//        public void run()
+//        {
+//            // Cancel discovery because it will slow down the connection
+//            mBluetoothAdapter.cancelDiscovery();
+//
+//            try
+//            {
+//                // Connect the device through the socket. This will block
+//                // until it succeeds or throws an exception
+//                mmSocket.connect();
+//            }
+//            catch (IOException connectException)
+//            {
+//                // Unable to connect; close the socket and get out
+//                try
+//                {
+//                    mmSocket.close();
+//                }
+//
+//                catch (IOException closeException) { }
+//                return;
+//            }
+//
+//            // Do work to manage the connection (in a separate thread)
+//            ConnectedThread ctThread = new ConnectedThread(mmSocket);
+//
+//            Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//            byte[] byteArray = stream.toByteArray();
+//
+//            ctThread.write(byteArray);
+//            ctThread.cancel();
+//        }
+//
+//        /** Will cancel an in-progress connection, and close the socket */
+//        public void cancel()
+//        {
+//            try
+//            {
+//                mmSocket.close();
+//            }
+//
+//            catch (IOException e) { }
+//        }
+//    }
 }
 
 
