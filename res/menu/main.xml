@@ -5,21 +5,18 @@
 	    <!--android:title="@string/share"-->
 	    <!--android:icon="@drawable/ic_share_50" />-->
 
-    <!--<item-->
-        <!--android:id="@+id/upload_menu_item"-->
-        <!--android:title="@string/upload"-->
-        <!--android:icon="@drawable/ic_archive_50" />-->
+    <item
+        android:id="@+id/upload_menu_item"
+        android:title="@string/upload_label"
+        android:icon="@drawable/ic_archive_50" />
 
     <item
         android:id="@+id/uploadphone_menu_item"
-        android:title="@string/uploadphone_label"
-        android:icon="@drawable/ic_archive_50" />
+        android:title="@string/uploadphone_label" />
     
 	<item
         android:id="@+id/delete_menu_item"
         android:title="@string/delete_label"
         android:icon="@drawable/ic_delete_50" />
-
-
 
 </menu>

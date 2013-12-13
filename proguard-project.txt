@@ -13,6 +13,11 @@
 # Add any project specific keep options here:
 
 -dontwarn com.google.android.gms.auth.GoogleAuthUtil
+-dontwarn com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
+-dontwarn com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
+-dontwarn com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential$RequestHandler
+-dontwarn com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAuthIOException
+-dontwarn com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException
 -dontwarn com.squareup.picasso.OkHttpLoader
 -dontwarn com.google.android.gms.common.GooglePlayServicesUtil
 -dontwarn com.google.android.gms.common.images.a

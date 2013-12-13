@@ -6,7 +6,9 @@
     <string name="delete_label">Delete</string>
     <string name="deleted_label">Deleted</string>
     <string name="deleting_label">Deleting</string>
-    <string name="uploadphone_label">Push to MyGlassShare</string>
+    <string name="upload_label">Push to Drive</string>
+    <string name="uploadphone_label">Save Blob</string>
+
 
     <integer name="google_play_services_version">4030500</integer>
 

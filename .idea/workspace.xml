@@ -17,16 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82357320-88b9-46d7-89b9-291ba56debae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ImageItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mobileservices_1_1_0.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/Classses/ConnectedThread.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/microsoft_windowsazure_api_0_4_6.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ImageItem.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GlassShare.iml" afterPath="$PROJECT_DIR$/GlassShare.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard_logs/dump.txt" afterPath="$PROJECT_DIR$/proguard_logs/dump.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main.xml" afterPath="$PROJECT_DIR$/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard_logs/mapping.txt" afterPath="$PROJECT_DIR$/proguard_logs/mapping.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard-project.txt" afterPath="$PROJECT_DIR$/proguard-project.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard_logs/seeds.txt" afterPath="$PROJECT_DIR$/proguard_logs/seeds.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proguard_logs/usage.txt" afterPath="$PROJECT_DIR$/proguard_logs/usage.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GlassShare.iws" />
@@ -83,7 +85,82 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="162" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="241" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="245" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="249" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="253" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="257" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" line="225" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -111,35 +188,26 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="46" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.79310346" vertical-offset="525" max-vertical-offset="2970">
+            <state line="52" column="0" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.27586207" vertical-offset="660" max-vertical-offset="3570">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1750#1758#0" expanded="true" />
-                <element signature="e#2766#3156#0" expanded="true" />
-                <element signature="e#3140#3141#0" expanded="true" />
+                <element signature="e#2421#2429#0" expanded="true" />
+                <element signature="e#3390#3740#0" expanded="true" />
+                <element signature="e#3728#3729#0" expanded="true" />
                 <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#3622#3872#0" expanded="true" />
-                <element signature="e#3861#3862#0" expanded="true" />
+                <element signature="e#4095#4345#0" expanded="true" />
+                <element signature="e#4334#4335#0" expanded="true" />
                 <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#4565#4573#0" expanded="true" />
+                <element signature="e#5038#5046#0" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#5376#5399#0" expanded="true" />
-                <element signature="e#5978#5987#0" expanded="false" />
-                <element signature="e#6173#6211#0" expanded="false" />
-                <element signature="e#8523#8978#0" expanded="true" />
-                <element signature="e#8963#8964#0" expanded="true" />
-                <element signature="e#9004#9052#0" expanded="false" />
+                <element signature="e#5849#5872#0" expanded="true" />
+                <element signature="e#6451#6460#0" expanded="false" />
+                <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#10410#11760#0" expanded="true" />
+                <element signature="e#11749#11750#0" expanded="true" />
+                <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageItem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ImageItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="12" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -147,7 +215,19 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="87" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="705">
+            <state line="32" column="23" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <folding>
+                <element signature="e#932#950#0" expanded="true" />
+                <element signature="e#1280#1298#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="54" selection-start="309" selection-end="309" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
@@ -156,28 +236,10 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="43" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.4" vertical-offset="0" max-vertical-offset="465">
+            <state line="20" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="420">
               <folding>
-                <element signature="e#477#504#0" expanded="true" />
+                <element signature="e#301#323#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="csaAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="32" selection-start="5191" selection-end="5253" vertical-scroll-proportion="0.0" vertical-offset="1967" max-vertical-offset="3135">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="66" selection-start="321" selection-end="321" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="330">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -206,18 +268,18 @@
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/BitmapWorkerTask.java" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/UploadtoDrive.java" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java" />
-        <option value="$PROJECT_DIR$/proguard-project.txt" />
         <option value="$PROJECT_DIR$/res/layout/deleting_layout.xml" />
         <option value="$PROJECT_DIR$/res/layout/deleted_layout.xml" />
         <option value="$PROJECT_DIR$/res/layout/test.xml" />
         <option value="$PROJECT_DIR$/res/menu/deleting_item.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ConnectionThread.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classses/ConnectedThread.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/AzureItem.java" />
-        <option value="$PROJECT_DIR$/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/proguard-project.txt" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ImageItem.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java" />
       </list>
     </option>
@@ -261,15 +323,9 @@
               <option name="myItemId" value="GlassShare" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -279,14 +335,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glassshare" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,10 +353,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="glassshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +378,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GlassShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -350,7 +450,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SDKs/azuresdk-android-1.1.0/mobileservices/gson-2.2.2.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SDKs/microsoft-windowsazure-api-0.4.6.jar!/" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -365,6 +465,13 @@
     <property name="FullScreen" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="glassshare" />
   </component>
   <component name="RunManager" selected="Android Application.GlassShare">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -585,8 +692,8 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33146068" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32022473" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33145276" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32016924" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21459228" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -646,22 +753,22 @@
         <state line="212" column="61" selection-start="7717" selection-end="7717" vertical-scroll-proportion="0.0" vertical-offset="2310" max-vertical-offset="2310">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1750#1758#0" expanded="true" />
-            <element signature="e#2766#3156#0" expanded="true" />
-            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#2421#2429#0" expanded="true" />
+            <element signature="e#3390#3740#0" expanded="true" />
+            <element signature="e#3728#3729#0" expanded="true" />
             <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3622#3872#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#4095#4345#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4565#4573#0" expanded="true" />
+            <element signature="e#5038#5046#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5376#5399#0" expanded="true" />
-            <element signature="e#5978#5987#0" expanded="false" />
-            <element signature="e#6173#6211#0" expanded="false" />
-            <element signature="e#8523#8978#0" expanded="true" />
-            <element signature="e#8963#8964#0" expanded="true" />
-            <element signature="e#9004#9052#0" expanded="false" />
+            <element signature="e#5849#5872#0" expanded="true" />
+            <element signature="e#6451#6460#0" expanded="false" />
+            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10410#11760#0" expanded="true" />
+            <element signature="e#11749#11750#0" expanded="true" />
+            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -669,7 +776,10 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="28" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="675">
-          <folding />
+          <folding>
+            <element signature="e#932#950#0" expanded="true" />
+            <element signature="e#1280#1298#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -678,22 +788,22 @@
         <state line="165" column="48" selection-start="6069" selection-end="6069" vertical-scroll-proportion="0.0" vertical-offset="2475" max-vertical-offset="3255">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1750#1758#0" expanded="true" />
-            <element signature="e#2766#3156#0" expanded="true" />
-            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#2421#2429#0" expanded="true" />
+            <element signature="e#3390#3740#0" expanded="true" />
+            <element signature="e#3728#3729#0" expanded="true" />
             <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3622#3872#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#4095#4345#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4565#4573#0" expanded="true" />
+            <element signature="e#5038#5046#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5376#5399#0" expanded="true" />
-            <element signature="e#5978#5987#0" expanded="false" />
-            <element signature="e#6173#6211#0" expanded="false" />
-            <element signature="e#8523#8978#0" expanded="true" />
-            <element signature="e#8963#8964#0" expanded="true" />
-            <element signature="e#9004#9052#0" expanded="false" />
+            <element signature="e#5849#5872#0" expanded="true" />
+            <element signature="e#6451#6460#0" expanded="false" />
+            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10410#11760#0" expanded="true" />
+            <element signature="e#11749#11750#0" expanded="true" />
+            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,7 +811,10 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="28" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="675">
-          <folding />
+          <folding>
+            <element signature="e#932#950#0" expanded="true" />
+            <element signature="e#1280#1298#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -717,22 +830,22 @@
         <state line="62" column="9" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="2070">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1750#1758#0" expanded="true" />
-            <element signature="e#2766#3156#0" expanded="true" />
-            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#2421#2429#0" expanded="true" />
+            <element signature="e#3390#3740#0" expanded="true" />
+            <element signature="e#3728#3729#0" expanded="true" />
             <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3622#3872#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#4095#4345#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4565#4573#0" expanded="true" />
+            <element signature="e#5038#5046#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5376#5399#0" expanded="true" />
-            <element signature="e#5978#5987#0" expanded="false" />
-            <element signature="e#6173#6211#0" expanded="false" />
-            <element signature="e#8523#8978#0" expanded="true" />
-            <element signature="e#8963#8964#0" expanded="true" />
-            <element signature="e#9004#9052#0" expanded="false" />
+            <element signature="e#5849#5872#0" expanded="true" />
+            <element signature="e#6451#6460#0" expanded="false" />
+            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10410#11760#0" expanded="true" />
+            <element signature="e#11749#11750#0" expanded="true" />
+            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -918,11 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proguard-project.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SDKs/facebook-android-sdk-3.5.2/facebook/src/com/facebook/Session.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="166" column="61" selection-start="6848" selection-end="6848" vertical-scroll-proportion="-9.090909" vertical-offset="6180" max-vertical-offset="29955">
@@ -930,11 +1038,6 @@
             <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/os/ZygoteInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="789" column="0" selection-start="26867" selection-end="26867" vertical-scroll-proportion="0.7624434" vertical-offset="10898" max-vertical-offset="11460" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/card_layout.xml">
@@ -947,64 +1050,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/proguard-project.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="109" selection-start="909" selection-end="909" vertical-scroll-proportion="0.57174885" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Adapters/csaAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="32" selection-start="5191" selection-end="5253" vertical-scroll-proportion="0.0" vertical-offset="1967" max-vertical-offset="3135">
+        <state line="163" column="32" selection-start="5191" selection-end="5253" vertical-scroll-proportion="0.7690583" vertical-offset="1862" max-vertical-offset="3135">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="66" selection-start="321" selection-end="321" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="330">
+        <state line="8" column="54" selection-start="309" selection-end="309" vertical-scroll-proportion="-4.8" vertical-offset="0" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="43" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.4" vertical-offset="0" max-vertical-offset="465">
+        <state line="20" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="420">
           <folding>
-            <element signature="e#477#504#0" expanded="true" />
+            <element signature="e#301#323#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="87" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="705">
-          <folding />
+        <state line="32" column="23" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding>
+            <element signature="e#932#950#0" expanded="true" />
+            <element signature="e#1280#1298#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/Classes/ImageItem.java">
+    <entry file="file:///Applications/Android Studio.app/sdk/sources/android-15/com/android/internal/os/ZygoteInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="12" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+        <state line="18" column="0" selection-start="655" selection-end="655" vertical-scroll-proportion="0.13392857" vertical-offset="0" max-vertical-offset="11460">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/w9jds/glassshare/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="46" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.79310346" vertical-offset="525" max-vertical-offset="2970">
+        <state line="52" column="0" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.27586207" vertical-offset="660" max-vertical-offset="3570">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1750#1758#0" expanded="true" />
-            <element signature="e#2766#3156#0" expanded="true" />
-            <element signature="e#3140#3141#0" expanded="true" />
+            <element signature="e#2421#2429#0" expanded="true" />
+            <element signature="e#3390#3740#0" expanded="true" />
+            <element signature="e#3728#3729#0" expanded="true" />
             <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#3622#3872#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#4095#4345#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#4565#4573#0" expanded="true" />
+            <element signature="e#5038#5046#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5376#5399#0" expanded="true" />
-            <element signature="e#5978#5987#0" expanded="false" />
-            <element signature="e#6173#6211#0" expanded="false" />
-            <element signature="e#8523#8978#0" expanded="true" />
-            <element signature="e#8963#8964#0" expanded="true" />
-            <element signature="e#9004#9052#0" expanded="false" />
+            <element signature="e#5849#5872#0" expanded="true" />
+            <element signature="e#6451#6460#0" expanded="false" />
+            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#10410#11760#0" expanded="true" />
+            <element signature="e#11749#11750#0" expanded="true" />
+            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1085,7 +1198,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gson-2.2.2</last-edited>
+          <last-edited>microsoft-windowsazure-api-0.4.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

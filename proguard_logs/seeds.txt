@@ -4276,123 +4276,6 @@ com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType: com.fasterxml.jac
 com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType: com.fasterxml.jackson.core.util.BufferRecycler$ByteBufferType valueOf(java.lang.String)
 com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType: com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType[] values()
 com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType: com.fasterxml.jackson.core.util.BufferRecycler$CharBufferType valueOf(java.lang.String)
-com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
-com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
-com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
-com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender valueOf(java.lang.String)
-com.google.android.gms.ads.AdView: com.google.android.gms.ads.AdListener getAdListener()
-com.google.android.gms.ads.AdView: com.google.android.gms.ads.AdSize getAdSize()
-com.google.android.gms.ads.AdView: java.lang.String getAdUnitId()
-com.google.android.gms.ads.AdView: void setAdListener(com.google.android.gms.ads.AdListener)
-com.google.android.gms.ads.AdView: void setAdSize(com.google.android.gms.ads.AdSize)
-com.google.android.gms.ads.AdView: void setAdUnitId(java.lang.String)
-com.google.android.gms.auth.RecoveryDecision
-com.google.android.gms.common.SignInButton: void setSize(int)
-com.google.android.gms.common.SignInButton: void setColorScheme(int)
-com.google.android.gms.common.SignInButton: void setOnClickListener(android.view.View$OnClickListener)
-com.google.android.gms.common.SignInButton: void setEnabled(boolean)
-com.google.android.gms.common.data.d
-com.google.android.gms.common.images.ImageManager$ImageReceiver
-com.google.android.gms.common.internal.safeparcel.SafeParcelable
-com.google.android.gms.games.Game
-com.google.android.gms.games.GameEntity
-com.google.android.gms.games.GameEntity: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.Player
-com.google.android.gms.games.PlayerEntity
-com.google.android.gms.games.PlayerEntity: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.b
-com.google.android.gms.games.d
-com.google.android.gms.games.multiplayer.Invitation
-com.google.android.gms.games.multiplayer.InvitationEntity
-com.google.android.gms.games.multiplayer.InvitationEntity: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.multiplayer.Participant
-com.google.android.gms.games.multiplayer.ParticipantEntity
-com.google.android.gms.games.multiplayer.ParticipantEntity: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.multiplayer.b
-com.google.android.gms.games.multiplayer.d
-com.google.android.gms.games.multiplayer.realtime.RealTimeMessage
-com.google.android.gms.games.multiplayer.realtime.RealTimeMessage: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.multiplayer.realtime.Room
-com.google.android.gms.games.multiplayer.realtime.RoomEntity
-com.google.android.gms.games.multiplayer.realtime.RoomEntity: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.games.multiplayer.realtime.c
-com.google.android.gms.internal.be
-com.google.android.gms.internal.bh
-com.google.android.gms.internal.bu
-com.google.android.gms.internal.bw
-com.google.android.gms.internal.co
-com.google.android.gms.internal.cq: void setContext(android.content.Context)
-com.google.android.gms.internal.dd
-com.google.android.gms.internal.dr
-com.google.android.gms.internal.dt
-com.google.android.gms.internal.dt$a
-com.google.android.gms.internal.dw$a
-com.google.android.gms.internal.dz
-com.google.android.gms.internal.dz$a
-com.google.android.gms.internal.dz$b
-com.google.android.gms.internal.ec
-com.google.android.gms.internal.en
-com.google.android.gms.internal.fa
-com.google.android.gms.internal.fn
-com.google.android.gms.internal.fq
-com.google.android.gms.internal.fs
-com.google.android.gms.internal.fv
-com.google.android.gms.internal.fv$a
-com.google.android.gms.internal.fv$b
-com.google.android.gms.internal.fv$b$a
-com.google.android.gms.internal.fv$b$b
-com.google.android.gms.internal.fv$c
-com.google.android.gms.internal.fv$d
-com.google.android.gms.internal.fv$f
-com.google.android.gms.internal.fv$g
-com.google.android.gms.internal.fv$h
-com.google.android.gms.internal.v
-com.google.android.gms.internal.x
-com.google.android.gms.location.ActivityRecognitionResult
-com.google.android.gms.location.DetectedActivity
-com.google.android.gms.location.LocationRequest
-com.google.android.gms.maps.GoogleMapOptions
-com.google.android.gms.maps.MapView: com.google.android.gms.maps.GoogleMap getMap()
-com.google.android.gms.maps.model.CameraPosition
-com.google.android.gms.maps.model.CircleOptions
-com.google.android.gms.maps.model.GroundOverlayOptions
-com.google.android.gms.maps.model.LatLng
-com.google.android.gms.maps.model.LatLngBounds
-com.google.android.gms.maps.model.MarkerOptions
-com.google.android.gms.maps.model.PolygonOptions
-com.google.android.gms.maps.model.PolylineOptions
-com.google.android.gms.maps.model.Tile
-com.google.android.gms.maps.model.TileOverlayOptions
-com.google.android.gms.maps.model.VisibleRegion
-com.google.android.gms.plus.PlusOneButton: void setOnPlusOneClickListener(com.google.android.gms.plus.PlusOneButton$OnPlusOneClickListener)
-com.google.android.gms.plus.PlusOneButton: void setAnnotation(int)
-com.google.android.gms.plus.PlusOneButton: void setSize(int)
-com.google.android.gms.plus.PlusOneButtonWithPopup: void setOnClickListener(android.view.View$OnClickListener)
-com.google.android.gms.plus.PlusOneButtonWithPopup: void setAnnotation(int)
-com.google.android.gms.plus.PlusOneButtonWithPopup: void setSize(int)
-com.google.android.gms.plus.PlusOneButtonWithPopup: android.app.PendingIntent getResolution()
-com.google.android.gms.wallet.Address
-com.google.android.gms.wallet.Address: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.Cart
-com.google.android.gms.wallet.Cart: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.FullWallet
-com.google.android.gms.wallet.FullWallet: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.FullWalletRequest
-com.google.android.gms.wallet.FullWalletRequest: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.LineItem
-com.google.android.gms.wallet.LineItem: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.LoyaltyWalletObject
-com.google.android.gms.wallet.LoyaltyWalletObject: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.MaskedWallet
-com.google.android.gms.wallet.MaskedWallet: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.MaskedWalletRequest
-com.google.android.gms.wallet.MaskedWalletRequest: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.NotifyTransactionStatusRequest
-com.google.android.gms.wallet.NotifyTransactionStatusRequest: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.OfferWalletObject
-com.google.android.gms.wallet.OfferWalletObject: android.os.Parcelable$Creator CREATOR
-com.google.android.gms.wallet.ProxyCard
-com.google.android.gms.wallet.ProxyCard: android.os.Parcelable$Creator CREATOR
 com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState: com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState[] values()
 com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState: com.google.api.client.googleapis.media.MediaHttpDownloader$DownloadState valueOf(java.lang.String)
 com.google.api.client.googleapis.media.MediaHttpUploader$UploadState: com.google.api.client.googleapis.media.MediaHttpUploader$UploadState[] values()
@@ -4427,6 +4310,180 @@ com.google.protobuf.WireFormat$FieldType: com.google.protobuf.WireFormat$FieldTy
 com.google.protobuf.WireFormat$FieldType: com.google.protobuf.WireFormat$FieldType valueOf(java.lang.String)
 com.google.protobuf.WireFormat$JavaType: com.google.protobuf.WireFormat$JavaType[] values()
 com.google.protobuf.WireFormat$JavaType: com.google.protobuf.WireFormat$JavaType valueOf(java.lang.String)
+com.microsoft.windowsazure.mobileservices.MobileServiceAuthenticationProvider: com.microsoft.windowsazure.mobileservices.MobileServiceAuthenticationProvider[] values()
+com.microsoft.windowsazure.mobileservices.MobileServiceAuthenticationProvider: com.microsoft.windowsazure.mobileservices.MobileServiceAuthenticationProvider valueOf(java.lang.String)
+com.microsoft.windowsazure.mobileservices.QueryOrder: com.microsoft.windowsazure.mobileservices.QueryOrder[] values()
+com.microsoft.windowsazure.mobileservices.QueryOrder: com.microsoft.windowsazure.mobileservices.QueryOrder valueOf(java.lang.String)
+com.parse.ParseImageView: void setImageBitmap(android.graphics.Bitmap)
+com.parse.ParseImageView: void setPlaceholder(android.graphics.drawable.Drawable)
+com.parse.ParseImageView: void setParseFile(com.parse.ParseFile)
+com.parse.ParseQuery$CachePolicy: com.parse.ParseQuery$CachePolicy[] values()
+com.parse.ParseQuery$CachePolicy: com.parse.ParseQuery$CachePolicy valueOf(java.lang.String)
+com.parse.PushConnection$Event: com.parse.PushConnection$Event[] values()
+com.parse.PushConnection$Event: com.parse.PushConnection$Event valueOf(java.lang.String)
+com.parse.R$attr: int confirm_logout
+com.parse.R$attr: int done_button_background
+com.parse.R$attr: int done_button_text
+com.parse.R$attr: int extra_fields
+com.parse.R$attr: int fetch_user_info
+com.parse.R$attr: int is_cropped
+com.parse.R$attr: int login_text
+com.parse.R$attr: int logout_text
+com.parse.R$attr: int multi_select
+com.parse.R$attr: int preset_size
+com.parse.R$attr: int radius_in_meters
+com.parse.R$attr: int results_limit
+com.parse.R$attr: int search_text
+com.parse.R$attr: int show_pictures
+com.parse.R$attr: int show_search_box
+com.parse.R$attr: int show_title_bar
+com.parse.R$attr: int title_bar_background
+com.parse.R$attr: int title_text
+com.parse.R$color: int com_facebook_blue
+com.parse.R$color: int com_facebook_loginview_text_color
+com.parse.R$color: int com_facebook_picker_search_bar_background
+com.parse.R$color: int com_facebook_picker_search_bar_text
+com.parse.R$color: int com_facebook_usersettingsfragment_connected_shadow_color
+com.parse.R$color: int com_facebook_usersettingsfragment_connected_text_color
+com.parse.R$color: int com_facebook_usersettingsfragment_not_connected_text_color
+com.parse.R$dimen: int com_facebook_loginview_compound_drawable_padding
+com.parse.R$dimen: int com_facebook_loginview_padding_bottom
+com.parse.R$dimen: int com_facebook_loginview_padding_left
+com.parse.R$dimen: int com_facebook_loginview_padding_right
+com.parse.R$dimen: int com_facebook_loginview_padding_top
+com.parse.R$dimen: int com_facebook_loginview_text_size
+com.parse.R$dimen: int com_facebook_picker_divider_width
+com.parse.R$dimen: int com_facebook_picker_place_image_size
+com.parse.R$dimen: int com_facebook_profilepictureview_preset_size_large
+com.parse.R$dimen: int com_facebook_profilepictureview_preset_size_normal
+com.parse.R$dimen: int com_facebook_profilepictureview_preset_size_small
+com.parse.R$dimen: int com_facebook_usersettingsfragment_profile_picture_height
+com.parse.R$dimen: int com_facebook_usersettingsfragment_profile_picture_width
+com.parse.R$drawable: int com_facebook_button_blue
+com.parse.R$drawable: int com_facebook_button_blue_focused
+com.parse.R$drawable: int com_facebook_button_blue_normal
+com.parse.R$drawable: int com_facebook_button_blue_pressed
+com.parse.R$drawable: int com_facebook_button_check
+com.parse.R$drawable: int com_facebook_button_check_off
+com.parse.R$drawable: int com_facebook_button_check_on
+com.parse.R$drawable: int com_facebook_button_grey_focused
+com.parse.R$drawable: int com_facebook_button_grey_normal
+com.parse.R$drawable: int com_facebook_button_grey_pressed
+com.parse.R$drawable: int com_facebook_close
+com.parse.R$drawable: int com_facebook_inverse_icon
+com.parse.R$drawable: int com_facebook_list_divider
+com.parse.R$drawable: int com_facebook_list_section_header_background
+com.parse.R$drawable: int com_facebook_loginbutton_silver
+com.parse.R$drawable: int com_facebook_logo
+com.parse.R$drawable: int com_facebook_picker_default_separator_color
+com.parse.R$drawable: int com_facebook_picker_item_background
+com.parse.R$drawable: int com_facebook_picker_list_focused
+com.parse.R$drawable: int com_facebook_picker_list_longpressed
+com.parse.R$drawable: int com_facebook_picker_list_pressed
+com.parse.R$drawable: int com_facebook_picker_list_selector
+com.parse.R$drawable: int com_facebook_picker_list_selector_background_transition
+com.parse.R$drawable: int com_facebook_picker_list_selector_disabled
+com.parse.R$drawable: int com_facebook_picker_magnifier
+com.parse.R$drawable: int com_facebook_picker_top_button
+com.parse.R$drawable: int com_facebook_place_default_icon
+com.parse.R$drawable: int com_facebook_profile_default_icon
+com.parse.R$drawable: int com_facebook_profile_picture_blank_portrait
+com.parse.R$drawable: int com_facebook_profile_picture_blank_square
+com.parse.R$drawable: int com_facebook_top_background
+com.parse.R$drawable: int com_facebook_top_button
+com.parse.R$drawable: int com_facebook_usersettingsfragment_background_gradient
+com.parse.R$id: int com_facebook_login_activity_progress_bar
+com.parse.R$id: int com_facebook_picker_activity_circle
+com.parse.R$id: int com_facebook_picker_checkbox
+com.parse.R$id: int com_facebook_picker_checkbox_stub
+com.parse.R$id: int com_facebook_picker_divider
+com.parse.R$id: int com_facebook_picker_done_button
+com.parse.R$id: int com_facebook_picker_image
+com.parse.R$id: int com_facebook_picker_list_section_header
+com.parse.R$id: int com_facebook_picker_list_view
+com.parse.R$id: int com_facebook_picker_profile_pic_stub
+com.parse.R$id: int com_facebook_picker_row_activity_circle
+com.parse.R$id: int com_facebook_picker_search_text
+com.parse.R$id: int com_facebook_picker_title
+com.parse.R$id: int com_facebook_picker_title_bar
+com.parse.R$id: int com_facebook_picker_title_bar_stub
+com.parse.R$id: int com_facebook_picker_top_bar
+com.parse.R$id: int com_facebook_search_bar_view
+com.parse.R$id: int com_facebook_usersettingsfragment_login_button
+com.parse.R$id: int com_facebook_usersettingsfragment_logo_image
+com.parse.R$id: int com_facebook_usersettingsfragment_profile_name
+com.parse.R$id: int large
+com.parse.R$id: int normal
+com.parse.R$id: int picker_subtitle
+com.parse.R$id: int small
+com.parse.R$layout: int com_facebook_friendpickerfragment
+com.parse.R$layout: int com_facebook_login_activity_layout
+com.parse.R$layout: int com_facebook_picker_activity_circle_row
+com.parse.R$layout: int com_facebook_picker_checkbox
+com.parse.R$layout: int com_facebook_picker_image
+com.parse.R$layout: int com_facebook_picker_list_row
+com.parse.R$layout: int com_facebook_picker_list_section_header
+com.parse.R$layout: int com_facebook_picker_search_box
+com.parse.R$layout: int com_facebook_picker_title_bar
+com.parse.R$layout: int com_facebook_picker_title_bar_stub
+com.parse.R$layout: int com_facebook_placepickerfragment
+com.parse.R$layout: int com_facebook_placepickerfragment_list_row
+com.parse.R$layout: int com_facebook_search_bar_layout
+com.parse.R$layout: int com_facebook_usersettingsfragment
+com.parse.R$string: int com_facebook_choose_friends
+com.parse.R$string: int com_facebook_dialogloginactivity_ok_button
+com.parse.R$string: int com_facebook_internet_permission_error_message
+com.parse.R$string: int com_facebook_internet_permission_error_title
+com.parse.R$string: int com_facebook_loading
+com.parse.R$string: int com_facebook_loginview_cancel_action
+com.parse.R$string: int com_facebook_loginview_log_in_button
+com.parse.R$string: int com_facebook_loginview_log_out_action
+com.parse.R$string: int com_facebook_loginview_log_out_button
+com.parse.R$string: int com_facebook_loginview_logged_in_as
+com.parse.R$string: int com_facebook_loginview_logged_in_using_facebook
+com.parse.R$string: int com_facebook_logo_content_description
+com.parse.R$string: int com_facebook_nearby
+com.parse.R$string: int com_facebook_picker_done_button_text
+com.parse.R$string: int com_facebook_placepicker_subtitle_catetory_only_format
+com.parse.R$string: int com_facebook_placepicker_subtitle_format
+com.parse.R$string: int com_facebook_placepicker_subtitle_were_here_only_format
+com.parse.R$string: int com_facebook_requesterror_password_changed
+com.parse.R$string: int com_facebook_requesterror_permissions
+com.parse.R$string: int com_facebook_requesterror_reconnect
+com.parse.R$string: int com_facebook_requesterror_relogin
+com.parse.R$string: int com_facebook_requesterror_web_login
+com.parse.R$string: int com_facebook_usersettingsfragment_log_in_button
+com.parse.R$string: int com_facebook_usersettingsfragment_logged_in
+com.parse.R$string: int com_facebook_usersettingsfragment_not_logged_in
+com.parse.R$style: int com_facebook_loginview_default_style
+com.parse.R$style: int com_facebook_loginview_silver_style
+com.parse.R$styleable: int[] com_facebook_friend_picker_fragment
+com.parse.R$styleable: int com_facebook_friend_picker_fragment_multi_select
+com.parse.R$styleable: int[] com_facebook_login_view
+com.parse.R$styleable: int com_facebook_login_view_confirm_logout
+com.parse.R$styleable: int com_facebook_login_view_fetch_user_info
+com.parse.R$styleable: int com_facebook_login_view_login_text
+com.parse.R$styleable: int com_facebook_login_view_logout_text
+com.parse.R$styleable: int[] com_facebook_picker_fragment
+com.parse.R$styleable: int com_facebook_picker_fragment_done_button_background
+com.parse.R$styleable: int com_facebook_picker_fragment_done_button_text
+com.parse.R$styleable: int com_facebook_picker_fragment_extra_fields
+com.parse.R$styleable: int com_facebook_picker_fragment_show_pictures
+com.parse.R$styleable: int com_facebook_picker_fragment_show_title_bar
+com.parse.R$styleable: int com_facebook_picker_fragment_title_bar_background
+com.parse.R$styleable: int com_facebook_picker_fragment_title_text
+com.parse.R$styleable: int[] com_facebook_place_picker_fragment
+com.parse.R$styleable: int com_facebook_place_picker_fragment_radius_in_meters
+com.parse.R$styleable: int com_facebook_place_picker_fragment_results_limit
+com.parse.R$styleable: int com_facebook_place_picker_fragment_search_text
+com.parse.R$styleable: int com_facebook_place_picker_fragment_show_search_box
+com.parse.R$styleable: int[] com_facebook_profile_picture_view
+com.parse.R$styleable: int com_facebook_profile_picture_view_is_cropped
+com.parse.R$styleable: int com_facebook_profile_picture_view_preset_size
+com.parse.entity.mime.HttpMultipartMode: com.parse.entity.mime.HttpMultipartMode[] values()
+com.parse.entity.mime.HttpMultipartMode: com.parse.entity.mime.HttpMultipartMode valueOf(java.lang.String)
+com.parse.os.ParseAsyncTask$Status: com.parse.os.ParseAsyncTask$Status[] values()
+com.parse.os.ParseAsyncTask$Status: com.parse.os.ParseAsyncTask$Status valueOf(java.lang.String)
 com.w9jds.glassshare.MainActivity
 com.w9jds.glassshare.MainActivity: MainActivity()
 com.w9jds.glassshare.R$attr: int confirm_logout
@@ -4603,9 +4660,7 @@ com.w9jds.glassshare.R$id: int delete_menu_item
 com.w9jds.glassshare.R$id: int large
 com.w9jds.glassshare.R$id: int normal
 com.w9jds.glassshare.R$id: int picker_subtitle
-com.w9jds.glassshare.R$id: int share_menu_item
 com.w9jds.glassshare.R$id: int small
-com.w9jds.glassshare.R$id: int upload_menu_item
 com.w9jds.glassshare.R$integer: int google_play_services_version
 com.w9jds.glassshare.R$layout: int card_layout
 com.w9jds.glassshare.R$layout: int com_facebook_friendpickerfragment
@@ -4650,12 +4705,11 @@ com.w9jds.glassshare.R$string: int com_facebook_requesterror_web_login
 com.w9jds.glassshare.R$string: int com_facebook_usersettingsfragment_log_in_button
 com.w9jds.glassshare.R$string: int com_facebook_usersettingsfragment_logged_in
 com.w9jds.glassshare.R$string: int com_facebook_usersettingsfragment_not_logged_in
-com.w9jds.glassshare.R$string: int delete
+com.w9jds.glassshare.R$string: int delete_label
 com.w9jds.glassshare.R$string: int deleted_label
 com.w9jds.glassshare.R$string: int deleting_label
 com.w9jds.glassshare.R$string: int glass_voice_trigger
-com.w9jds.glassshare.R$string: int share
-com.w9jds.glassshare.R$string: int upload
+com.w9jds.glassshare.R$string: int uploadphone_label
 com.w9jds.glassshare.R$style: int AppBaseTheme
 com.w9jds.glassshare.R$style: int CustomTheme
 com.w9jds.glassshare.R$style: int com_facebook_loginview_default_style

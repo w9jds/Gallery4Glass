@@ -1,18 +1,30 @@
 package com.w9jds.glassshare;
 
-import java.io.ByteArrayOutputStream;
-import java.net.MalformedURLException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.security.InvalidKeyException;
 import java.util.*;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Base64;
+import android.net.ConnectivityManager;
+import android.util.Log;
 import com.google.android.glass.widget.CardScrollView;
-import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
-import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
+import com.google.api.client.http.FileContent;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
+import com.google.api.services.drive.model.File;
+import com.microsoft.windowsazure.services.blob.client.CloudBlobClient;
+import com.microsoft.windowsazure.services.blob.client.CloudBlobContainer;
+import com.microsoft.windowsazure.services.blob.client.CloudBlockBlob;
+import com.microsoft.windowsazure.services.core.storage.CloudStorageAccount;
+import com.microsoft.windowsazure.services.core.storage.StorageException;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 
 import android.net.Uri;
@@ -29,7 +41,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import com.w9jds.glassshare.Classes.ImageItem;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity 
@@ -37,9 +48,12 @@ public class MainActivity extends Activity
 	public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
 	public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
-    private MobileServiceClient mClient;
-//    private static Drive mdService;
-//    private GoogleAccountCredential mgacCredential;
+    private ConnectivityManager mcmCon;
+
+
+
+    private static Drive mdService;
+    private GoogleAccountCredential mgacCredential;
 	
 	//custom adapter
 	private csaAdapter mcvAdapter;
@@ -51,46 +65,38 @@ public class MainActivity extends Activity
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
-
 		super.onCreate(savedInstanceState);
 
-        try
-        {
-            mClient = new MobileServiceClient(, this);
+        mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-            //get all the images from the camera folder (paths)
-            mlsPaths = getCameraImages(this);
-            //sort the paths of pictures
-            sortPaths();
-            //create a new card scroll viewer for this context
-            CardScrollView csvCardsView = new CardScrollView(this);
-            //create a new adapter for the scroll viewer
-            mcvAdapter = new csaAdapter(this, mlsPaths);
-            //set this adapter as the adapter for the scroll viewer
-            csvCardsView.setAdapter(mcvAdapter);
-            //activate this scroll viewer
-            csvCardsView.activate();
-            //add a listener to the scroll viewer that is fired when an item is clicked
-            csvCardsView.setOnItemClickListener(new OnItemClickListener()
+        //get all the images from the camera folder (paths)
+        mlsPaths = getCameraImages(this);
+        //sort the paths of pictures
+        sortPaths();
+        //create a new card scroll viewer for this context
+        CardScrollView csvCardsView = new CardScrollView(this);
+        //create a new adapter for the scroll viewer
+        mcvAdapter = new csaAdapter(this, mlsPaths);
+        //set this adapter as the adapter for the scroll viewer
+        csvCardsView.setAdapter(mcvAdapter);
+        //activate this scroll viewer
+        csvCardsView.activate();
+        //add a listener to the scroll viewer that is fired when an item is clicked
+        csvCardsView.setOnItemClickListener(new OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-                {
-                    //save the card index that was selected
-                    iPosition = position;
-                    //open the menu
-                    openOptionsMenu();
-                }
-             });
+                //save the card index that was selected
+                iPosition = position;
+                //open the menu
+                openOptionsMenu();
+            }
+         });
 
-            //set the view of this activity
-            setContentView(csvCardsView);
+        //set the view of this activity
+        setContentView(csvCardsView);
 
-        }
-        catch (MalformedURLException e)
-        {
-            e.printStackTrace();
-        }
     }
 
     private void sortPaths()
@@ -175,27 +181,10 @@ public class MainActivity extends Activity
 //                iDelete.setIcon(R.drawable.ic_done_50);
 //                iItem.setTitle(R.string.deleted_label);
 	            return true;
-//	        case R.id.upload_menu_item:
-//                //get google account credentials and store to member variable
-//                mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-//                //get a list of all the accounts on the device
-//                Account[] myAccounts = AccountManager.get(this).getAccounts();
-//                //for each account
-//                for(int i = 0; i < myAccounts.length; i++)
-//                {
-//                    //if the account type is google
-//                    if (myAccounts[i].type.equals("com.google"))
-//                        //set this as the selected Account
-//                        mgacCredential.setSelectedAccountName(myAccounts[i].name);
-//                }
-//                //get the drive service
-//                mdService = getDriveService(mgacCredential);
-//                //save the selected item to google drive
-//                saveFileToDrive(mlsPaths.get(iPosition));
-//	        	return true;
-            case R.id.uploadphone_menu_item:
-                ImageItem aiItem = new ImageItem();
-
+	        case R.id.upload_menu_item:
+                //get google account credentials and store to member variable
+                mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+                //get a list of all the accounts on the device
                 Account[] myAccounts = AccountManager.get(this).getAccounts();
                 //for each account
                 for(int i = 0; i < myAccounts.length; i++)
@@ -203,11 +192,74 @@ public class MainActivity extends Activity
                     //if the account type is google
                     if (myAccounts[i].type.equals("com.google"))
                         //set this as the selected Account
-                        aiItem.mUserId = myAccounts[i].name;
+                        mgacCredential.setSelectedAccountName(myAccounts[i].name);
                 }
+                //get the drive service
+                mdService = getDriveService(mgacCredential);
+                //save the selected item to google drive
+                saveFileToDrive(mlsPaths.get(iPosition));
+	        	return true;
 
-                Thread test = new Thread(new insertImage(aiItem));
-                test.run();
+            case R.id.uploadphone_menu_item:
+
+
+                if (mcmCon.getActiveNetworkInfo().isConnected())
+                {
+                    try
+                    {
+                        String ContName = null;
+
+                        //get a list of all the accounts on the device
+                        Account[] aAccounts = AccountManager.get(this).getAccounts();
+                        //for each account
+                        for(int i = 0; i < aAccounts.length; i++)
+                        {
+                            //if the account type is google
+                            if (aAccounts[i].type.equals("com.google"))
+                                //set this as the selected Account
+                                ContName = aAccounts[i].name;
+                        }
+
+                        if (!ContName.isEmpty())
+                        {
+                            // Retrieve storage account from connection-string
+                            CloudStorageAccount storageAccount = CloudStorageAccount.parse(storageConnectionString);
+
+                            // Create the blob client
+                            CloudBlobClient blobClient = storageAccount.createCloudBlobClient();
+                            // get container
+                            CloudBlobContainer container = blobClient.getContainerReference(ContName);
+                            // if the container doesn't exist create it
+                            container.createIfNotExist();
+
+                            CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
+                            java.io.File fSave = new java.io.File(mlsPaths.get(iPosition));
+                            blob.upload(new FileInputStream(fSave), fSave.length());
+                        }
+                    }
+                    catch(InvalidKeyException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch(URISyntaxException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch(StorageException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch(FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+
+
+                }
 
                 return true;
 
@@ -216,87 +268,54 @@ public class MainActivity extends Activity
 		}
 	};
     
-    public class insertImage extends Thread
+
+    private void saveFileToDrive(String sPath)
     {
-        private ImageItem miItem;
+        final String msPath = sPath;
 
-        public insertImage(ImageItem iiItem)
+        Thread t = new Thread(new Runnable()
         {
-             miItem = iiItem;
-        }
-
-        public void run()
-        {
-            ByteArrayOutputStream baoStream = new ByteArrayOutputStream();
-            BitmapFactory.decodeFile(mlsPaths.get(iPosition)).compress(Bitmap.CompressFormat.PNG, 100, baoStream);
-            miItem.mImage = Base64.encodeToString(baoStream.toByteArray(), Base64.DEFAULT);
-
-            mClient.getTable(ImageItem.class).insert(miItem, new TableOperationCallback<ImageItem>()
-            {
-                public void onCompleted(ImageItem entity, Exception exception, ServiceFilterResponse response)
+            @Override
+            public void run() {
+                try
                 {
-                    if (exception == null)
-                    {
-                        // Insert succeeded
-                    }
-                    else
-                    {
-                        // Insert failed
-                    }
+                    // File's binary content
+                    java.io.File fImage = new java.io.File(msPath);
+                    FileContent fcContent = new FileContent("image/jpeg", fImage);
+
+                    // File's metadata.
+                    File gdfBody = new File();
+                    gdfBody.setTitle(fImage.getName());
+                    gdfBody.setMimeType("image/jpeg");
+
+                    com.google.api.services.drive.model.File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
+                    if (gdfFile != null)
+                        Log.d("GlassShareUploadTask", "Uploaded");
                 }
-            });
+                catch (UserRecoverableAuthIOException e)
+                {
+                    Log.d("GlassShareUploadTask", e.toString());
+//                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
+                }
+                catch (IOException e)
+                {
+                    Log.d("GlassShareUploadTask", e.toString());
+//                    e.printStackTrace();
+                }
+                catch (Exception e)
+                {
+                    Log.d("GlassShareUploadTask", e.toString());
+                }
+            }
+        });
+        t.start();
 
-        }
     }
-    
 
-//    private void saveFileToDrive(String sPath)
-//    {
-//        final String msPath = sPath;
-//
-//        Thread t = new Thread(new Runnable()
-//        {
-//            @Override
-//            public void run() {
-//                try
-//                {
-//                    // File's binary content
-//                    java.io.File fImage = new java.io.File(msPath);
-//                    FileContent fcContent = new FileContent("image/jpeg", fImage);
-//
-//                    // File's metadata.
-//                    File gdfBody = new File();
-//                    gdfBody.setTitle(fImage.getName());
-//                    gdfBody.setMimeType("image/jpeg");
-//
-//                    com.google.api.services.drive.model.File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
-//                    if (gdfFile != null)
-//                        Log.d("GlassShareUploadTask", "Uploaded");
-//                }
-//                catch (UserRecoverableAuthIOException e)
-//                {
-//                    Log.d("GlassShareUploadTask", e.toString());
-////                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
-//                }
-//                catch (IOException e)
-//                {
-//                    Log.d("GlassShareUploadTask", e.toString());
-////                    e.printStackTrace();
-//                }
-//                catch (Exception e)
-//                {
-//                    Log.d("GlassShareUploadTask", e.toString());
-//                }
-//            }
-//        });
-//        t.start();
-//
-//    }
-//
-//    private Drive getDriveService(GoogleAccountCredential credential)
-//    {
-//        return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
-//    }
+    private Drive getDriveService(GoogleAccountCredential credential)
+    {
+        return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
+    }
 }
 
 

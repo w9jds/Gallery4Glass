@@ -30,6 +30,7 @@
     <orderEntry type="library" exported="" name="google-api-services-plus-v1-rev111-1.16.0-rc" level="project" />
     <orderEntry type="library" exported="" name="mobileservices-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="microsoft-windowsazure-api-0.4.6" level="project" />
   </component>
 </module>
 
