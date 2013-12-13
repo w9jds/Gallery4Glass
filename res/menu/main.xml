@@ -1,25 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-   	<item
-	    android:id="@+id/share_menu_item"
-	    android:title="@string/share"
-	    android:icon="@drawable/ic_share_50" />
-
-    <item
-        android:id="@+id/upload_menu_item"
-        android:title="@string/upload"
-        android:icon="@drawable/ic_archive_50" />
+   	<!--<item-->
+	    <!--android:id="@+id/share_menu_item"-->
+	    <!--android:title="@string/share"-->
+	    <!--android:icon="@drawable/ic_share_50" />-->
 
     <!--<item-->
-        <!--android:id="@+id/phone_menu_item"-->
-        <!--android:title="@string/send_label"-->
-        <!--android:icon="@drawable/ic_bluetooth_50"/>-->
+        <!--android:id="@+id/upload_menu_item"-->
+        <!--android:title="@string/upload"-->
+        <!--android:icon="@drawable/ic_archive_50" />-->
+
+    <item
+        android:id="@+id/uploadphone_menu_item"
+        android:title="@string/uploadphone_label"
+        android:icon="@drawable/ic_archive_50" />
     
 	<item
         android:id="@+id/delete_menu_item"
-        android:title="@string/delete"
+        android:title="@string/delete_label"
         android:icon="@drawable/ic_delete_50" />
 
 
-	
+
 </menu>
