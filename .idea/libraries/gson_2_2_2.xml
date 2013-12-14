@@ -1,7 +1,8 @@
 <component name="libraryTable">
   <library name="gson-2.2.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../SDKs/azuresdk-android-1.1.0/mobileservices/gson-2.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GlassShare/build/libs/gson-2.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GlassShare/build/libs/gson-2.2.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

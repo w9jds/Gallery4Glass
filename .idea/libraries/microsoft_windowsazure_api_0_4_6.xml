@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="microsoft-windowsazure-api-0.4.6">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../SDKs/microsoft-windowsazure-api-0.4.6.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
