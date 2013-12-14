@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+        classpath 'com.newrelic.agent.android:agent-gradle-plugin:3.214.0'
+    }
+}
+apply plugin: 'android'
+apply plugin: 'newrelic'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+
+    compileSdkVersion "Google Inc.:Glass Development Kit Sneak Peek:15"
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 15
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    productFlavors {
+        defaultFlavor {
+            proguardFile 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies
+        {
+            compile 'com.newrelic.agent.android:android-agent:3.214.0'
+            compile 'com.google.api-client:google-api-client:1.9.0-beta@jar'
+            compile 'com.google.api-client:google-api-client-android:1.17.0-rc@jar'
+            compile 'com.google.http-client:google-http-client:1.9.0-beta@jar'
+            compile 'com.google.http-client:google-http-client-android:1.17.0-rc@jar'
+//            compile 'com.google.http-client:google-http-client-gson:1.17.0-rc@jar'
+            compile 'com.google.oauth-client:google-oauth-client:1.9.0-beta@jar'
+            compile 'com.google.apis:google-api-services-drive:v2-rev99-1.17.0-rc@jar'
+            compile 'com.fasterxml.jackson.core:jackson-core:2.1.4@jar'
+            compile 'org.codehaus.jackson:jackson-core-asl:1.9.9@jar'
+            compile 'com.google.code.findbugs:jsr305:2.0.2@jar'
+            compile 'com.google.protobuf:protobuf-java:2.5.0@jar'
+            compile 'com.google.android:support-v4:r7@jar'
+            compile files('build/libs/google-play-services.jar')
+            compile files('build/libs/gson-2.2.2.jar')
+            compile files('build/libs/mobileservices-1.1.0.jar')
+        }
+

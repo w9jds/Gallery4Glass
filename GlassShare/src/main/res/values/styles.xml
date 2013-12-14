@@ -1,0 +1,5 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault"/>
+
+</resources>
