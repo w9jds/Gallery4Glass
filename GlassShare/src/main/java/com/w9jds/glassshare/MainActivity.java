@@ -1,7 +1,5 @@
 package com.w9jds.glassshare;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -24,10 +22,8 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
-import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
+import com.newrelic.agent.android.NewRelic;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 
 import java.io.IOException;
@@ -59,13 +55,7 @@ public class MainActivity extends Activity {
 
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        if (mcmCon.getActiveNetworkInfo().isConnected())
-        {
-//            Parse.initialize(this, "YMdRbwiu0qWNZPSRRoWOxejHDsAQqkZ2MgPomjUC", "ET6wO4zIPHooOMkbk1UXfIV888O9tUdidlu7W6r0");
-//            ParseAnalytics.trackAppOpened(getIntent());
-        }
 
-//        mClient = new MobileServiceClient( "https://glassshare.azure-mobile.net/", "hGZSWGJntAFbXLmYRitDivIhrClsgA21", this );
 
         //get all the images from the camera folder (paths)
         mlsPaths = getCameraImages(this);
@@ -189,7 +179,8 @@ public class MainActivity extends Activity {
 
             case R.id.uploadphone_menu_item:
 
-                if (mcmCon.getActiveNetworkInfo().isConnected()) {
+                if (mcmCon.getActiveNetworkInfo().isConnected())
+                {
 
                 }
 
