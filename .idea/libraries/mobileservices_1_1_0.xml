@@ -1,9 +1,6 @@
 <component name="libraryTable">
   <library name="mobileservices-1.1.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/GlassShare/build/libs/mobileservices-1.1.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/GlassShare/build/libs/mobileservices-1.1.0.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

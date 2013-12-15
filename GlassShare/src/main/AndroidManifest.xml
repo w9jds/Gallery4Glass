@@ -37,7 +37,6 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/my_voice_trigger" />
 
-
         </activity>
     </application>
 

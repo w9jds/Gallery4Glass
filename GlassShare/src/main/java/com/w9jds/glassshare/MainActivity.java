@@ -3,10 +3,8 @@ package com.w9jds.glassshare;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -23,7 +21,6 @@ import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
-import com.newrelic.agent.android.NewRelic;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 
 import java.io.IOException;
@@ -38,9 +35,11 @@ public class MainActivity extends Activity {
 
     private ConnectivityManager mcmCon;
 
-    //    private MobileServiceClient mClient;
+//    private MobileServiceClient mClient;
     private static Drive mdService;
     private GoogleAccountCredential mgacCredential;
+
+    private Menu mMenu;
 
     //custom adapter
     private csaAdapter mcvAdapter;
@@ -50,12 +49,11 @@ public class MainActivity extends Activity {
     private int iPosition;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-
 
         //get all the images from the camera folder (paths)
         mlsPaths = getCameraImages(this);
@@ -85,7 +83,8 @@ public class MainActivity extends Activity {
 
     }
 
-    private void sortPaths() {
+    private void sortPaths()
+    {
         java.io.File[] fPics = new java.io.File[mlsPaths.size()];
 
         for (int i = 0; i < mlsPaths.size(); i++)
@@ -93,9 +92,11 @@ public class MainActivity extends Activity {
 
         mlsPaths.clear();
 
-        Arrays.sort(fPics, new Comparator<java.io.File>() {
+        Arrays.sort(fPics, new Comparator<java.io.File>()
+        {
             @Override
-            public int compare(java.io.File o1, java.io.File o2) {
+            public int compare(java.io.File o1, java.io.File o2)
+            {
                 return Long.valueOf(o1.lastModified()).compareTo(o2.lastModified());
             }
         });
@@ -104,20 +105,24 @@ public class MainActivity extends Activity {
             mlsPaths.add(fPics[i].getAbsolutePath());
     }
 
-    public static String getBucketId(String path) {
+    public static String getBucketId(String path)
+    {
         return String.valueOf(path.toLowerCase().hashCode());
     }
 
-    public static ArrayList<String> getCameraImages(Context context) {
+    public static ArrayList<String> getCameraImages(Context context)
+    {
         final String[] projection = {MediaStore.Images.Media.DATA};
         final String selection = MediaStore.Images.Media.BUCKET_ID + " = ?";
         final String[] selectionArgs = {CAMERA_IMAGE_BUCKET_ID};
         final Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, selection, selectionArgs, null);
         ArrayList<String> result = new ArrayList<String>(cursor.getCount());
 
-        if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst())
+        {
             final int dataColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            do {
+            do
+            {
                 final String data = cursor.getString(dataColumn);
                 result.add(data);
             } while (cursor.moveToNext());
@@ -128,9 +133,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        mMenu = menu;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -138,41 +146,14 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(android.view.MenuItem iItem) {
         switch (iItem.getItemId()) {
             case R.id.delete_menu_item:
-                //set the text as deleting
-                iItem.setTitle(R.string.deleting_label);
 
-                //pull the file from the path of the selected item
-                java.io.File fPic = new java.io.File(mlsPaths.get(iPosition));
-                //delete the image
-                fPic.delete();
-                //refresh the folder
-                sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
-                //remove the selected item from the list of images
-                mlsPaths.remove(iPosition);
-                //let the adapter know that the list of images has changed
-                mcvAdapter.notifyDataSetChanged();
-                //handled
 
                 return true;
             case R.id.upload_menu_item:
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
-//                    //get google account credentials and store to member variable
-//                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-//                    //get a list of all the accounts on the device
-//                    Account[] myAccounts = AccountManager.get(this).getAccounts();
-//                    //for each account
-//                    for (int i = 0; i < myAccounts.length; i++) {
-//                        //if the account type is google
-//                        if (myAccounts[i].type.equals("com.google"))
-//                            //set this as the selected Account
-//                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
-//                    }
-//                    //get the drive service
-//                    mdService = getDriveService(mgacCredential);
-//                    //save the selected item to google drive
-//                    saveFileToDrive(mlsPaths.get(iPosition));
+
                 }
 
                 return true;
