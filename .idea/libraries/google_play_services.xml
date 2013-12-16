@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="google-play-services">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/GlassShare/build/libs/google-play-services.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GlassShare/libs/google-play-services.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

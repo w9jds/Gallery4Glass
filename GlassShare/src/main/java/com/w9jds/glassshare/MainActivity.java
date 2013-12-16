@@ -6,7 +6,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,13 +24,12 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
-import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 import com.w9jds.glassshare.Classes.ImageItem;
+import com.w9jds.glassshare.Classes.StorageApplication;
+import com.w9jds.glassshare.Classes.StorageService;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -44,7 +42,11 @@ public class MainActivity extends Activity
 
     private ConnectivityManager mcmCon;
 
+    //create member variables for Azure
     private MobileServiceClient mClient;
+    private StorageService mStorageService;
+
+    //create member variables for google drive
     private Drive mdService;
     private GoogleAccountCredential mgacCredential;
 
@@ -64,12 +66,8 @@ public class MainActivity extends Activity
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
-            try
-            {
-
-            }
-
-            catch (MalformedURLException e) {}
+            StorageApplication myApp = (StorageApplication) getApplication();
+            mStorageService = myApp.getStorageService();
         }
 
         //get all the images from the camera folder (paths)
@@ -181,31 +179,25 @@ public class MainActivity extends Activity
                 {
                     ImageItem item = new ImageItem();
 
+                    String sContainer = "";
+
                     Account[] myAccounts = AccountManager.get(this).getAccounts();
                     //for each account
-                    for (int i = 0; i < myAccounts.length; i++) {
+                    for (int i = 0; i < myAccounts.length; i++)
+                    {
                         //if the account type is google
                         if (myAccounts[i].type.equals("com.google"))
                             //set this as the selected Account
-                            item.userid = myAccounts[i].name;
+                            sContainer = myAccounts[i].name;
                     }
 
-                    item.image = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+//                    item.image = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
 
-                    mClient.getTable(ImageItem.class).insert(item, new TableOperationCallback<ImageItem>()
-                    {
-                        public void onCompleted(ImageItem entity, Exception exception, ServiceFilterResponse response)
-                        {
-                            if (exception == null)
-                            {
-                                // Insert succeeded
-                            }
-                            else
-                            {
-                                // Insert failed
-                            }
-                        }
-                    });
+//                    Intent blobDetailsIntent = new Intent(getApplicationContext(), ImageItem.class);
+//                    blobDetailsIntent.putExtra("ContainerName", sContainer);
+//                    blobDetailsIntent.putExtra("BlobName", "img1");
+//                    blobDetailsIntent.putExtra("BlobPosition", iPosition);
+//                    startActivity(blobDetailsIntent);
                 }
 
                 return true;
@@ -214,6 +206,78 @@ public class MainActivity extends Activity
                 return super.onOptionsItemSelected(iItem);
         }
     }
+
+    /***
+     * Handles uploading an image to a specified url
+     */
+//    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
+//    {
+//        private String mUrl;
+//
+//        public ImageUploaderTask(String url)
+//        {
+//            mUrl = url;
+//        }
+//
+//        @Override
+//        protected Boolean doInBackground(Void... params) {
+//            try {
+//                //Get the image data
+//                Cursor cursor = getContentResolver().query(mImageUri, null,null, null, null);
+//                cursor.moveToFirst();
+//
+//                FileInputStream fiStream = new FileInputStream(mlsPaths.get(iPosition));
+//
+//                int bytesRead = 0;
+//                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+//
+//                byte[] b = new byte[1024];
+//                while ((bytesRead = fiStream.read(b)) != -1)
+//                {
+//                    bos.write(b, 0, bytesRead);
+//                }
+//                byte[] bytes = bos.toByteArray();
+//
+//                // Post our image data (byte array) to the server
+//                HttpURLConnection urlConnection = (HttpURLConnection) new URL(mUrl.replace("\"", "")).openConnection();
+//                urlConnection.setDoOutput(true);
+//                urlConnection.setRequestMethod("PUT");
+//                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+//                urlConnection.setRequestProperty("Content-Length", ""+ bytes.length);
+//
+//                // Write image data to server
+//                DataOutputStream doStream = new DataOutputStream(urlConnection.getOutputStream());
+//                doStream.write(bytes);
+//                doStream.flush();
+//                doStream.close();
+//
+//                int response = urlConnection.getResponseCode();
+//
+//                //If we successfully uploaded, return true
+//                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+//                    return true;
+//
+//            }
+//
+//            catch (Exception ex)
+//            {
+//                Log.e("GlassShareDebug", ex.getMessage());
+//            }
+//            return false;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Boolean uploaded)
+//        {
+////            if (uploaded)
+////            {
+////                mAlertDialog.cancel();
+////                mStorageService.getBlobsForContainer(mContainerName);
+////            }
+//        }
+//    }
+
+
 
     private void saveFileToDrive(String sPath)
     {
@@ -261,3 +325,6 @@ public class MainActivity extends Activity
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
     }
 }
+
+
+
