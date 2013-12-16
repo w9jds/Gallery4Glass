@@ -1,9 +1,12 @@
 package com.w9jds.glassshare;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,25 +24,29 @@ import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
+import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
+import com.microsoft.windowsazure.mobileservices.ServiceFilterResponse;
+import com.microsoft.windowsazure.mobileservices.TableOperationCallback;
 import com.w9jds.glassshare.Adapters.csaAdapter;
+import com.w9jds.glassshare.Classes.ImageItem;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
 @SuppressLint("DefaultLocale")
-public class MainActivity extends Activity {
-    public static final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
-    public static final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
+public class MainActivity extends Activity
+{
+    private final String CAMERA_IMAGE_BUCKET_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
+    private final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
     private ConnectivityManager mcmCon;
 
-//    private MobileServiceClient mClient;
-    private static Drive mdService;
+    private MobileServiceClient mClient;
+    private Drive mdService;
     private GoogleAccountCredential mgacCredential;
-
-    private Menu mMenu;
 
     //custom adapter
     private csaAdapter mcvAdapter;
@@ -55,6 +62,16 @@ public class MainActivity extends Activity {
 
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
+        if (mcmCon.getActiveNetworkInfo().isConnected())
+        {
+            try
+            {
+
+            }
+
+            catch (MalformedURLException e) {}
+        }
+
         //get all the images from the camera folder (paths)
         mlsPaths = getCameraImages(this);
         //sort the paths of pictures
@@ -68,9 +85,11 @@ public class MainActivity extends Activity {
         //activate this scroll viewer
         csvCardsView.activate();
         //add a listener to the scroll viewer that is fired when an item is clicked
-        csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
                 //save the card index that was selected
                 iPosition = position;
                 //open the menu
@@ -105,16 +124,16 @@ public class MainActivity extends Activity {
             mlsPaths.add(fPics[i].getAbsolutePath());
     }
 
-    public static String getBucketId(String path)
+    public String getBucketId(String path)
     {
         return String.valueOf(path.toLowerCase().hashCode());
     }
 
-    public static ArrayList<String> getCameraImages(Context context)
+    public ArrayList<String> getCameraImages(Context context)
     {
         final String[] projection = {MediaStore.Images.Media.DATA};
         final String selection = MediaStore.Images.Media.BUCKET_ID + " = ?";
-        final String[] selectionArgs = {CAMERA_IMAGE_BUCKET_ID};
+        final String[] selectionArgs = { CAMERA_IMAGE_BUCKET_ID };
         final Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, selection, selectionArgs, null);
         ArrayList<String> result = new ArrayList<String>(cursor.getCount());
 
@@ -135,10 +154,8 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        mMenu = menu;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-
         return true;
     }
 
@@ -162,7 +179,33 @@ public class MainActivity extends Activity {
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
+                    ImageItem item = new ImageItem();
 
+                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+                    //for each account
+                    for (int i = 0; i < myAccounts.length; i++) {
+                        //if the account type is google
+                        if (myAccounts[i].type.equals("com.google"))
+                            //set this as the selected Account
+                            item.userid = myAccounts[i].name;
+                    }
+
+                    item.image = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+
+                    mClient.getTable(ImageItem.class).insert(item, new TableOperationCallback<ImageItem>()
+                    {
+                        public void onCompleted(ImageItem entity, Exception exception, ServiceFilterResponse response)
+                        {
+                            if (exception == null)
+                            {
+                                // Insert succeeded
+                            }
+                            else
+                            {
+                                // Insert failed
+                            }
+                        }
+                    });
                 }
 
                 return true;
@@ -172,16 +215,17 @@ public class MainActivity extends Activity {
         }
     }
 
-    ;
-
-
-    private void saveFileToDrive(String sPath) {
+    private void saveFileToDrive(String sPath)
+    {
         final String msPath = sPath;
 
-        Thread t = new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable()
+        {
             @Override
-            public void run() {
-                try {
+            public void run()
+            {
+                try
+                {
                     // File's binary content
                     java.io.File fImage = new java.io.File(msPath);
                     FileContent fcContent = new FileContent("image/jpeg", fImage);
@@ -194,13 +238,16 @@ public class MainActivity extends Activity {
                     File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
                     if (gdfFile != null)
                         Log.d("GlassShareUploadTask", "Uploaded");
-                } catch (UserRecoverableAuthIOException e) {
+                }
+                catch (UserRecoverableAuthIOException e) {
                     Log.d("GlassShareUploadTask", e.toString());
 //                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
-                } catch (IOException e) {
+                }
+                catch (IOException e) {
                     Log.d("GlassShareUploadTask", e.toString());
 //                    e.printStackTrace();
-                } catch (Exception e) {
+                }
+                catch (Exception e) {
                     Log.d("GlassShareUploadTask", e.toString());
                 }
             }
@@ -209,7 +256,8 @@ public class MainActivity extends Activity {
 
     }
 
-    private Drive getDriveService(GoogleAccountCredential credential) {
+    private Drive getDriveService(GoogleAccountCredential credential)
+    {
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
     }
 }
