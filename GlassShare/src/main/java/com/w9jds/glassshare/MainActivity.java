@@ -5,8 +5,10 @@ import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -22,6 +24,7 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.w9jds.glassshare.Adapters.csaAdapter;
@@ -161,14 +164,41 @@ public class MainActivity extends Activity
     public boolean onOptionsItemSelected(android.view.MenuItem iItem) {
         switch (iItem.getItemId()) {
             case R.id.delete_menu_item:
+                //set the text as deleting
+                iItem.setTitle(R.string.deleting_label);
 
+                //pull the file from the path of the selected item
+                java.io.File fPic = new java.io.File(mlsPaths.get(iPosition));
+                //delete the image
+                fPic.delete();
+                //refresh the folder
+                sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+                //remove the selected item from the list of images
+                mlsPaths.remove(iPosition);
+                //let the adapter know that the list of images has changed
+                mcvAdapter.notifyDataSetChanged();
+                //handled
 
                 return true;
             case R.id.upload_menu_item:
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
-
+                    //get google account credentials and store to member variable
+                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+                    //get a list of all the accounts on the device
+                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+                    //for each account
+                    for (int i = 0; i < myAccounts.length; i++) {
+                        //if the account type is google
+                        if (myAccounts[i].type.equals("com.google"))
+                            //set this as the selected Account
+                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
+                    }
+                    //get the drive service
+                    mdService = getDriveService(mgacCredential);
+                    //save the selected item to google drive
+                    saveFileToDrive(mlsPaths.get(iPosition));
                 }
 
                 return true;
@@ -276,8 +306,6 @@ public class MainActivity extends Activity
 ////            }
 //        }
 //    }
-
-
 
     private void saveFileToDrive(String sPath)
     {
