@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -32,7 +33,12 @@ import com.w9jds.glassshare.Classes.ImageItem;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -69,6 +75,7 @@ public class MainActivity extends Activity
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
+
             StorageApplication myApp = (StorageApplication) getApplication();
             mStorageService = myApp.getStorageService();
         }
@@ -161,8 +168,10 @@ public class MainActivity extends Activity
     }
 
     @Override
-    public boolean onOptionsItemSelected(android.view.MenuItem iItem) {
-        switch (iItem.getItemId()) {
+    public boolean onOptionsItemSelected(android.view.MenuItem iItem)
+    {
+        switch (iItem.getItemId())
+        {
             case R.id.delete_menu_item:
                 //set the text as deleting
                 iItem.setTitle(R.string.deleting_label);
@@ -221,13 +230,11 @@ public class MainActivity extends Activity
                             sContainer = myAccounts[i].name;
                     }
 
-//                    item.image = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+//                    mStorageService.getTables();
 
-//                    Intent blobDetailsIntent = new Intent(getApplicationContext(), ImageItem.class);
-//                    blobDetailsIntent.putExtra("ContainerName", sContainer);
-//                    blobDetailsIntent.putExtra("BlobName", "img1");
-//                    blobDetailsIntent.putExtra("BlobPosition", iPosition);
-//                    startActivity(blobDetailsIntent);
+                    mStorageService.addContainer(sContainer, false);
+//                    mStorageService.getSasForNewBlob(sContainer, "testimage");
+
                 }
 
                 return true;
@@ -240,72 +247,72 @@ public class MainActivity extends Activity
     /***
      * Handles uploading an image to a specified url
      */
-//    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
-//    {
-//        private String mUrl;
-//
-//        public ImageUploaderTask(String url)
-//        {
-//            mUrl = url;
-//        }
-//
-//        @Override
-//        protected Boolean doInBackground(Void... params) {
-//            try {
-//                //Get the image data
-//                Cursor cursor = getContentResolver().query(mImageUri, null,null, null, null);
+    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
+    {
+        private String mUrl;
+
+        public ImageUploaderTask(String url)
+        {
+            mUrl = url;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                //Get the image data
+//                Cursor cursor = getContentResolver().query(mImageUri, null, null, null, null);
 //                cursor.moveToFirst();
-//
-//                FileInputStream fiStream = new FileInputStream(mlsPaths.get(iPosition));
-//
-//                int bytesRead = 0;
-//                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//
-//                byte[] b = new byte[1024];
-//                while ((bytesRead = fiStream.read(b)) != -1)
-//                {
-//                    bos.write(b, 0, bytesRead);
-//                }
-//                byte[] bytes = bos.toByteArray();
-//
-//                // Post our image data (byte array) to the server
-//                HttpURLConnection urlConnection = (HttpURLConnection) new URL(mUrl.replace("\"", "")).openConnection();
-//                urlConnection.setDoOutput(true);
-//                urlConnection.setRequestMethod("PUT");
-//                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
-//                urlConnection.setRequestProperty("Content-Length", ""+ bytes.length);
-//
-//                // Write image data to server
-//                DataOutputStream doStream = new DataOutputStream(urlConnection.getOutputStream());
-//                doStream.write(bytes);
-//                doStream.flush();
-//                doStream.close();
-//
-//                int response = urlConnection.getResponseCode();
-//
-//                //If we successfully uploaded, return true
-//                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
-//                    return true;
-//
-//            }
-//
-//            catch (Exception ex)
+
+                FileInputStream fiStream = new FileInputStream(mlsPaths.get(iPosition));
+
+                int bytesRead;
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+                byte[] b = new byte[1024];
+                while ((bytesRead = fiStream.read(b)) != -1)
+                {
+                    bos.write(b, 0, bytesRead);
+                }
+                byte[] bytes = bos.toByteArray();
+
+                // Post our image data (byte array) to the server
+                HttpURLConnection urlConnection = (HttpURLConnection) new URL(mUrl.replace("\"", "")).openConnection();
+                urlConnection.setDoOutput(true);
+                urlConnection.setRequestMethod("PUT");
+                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+                urlConnection.setRequestProperty("Content-Length", ""+ bytes.length);
+
+                // Write image data to server
+                DataOutputStream doStream = new DataOutputStream(urlConnection.getOutputStream());
+                doStream.write(bytes);
+                doStream.flush();
+                doStream.close();
+
+                int response = urlConnection.getResponseCode();
+
+                //If we successfully uploaded, return true
+                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+                    return true;
+
+            }
+
+            catch (Exception ex)
+            {
+                Log.e("GlassShareDebug", ex.getMessage());
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean uploaded)
+        {
+//            if (uploaded)
 //            {
-//                Log.e("GlassShareDebug", ex.getMessage());
+//                mAlertDialog.cancel();
+//                mStorageService.getBlobsForContainer(mContainerName);
 //            }
-//            return false;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Boolean uploaded)
-//        {
-////            if (uploaded)
-////            {
-////                mAlertDialog.cancel();
-////                mStorageService.getBlobsForContainer(mContainerName);
-////            }
-//        }
-//    }
+        }
+    }
 
     private void saveFileToDrive(String sPath)
     {
