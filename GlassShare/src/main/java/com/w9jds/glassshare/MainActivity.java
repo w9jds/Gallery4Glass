@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -25,20 +24,14 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
-import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
+import com.newrelic.agent.android.NewRelic;
 import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.w9jds.glassshare.Classes.ImageItem;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -75,6 +68,7 @@ public class MainActivity extends Activity
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
+
 
             StorageApplication myApp = (StorageApplication) getApplication();
             mStorageService = myApp.getStorageService();
@@ -189,34 +183,33 @@ public class MainActivity extends Activity
                 //handled
 
                 return true;
-            case R.id.upload_menu_item:
-
-                if (mcmCon.getActiveNetworkInfo().isConnected())
-                {
-                    //get google account credentials and store to member variable
-                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-                    //get a list of all the accounts on the device
-                    Account[] myAccounts = AccountManager.get(this).getAccounts();
-                    //for each account
-                    for (int i = 0; i < myAccounts.length; i++) {
-                        //if the account type is google
-                        if (myAccounts[i].type.equals("com.google"))
-                            //set this as the selected Account
-                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
-                    }
-                    //get the drive service
-                    mdService = getDriveService(mgacCredential);
-                    //save the selected item to google drive
-                    saveFileToDrive(mlsPaths.get(iPosition));
-                }
-
-                return true;
-
+//            case R.id.upload_menu_item:
+//
+//                if (mcmCon.getActiveNetworkInfo().isConnected())
+//                {
+//                    //get google account credentials and store to member variable
+//                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+//                    //get a list of all the accounts on the device
+//                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+//                    //for each account
+//                    for (int i = 0; i < myAccounts.length; i++) {
+//                        //if the account type is google
+//                        if (myAccounts[i].type.equals("com.google"))
+//                            //set this as the selected Account
+//                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
+//                    }
+//                    //get the drive service
+//                    mdService = getDriveService(mgacCredential);
+//                    //save the selected item to google drive
+//                    saveFileToDrive(mlsPaths.get(iPosition));
+//                }
+//
+//                return true;
+//
             case R.id.uploadphone_menu_item:
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
-                    ImageItem item = new ImageItem();
 
                     String sContainer = "";
 
@@ -241,76 +234,6 @@ public class MainActivity extends Activity
 
             default:
                 return super.onOptionsItemSelected(iItem);
-        }
-    }
-
-    /***
-     * Handles uploading an image to a specified url
-     */
-    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
-    {
-        private String mUrl;
-
-        public ImageUploaderTask(String url)
-        {
-            mUrl = url;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            try {
-                //Get the image data
-//                Cursor cursor = getContentResolver().query(mImageUri, null, null, null, null);
-//                cursor.moveToFirst();
-
-                FileInputStream fiStream = new FileInputStream(mlsPaths.get(iPosition));
-
-                int bytesRead;
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-
-                byte[] b = new byte[1024];
-                while ((bytesRead = fiStream.read(b)) != -1)
-                {
-                    bos.write(b, 0, bytesRead);
-                }
-                byte[] bytes = bos.toByteArray();
-
-                // Post our image data (byte array) to the server
-                HttpURLConnection urlConnection = (HttpURLConnection) new URL(mUrl.replace("\"", "")).openConnection();
-                urlConnection.setDoOutput(true);
-                urlConnection.setRequestMethod("PUT");
-                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
-                urlConnection.setRequestProperty("Content-Length", ""+ bytes.length);
-
-                // Write image data to server
-                DataOutputStream doStream = new DataOutputStream(urlConnection.getOutputStream());
-                doStream.write(bytes);
-                doStream.flush();
-                doStream.close();
-
-                int response = urlConnection.getResponseCode();
-
-                //If we successfully uploaded, return true
-                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
-                    return true;
-
-            }
-
-            catch (Exception ex)
-            {
-                Log.e("GlassShareDebug", ex.getMessage());
-            }
-            return false;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean uploaded)
-        {
-//            if (uploaded)
-//            {
-//                mAlertDialog.cancel();
-//                mStorageService.getBlobsForContainer(mContainerName);
-//            }
         }
     }
 

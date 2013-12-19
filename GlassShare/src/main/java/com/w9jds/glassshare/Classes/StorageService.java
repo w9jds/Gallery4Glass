@@ -52,8 +52,8 @@ public class StorageService
 
 //            mTableTables = mClient.getTable("");
 //            mTableTableRows = mClient.getTable("");
-            mTableContainers = mClient.getTable("");
-//            mTableBlobs = mClient.getTable("");
+            mTableContainers = mClient.getTable("blobcontainers");
+            mTableBlobs = mClient.getTable("blobs");
         }
         catch (MalformedURLException e)
         {
