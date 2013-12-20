@@ -9,11 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -29,17 +26,16 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
+import com.newrelic.agent.android.NewRelic;
 import com.w9jds.glassshare.Adapters.csaAdapter;
+import com.w9jds.glassshare.Classes.ImageUploaderTask;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -51,7 +47,6 @@ public class MainActivity extends Activity
     private final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
     private ConnectivityManager mcmCon;
-    private Uri mImageUri;
 
     //create member variables for Azure
     private StorageService mStorageService;
@@ -65,7 +60,7 @@ public class MainActivity extends Activity
     //list for all the paths of the images on google glass
     private ArrayList<String> mlsPaths = new ArrayList<String>();
     //variable for the last selected index
-    private int iPosition;
+    private int miPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -101,7 +96,7 @@ public class MainActivity extends Activity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 //save the card index that was selected
-                iPosition = position;
+                miPosition = position;
                 //open the menu
                 openOptionsMenu();
             }
@@ -206,48 +201,48 @@ public class MainActivity extends Activity
                 iItem.setTitle(R.string.deleting_label);
 
                 //pull the file from the path of the selected item
-                java.io.File fPic = new java.io.File(mlsPaths.get(iPosition));
+                java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
                 //delete the image
                 fPic.delete();
                 //refresh the folder
                 sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
                 //remove the selected item from the list of images
-                mlsPaths.remove(iPosition);
+                mlsPaths.remove(miPosition);
                 //let the adapter know that the list of images has changed
                 mcvAdapter.notifyDataSetChanged();
                 //handled
 
                 return true;
-//            case R.id.upload_menu_item:
-//
-//                if (mcmCon.getActiveNetworkInfo().isConnected())
-//                {
-//                    //get google account credentials and store to member variable
-//                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-//                    //get a list of all the accounts on the device
-//                    Account[] myAccounts = AccountManager.get(this).getAccounts();
-//                    //for each account
-//                    for (int i = 0; i < myAccounts.length; i++) {
-//                        //if the account type is google
-//                        if (myAccounts[i].type.equals("com.google"))
-//                            //set this as the selected Account
-//                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
-//                    }
-//                    //get the drive service
-//                    mdService = getDriveService(mgacCredential);
-//                    //save the selected item to google drive
-//                    saveFileToDrive(mlsPaths.get(iPosition));
-//                }
-//
-//                return true;
-//
+            case R.id.upload_menu_item:
+
+                if (mcmCon.getActiveNetworkInfo().isConnected())
+                {
+                    //get google account credentials and store to member variable
+                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+                    //get a list of all the accounts on the device
+                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+                    //for each account
+                    for (int i = 0; i < myAccounts.length; i++) {
+                        //if the account type is google
+                        if (myAccounts[i].type.equals("com.google"))
+                            //set this as the selected Account
+                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
+                    }
+                    //get the drive service
+                    mdService = getDriveService(mgacCredential);
+                    //save the selected item to google drive
+                    saveFileToDrive(mlsPaths.get(miPosition));
+                }
+
+                return true;
+
             case R.id.uploadphone_menu_item:
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
 
                     String sContainer = "";
-                    String[] saImage = mlsPaths.get(iPosition).split("/|\\.");
+                    String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
 
                     Account[] myAccounts = AccountManager.get(this).getAccounts();
                     //for each account
@@ -287,65 +282,11 @@ public class MainActivity extends Activity
                 //If a blob has been created, upload the image
                 JsonObject blob = mStorageService.getLoadedBlob();
                 String sasUrl = blob.getAsJsonPrimitive("sasUrl").toString();
-                (new ImageUploaderTask(sasUrl)).execute();
+                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).execute();
 
             }
         }
     };
-
-    /***
-     * Handles uploading an image to a specified url
-     */
-    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean> {
-        private String mUrl;
-        public ImageUploaderTask(String url) {
-            mUrl = url;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            try
-            {
-                //get the image data
-                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-                // Post our image data (byte array) to the server
-                URL url = new URL(mUrl.replace("\"", ""));
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setDoOutput(true);
-                urlConnection.setRequestMethod("PUT");
-                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
-                urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
-                // Write image data to server
-                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
-                wr.write(byteArray);
-                wr.flush();
-                wr.close();
-                int response = urlConnection.getResponseCode();
-                //If we successfully uploaded, return true
-                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
-                    return true;
-            }
-
-            catch (Exception ex)
-            {
-                Log.e("GlassShareImageUploadTask", ex.getMessage());
-            }
-            return false;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean uploaded)
-        {
-//            if (uploaded)
-//            {
-//                mAlertDialog.cancel();
-//                mStorageService.getBlobsForContainer(mContainerName);
-//            }
-        }
-    }
 
     private void saveFileToDrive(String sPath)
     {
@@ -392,6 +333,8 @@ public class MainActivity extends Activity
     {
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
     }
+
+
 }
 
 
