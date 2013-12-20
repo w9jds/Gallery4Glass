@@ -4,11 +4,16 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -25,13 +30,16 @@ import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
-import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.newrelic.agent.android.NewRelic;
+import com.google.gson.JsonObject;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -43,9 +51,9 @@ public class MainActivity extends Activity
     private final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
     private ConnectivityManager mcmCon;
+    private Uri mImageUri;
 
     //create member variables for Azure
-    private MobileServiceClient mClient;
     private StorageService mStorageService;
 
     //create member variables for google drive
@@ -75,7 +83,7 @@ public class MainActivity extends Activity
         }
 
         //get all the images from the camera folder (paths)
-        mlsPaths = getCameraImages(this);
+        mlsPaths = getCameraImages();
         //sort the paths of pictures
         sortPaths();
         //create a new card scroll viewer for this context
@@ -104,6 +112,29 @@ public class MainActivity extends Activity
 
     }
 
+    /***
+     * Register for broadcasts
+     */
+    @Override
+    protected void onResume() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("blob.created");
+        registerReceiver(receiver, filter);
+        super.onResume();
+    }
+
+    /***
+     * Unregister for broadcasts
+     */
+    @Override
+    protected void onPause() {
+        unregisterReceiver(receiver);
+        super.onPause();
+    }
+
+    /***
+     * Sort the file paths so that the images are in order from most resent first
+     */
     private void sortPaths()
     {
         java.io.File[] fPics = new java.io.File[mlsPaths.size()];
@@ -131,12 +162,16 @@ public class MainActivity extends Activity
         return String.valueOf(path.toLowerCase().hashCode());
     }
 
-    public ArrayList<String> getCameraImages(Context context)
+    /***
+     * Get all the image file paths on this device (from the camera folder)
+     * @return an arraylist of all the file paths
+     */
+    public ArrayList<String> getCameraImages()
     {
         final String[] projection = {MediaStore.Images.Media.DATA};
         final String selection = MediaStore.Images.Media.BUCKET_ID + " = ?";
         final String[] selectionArgs = { CAMERA_IMAGE_BUCKET_ID };
-        final Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, selection, selectionArgs, null);
+        final Cursor cursor = this.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, selection, selectionArgs, null);
         ArrayList<String> result = new ArrayList<String>(cursor.getCount());
 
         if (cursor.moveToFirst())
@@ -212,6 +247,7 @@ public class MainActivity extends Activity
                 {
 
                     String sContainer = "";
+                    String[] saImage = mlsPaths.get(iPosition).split("/|\\.");
 
                     Account[] myAccounts = AccountManager.get(this).getAccounts();
                     //for each account
@@ -219,21 +255,95 @@ public class MainActivity extends Activity
                     {
                         //if the account type is google
                         if (myAccounts[i].type.equals("com.google"))
+                        {
                             //set this as the selected Account
-                            sContainer = myAccounts[i].name;
+                            String[] saAccount = myAccounts[i].name.split("@|\\.");
+                            sContainer = saAccount[0] + saAccount[1] + saAccount[2];
+                        }
                     }
 
-//                    mStorageService.getTables();
-
                     mStorageService.addContainer(sContainer, false);
-//                    mStorageService.getSasForNewBlob(sContainer, "testimage");
+                    mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length-2]);
 
                 }
-
                 return true;
 
             default:
                 return super.onOptionsItemSelected(iItem);
+        }
+    }
+
+    /***
+     * Broadcast receiver handles blobs being loaded or a new blob being created
+     */
+    private BroadcastReceiver receiver = new BroadcastReceiver()
+    {
+        public void onReceive(Context context, android.content.Intent intent)
+        {
+            String intentAction = intent.getAction();
+
+            if (intentAction.equals("blob.created"))
+            {
+                //If a blob has been created, upload the image
+                JsonObject blob = mStorageService.getLoadedBlob();
+                String sasUrl = blob.getAsJsonPrimitive("sasUrl").toString();
+                (new ImageUploaderTask(sasUrl)).execute();
+
+            }
+        }
+    };
+
+    /***
+     * Handles uploading an image to a specified url
+     */
+    class ImageUploaderTask extends AsyncTask<Void, Void, Boolean> {
+        private String mUrl;
+        public ImageUploaderTask(String url) {
+            mUrl = url;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try
+            {
+                //get the image data
+                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(iPosition));
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                // Post our image data (byte array) to the server
+                URL url = new URL(mUrl.replace("\"", ""));
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setDoOutput(true);
+                urlConnection.setRequestMethod("PUT");
+                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+                urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
+                // Write image data to server
+                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+                wr.write(byteArray);
+                wr.flush();
+                wr.close();
+                int response = urlConnection.getResponseCode();
+                //If we successfully uploaded, return true
+                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+                    return true;
+            }
+
+            catch (Exception ex)
+            {
+                Log.e("GlassShareImageUploadTask", ex.getMessage());
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean uploaded)
+        {
+//            if (uploaded)
+//            {
+//                mAlertDialog.cancel();
+//                mStorageService.getBlobsForContainer(mContainerName);
+//            }
         }
     }
 

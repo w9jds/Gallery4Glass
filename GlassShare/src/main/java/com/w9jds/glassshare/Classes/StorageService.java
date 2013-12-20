@@ -50,8 +50,6 @@ public class StorageService
         try
         {
 
-//            mTableTables = mClient.getTable("");
-//            mTableTableRows = mClient.getTable("");
             mTableContainers = mClient.getTable("blobcontainers");
             mTableBlobs = mClient.getTable("blobs");
         }
@@ -454,7 +452,8 @@ public class StorageService
      * @param containerName
      * @param blobName
      */
-    public void deleteBlob(final String containerName, String blobName) {
+    public void deleteBlob(final String containerName, String blobName)
+    {
         //Create the json Object we'll send over and fill it with the required
         //id property - otherwise we'll get kicked back
         JsonObject blob = new JsonObject();
