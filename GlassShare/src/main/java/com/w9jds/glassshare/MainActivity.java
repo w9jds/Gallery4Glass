@@ -9,8 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -19,6 +22,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -26,16 +30,17 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
-import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
-import com.newrelic.agent.android.NewRelic;
 import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.w9jds.glassshare.Classes.ImageUploaderTask;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -81,6 +86,12 @@ public class MainActivity extends Activity
         mlsPaths = getCameraImages();
         //sort the paths of pictures
         sortPaths();
+
+        CreatePictureView();
+    }
+
+    private void CreatePictureView()
+    {
         //create a new card scroll viewer for this context
         CardScrollView csvCardsView = new CardScrollView(this);
         //create a new adapter for the scroll viewer
@@ -104,7 +115,6 @@ public class MainActivity extends Activity
 
         //set the view of this activity
         setContentView(csvCardsView);
-
     }
 
     /***
@@ -213,33 +223,37 @@ public class MainActivity extends Activity
                 //handled
 
                 return true;
-            case R.id.upload_menu_item:
-
-                if (mcmCon.getActiveNetworkInfo().isConnected())
-                {
-                    //get google account credentials and store to member variable
-                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
-                    //get a list of all the accounts on the device
-                    Account[] myAccounts = AccountManager.get(this).getAccounts();
-                    //for each account
-                    for (int i = 0; i < myAccounts.length; i++) {
-                        //if the account type is google
-                        if (myAccounts[i].type.equals("com.google"))
-                            //set this as the selected Account
-                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
-                    }
-                    //get the drive service
-                    mdService = getDriveService(mgacCredential);
-                    //save the selected item to google drive
-                    saveFileToDrive(mlsPaths.get(miPosition));
-                }
-
-                return true;
+//            case R.id.upload_menu_item:
+//
+//                if (mcmCon.getActiveNetworkInfo().isConnected())
+//                {
+//                    //get google account credentials and store to member variable
+//                    mgacCredential = GoogleAccountCredential.usingOAuth2(this, Arrays.asList(DriveScopes.DRIVE));
+//                    //get a list of all the accounts on the device
+//                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+//                    //for each account
+//                    for (int i = 0; i < myAccounts.length; i++) {
+//                        //if the account type is google
+//                        if (myAccounts[i].type.equals("com.google"))
+//                            //set this as the selected Account
+//                            mgacCredential.setSelectedAccountName(myAccounts[i].name);
+//                    }
+//                    //get the drive service
+//                    mdService = getDriveService(mgacCredential);
+//                    //save the selected item to google drive
+//                    saveFileToDrive(mlsPaths.get(miPosition));
+//                }
+//
+//                return true;
 
             case R.id.uploadphone_menu_item:
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
+                    Card TestCard = new Card(this);
+                    TestCard.setText("Uploading");
+                    setContentView(TestCard.toView());
+
 
                     String sContainer = "";
                     String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
@@ -288,6 +302,71 @@ public class MainActivity extends Activity
         }
     };
 
+
+    public class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
+    {
+        private String mUrl;
+        private ArrayList<String> mlsPaths;
+        private int miPosition;
+
+        public ImageUploaderTask(String url, int iPosition, ArrayList<String> lsPath)
+        {
+            mUrl = url;
+            miPosition = iPosition;
+            mlsPaths = lsPath;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params)
+        {
+            try
+            {
+                //get the image data
+                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                // Post our image data (byte array) to the server
+                URL url = new URL(mUrl.replace("\"", ""));
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setDoOutput(true);
+                urlConnection.setRequestMethod("PUT");
+                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+                urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
+                // Write image data to server
+                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+                wr.write(byteArray);
+                wr.flush();
+                wr.close();
+                int response = urlConnection.getResponseCode();
+                //If we successfully uploaded, return true
+                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+                    return true;
+            }
+
+            catch (Exception ex)
+            {
+                Log.e("GlassShareImageUploadTask", ex.getMessage());
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean uploaded)
+        {
+            if (uploaded)
+            {
+                CreatePictureView();
+//                mAlertDialog.cancel();
+//                mStorageService.getBlobsForContainer(mContainerName);
+            }
+        }
+    }
+
+
+
+
+
     private void saveFileToDrive(String sPath)
     {
         final String msPath = sPath;
@@ -310,7 +389,10 @@ public class MainActivity extends Activity
 
                     File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
                     if (gdfFile != null)
+                    {
                         Log.d("GlassShareUploadTask", "Uploaded");
+                    }
+
                 }
                 catch (UserRecoverableAuthIOException e) {
                     Log.d("GlassShareUploadTask", e.toString());
