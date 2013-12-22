@@ -116,7 +116,6 @@ public class csaAdapter extends CardScrollAdapter
         }
     }
 
-
     private static BitmapWorkerTask getBitmapWorkerTask(ImageView ivCard)
     {
         if (ivCard != null)

@@ -1,6 +1,23 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="card_generic_padding">40.0px</dimen>
+    <dimen name="card_adjusted_top_padding">36.0px</dimen>
+    <dimen name="card_adjusted_bottom_padding">20.0px</dimen>
+    <dimen name="card_footer_height">50.0px</dimen>
+    <dimen name="card_footer_top_margin">7.0px</dimen>
+    <dimen name="card_horizontal_padding">20.0px</dimen>
+    <dimen name="card_small_text_size">26.0px</dimen>
+    <dimen name="card_lhs_img_left_padding">30.0px</dimen>
+    <dimen name="card_lhs_img_width">200.0px</dimen>
+    <dimen name="menu_text_size">70.0px</dimen>
+    <dimen name="menu_description_text_size">26.0px</dimen>
+    <dimen name="menu_icon_margin">20.0px</dimen>
+    <dimen name="menu_icon_size">50.0px</dimen>
+    <dimen name="slider_height">12.0px</dimen>
+    <item type="dimen" name="swipe_velocity_threshold_px_per_ms">3.0</item>
+    <item type="dimen" name="fast_motion_threshold_px_per_ms">0.5</item>
+    <dimen name="knob_pointer_size">20.0dip</dimen>
+    <dimen name="knob_pointer_spacing">20.0dip</dimen>
+    <dimen name="knob_trail_width">66.0dip</dimen>
 
     </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="attempt_delays">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>60</item>
+    </integer-array>
+    <array name="dynamic_text_sizes">
+        <item>70.0px</item>
+        <item>50.0px</item>
+        <item>40.0px</item>
+        <item>34.0px</item>
+        <item>32.0px</item>
+        <item>30.0px</item>
+    </array>
+</resources>

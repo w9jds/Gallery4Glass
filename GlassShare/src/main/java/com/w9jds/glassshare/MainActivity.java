@@ -1,7 +1,5 @@
 package com.w9jds.glassshare;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -13,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -22,7 +19,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -76,7 +72,6 @@ public class MainActivity extends Activity
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
-
 
             StorageApplication myApp = (StorageApplication) getApplication();
             mStorageService = myApp.getStorageService();
@@ -250,30 +245,29 @@ public class MainActivity extends Activity
 
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
-                    Card TestCard = new Card(this);
-                    TestCard.setText("Uploading");
-                    setContentView(TestCard.toView());
+//                    View loadCard = findViewById(R.layout.loading_card);
+//                    ((TextView) loadCard.findViewById(R.id.label_text)).setText("Uploading");
+//                    ((ImageView) loadCard.findViewById(R.id.menu_image)).setImageResource(R.drawable.ic_mobile_phone_50);
+                    setContentView(R.layout.loading_card);
 
-
-                    String sContainer = "";
-                    String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
-
-                    Account[] myAccounts = AccountManager.get(this).getAccounts();
-                    //for each account
-                    for (int i = 0; i < myAccounts.length; i++)
-                    {
-                        //if the account type is google
-                        if (myAccounts[i].type.equals("com.google"))
-                        {
-                            //set this as the selected Account
-                            String[] saAccount = myAccounts[i].name.split("@|\\.");
-                            sContainer = saAccount[0] + saAccount[1] + saAccount[2];
-                        }
-                    }
-
-                    mStorageService.addContainer(sContainer, false);
-                    mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length-2]);
-
+//                    String sContainer = "";
+//                    String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
+//
+//                    Account[] myAccounts = AccountManager.get(this).getAccounts();
+//                    //for each account
+//                    for (int i = 0; i < myAccounts.length; i++)
+//                    {
+//                        //if the account type is google
+//                        if (myAccounts[i].type.equals("com.google"))
+//                        {
+//                            //set this as the selected Account
+//                            String[] saAccount = myAccounts[i].name.split("@|\\.");
+//                            sContainer = saAccount[0] + saAccount[1] + saAccount[2];
+//                        }
+//                    }
+//
+//                    mStorageService.addContainer(sContainer, false);
+//                    mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length-2]);
                 }
                 return true;
 
@@ -296,75 +290,101 @@ public class MainActivity extends Activity
                 //If a blob has been created, upload the image
                 JsonObject blob = mStorageService.getLoadedBlob();
                 String sasUrl = blob.getAsJsonPrimitive("sasUrl").toString();
-                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).execute();
+//                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).execute();
+
+                try
+                {
+                    //get the image data
+                    Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+                    // Post our image data (byte array) to the server
+                    URL url = new URL(sasUrl.replace("\"", ""));
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.setDoOutput(true);
+                    urlConnection.setRequestMethod("PUT");
+                    urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+                    urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
+                    // Write image data to server
+                    DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+                    wr.write(byteArray);
+                    wr.flush();
+                    wr.close();
+                    int response = urlConnection.getResponseCode();
+                    //If we successfully uploaded, return true
+                    if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+                        CreatePictureView();
+    //                    return true;
+                }
+                catch(Exception e){
+
+                }
 
             }
         }
     };
 
 
-    public class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
-    {
-        private String mUrl;
-        private ArrayList<String> mlsPaths;
-        private int miPosition;
-
-        public ImageUploaderTask(String url, int iPosition, ArrayList<String> lsPath)
-        {
-            mUrl = url;
-            miPosition = iPosition;
-            mlsPaths = lsPath;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params)
-        {
-            try
-            {
-                //get the image data
-                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-                // Post our image data (byte array) to the server
-                URL url = new URL(mUrl.replace("\"", ""));
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setDoOutput(true);
-                urlConnection.setRequestMethod("PUT");
-                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
-                urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
-                // Write image data to server
-                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
-                wr.write(byteArray);
-                wr.flush();
-                wr.close();
-                int response = urlConnection.getResponseCode();
-                //If we successfully uploaded, return true
-                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
-                    return true;
-            }
-
-            catch (Exception ex)
-            {
-                Log.e("GlassShareImageUploadTask", ex.getMessage());
-            }
-            return false;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean uploaded)
-        {
-            if (uploaded)
-            {
-                CreatePictureView();
-//                mAlertDialog.cancel();
-//                mStorageService.getBlobsForContainer(mContainerName);
-            }
-        }
-    }
-
-
-
+//    public class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
+//    {
+//        private String mUrl;
+//        private ArrayList<String> mlsPaths;
+//        private int miPosition;
+//
+//        public ImageUploaderTask(String url, int iPosition, ArrayList<String> lsPath)
+//        {
+//            mUrl = url;
+//            miPosition = iPosition;
+//            mlsPaths = lsPath;
+//        }
+//
+//        @Override
+//        protected Boolean doInBackground(Void... params)
+//        {
+//            try
+//            {
+//                //get the image data
+//                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//                byte[] byteArray = stream.toByteArray();
+//                // Post our image data (byte array) to the server
+//                URL url = new URL(mUrl.replace("\"", ""));
+//                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+//                urlConnection.setDoOutput(true);
+//                urlConnection.setRequestMethod("PUT");
+//                urlConnection.addRequestProperty("Content-Type", "image/jpeg");
+//                urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
+//                // Write image data to server
+//                DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
+//                wr.write(byteArray);
+//                wr.flush();
+//                wr.close();
+//                int response = urlConnection.getResponseCode();
+//                //If we successfully uploaded, return true
+//                if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
+//                    return true;
+//            }
+//
+//            catch (Exception ex)
+//            {
+//                Log.e("GlassShareImageUploadTask", ex.getMessage());
+//            }
+//            return false;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Boolean uploaded)
+//        {
+//            if (uploaded)
+//            {
+//                CreatePictureView();
+////                mAlertDialog.cancel();
+////                mStorageService.getBlobsForContainer(mContainerName);
+//            }
+//        }
+//    }
 
 
     private void saveFileToDrive(String sPath)

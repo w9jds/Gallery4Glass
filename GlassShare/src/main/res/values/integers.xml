@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="activity_animation_duration_ms">200</integer>
+    <integer name="knob_movement_dampening">5</integer>
+    <integer name="free_attempts">11</integer>
+    <integer name="activation_delay_ms">15000</integer>
+    <integer name="home_reset_timeout_ms">5000</integer>
+</resources>
