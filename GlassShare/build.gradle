@@ -52,5 +52,4 @@ dependencies
             compile files('libs/google-play-services.jar')
             compile files('libs/gson-2.2.2.jar')
             compile files('libs/mobileservices-1.1.0.jar')
-
-        }
+}
