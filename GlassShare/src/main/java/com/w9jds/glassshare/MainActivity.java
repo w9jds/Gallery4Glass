@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -72,6 +74,7 @@ public class MainActivity extends Activity
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
+
 
             StorageApplication myApp = (StorageApplication) getApplication();
             mStorageService = myApp.getStorageService();
@@ -248,7 +251,9 @@ public class MainActivity extends Activity
 //                    View loadCard = findViewById(R.layout.loading_card);
 //                    ((TextView) loadCard.findViewById(R.id.label_text)).setText("Uploading");
 //                    ((ImageView) loadCard.findViewById(R.id.menu_image)).setImageResource(R.drawable.ic_mobile_phone_50);
-                    setContentView(R.layout.loading_card);
+                    setContentView(R.layout.menu_layout);
+                    ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
+                    ((TextView)findViewById(R.id.label)).setText("Uploading");
 
 //                    String sContainer = "";
 //                    String[] saImage = mlsPaths.get(miPosition).split("/|\\.");

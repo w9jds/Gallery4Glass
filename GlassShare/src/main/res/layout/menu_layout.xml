@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="@dimen/card_generic_padding" android:layout_marginRight="@dimen/card_generic_padding" class="com.google.android.glass.menu.SliderMenuView$SliderMenuItemView"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@id/icon"
+            android:layout_width="@dimen/menu_icon_size"
+            android:layout_height="@dimen/menu_icon_size"
+            android:layout_marginRight="@dimen/menu_icon_margin"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:textSize="@dimen/menu_text_size"
+            android:ellipsize="end"
+            android:id="@id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+
+    <!--<TextView-->
+    <!--android:textSize="@dimen/menu_description_text_size"-->
+    <!--android:ellipsize="end"-->
+    <!--android:layout_gravity="bottom|center"-->
+    <!--android:id="@id/description"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="@dimen/card_generic_padding"-->
+    <!--android:singleLine="true" />-->
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateOnly="true"
+        android:indeterminateDrawable="@drawable/progress_indeterminate_horizontal_holo"
+        android:indeterminate="true"
+        android:minWidth="360px"
+        android:paddingLeft="0px"
+        android:paddingRight="0px"
+        android:max="100"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="-13dp"/>
+
+
+</LinearLayout>

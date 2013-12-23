@@ -2,9 +2,4 @@
 
     <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault" />
 
-    <style name="MenuAnimation" parent="@*android:style/Animation">
-        <item name="android:windowEnterAnimation">@anim/menu_enter</item>
-        <item name="android:windowExitAnimation">@anim/menu_exit</item>
-    </style>
-
 </resources>

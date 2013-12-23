@@ -2,13 +2,33 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState />
+      <GlobalState>
+        <option name="hideForNonLayoutFiles" value="false" />
+        <option name="visible" value="false" />
+      </GlobalState>
     </option>
   </component>
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <target>android-15</target>
+      </config>
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_indeterminate_horizontal_holo.xml">
+        <config>
+          <device>Nexus 4</device>
+          <state>Landscape</state>
+          <theme>@android:style/Theme.Holo.Light</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/loading_card.xml">
+        <config>
+          <device>Nexus 4</device>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
@@ -69,7 +89,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="381" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
+      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="386" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -94,33 +114,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.41551247" vertical-offset="225" max-vertical-offset="4995">
+            <state line="76" column="0" selection-start="2716" selection-end="2716" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="5115">
               <folding>
-                <element signature="e#2292#2300#0" expanded="true" />
-                <element signature="e#5908#5916#0" expanded="true" />
-                <element signature="e#12537#12612#0" expanded="false" />
+                <element signature="e#2357#2365#0" expanded="true" />
+                <element signature="e#4880#5130#0" expanded="true" />
+                <element signature="e#5119#5120#0" expanded="true" />
+                <element signature="e#5974#5982#0" expanded="true" />
+                <element signature="e#12787#12862#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StorageService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2565">
+            <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.20053476" vertical-offset="315" max-vertical-offset="2580">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loading_card.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/loading_card.xml">
+      <file leaf-file-name="menu_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="88" selection-start="1629" selection-end="1629" vertical-scroll-proportion="-25.555555" vertical-offset="0" max-vertical-offset="825">
-              <folding />
+            <state line="57" column="15" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-30.555555" vertical-offset="30" max-vertical-offset="945">
+              <folding>
+                <element signature="e#197#226#0" expanded="true" />
+                <element signature="e#254#283#0" expanded="true" />
+                <element signature="e#689#712#0" expanded="true" />
+                <element signature="e#747#770#0" expanded="true" />
+                <element signature="e#810#835#0" expanded="true" />
+                <element signature="e#931#954#0" expanded="true" />
+              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer">
@@ -131,18 +160,30 @@
       <file leaf-file-name="progress_indeterminate_horizontal_holo.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_indeterminate_horizontal_holo.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="5" column="42" selection-start="219" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="progress_horizontal_holo_dark.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_dark.xml">
+      <file leaf-file-name="progress_horizontal_holo_light.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_light.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+            <state line="18" column="15" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="405">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/card_layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="270">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -568,16 +609,18 @@
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/ImageUploaderTask.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/xml/progress_indeterminate_horizontal.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/anim/menu_exit.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/anim/menu_hide.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_light.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_dark.xml" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_indeterminate_horizontal_holo.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/loading_card.xml" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
       </list>
@@ -621,6 +664,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1033,7 +1077,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1052,7 +1095,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MyGlassShare" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="AndroidTargetDevices" value="015ECD710300400C" />
@@ -1112,6 +1155,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1137,19 +1193,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1281,7 +1324,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="784" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1290,7 +1333,6 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3313433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3963964" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1298,19 +1340,20 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892396" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3228228" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789317" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32732734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24892396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24928162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3313433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1339,9 +1382,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="164" column="0" selection-start="6536" selection-end="6536" vertical-scroll-proportion="0.0" vertical-offset="2460" max-vertical-offset="3240">
           <folding>
-            <element signature="e#2292#2300#0" expanded="true" />
-            <element signature="e#5908#5916#0" expanded="true" />
-            <element signature="e#12537#12612#0" expanded="false" />
+            <element signature="e#2357#2365#0" expanded="true" />
+            <element signature="e#4880#5130#0" expanded="true" />
+            <element signature="e#5119#5120#0" expanded="true" />
+            <element signature="e#5974#5982#0" expanded="true" />
+            <element signature="e#12787#12862#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1350,9 +1395,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="0" selection-start="2286" selection-end="2286" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="3180">
           <folding>
-            <element signature="e#2292#2300#0" expanded="true" />
-            <element signature="e#5908#5916#0" expanded="true" />
-            <element signature="e#12537#12612#0" expanded="false" />
+            <element signature="e#2357#2365#0" expanded="true" />
+            <element signature="e#4880#5130#0" expanded="true" />
+            <element signature="e#5119#5120#0" expanded="true" />
+            <element signature="e#5974#5982#0" expanded="true" />
+            <element signature="e#12787#12862#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1450,15 +1497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding>
-            <element signature="e#822#840#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="51" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.0" vertical-offset="916" max-vertical-offset="1290">
@@ -1481,13 +1519,6 @@
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="422">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="12" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
           <folding />
         </state>
       </provider>
@@ -1567,31 +1598,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_secondary_holo_light.9.png">
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_secondary_holo_dark.9.png">
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_primary_holo_light.9.png">
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_primary_holo_dark.9.png">
       <provider editor-type-id="images">
         <state />
       </provider>
@@ -1615,23 +1622,61 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_dark.xml">
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+        <state line="10" column="45" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_indeterminate_horizontal_holo.xml">
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="409">
+        <state line="2" column="76" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_secondary_holo_light.9.png">
+      <provider editor-type-id="images">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="ninepatcheditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_primary_holo_light.9.png">
+      <provider editor-type-id="images">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="ninepatcheditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/progress_primary_holo_dark.9.png">
+      <provider editor-type-id="images">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="ninepatcheditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_dark.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="595" selection-end="595" vertical-scroll-proportion="0.7620321" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_horizontal_holo_light.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="409" selection-end="409" vertical-scroll-proportion="0.30564263" vertical-offset="0" max-vertical-offset="638">
+        <state line="18" column="15" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0" vertical-offset="31" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_indeterminate_horizontal_holo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="42" selection-start="219" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
@@ -1646,31 +1691,40 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/loading_card.xml">
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="88" selection-start="1629" selection-end="1629" vertical-scroll-proportion="-25.555555" vertical-offset="0" max-vertical-offset="825">
-          <folding />
+        <state line="57" column="15" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-30.555555" vertical-offset="30" max-vertical-offset="945">
+          <folding>
+            <element signature="e#197#226#0" expanded="true" />
+            <element signature="e#254#283#0" expanded="true" />
+            <element signature="e#689#712#0" expanded="true" />
+            <element signature="e#747#770#0" expanded="true" />
+            <element signature="e#810#835#0" expanded="true" />
+            <element signature="e#931#954#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2565">
-          <folding />
+        <state line="76" column="0" selection-start="2716" selection-end="2716" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="5115">
+          <folding>
+            <element signature="e#2357#2365#0" expanded="true" />
+            <element signature="e#4880#5130#0" expanded="true" />
+            <element signature="e#5119#5120#0" expanded="true" />
+            <element signature="e#5974#5982#0" expanded="true" />
+            <element signature="e#12787#12862#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.41551247" vertical-offset="225" max-vertical-offset="4995">
-          <folding>
-            <element signature="e#2292#2300#0" expanded="true" />
-            <element signature="e#5908#5916#0" expanded="true" />
-            <element signature="e#12537#12612#0" expanded="false" />
-          </folding>
+        <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.20053476" vertical-offset="315" max-vertical-offset="2580">
+          <folding />
         </state>
       </provider>
     </entry>
