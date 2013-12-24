@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PowerManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -70,8 +69,6 @@ public class MainActivity extends Activity
     //variable for the last selected index
     private int miPosition;
 
-    protected PowerManager.WakeLock mWakeLock;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -94,6 +91,14 @@ public class MainActivity extends Activity
         CreatePictureView();
     }
 
+    @Override
+    protected void onStop()
+    {
+        Log.d("GlassShare", "Closing Application");
+        finish();
+        super.onStop();
+    }
+
     private void CreatePictureView()
     {
         //create a new card scroll viewer for this context
@@ -110,7 +115,9 @@ public class MainActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                maManager.playSoundEffect(Sounds.SELECTED);
+                maManager.playSoundEffect(Sounds.TAP);
+
+
                 //save the card index that was selected
                 miPosition = position;
                 //open the menu
@@ -261,9 +268,9 @@ public class MainActivity extends Activity
                     ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
                     ((TextView)findViewById(R.id.label)).setText("Uploading");
 
-                    final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-                    this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
-                    this.mWakeLock.acquire();
+//                    final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+//                    this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+//                    this.mWakeLock.acquire();
 
                     String sContainer = "";
                     String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
@@ -282,7 +289,7 @@ public class MainActivity extends Activity
                     }
 
                     mStorageService.addContainer(sContainer, false);
-                    mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length-2]);
+                    mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length - 2]);
                 }
                 else
                     maManager.playSoundEffect(Sounds.DISALLOWED);
@@ -355,12 +362,15 @@ public class MainActivity extends Activity
                 Log.d("ImageUpload", "DataOutputStream Closed");
                 int response = urlConnection.getResponseCode();
                 Log.d("ImageUpload", "Got response code " + response);
+                urlConnection.disconnect();
+                Log.d("ImageUpload", "Disconnected Connection");
                 //If we successfully uploaded, return true
                 if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
                 {
                     Log.d("ImageUpload", "Image uploaded");
                     return true;
                 }
+
             }
 
             catch (Exception ex)
@@ -375,16 +385,18 @@ public class MainActivity extends Activity
         {
             if (uploaded)
             {
-                setContentView(R.layout.menu_layout);
-                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_bike_50);
-                ((TextView)findViewById(R.id.label)).setText("Uploaded");
-                findViewById(R.id.progress).setVisibility(View.GONE);
+//                setContentView(R.layout.menu_layout);
+//                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_bike_50);
+//                ((TextView)findViewById(R.id.label)).setText("Uploaded");
+//                findViewById(R.id.progress).setVisibility(View.GONE);
+
 
                 maManager.playSoundEffect(Sounds.SUCCESS);
+//                mWakeLock.release();
 
-                CreatePictureView();
-                mWakeLock.release();
             }
+
+            CreatePictureView();
         }
     }
 

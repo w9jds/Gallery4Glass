@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:keepScreenOn="true"
     android:layout_marginLeft="@dimen/card_generic_padding" android:layout_marginRight="@dimen/card_generic_padding" class="com.google.android.glass.menu.SliderMenuView$SliderMenuItemView"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
