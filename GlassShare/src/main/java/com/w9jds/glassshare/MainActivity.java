@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -23,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
@@ -52,6 +54,7 @@ public class MainActivity extends Activity
     private final String CAMERA_IMAGE_BUCKET_ID = getBucketId(CAMERA_IMAGE_BUCKET_NAME);
 
     private ConnectivityManager mcmCon;
+    private AudioManager maManager;
 
     //create member variables for Azure
     private StorageService mStorageService;
@@ -75,6 +78,7 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
 
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
@@ -106,6 +110,7 @@ public class MainActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                maManager.playSoundEffect(Sounds.SELECTED);
                 //save the card index that was selected
                 miPosition = position;
                 //open the menu
@@ -121,7 +126,8 @@ public class MainActivity extends Activity
      * Register for broadcasts
      */
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         IntentFilter filter = new IntentFilter();
         filter.addAction("blob.created");
         registerReceiver(receiver, filter);
@@ -132,7 +138,8 @@ public class MainActivity extends Activity
      * Unregister for broadcasts
      */
     @Override
-    protected void onPause() {
+    protected void onPause()
+    {
         unregisterReceiver(receiver);
         super.onPause();
     }
@@ -277,6 +284,8 @@ public class MainActivity extends Activity
                     mStorageService.addContainer(sContainer, false);
                     mStorageService.getSasForNewBlob(sContainer, saImage[saImage.length-2]);
                 }
+                else
+                    maManager.playSoundEffect(Sounds.DISALLOWED);
                 return true;
 
             default:
@@ -323,11 +332,6 @@ public class MainActivity extends Activity
         {
             try
             {
-//                //get the image data
-//                Bitmap bmp = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
-//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
                 java.io.File fImage = new java.io.File(mlsPaths.get(miPosition));
                 FileInputStream fisStream = new FileInputStream(fImage);
                 byte[] byteArray = new byte[(int)fImage.length()];
@@ -371,10 +375,15 @@ public class MainActivity extends Activity
         {
             if (uploaded)
             {
+                setContentView(R.layout.menu_layout);
+                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_bike_50);
+                ((TextView)findViewById(R.id.label)).setText("Uploaded");
+                findViewById(R.id.progress).setVisibility(View.GONE);
+
+                maManager.playSoundEffect(Sounds.SUCCESS);
+
                 CreatePictureView();
                 mWakeLock.release();
-//                mAlertDialog.cancel();
-//                mStorageService.getBlobsForContainer(mContainerName);
             }
         }
     }

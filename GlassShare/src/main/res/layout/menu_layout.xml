@@ -42,16 +42,11 @@
     <!--android:singleLine="true" />-->
 
     <ProgressBar
+        android:id="@id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateOnly="true"
         android:indeterminateDrawable="@drawable/progress_indeterminate_horizontal_holo"
         android:indeterminate="true"
-        android:minWidth="360px"
-        android:paddingLeft="0px"
-        android:paddingRight="0px"
-        android:max="100"
-        android:layout_marginLeft="-10dp"
         android:layout_marginTop="-13dp"/>
 
 
