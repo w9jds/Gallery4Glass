@@ -46,9 +46,11 @@
         android:id="@id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/progress_horizontal_holo_dark"
         android:indeterminateDrawable="@drawable/progress_indeterminate_horizontal_holo"
+        android:max="100"
         android:indeterminate="true"
         android:layout_marginTop="-13dp"/>
-
 
 </LinearLayout>

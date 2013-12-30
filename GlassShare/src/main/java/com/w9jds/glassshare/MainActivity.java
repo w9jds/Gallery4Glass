@@ -15,12 +15,14 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.glass.media.Sounds;
@@ -222,7 +224,17 @@ public class MainActivity extends Activity
         {
             case R.id.delete_menu_item:
                 //set the text as deleting
-                iItem.setTitle(R.string.deleting_label);
+                setContentView(R.layout.menu_layout);
+                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_delete_50);
+                ((TextView)findViewById(R.id.label)).setText("Deleting");
+                ProgressBar pbProgress = (ProgressBar)findViewById(R.id.progress);
+
+                pbProgress.setIndeterminate(false);
+
+                for (int i = 0; i <= 100; i++)
+                {
+                    pbProgress.setProgress(i);
+                }
 
                 //pull the file from the path of the selected item
                 java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
@@ -236,6 +248,7 @@ public class MainActivity extends Activity
                 mcvAdapter.notifyDataSetChanged();
                 //handled
 
+                maManager.playSoundEffect(Sounds.SUCCESS);
                 return true;
 //            case R.id.upload_menu_item:
 //
@@ -267,10 +280,6 @@ public class MainActivity extends Activity
                     setContentView(R.layout.menu_layout);
                     ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
                     ((TextView)findViewById(R.id.label)).setText("Uploading");
-
-//                    final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-//                    this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
-//                    this.mWakeLock.acquire();
 
                     String sContainer = "";
                     String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
@@ -385,18 +394,24 @@ public class MainActivity extends Activity
         {
             if (uploaded)
             {
-//                setContentView(R.layout.menu_layout);
-//                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_bike_50);
-//                ((TextView)findViewById(R.id.label)).setText("Uploaded");
-//                findViewById(R.id.progress).setVisibility(View.GONE);
-
+                setContentView(R.layout.menu_layout);
+                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
+                ((TextView)findViewById(R.id.label)).setText("Uploaded");
+                findViewById(R.id.progress).setVisibility(View.GONE);
 
                 maManager.playSoundEffect(Sounds.SUCCESS);
 //                mWakeLock.release();
 
+
             }
 
-            CreatePictureView();
+            new Handler().postDelayed(new Runnable()
+            {
+                public void run()
+                {
+                    CreatePictureView();
+                }
+            }, 1000);
         }
     }
 

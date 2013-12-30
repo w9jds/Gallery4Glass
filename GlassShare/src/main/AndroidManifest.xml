@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.w9jds.glassshare"
-    android:versionCode="10"
-    android:versionName="0.10-alpha" >
+    android:versionCode="12"
+    android:versionName="0.12-alpha" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -20,8 +20,6 @@
         android:icon="@drawable/ic_photo_50"
         android:label="@string/app_name"
         android:name="com.w9jds.glassshare.Classes.StorageApplication">
-
-
 
         <meta-data
             android:name="com.google.android.gms.version"

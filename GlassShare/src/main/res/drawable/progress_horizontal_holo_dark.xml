@@ -11,6 +11,7 @@
             android:drawable="@drawable/progress_secondary_holo_dark"
             android:scaleWidth="100%" />
     </item>
+
     <item
         android:id="@id/progress">
         <scale

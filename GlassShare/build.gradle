@@ -4,11 +4,10 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.7.+'
-        classpath 'com.newrelic.agent.android:agent-gradle-plugin:3.239.0'
     }
 }
+
 apply plugin: 'android'
-apply plugin: 'newrelic'
 
 repositories {
     mavenCentral()
@@ -19,7 +18,8 @@ android {
     compileSdkVersion 'Google Inc.:Glass Development Kit Sneak Peek:15'
     buildToolsVersion '17.0.0'
 
-    defaultConfig {
+    defaultConfig
+            {
         minSdkVersion 15
         targetSdkVersion 15
     }
@@ -37,7 +37,6 @@ android {
 
 dependencies
         {
-            compile 'com.newrelic.agent.android:android-agent:3.239.0'
             compile 'com.google.api-client:google-api-client:1.17.0-rc@jar'
             compile 'com.google.api-client:google-api-client-android:1.17.0-rc@jar'
             compile 'com.google.http-client:google-http-client:1.17.0-rc@jar'
@@ -52,4 +51,4 @@ dependencies
             compile files('libs/google-play-services.jar')
             compile files('libs/gson-2.2.2.jar')
             compile files('libs/mobileservices-1.1.0.jar')
-}
+        }
