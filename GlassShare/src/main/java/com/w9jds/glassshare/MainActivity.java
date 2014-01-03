@@ -227,14 +227,16 @@ public class MainActivity extends Activity
                 setContentView(R.layout.menu_layout);
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_delete_50);
                 ((TextView)findViewById(R.id.label)).setText("Deleting");
-                ProgressBar pbProgress = (ProgressBar)findViewById(R.id.progress);
 
+                ProgressBar pbProgress = (ProgressBar)findViewById(R.id.progress);
                 pbProgress.setIndeterminate(false);
 
-                for (int i = 0; i <= 100; i++)
-                {
-                    pbProgress.setProgress(i);
-                }
+//                for (int i = 0; i <= 100; i++)
+//                {
+//
+//                    pbProgress.setProgress(i);
+//
+//                }
 
                 //pull the file from the path of the selected item
                 java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
@@ -248,7 +250,22 @@ public class MainActivity extends Activity
                 mcvAdapter.notifyDataSetChanged();
                 //handled
 
+
+                setContentView(R.layout.menu_layout);
+                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
+                ((TextView)findViewById(R.id.label)).setText("Deleted");
+                findViewById(R.id.progress).setVisibility(View.GONE);
+
                 maManager.playSoundEffect(Sounds.SUCCESS);
+
+                new Handler().postDelayed(new Runnable()
+                {
+                    public void run()
+                    {
+                        CreatePictureView();
+                    }
+                }, 1000);
+
                 return true;
 //            case R.id.upload_menu_item:
 //
@@ -414,7 +431,6 @@ public class MainActivity extends Activity
             }, 1000);
         }
     }
-
 
     private void saveFileToDrive(String sPath)
     {
