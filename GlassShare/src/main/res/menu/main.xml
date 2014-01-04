@@ -11,6 +11,11 @@
         <!--android:icon="@drawable/ic_archive_50"/>-->
 
     <item
+        android:id="@+id/vignette_menu_item"
+        android:title="@string/vignette_label"
+        android:icon="@drawable/ic_photo_50"/>
+
+    <item
         android:id="@+id/uploadphone_menu_item"
         android:title="@string/uploadphone_label"
         android:icon="@drawable/ic_mobile_phone_50"/>

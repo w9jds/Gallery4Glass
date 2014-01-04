@@ -9,6 +9,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -36,12 +44,15 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
 import com.w9jds.glassshare.Adapters.csaAdapter;
+import com.w9jds.glassshare.Classes.Size;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -222,6 +233,12 @@ public class MainActivity extends Activity
     {
         switch (iItem.getItemId())
         {
+            case R.id.vignette_menu_item:
+
+                createComposite();
+
+                return true;
+
             case R.id.delete_menu_item:
                 //set the text as deleting
                 setContentView(R.layout.menu_layout);
@@ -481,7 +498,58 @@ public class MainActivity extends Activity
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
     }
 
+    static final Size FULL_COMPOSITE_SIZE;
+    static final Size PREVIEW_COMPOSITE_SIZE;
+    private static final Paint SCALE_PAINT;
+    private static final Paint SCREEN_PAINT;
+    private static final RectF SCREEN_POSITION;
+//    private final String screenshotPath;
 
+    static
+    {
+        FULL_COMPOSITE_SIZE = new Size(1920, 1080);
+        PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
+        SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
+        SCALE_PAINT = new Paint();
+        SCALE_PAINT.setFilterBitmap(true);
+        SCALE_PAINT.setDither(true);
+        SCREEN_PAINT = new Paint(SCALE_PAINT);
+        SCREEN_PAINT.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SCREEN));
+    }
+
+    protected void createComposite()
+    {
+
+        Bitmap paramBitmap = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
+        Size paramSize = FULL_COMPOSITE_SIZE;
+
+        Bitmap localBitmap2 = Bitmap.createBitmap(paramSize.width, paramSize.height, Bitmap.Config.ARGB_8888);
+        Canvas localCanvas = new Canvas(localBitmap2);
+        int i = (int)((paramSize.height - paramBitmap.getHeight() * (paramSize.width / paramBitmap.getWidth())) / 2.0F);
+        localCanvas.drawBitmap(paramBitmap, null, new Rect(0, i, paramSize.width, paramSize.height - i), SCALE_PAINT);
+        localCanvas.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, paramSize.width, paramSize.height), SCALE_PAINT);
+        localCanvas.drawBitmap(BitmapFactory.decodeFile(mlsPaths.get(miPosition + 1)), null, new Rect(Math.round(SCREEN_POSITION.left * paramSize.width), Math.round(SCREEN_POSITION.top * paramSize.height), Math.round(SCREEN_POSITION.right * paramSize.width), Math.round(SCREEN_POSITION.bottom * paramSize.height)), SCREEN_PAINT);
+
+        try
+        {
+            String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
+            OutputStream fOut;
+            java.io.File file = new java.io.File(path, "x.jpg");
+            fOut = new FileOutputStream(file);
+
+            localBitmap2.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+            fOut.flush();
+            fOut.close();
+
+            MediaStore.Images.Media.insertImage(this.getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
+        }
+        catch (Exception e)
+        {
+            Log.d("MyGlassShare", e.getCause().toString());
+        }
+
+//        return localBitmap2;
+    }
 }
 
 
