@@ -13,7 +13,7 @@
     <item
         android:id="@+id/vignette_menu_item"
         android:title="@string/vignette_label"
-        android:icon="@drawable/ic_photo_50"/>
+        android:icon="@drawable/ic_vignette_medium"/>
 
     <item
         android:id="@+id/uploadphone_menu_item"

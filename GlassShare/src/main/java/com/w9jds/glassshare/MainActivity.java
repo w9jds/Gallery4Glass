@@ -434,9 +434,6 @@ public class MainActivity extends Activity
                 findViewById(R.id.progress).setVisibility(View.GONE);
 
                 maManager.playSoundEffect(Sounds.SUCCESS);
-//                mWakeLock.release();
-
-
             }
 
             new Handler().postDelayed(new Runnable()
@@ -503,41 +500,46 @@ public class MainActivity extends Activity
     private static final Paint SCALE_PAINT;
     private static final Paint SCREEN_PAINT;
     private static final RectF SCREEN_POSITION;
-//    private final String screenshotPath;
 
     static
     {
         FULL_COMPOSITE_SIZE = new Size(1920, 1080);
         PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
         SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
+
         SCALE_PAINT = new Paint();
         SCALE_PAINT.setFilterBitmap(true);
         SCALE_PAINT.setDither(true);
+
         SCREEN_PAINT = new Paint(SCALE_PAINT);
         SCREEN_PAINT.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SCREEN));
     }
 
     protected void createComposite()
     {
+        Bitmap bitMain = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
 
-        Bitmap paramBitmap = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
-        Size paramSize = FULL_COMPOSITE_SIZE;
+        Size sWhole = FULL_COMPOSITE_SIZE;
 
-        Bitmap localBitmap2 = Bitmap.createBitmap(paramSize.width, paramSize.height, Bitmap.Config.ARGB_8888);
-        Canvas localCanvas = new Canvas(localBitmap2);
-        int i = (int)((paramSize.height - paramBitmap.getHeight() * (paramSize.width / paramBitmap.getWidth())) / 2.0F);
-        localCanvas.drawBitmap(paramBitmap, null, new Rect(0, i, paramSize.width, paramSize.height - i), SCALE_PAINT);
-        localCanvas.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, paramSize.width, paramSize.height), SCALE_PAINT);
-        localCanvas.drawBitmap(BitmapFactory.decodeFile(mlsPaths.get(miPosition + 1)), null, new Rect(Math.round(SCREEN_POSITION.left * paramSize.width), Math.round(SCREEN_POSITION.top * paramSize.height), Math.round(SCREEN_POSITION.right * paramSize.width), Math.round(SCREEN_POSITION.bottom * paramSize.height)), SCREEN_PAINT);
+        Bitmap bitWhole = Bitmap.createBitmap(sWhole.Width, sWhole.Height, Bitmap.Config.ARGB_8888);
+        Canvas cBuild = new Canvas(bitWhole);
+
+        int i = (int)((sWhole.Height - bitMain.getHeight() * (sWhole.Width / bitMain.getWidth())) / 2.0F);
+        cBuild.drawBitmap(bitMain, null, new Rect(0, i, sWhole.Width, sWhole.Height - i), SCALE_PAINT);
+        bitMain.recycle();
+
+        cBuild.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
+        cBuild.drawBitmap(BitmapFactory.decodeFile(mlsPaths.get(miPosition + 1)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
 
         try
         {
             String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
             OutputStream fOut;
-            java.io.File file = new java.io.File(path, "x.jpg");
+
+            java.io.File file = new java.io.File(path, mlsPaths.get(miPosition).split("/|\\.")[5] + "_x.jpg");
             fOut = new FileOutputStream(file);
 
-            localBitmap2.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+            bitWhole.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
             fOut.flush();
             fOut.close();
 
@@ -547,6 +549,8 @@ public class MainActivity extends Activity
         {
             Log.d("MyGlassShare", e.getCause().toString());
         }
+
+        CreatePictureView();
 
 //        return localBitmap2;
     }
