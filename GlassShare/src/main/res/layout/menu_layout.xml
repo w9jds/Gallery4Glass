@@ -4,7 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:keepScreenOn="true"
-    android:layout_marginLeft="@dimen/card_generic_padding" android:layout_marginRight="@dimen/card_generic_padding" class="com.google.android.glass.menu.SliderMenuView$SliderMenuItemView"
+    android:layout_marginLeft="@dimen/card_generic_padding"
+    android:layout_marginRight="@dimen/card_generic_padding"
+    class="com.google.android.glass.menu.SliderMenuView$SliderMenuItemView"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -31,26 +33,8 @@
 
     </LinearLayout>
 
-
-    <!--<TextView-->
-    <!--android:textSize="@dimen/menu_description_text_size"-->
-    <!--android:ellipsize="end"-->
-    <!--android:layout_gravity="bottom|center"-->
-    <!--android:id="@id/description"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="@dimen/card_generic_padding"-->
-    <!--android:singleLine="true" />-->
-
-    <ProgressBar
-        android:id="@id/progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/progress_horizontal_holo_dark"
-        android:indeterminateDrawable="@drawable/progress_indeterminate_horizontal_holo"
-        android:max="100"
-        android:indeterminate="true"
-        android:layout_marginTop="-13dp"/>
+    <com.w9jds.glassshare.widget.ProgressBar
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
 </LinearLayout>

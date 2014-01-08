@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_dark_gray">#ff222222</color>
-    <color name="knob_pointer">#ffffffff</color>
-    <color name="knob_trail_start">#88ffffff</color>
-    <color name="knob_trail_end">#00ffffff</color>
-    <color name="knob_stroke">#ff666666</color>
-    <color name="lock_separator">#ff666666</color>
+    <!--<color name="background_dark_gray">#ff222222</color>-->
+    <!--<color name="knob_pointer">#ffffffff</color>-->
+    <!--<color name="knob_trail_start">#88ffffff</color>-->
+    <!--<color name="knob_trail_end">#00ffffff</color>-->
+    <!--<color name="knob_stroke">#ff666666</color>-->
+    <!--<color name="lock_separator">#ff666666</color>-->
 </resources>

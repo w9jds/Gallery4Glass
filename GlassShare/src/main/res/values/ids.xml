@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="background" />
-    <item type="id" name="tag_card_state_manager" />
-    <item type="id" name="tag_horizontal_scroll_item_position" />
-    <item type="id" name="tag_horizontal_scroll_item" />
-    <item type="id" name="tag_horizontal_scroll_card_sheen" />
-    <item type="id" name="card_footer">false</item>
-    <item type="id" name="card_info">false</item>
-    <item type="id" name="card_timestamp">false</item>
-    <item type="id" name="card_mosaic">false</item>
-    <item type="id" name="card_text">false</item>
-    <item type="id" name="lock_1">false</item>
-    <item type="id" name="lock_2">false</item>
-    <item type="id" name="lock_3">false</item>
-    <item type="id" name="lock_4">false</item>
-    <item type="id" name="container">false</item>
-    <item type="id" name="time">false</item>
-    <item type="id" name="locked_out">false</item>
-    <item type="id" name="prompt">false</item>
-    <item type="id" name="locks">false</item>
-    <item type="id" name="icon">false</item>
     <item type="id" name="label">false</item>
-    <item type="id" name="description">false</item>
-    <item type="id" name="header">false</item>
-    <item type="id" name="voice_match">false</item>
-    <item type="id" name="primary_voice_items">false</item>
-    <item type="id" name="secondary_voice_items">false</item>
-    <item type="id" name="clue">false</item>
-    <item type="id" name="secondaryProgress" />
-    <item type="id" name="progress" />
+
+    <item type="id" name="icon">false</item>
 </resources>

@@ -357,7 +357,7 @@ public class MainActivity extends Activity
                 //If a blob has been created, upload the image
                 JsonObject blob = mStorageService.getLoadedBlob();
                 String sasUrl = blob.getAsJsonPrimitive("sasUrl").toString();
-                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);;
+                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
             }
         }
