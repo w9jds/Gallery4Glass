@@ -4,6 +4,7 @@
     <option name="state">
       <GlobalState>
         <option name="hideForNonLayoutFiles" value="false" />
+        <option name="visible" value="false" />
       </GlobalState>
     </option>
   </component>
@@ -107,71 +108,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
+      <file leaf-file-name="StorageService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="73" selection-start="11020" selection-end="11020" vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="7290">
+            <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.37151703" vertical-offset="150" max-vertical-offset="2655">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu_layout.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="23" selection-start="1249" selection-end="1269" vertical-scroll-proportion="0.48863637" vertical-offset="353" max-vertical-offset="705">
-              <folding>
-                <element signature="e#229#258#0" expanded="true" />
-                <element signature="e#290#319#0" expanded="true" />
-                <element signature="e#729#752#0" expanded="true" />
-                <element signature="e#787#810#0" expanded="true" />
-                <element signature="e#850#875#0" expanded="true" />
-                <element signature="e#971#994#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SliderView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="5235">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3454#3517#0" expanded="true" />
-                <element signature="e#3616#3688#0" expanded="true" />
-                <element signature="e#3872#3935#0" expanded="true" />
-                <element signature="e#4051#4123#0" expanded="true" />
-                <element signature="e#5219#5291#0" expanded="true" />
-                <element signature="e#5628#5700#0" expanded="true" />
-                <element signature="e#6448#6449#0" expanded="true" />
-                <element signature="e#6483#6484#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ids.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="60" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slider.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="-8.888889" vertical-offset="0" max-vertical-offset="360">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -625,20 +567,20 @@
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/ProgressBar.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/slider_indeterminate.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="804" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1242,16 +1184,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="804" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="792" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3877551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3877551" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1461,13 +1403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1312" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2655">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="47" selection-start="350" selection-end="350" vertical-scroll-proportion="0.20930232" vertical-offset="0" max-vertical-offset="430">
@@ -1512,7 +1447,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="60" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+        <state line="6" column="60" selection-start="304" selection-end="304" vertical-scroll-proportion="0.13677812" vertical-offset="0" max-vertical-offset="658">
           <folding />
         </state>
       </provider>
@@ -1524,16 +1459,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="73" selection-start="11020" selection-end="11020" vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="7290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="-8.888889" vertical-offset="0" max-vertical-offset="360">
+        <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="0.38034865" vertical-offset="0" max-vertical-offset="631">
           <folding />
         </state>
       </provider>
@@ -1543,7 +1471,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="5235">
+        <state line="20" column="13" selection-start="771" selection-end="771" vertical-scroll-proportion="0.23255815" vertical-offset="150" max-vertical-offset="5235">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3454#3517#0" expanded="true" />
@@ -1558,9 +1486,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="317" column="73" selection-start="11020" selection-end="11020" vertical-scroll-proportion="0.0" vertical-offset="3833" max-vertical-offset="7290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="23" selection-start="1249" selection-end="1269" vertical-scroll-proportion="0.48863637" vertical-offset="353" max-vertical-offset="705">
+        <state line="35" column="23" selection-start="1249" selection-end="1269" vertical-scroll-proportion="0.7147385" vertical-offset="74" max-vertical-offset="705">
           <folding>
             <element signature="e#229#258#0" expanded="true" />
             <element signature="e#290#319#0" expanded="true" />
@@ -1573,6 +1508,13 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.37151703" vertical-offset="150" max-vertical-offset="2655">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

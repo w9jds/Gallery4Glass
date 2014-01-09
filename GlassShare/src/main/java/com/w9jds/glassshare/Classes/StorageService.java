@@ -42,7 +42,7 @@ public class StorageService
         mContext = context;
         try
         {
-            mClient = new MobileServiceClient("https://glassshare.azure-mobile.net/", "hGZSWGJntAFbXLmYRitDivIhrClsgA21", mContext);
+
             mTableContainers = mClient.getTable("blobcontainers");
             mTableBlobs = mClient.getTable("blobs");
         }
