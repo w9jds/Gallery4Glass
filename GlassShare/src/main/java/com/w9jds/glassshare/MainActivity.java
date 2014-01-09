@@ -30,7 +30,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.glass.media.Sounds;
@@ -47,6 +46,7 @@ import com.w9jds.glassshare.Adapters.csaAdapter;
 import com.w9jds.glassshare.Classes.Size;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
+import com.w9jds.glassshare.widget.SliderView;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
@@ -231,6 +231,8 @@ public class MainActivity extends Activity
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem iItem)
     {
+        SliderView svProgress;
+
         switch (iItem.getItemId())
         {
             case R.id.vignette_menu_item:
@@ -245,8 +247,8 @@ public class MainActivity extends Activity
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_delete_50);
                 ((TextView)findViewById(R.id.label)).setText("Deleting");
 
-                ProgressBar pbProgress = (ProgressBar)findViewById(R.id.progress);
-                pbProgress.setIndeterminate(false);
+                svProgress = (SliderView)findViewById(R.id.progress);
+
 
 //                for (int i = 0; i <= 100; i++)
 //                {
@@ -312,6 +314,10 @@ public class MainActivity extends Activity
                 if (mcmCon.getActiveNetworkInfo().isConnected())
                 {
                     setContentView(R.layout.menu_layout);
+
+                    svProgress = (SliderView)findViewById(R.id.progress);
+                    svProgress.startIndeterminate();
+
                     ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
                     ((TextView)findViewById(R.id.label)).setText("Uploading");
 

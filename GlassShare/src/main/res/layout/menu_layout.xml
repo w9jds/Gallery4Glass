@@ -33,8 +33,10 @@
 
     </LinearLayout>
 
-    <com.w9jds.glassshare.widget.ProgressBar
+    <com.w9jds.glassshare.widget.SliderView
+        android:id="@id/slider"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </LinearLayout>
