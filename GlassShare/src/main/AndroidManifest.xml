@@ -8,7 +8,6 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="15" />
 
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
@@ -29,7 +28,8 @@
         <activity
             android:name="com.w9jds.glassshare.MainActivity"
             android:label="@string/app_name"
-            android:exported="true" >
+            android:immersive="true"
+            android:launchMode="singleTop">
 
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
@@ -38,6 +38,9 @@
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/my_voice_trigger" />
+
+            <receiver
+                android:name=".MainActivity"/>
 
         </activity>
     </application>

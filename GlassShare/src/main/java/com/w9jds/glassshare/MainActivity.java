@@ -2,6 +2,7 @@ package com.w9jds.glassshare;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -247,43 +248,57 @@ public class MainActivity extends Activity
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_delete_50);
                 ((TextView)findViewById(R.id.label)).setText("Deleting");
 
-                svProgress = (SliderView)findViewById(R.id.progress);
-
-
-//                for (int i = 0; i <= 100; i++)
-//                {
-//
-//                    pbProgress.setProgress(i);
-//
-//                }
-
-                //pull the file from the path of the selected item
-                java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
-                //delete the image
-                fPic.delete();
-                //refresh the folder
-                sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
-                //remove the selected item from the list of images
-                mlsPaths.remove(miPosition);
-                //let the adapter know that the list of images has changed
-                mcvAdapter.notifyDataSetChanged();
-                //handled
-
-
-                setContentView(R.layout.menu_layout);
-                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-                ((TextView)findViewById(R.id.label)).setText("Deleted");
-                findViewById(R.id.progress).setVisibility(View.GONE);
-
-                maManager.playSoundEffect(Sounds.SUCCESS);
-
-                new Handler().postDelayed(new Runnable()
+                svProgress = (SliderView)findViewById(R.id.slider);
+                svProgress.startProgress(1000, new Animator.AnimatorListener()
                 {
-                    public void run()
+                    @Override
+                    public void onAnimationStart(Animator animation)
+                    {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation)
+                    {
+                        //pull the file from the path of the selected item
+                        java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
+                        //delete the image
+                        fPic.delete();
+                        //refresh the folder
+                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+                        //remove the selected item from the list of images
+                        mlsPaths.remove(miPosition);
+                        //let the adapter know that the list of images has changed
+                        mcvAdapter.notifyDataSetChanged();
+                        //handled
+
+                        setContentView(R.layout.menu_layout);
+                        ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
+                        ((TextView)findViewById(R.id.label)).setText("Deleted");
+
+                        maManager.playSoundEffect(Sounds.SUCCESS);
+
+                        new Handler().postDelayed(new Runnable()
+                        {
+                            public void run()
+                            {
+                                CreatePictureView();
+                            }
+                        }, 1000);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation)
                     {
                         CreatePictureView();
                     }
-                }, 1000);
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation)
+                    {
+
+                    }
+                });
 
                 return true;
 //            case R.id.upload_menu_item:
@@ -315,7 +330,8 @@ public class MainActivity extends Activity
                 {
                     setContentView(R.layout.menu_layout);
 
-                    svProgress = (SliderView)findViewById(R.id.progress);
+                    svProgress = (SliderView)findViewById(R.id.slider);
+
                     svProgress.startIndeterminate();
 
                     ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
@@ -434,10 +450,10 @@ public class MainActivity extends Activity
         {
             if (uploaded)
             {
+
                 setContentView(R.layout.menu_layout);
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
                 ((TextView)findViewById(R.id.label)).setText("Uploaded");
-                findViewById(R.id.progress).setVisibility(View.GONE);
 
                 maManager.playSoundEffect(Sounds.SUCCESS);
             }
@@ -502,7 +518,7 @@ public class MainActivity extends Activity
     }
 
     static final Size FULL_COMPOSITE_SIZE;
-    static final Size PREVIEW_COMPOSITE_SIZE;
+//    static final Size PREVIEW_COMPOSITE_SIZE;
     private static final Paint SCALE_PAINT;
     private static final Paint SCREEN_PAINT;
     private static final RectF SCREEN_POSITION;
@@ -510,7 +526,7 @@ public class MainActivity extends Activity
     static
     {
         FULL_COMPOSITE_SIZE = new Size(1920, 1080);
-        PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
+//        PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
         SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
 
         SCALE_PAINT = new Paint();
@@ -523,8 +539,7 @@ public class MainActivity extends Activity
 
     protected void createComposite()
     {
-        Bitmap bitMain = BitmapFactory.decodeFile(mlsPaths.get(miPosition));
-
+        Bitmap bitMain = BitmapFactory.decodeFile(mlsPaths.get(miPosition)).copy(Bitmap.Config.ARGB_8888, true);
         Size sWhole = FULL_COMPOSITE_SIZE;
 
         Bitmap bitWhole = Bitmap.createBitmap(sWhole.Width, sWhole.Height, Bitmap.Config.ARGB_8888);
@@ -559,7 +574,9 @@ public class MainActivity extends Activity
         CreatePictureView();
 
 //        return localBitmap2;
+
     }
+
 }
 
 
