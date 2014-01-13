@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">GlassShare</string>
-
     <string name="delete_label">Delete</string>
     <string name="deleted_label">Deleted</string>
     <string name="deleting_label">Deleting</string>
@@ -10,10 +9,12 @@
     <string name="uploadphone_label">Upload Image</string>
     <string name="vignette_label">Make Vignette</string>
 
-
     <integer name="google_play_services_version">4030500</integer>
 
     <string name="app_id">551585648263023</string>
     <string name="glass_voice_trigger">Pictures</string>
+    <string name="title_activity_vignette">VignetteActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

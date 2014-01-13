@@ -11,13 +11,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -44,16 +37,14 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
 import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.w9jds.glassshare.Classes.Size;
 import com.w9jds.glassshare.Classes.StorageApplication;
 import com.w9jds.glassshare.Classes.StorageService;
+import com.w9jds.glassshare.Classes.cPaths;
 import com.w9jds.glassshare.widget.SliderView;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -79,9 +70,10 @@ public class MainActivity extends Activity
     //custom adapter
     private csaAdapter mcvAdapter;
     //list for all the paths of the images on google glass
-    private ArrayList<String> mlsPaths = new ArrayList<String>();
+//    private ArrayList<String> mlsPaths = new ArrayList<String>();
     //variable for the last selected index
-    private int miPosition;
+//    private int miPosition;
+    private cPaths mcpPaths = new cPaths();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -238,7 +230,7 @@ public class MainActivity extends Activity
         {
             case R.id.vignette_menu_item:
 
-                createComposite();
+                Bitmap Pic = createComposite();
 
                 return true;
 
@@ -385,7 +377,6 @@ public class MainActivity extends Activity
         }
     };
 
-
     public class ImageUploaderTask extends AsyncTask<Void, Void, Boolean>
     {
         private String mUrl;
@@ -515,66 +506,6 @@ public class MainActivity extends Activity
     private Drive getDriveService(GoogleAccountCredential credential)
     {
         return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
-    }
-
-    static final Size FULL_COMPOSITE_SIZE;
-//    static final Size PREVIEW_COMPOSITE_SIZE;
-    private static final Paint SCALE_PAINT;
-    private static final Paint SCREEN_PAINT;
-    private static final RectF SCREEN_POSITION;
-
-    static
-    {
-        FULL_COMPOSITE_SIZE = new Size(1920, 1080);
-//        PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
-        SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
-
-        SCALE_PAINT = new Paint();
-        SCALE_PAINT.setFilterBitmap(true);
-        SCALE_PAINT.setDither(true);
-
-        SCREEN_PAINT = new Paint(SCALE_PAINT);
-        SCREEN_PAINT.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SCREEN));
-    }
-
-    protected void createComposite()
-    {
-        Bitmap bitMain = BitmapFactory.decodeFile(mlsPaths.get(miPosition)).copy(Bitmap.Config.ARGB_8888, true);
-        Size sWhole = FULL_COMPOSITE_SIZE;
-
-        Bitmap bitWhole = Bitmap.createBitmap(sWhole.Width, sWhole.Height, Bitmap.Config.ARGB_8888);
-        Canvas cBuild = new Canvas(bitWhole);
-
-        int i = (int)((sWhole.Height - bitMain.getHeight() * (sWhole.Width / bitMain.getWidth())) / 2.0F);
-        cBuild.drawBitmap(bitMain, null, new Rect(0, i, sWhole.Width, sWhole.Height - i), SCALE_PAINT);
-        bitMain.recycle();
-
-        cBuild.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
-        cBuild.drawBitmap(BitmapFactory.decodeFile(mlsPaths.get(miPosition + 1)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
-
-        try
-        {
-            String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
-            OutputStream fOut;
-
-            java.io.File file = new java.io.File(path, mlsPaths.get(miPosition).split("/|\\.")[5] + "_x.jpg");
-            fOut = new FileOutputStream(file);
-
-            bitWhole.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
-            fOut.flush();
-            fOut.close();
-
-            MediaStore.Images.Media.insertImage(this.getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
-        }
-        catch (Exception e)
-        {
-            Log.d("MyGlassShare", e.getCause().toString());
-        }
-
-        CreatePictureView();
-
-//        return localBitmap2;
-
     }
 
 }
