@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -69,10 +68,7 @@ public class MainActivity extends Activity
 
     //custom adapter
     private csaAdapter mcvAdapter;
-    //list for all the paths of the images on google glass
-//    private ArrayList<String> mlsPaths = new ArrayList<String>();
-    //variable for the last selected index
-//    private int miPosition;
+    //custom object
     private cPaths mcpPaths = new cPaths();
 
     @Override
@@ -90,9 +86,9 @@ public class MainActivity extends Activity
         }
 
         //get all the images from the camera folder (paths)
-        mlsPaths = getCameraImages();
+        mcpPaths.setImagePaths(getCameraImages());
         //sort the paths of pictures
-        sortPaths();
+        sortPaths(mcpPaths.getImagePaths());
 
         CreatePictureView();
     }
@@ -110,7 +106,7 @@ public class MainActivity extends Activity
         //create a new card scroll viewer for this context
         CardScrollView csvCardsView = new CardScrollView(this);
         //create a new adapter for the scroll viewer
-        mcvAdapter = new csaAdapter(this, mlsPaths);
+        mcvAdapter = new csaAdapter(this, mcpPaths.getImagePaths());
         //set this adapter as the adapter for the scroll viewer
         csvCardsView.setAdapter(mcvAdapter);
         //activate this scroll viewer
@@ -122,10 +118,8 @@ public class MainActivity extends Activity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 maManager.playSoundEffect(Sounds.TAP);
-
-
                 //save the card index that was selected
-                miPosition = position;
+                mcpPaths.setMainPosition(position);
                 //open the menu
                 openOptionsMenu();
             }
@@ -160,14 +154,14 @@ public class MainActivity extends Activity
     /***
      * Sort the file paths so that the images are in order from most resent first
      */
-    private void sortPaths()
+    private void sortPaths(ArrayList<String> lsPaths)
     {
-        java.io.File[] fPics = new java.io.File[mlsPaths.size()];
+        java.io.File[] fPics = new java.io.File[lsPaths.size()];
 
-        for (int i = 0; i < mlsPaths.size(); i++)
-            fPics[i] = new java.io.File(mlsPaths.get(i));
+        for (int i = 0; i < lsPaths.size(); i++)
+            fPics[i] = new java.io.File(lsPaths.get(i));
 
-        mlsPaths.clear();
+        lsPaths.clear();
 
         Arrays.sort(fPics, new Comparator<java.io.File>()
         {
@@ -179,7 +173,7 @@ public class MainActivity extends Activity
         });
 
         for (int i = fPics.length - 1; i >= 0; i--)
-            mlsPaths.add(fPics[i].getAbsolutePath());
+            lsPaths.add(fPics[i].getAbsolutePath());
     }
 
     public String getBucketId(String path)
@@ -230,7 +224,9 @@ public class MainActivity extends Activity
         {
             case R.id.vignette_menu_item:
 
-                Bitmap Pic = createComposite();
+                Intent iVignette = new Intent(this, VignetteActivity.class);
+                iVignette.putExtra("PathsObject", mcpPaths);
+                startActivity(iVignette);
 
                 return true;
 
@@ -253,13 +249,13 @@ public class MainActivity extends Activity
                     public void onAnimationEnd(Animator animation)
                     {
                         //pull the file from the path of the selected item
-                        java.io.File fPic = new java.io.File(mlsPaths.get(miPosition));
+                        java.io.File fPic = new java.io.File(mcpPaths.getCurrentPositionPath());
                         //delete the image
                         fPic.delete();
                         //refresh the folder
                         sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
                         //remove the selected item from the list of images
-                        mlsPaths.remove(miPosition);
+                        mcpPaths.removeCurrentPositionPath();
                         //let the adapter know that the list of images has changed
                         mcvAdapter.notifyDataSetChanged();
                         //handled
@@ -330,7 +326,7 @@ public class MainActivity extends Activity
                     ((TextView)findViewById(R.id.label)).setText("Uploading");
 
                     String sContainer = "";
-                    String[] saImage = mlsPaths.get(miPosition).split("/|\\.");
+                    String[] saImage = mcpPaths.getCurrentPositionPath().split("/|\\.");
 
                     Account[] myAccounts = AccountManager.get(this).getAccounts();
                     //for each account
@@ -371,7 +367,7 @@ public class MainActivity extends Activity
                 //If a blob has been created, upload the image
                 JsonObject blob = mStorageService.getLoadedBlob();
                 String sasUrl = blob.getAsJsonPrimitive("sasUrl").toString();
-                (new ImageUploaderTask(sasUrl, miPosition, mlsPaths)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                (new ImageUploaderTask(sasUrl, mcpPaths.getMainPosition(), mcpPaths.getImagePaths())).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
             }
         }

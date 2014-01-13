@@ -1,6 +1,7 @@
 package com.w9jds.glassshare;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -15,12 +16,22 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import com.w9jds.glassshare.Classes.Size;
+import com.w9jds.glassshare.Classes.cPaths;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class VignetteActivity extends Activity
 {
+    static final Size FULL_COMPOSITE_SIZE = new Size(1920, 1080);
+    private static final Paint SCALE_PAINT;
+    private static final Paint SCREEN_PAINT;
+    private static final RectF SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
+
+    //list of image paths
+    private cPaths mcpPaths = new cPaths();
+    //create variable to store the vignette position in
+    private int miVignettePosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,43 +39,14 @@ public class VignetteActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vignette);
 
+        Intent iThis = getIntent();
+        iThis.getExtras();
+        mcpPaths = iThis.getParcelableExtra("PathsObject");
+
     }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu)
-//    {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.vignette, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item)
-//    {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//        if (id == R.id.action_settings)
-//        {
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
-    static final Size FULL_COMPOSITE_SIZE;
-    //    static final Size PREVIEW_COMPOSITE_SIZE;
-    private static final Paint SCALE_PAINT;
-    private static final Paint SCREEN_PAINT;
-    private static final RectF SCREEN_POSITION;
 
     static
     {
-        FULL_COMPOSITE_SIZE = new Size(1920, 1080);
-//        PREVIEW_COMPOSITE_SIZE = new Size(640, 360);
-        SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
-
         SCALE_PAINT = new Paint();
         SCALE_PAINT.setFilterBitmap(true);
         SCALE_PAINT.setDither(true);
@@ -81,21 +63,21 @@ public class VignetteActivity extends Activity
         //calculate the sample size and set it in the options
         bfoOptions.inSampleSize = calculateInSampleSize(bfoOptions, FULL_COMPOSITE_SIZE.Height, FULL_COMPOSITE_SIZE.Width);
 
-        Bitmap bitMain = BitmapFactory.decodeFile(mlsPaths.get(miPosition), bfoOptions);
+        Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getCurrentPositionPath(), bfoOptions);
         Size sWhole = FULL_COMPOSITE_SIZE;
 
         Bitmap bitWhole = Bitmap.createScaledBitmap(bitMain, sWhole.Width, sWhole.Height, false);
         Canvas cBuild = new Canvas(bitWhole);
 
         cBuild.drawBitmap(BitmapFactory.decodeResource(this.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
-        cBuild.drawBitmap(BitmapFactory.decodeFile(mlsPaths.get(miPosition + 1)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+        cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
 
         try
         {
             String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
             OutputStream fOut;
 
-            java.io.File file = new java.io.File(path, mlsPaths.get(miPosition).split("/|\\.")[5] + "_x.jpg");
+            java.io.File file = new java.io.File(path, mcpPaths.getCurrentPositionPath().split("/|\\.")[5] + "_x.jpg");
             fOut = new FileOutputStream(file);
 
             bitWhole.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
@@ -108,9 +90,6 @@ public class VignetteActivity extends Activity
         {
             Log.d("MyGlassShare", e.getCause().toString());
         }
-
-        CreatePictureView();
-
     }
 
     public int calculateInSampleSize(BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)
