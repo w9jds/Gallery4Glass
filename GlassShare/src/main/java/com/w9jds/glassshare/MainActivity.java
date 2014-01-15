@@ -215,6 +215,19 @@ public class MainActivity extends Activity
         return true;
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == 1)
+        {
+            if (resultCode == RESULT_OK)
+            {
+                // A contact was picked.  Here we will just display it
+                // to the user.
+
+            }
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem iItem)
     {
@@ -226,7 +239,7 @@ public class MainActivity extends Activity
 
                 Intent iVignette = new Intent(this, VignetteActivity.class);
                 iVignette.putExtra("PathsObject", mcpPaths);
-                startActivity(iVignette);
+                startActivityForResult(iVignette, 1);
 
                 return true;
 

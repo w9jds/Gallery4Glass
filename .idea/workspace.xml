@@ -79,7 +79,22 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="280" class="com.w9jds.glassshare.MainActivity$3" package="com.w9jds.glassshare">
+      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="293" class="com.w9jds.glassshare.MainActivity$3" package="com.w9jds.glassshare">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="221" class="com.w9jds.glassshare.MainActivity" package="com.w9jds.glassshare">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -111,23 +126,16 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="226" column="0" selection-start="7358" selection-end="7358" vertical-scroll-proportion="0.0" vertical-offset="2025" max-vertical-offset="4380">
+            <state line="225" column="0" selection-start="7434" selection-end="7434" vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="4095">
               <folding>
-                <element signature="e#4076#4506#0" expanded="true" />
-                <element signature="e#4495#4496#0" expanded="true" />
                 <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#5416#5666#0" expanded="true" />
-                <element signature="e#5655#5656#0" expanded="true" />
+                <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
                 <element signature="e#6509#6517#0" expanded="true" />
                 <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#9429#9654#0" expanded="true" />
-                <element signature="e#9627#9628#0" expanded="true" />
-                <element signature="e#10071#10112#0" expanded="false" />
-                <element signature="e#13079#13710#0" expanded="true" />
-                <element signature="e#13703#13704#0" expanded="true" />
+                <element signature="e#10401#10442#0" expanded="false" />
                 <element signature="class#ImageUploaderTask#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
@@ -136,25 +144,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.67460316" vertical-offset="135" max-vertical-offset="1035">
-              <folding>
-                <element signature="method#getContainers#0;class#StorageService#0" expanded="false" />
-                <element signature="method#addContainer#0;class#StorageService#0" expanded="false" />
-                <element signature="method#getSasForNewBlob#0;class#StorageService#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VignetteActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VignetteActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="5" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1920">
+            <state line="205" column="75" selection-start="7996" selection-end="7996" vertical-scroll-proportion="1.0241545" vertical-offset="2439" max-vertical-offset="3480">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2980#3608#0" expanded="true" />
+                <element signature="e#3597#3598#0" expanded="true" />
+                <element signature="e#8113#8373#0" expanded="true" />
+                <element signature="e#8358#8359#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,7 +162,7 @@
       <file leaf-file-name="cPaths.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="1" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1995">
+            <state line="12" column="1" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#291#299#0" expanded="true" />
@@ -634,9 +633,9 @@
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java" />
+        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" />
         <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
       </list>
     </option>
   </component>
@@ -1215,7 +1214,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38670695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38670695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1300,8 +1299,8 @@
           <folding>
             <element signature="method#StorageService#0;class#StorageService#0" expanded="false" />
             <element signature="method#getContainers#0;class#StorageService#0" expanded="false" />
-            <element signature="e#1827#3017#0" expanded="false" />
-            <element signature="e#3006#3007#0" expanded="false" />
+            <element signature="e#1959#3149#0" expanded="false" />
+            <element signature="e#3138#3139#0" expanded="false" />
             <element signature="method#addContainer#0;class#StorageService#0" expanded="false" />
             <element signature="method#getSasForNewBlob#0;class#StorageService#0" expanded="false" />
           </folding>
@@ -1312,21 +1311,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="251" column="0" selection-start="8183" selection-end="10260" vertical-scroll-proportion="0.0" vertical-offset="3765" max-vertical-offset="8820">
           <folding>
-            <element signature="e#4076#4506#0" expanded="true" />
-            <element signature="e#4495#4496#0" expanded="true" />
             <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5416#5666#0" expanded="true" />
-            <element signature="e#5655#5656#0" expanded="true" />
+            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
             <element signature="e#6509#6517#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#9429#9654#0" expanded="true" />
-            <element signature="e#9627#9628#0" expanded="true" />
-            <element signature="e#10071#10112#0" expanded="false" />
-            <element signature="e#13079#13710#0" expanded="true" />
-            <element signature="e#13703#13704#0" expanded="true" />
+            <element signature="e#10401#10442#0" expanded="false" />
             <element signature="class#ImageUploaderTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
@@ -1391,8 +1383,8 @@
           <folding>
             <element signature="method#StorageService#0;class#StorageService#0" expanded="false" />
             <element signature="method#getContainers#0;class#StorageService#0" expanded="false" />
-            <element signature="e#1827#3017#0" expanded="false" />
-            <element signature="e#3006#3007#0" expanded="false" />
+            <element signature="e#1959#3149#0" expanded="false" />
+            <element signature="e#3138#3139#0" expanded="false" />
             <element signature="method#addContainer#0;class#StorageService#0" expanded="false" />
             <element signature="method#getSasForNewBlob#0;class#StorageService#0" expanded="false" />
           </folding>
@@ -1403,21 +1395,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="320" column="42" selection-start="11240" selection-end="11240" vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="8640">
           <folding>
-            <element signature="e#4076#4506#0" expanded="true" />
-            <element signature="e#4495#4496#0" expanded="true" />
             <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5416#5666#0" expanded="true" />
-            <element signature="e#5655#5656#0" expanded="true" />
+            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
             <element signature="e#6509#6517#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#9429#9654#0" expanded="true" />
-            <element signature="e#9627#9628#0" expanded="true" />
-            <element signature="e#10071#10112#0" expanded="false" />
-            <element signature="e#13079#13710#0" expanded="true" />
-            <element signature="e#13703#13704#0" expanded="true" />
+            <element signature="e#10401#10442#0" expanded="false" />
             <element signature="class#ImageUploaderTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
@@ -1689,25 +1674,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1312" selection-end="1444" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1035">
+          <folding>
+            <element signature="method#getContainers#0;class#StorageService#0" expanded="false" />
+            <element signature="method#addContainer#0;class#StorageService#0" expanded="false" />
+            <element signature="method#getSasForNewBlob#0;class#StorageService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="0" selection-start="7358" selection-end="7358" vertical-scroll-proportion="0.0" vertical-offset="2025" max-vertical-offset="4380">
+        <state line="225" column="0" selection-start="7434" selection-end="7434" vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="4095">
           <folding>
-            <element signature="e#4076#4506#0" expanded="true" />
-            <element signature="e#4495#4496#0" expanded="true" />
             <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5416#5666#0" expanded="true" />
-            <element signature="e#5655#5656#0" expanded="true" />
+            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getBucketId#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getCameraImages#0;class#MainActivity#0" expanded="false" />
             <element signature="e#6509#6517#0" expanded="true" />
             <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#9429#9654#0" expanded="true" />
-            <element signature="e#9627#9628#0" expanded="true" />
-            <element signature="e#10071#10112#0" expanded="false" />
-            <element signature="e#13079#13710#0" expanded="true" />
-            <element signature="e#13703#13704#0" expanded="true" />
+            <element signature="e#10401#10442#0" expanded="false" />
             <element signature="class#ImageUploaderTask#0;class#MainActivity#0" expanded="false" />
             <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
             <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
@@ -1717,20 +1706,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="5" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1920">
+        <state line="205" column="75" selection-start="7996" selection-end="7996" vertical-scroll-proportion="1.0241545" vertical-offset="2439" max-vertical-offset="3480">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.67460316" vertical-offset="135" max-vertical-offset="1035">
-          <folding>
-            <element signature="method#getContainers#0;class#StorageService#0" expanded="false" />
-            <element signature="method#addContainer#0;class#StorageService#0" expanded="false" />
-            <element signature="method#getSasForNewBlob#0;class#StorageService#0" expanded="false" />
+            <element signature="e#2980#3608#0" expanded="true" />
+            <element signature="e#3597#3598#0" expanded="true" />
+            <element signature="e#8113#8373#0" expanded="true" />
+            <element signature="e#8358#8359#0" expanded="true" />
           </folding>
         </state>
       </provider>
