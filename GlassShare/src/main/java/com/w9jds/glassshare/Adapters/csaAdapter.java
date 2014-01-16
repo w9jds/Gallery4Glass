@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.w9jds.glassshare.R;
 
@@ -61,22 +62,33 @@ public class csaAdapter extends CardScrollAdapter
     @Override
     public View getView(int iPosition, View convertView, ViewGroup parent)
     {
-        LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View vCard = inflater.inflate(R.layout.card_layout, parent, false);
+        View vCard;
 
-        //get the imageview we are going to populate
-        ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
-
-
-        if (cancelPotentialWork(iPosition, ivPic))
+        if (mlsPaths.get(iPosition).contains("."))
         {
-            final BitmapWorkerTask task = new BitmapWorkerTask(ivPic, mlsPaths, iPosition);
+            LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            vCard = inflater.inflate(R.layout.card_layout, parent, false);
 
-            final AsyncDrawable asyncDrawable = new AsyncDrawable(mcContext.getResources(), mPlaceHolderBitmap, task);
-            ivPic.setScaleType(ImageView.ScaleType.CENTER);
-            ivPic.setImageDrawable(asyncDrawable);
+            //get the imageview we are going to populate
+            ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);
 
-            task.execute();
+
+            if (cancelPotentialWork(iPosition, ivPic))
+            {
+                final BitmapWorkerTask task = new BitmapWorkerTask(ivPic, mlsPaths, iPosition);
+
+                final AsyncDrawable asyncDrawable = new AsyncDrawable(mcContext.getResources(), mPlaceHolderBitmap, task);
+                ivPic.setScaleType(ImageView.ScaleType.CENTER);
+                ivPic.setImageDrawable(asyncDrawable);
+
+                task.execute();
+            }
+        }
+        else
+        {
+            Card firstCard = new Card(mcContext);
+            firstCard.setText(mlsPaths.get(iPosition));
+            vCard = firstCard.toView();
         }
 
         return vCard;

@@ -17,6 +17,14 @@ public class cPaths implements Parcelable
 
     public cPaths() { }
 
+
+    /***
+     * Insert the passed in string to the indicated index
+     * @param sString
+     * @param nIndex
+     */
+    public void insertString(String sString, int nIndex) { ImagePaths.add(nIndex, sString); }
+
     /***
      * get the selected card index
      * @return MainPosition

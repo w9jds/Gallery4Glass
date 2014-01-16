@@ -28,6 +28,7 @@ import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.glassshare.Adapters.csaAdapter;
 import com.w9jds.glassshare.Classes.Size;
 import com.w9jds.glassshare.Classes.cPaths;
+import com.w9jds.glassshare.widget.SliderView;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -60,6 +61,8 @@ public class VignetteActivity extends Activity
         iThis.getExtras();
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
+        mcpPaths.insertString("Select Second Image for Vignette", 0);
+
         CreatePictureView();
     }
 
@@ -67,11 +70,6 @@ public class VignetteActivity extends Activity
     {
         (new CreateComposite(mcpPaths, miVignettePosition, this)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
-//    private void loadMainView()
-//    {
-//        Intent i = new Intent(this, MainActivity.class);
-//        startActivity(i);
-//    }
 
     private void CreatePictureView()
     {
@@ -94,6 +92,14 @@ public class VignetteActivity extends Activity
                     maManager.playSoundEffect(Sounds.TAP);
                     //save the card index that was selected
                     miVignettePosition = position;
+
+                    setContentView(R.layout.menu_layout);
+                    ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+                    ((TextView)findViewById(R.id.label)).setText("Making Vignette");
+
+                    SliderView svProgress = (SliderView)findViewById(R.id.slider);
+                    svProgress.startIndeterminate();
+
                     //create the vignette and save it
                     startCompositeCreation();
                 }
@@ -138,7 +144,7 @@ public class VignetteActivity extends Activity
             //calculate the sample size and set it in the options
             bfoOptions.inSampleSize = calculateInSampleSize(bfoOptions, FULL_COMPOSITE_SIZE.Height, FULL_COMPOSITE_SIZE.Width);
 
-            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getCurrentPositionPath(), bfoOptions);
+            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1), bfoOptions);
             Size sWhole = FULL_COMPOSITE_SIZE;
 
             Bitmap bitWhole = Bitmap.createScaledBitmap(bitMain, sWhole.Width, sWhole.Height, false);
@@ -152,7 +158,7 @@ public class VignetteActivity extends Activity
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
                 OutputStream fOut;
 
-                java.io.File file = new java.io.File(path, mcpPaths.getCurrentPositionPath().split("/|\\.")[5] + "_x.jpg");
+                java.io.File file = new java.io.File(path, mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.")[5] + "_x.jpg");
                 fOut = new FileOutputStream(file);
 
                 bitWhole.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
@@ -198,22 +204,18 @@ public class VignetteActivity extends Activity
         @Override
         protected void onPostExecute(Boolean uploaded)
         {
-            if (uploaded)
-            {
+            setContentView(R.layout.menu_layout);
+            ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
+            ((TextView)findViewById(R.id.label)).setText("Made Vignette");
 
-                setContentView(R.layout.menu_layout);
-                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-                ((TextView)findViewById(R.id.label)).setText("Made Vignette");
-
-                maManager.playSoundEffect(Sounds.SUCCESS);
-            }
+            maManager.playSoundEffect(Sounds.SUCCESS);
 
             new Handler().postDelayed(new Runnable()
             {
                 public void run()
                 {
                     Intent returnIntent = new Intent();
-                    setResult(RESULT_CANCELED, returnIntent);
+                    setResult(RESULT_OK, returnIntent);
                     finish();
                 }
             }, 1000);
