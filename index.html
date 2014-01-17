@@ -8,11 +8,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>Gallery For Glass by w9jds</title>
   </head>
 
@@ -20,7 +15,7 @@
     <header>
       <div class="inner">
         <h1>Gallery For Glass</h1>
-        <h2>Gallery for Google Glass. Manage and (eventually) Share your photos.</h2>
+        <h2>Manage, Upload, and Create Vignettes with your pictures.</h2>
         <a href="https://github.com/w9jds/GlassShare" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -28,52 +23,67 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
+          <h3> 
+              <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>
+              
+              This is a GDK application.</h3>
+            
+            <p> In order to install this onto your Google Glass you need to sideload it. In order to do that you need to install adb onto your computer. 
+                The following video will show you how to install it onto a windows computer since the drive is broken. If you own a Mac you don't need to mess
+                with the driver it will just work.</p>
+            
+            <iframe width="640" height="360" src="//www.youtube.com/embed/rfpKyj7fJCM?list=UUkopP0Gk-wSE9HHrVH8izFw" frameborder="0" allowfullscreen></iframe>
+            
+            <p> The next video will then show you how to sideload the apk onto your Google Glass.</p>
+            
+            
+            Video Here...
+            
+            
+            <h3>Starting up Gallery for Glass</h3>
+            <p>Once you have successfully installed Gallery for Glass you can start it with the voice command "okay, glass" and then "pictures" 
+                or you can find the following card in the glass menu.</p>
+            
+            <img src="images/pictures-card.png" />
+            
+            <h3>Available Picture Options</h3>
+            <p>You can now see all of the images available on your device. Each image has 3 options (at the moment) Make Vignette, Upload, and Delete. 
+                Make Vignette does exactly what it says, you are asked to select a second image and it will generate a Vignette and save it for you. When you select
+            upload, the image is uploaded to a server. You then open up the companion application on your android device and download the images. After they have been
+            downloaded they will be removed from the server. Finally, you have delete which removes the image from you Google Glass Device.</p>
+            
+            </section>
+            
 
         <aside id="sidebar">
-          <a href="https://github.com/w9jds/GlassShare/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/w9jds/GlassShare/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+            
+            <a href="https://github.com/w9jds/GlassShare/zipball/master" class="button">
+                <small>Download Source</small>
+                .zip file
+            </a>
+            
+            <a href="https://github.com/w9jds/GlassShare/tarball/master" class="button">
+                <small>Download Source</small>
+                .tar.gz file
+            </a>
+            
+            <a href="https://github.com/w9jds/GlassShare/releases/download/v0.12-alpha/GlassShare.apk" class="button">
+                <small>Download App</small>
+                .apk file
+            </a>
+            
 
-          <p class="repo-owner"><a href="https://github.com/w9jds/GlassShare"></a> is maintained by <a href="https://github.com/w9jds">w9jds</a>.</p>
+            <p class="repo-owner">
+              <a href="https://github.com/w9jds/GlassShare"></a> is maintained by <a href="https://github.com/w9jds">w9jds</a>.
+            </p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+            <p>This page was generated by 
+                <a href="https://pages.github.com">GitHub Pages</a> 
+                using the Architect theme by 
+                <a href="https://twitter.com/jasonlong">Jason Long</a>.
+                Videos are supplied by
+                <a href="https://plus.google.com/u/0/+AndrewPritykin/posts">Andrew Pritykin</a>.
+            </p>
         </aside>
       </div>
     </div>
