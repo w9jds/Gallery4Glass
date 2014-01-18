@@ -79,6 +79,21 @@ public class MainActivity extends Activity
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
+
+
+        CreatePictureView();
+    }
+
+    @Override
+    protected void onStop()
+    {
+//        Log.d("GlassShare", "Closing Application");
+//        finish();
+        super.onStop();
+    }
+
+    private void CreatePictureView()
+    {
         if (mcmCon.getActiveNetworkInfo().isConnected())
         {
             StorageApplication myApp = (StorageApplication) getApplication();
@@ -90,19 +105,6 @@ public class MainActivity extends Activity
         //sort the paths of pictures
         sortPaths(mcpPaths.getImagePaths());
 
-        CreatePictureView();
-    }
-
-    @Override
-    protected void onStop()
-    {
-        Log.d("GlassShare", "Closing Application");
-        finish();
-        super.onStop();
-    }
-
-    private void CreatePictureView()
-    {
         //create a new card scroll viewer for this context
         CardScrollView csvCardsView = new CardScrollView(this);
         //create a new adapter for the scroll viewer
@@ -220,11 +222,7 @@ public class MainActivity extends Activity
         if (requestCode == 1)
         {
             if (resultCode == RESULT_OK)
-            {
-                // A contact was picked.  Here we will just display it
-                // to the user.
-
-            }
+                CreatePictureView();
         }
     }
 

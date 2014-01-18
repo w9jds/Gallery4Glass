@@ -18,7 +18,7 @@
     <application
         android:name="com.w9jds.glassshare.Classes.StorageApplication"
         android:allowBackup="true"
-        android:debuggable="true"
+        android:debuggable="false"
         android:icon="@drawable/ic_photo_50"
         android:label="@string/app_name" >
 

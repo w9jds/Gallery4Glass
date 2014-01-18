@@ -2,3 +2,5 @@
 /local.properties
 /.idea/workspace.xml
 .DS_Store
+
+GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java
