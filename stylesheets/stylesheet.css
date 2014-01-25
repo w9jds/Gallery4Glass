@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,7 +10,8 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video 
+{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -22,32 +19,45 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section 
+{
 	display: block;
 }
-body {
+
+body 
+{
 	line-height: 1;
 }
-ol, ul {
+
+ol, ul 
+{
 	list-style: none;
 }
-blockquote, q {
+
+blockquote, q 
+{
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
-q:before, q:after {
+q:before, q:after 
+{
 	content: '';
 	content: none;
 }
-table {
+
+table 
+{
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
 /* LAYOUT STYLES */
-body {
+body 
+{
   font-size: 15px;
   line-height: 1.5; 
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
@@ -56,14 +66,18 @@ body {
   color: #666;
 }
 
-a {
+a 
+{
   color: #2879d0;
 }
-a:hover {
+
+a:hover 
+{
   color: #2268b2;
 }
 
-header {
+header 
+{
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
@@ -71,7 +85,8 @@ header {
   border-bottom: solid 1px #275da1;
 }
 
-header h1 {
+header h1 
+{
   letter-spacing: -1px;
   font-size: 72px;
   color: #fff;
@@ -148,11 +163,30 @@ header a.button {
   top: 0;
   background: transparent url(../images/github-button.png) 0 0 no-repeat;
 }
+
 aside a.button {
   width: 138px;
   padding-left: 64px;
   display: block;
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+aside a.button:hover {
+  width: 138px;
+  padding-left: 64px;
+  display: block;
+  background: transparent url(../images/download-button-up.png) 0 0 no-repeat;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+aside a.button:active {
+  width: 138px;
+  padding-left: 64px;
+  display: block;
+  background: transparent url(../images/download-button-down.png) 0 0 no-repeat;
   margin-bottom: 20px;
   font-size: 21px;
 }
@@ -177,21 +211,24 @@ pre {
   overflow: auto;
   border: solid 1px #f2f2f2;
 }
-pre code {
+
+pre code 
+{
   color: #2879d0;
   background-color: #fff;
   border: none;
   padding: 0;
 }
 
-ul, ol, dl {
+ul, ol, dl 
+{
   margin-bottom: 20px;
 }
 
 
 /* COMMON STYLES */
-
-hr {
+hr 
+{
   height: 1px;
   line-height: 1px;
   margin-top: 1em;
@@ -200,22 +237,26 @@ hr {
   background: transparent url('../images/hr.png') 0 0 no-repeat;
 }
 
-table {
+table 
+{
   width: 100%;
   border: 1px solid #ebebeb;
 }
 
-th {
+th 
+{
   font-weight: 500;
 }
 
-td {
+td 
+{
   border: 1px solid #ebebeb;
   text-align: center; 
   font-weight: 300;
 }
 
-form {
+form 
+{
   background: #f2f2f2;
   padding: 20px;
   
@@ -224,14 +265,16 @@ form {
 
 /* GENERAL ELEMENT TYPE STYLES */
 
-#main-content h1 {
+#main-content h1 
+{
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
   font-size: 2.8em;
   letter-spacing: -1px;
   color: #474747;
 } 
 
-#main-content h1:before {
+#main-content h1:before 
+{
   content: "/";
   color: #9ddcff;
   padding-right: 0.3em;
