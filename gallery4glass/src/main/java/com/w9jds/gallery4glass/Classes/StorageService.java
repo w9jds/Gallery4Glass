@@ -1,4 +1,4 @@
-package com.w9jds.glassshare.Classes;
+package com.w9jds.gallery4glass.Classes;
 
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +42,7 @@ public class StorageService
         mContext = context;
         try
         {
-
+            mClient = new MobileServiceClient("https://glassshare.azure-mobile.net/", "hGZSWGJntAFbXLmYRitDivIhrClsgA21", mContext);
             mTableContainers = mClient.getTable("blobcontainers");
             mTableBlobs = mClient.getTable("blobs");
         }

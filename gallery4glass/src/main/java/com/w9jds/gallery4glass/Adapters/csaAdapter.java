@@ -1,4 +1,4 @@
-package com.w9jds.glassshare.Adapters;
+package com.w9jds.gallery4glass.Adapters;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -14,7 +14,6 @@ import android.widget.ImageView;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
-import com.w9jds.glassshare.R;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

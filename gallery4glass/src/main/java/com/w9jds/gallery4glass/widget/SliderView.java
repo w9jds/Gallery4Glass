@@ -1,4 +1,4 @@
-package com.w9jds.glassshare.widget;
+package com.w9jds.gallery4glass.widget;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -174,7 +174,7 @@ public class SliderView extends FrameLayout
             return;
         }
 
-        FrameLayout.LayoutParams localLayoutParams = (FrameLayout.LayoutParams)this.slider.getLayoutParams();
+        LayoutParams localLayoutParams = (LayoutParams)this.slider.getLayoutParams();
         localLayoutParams.width = ((int)(1.0F / this.slideableScale * getBaseSliderWidth()));
         localLayoutParams.leftMargin = 0;
         this.slider.setLayoutParams(localLayoutParams);
@@ -237,7 +237,7 @@ public class SliderView extends FrameLayout
         hideIndeterminateSlider(true);
         showSlider(false);
         int i = getResources().getDisplayMetrics().widthPixels;
-        FrameLayout.LayoutParams localLayoutParams = (FrameLayout.LayoutParams)this.slider.getLayoutParams();
+        LayoutParams localLayoutParams = (LayoutParams)this.slider.getLayoutParams();
         localLayoutParams.width = i;
         localLayoutParams.setMargins(-i, 0, 0, 0);
         this.slider.setLayoutParams(localLayoutParams);
@@ -270,7 +270,7 @@ public class SliderView extends FrameLayout
     public void startIndeterminate()
     {
         int i = getResources().getDisplayMetrics().widthPixels;
-        FrameLayout.LayoutParams localLayoutParams = (FrameLayout.LayoutParams)this.slider.getLayoutParams();
+        LayoutParams localLayoutParams = (LayoutParams)this.slider.getLayoutParams();
         localLayoutParams.width = i;
         localLayoutParams.setMargins(0, 0, 0, 0);
         this.slider.setLayoutParams(localLayoutParams);
@@ -306,7 +306,7 @@ public class SliderView extends FrameLayout
         this.slider.setTranslationX(0.0F);
         showSlider(false);
         int i = getResources().getDisplayMetrics().widthPixels;
-        FrameLayout.LayoutParams localLayoutParams = (FrameLayout.LayoutParams)this.slider.getLayoutParams();
+        LayoutParams localLayoutParams = (LayoutParams)this.slider.getLayoutParams();
         localLayoutParams.width = i;
         localLayoutParams.setMargins(-i, 0, 0, 0);
         this.slider.setLayoutParams(localLayoutParams);

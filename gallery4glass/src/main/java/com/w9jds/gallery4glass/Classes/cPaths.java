@@ -1,4 +1,4 @@
-package com.w9jds.glassshare.Classes;
+package com.w9jds.gallery4glass.Classes;
 
 import android.os.Parcel;
 import android.os.Parcelable;

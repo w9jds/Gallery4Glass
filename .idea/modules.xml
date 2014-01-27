@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GlassShare.iml" filepath="$PROJECT_DIR$/GlassShare.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GlassShare/GlassShare-GlassShare.iml" filepath="$PROJECT_DIR$/GlassShare/GlassShare-GlassShare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gallery4Glass.iml" filepath="$PROJECT_DIR$/Gallery4Glass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gallery4glass/gallery4glass.iml" filepath="$PROJECT_DIR$/gallery4glass/gallery4glass.iml" />
     </modules>
   </component>
 </project>

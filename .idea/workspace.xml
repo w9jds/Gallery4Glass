@@ -2,30 +2,210 @@
 <project version="4">
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
-      <GlobalState>
-        <option name="hideForNonLayoutFiles" value="false" />
-        <option name="visible" value="false" />
-      </GlobalState>
+      <GlobalState />
     </option>
   </component>
   <component name="AndroidLayouts">
     <shared>
-      <config>
-        <target>android-15</target>
-      </config>
+      <config />
     </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
-        <config>
-          <device>Nexus 4</device>
-          <theme>@android:style/Theme.Holo</theme>
-        </config>
-      </layout>
-    </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af5dbb29-d6a0-474d-97fb-58945db054b4" name="Default" comment="" />
-    <ignored path="GlassShare.iws" />
+    <list default="true" id="10cceac4-7030-45e5-9818-949adbf614e2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/GlassShare-GlassShare.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/libs/google-play-services.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/libs/gson-2.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/libs/mobileservices-1.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/proguard-rules.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/ic_launcher-web.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Size.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0006.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0007.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0008.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0009.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0011.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0016.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0017.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0018.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0019.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0020.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0022.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0023.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0024.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0025.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0026.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0027.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0028.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0029.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0030.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0031.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0032.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0033.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0034.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0035.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0036.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0037.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0038.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0039.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0040.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0041.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0042.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0043.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0044.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0045.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0046.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0047.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0048.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0049.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0050.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0051.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0052.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0053.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0054.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0055.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0056.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0057.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0058.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0059.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_add_person_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_angle_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_archive_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_arrow_left_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_arrow_right_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_attachment_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_beamed_note_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_bed_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_bike_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_bluetooth_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_bus_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_calendar_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_camera_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_compass_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_computer_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_delete_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_directions_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_document_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_done_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_done_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_drive_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_eighth_note_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_email_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_forward_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_game_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_gear_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_help_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_location_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_message_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_microphone_off_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_microphone_on_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_mobile_phone_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_move_to_end_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_move_to_front_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_next_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_pause_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_play_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_music_previous_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_no_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_note_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_pen_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_people_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_person_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_phone_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_phone_hang_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_phone_in_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_phone_out_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_photo_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_placeholder_attachment_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_placeholder_photo_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_placeholder_video_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_plus_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_question_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_read_aloud_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_reply_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_reply_all_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_run_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_search_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_select_link_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_share_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_star_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_storefront_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_sync_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_timer_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_transit_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_unstar_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_video_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_video_off_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_vignette_medium.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_volume_full_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_volume_half_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_volume_muted_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_walk_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_warning_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_warning_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/ic_world_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/vignette_overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_bar_determinate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/drawable/slider_indeterminate.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/layout/activity_vignette.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/layout/card_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/menu/vignette.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values-w820dp/dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values/integers.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GlassShare/src/main/res/xml/my_voice_trigger.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_play_services.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__google_play_services.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gson_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__gson_2_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__mobileservices_1_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__mobileservices_1_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" afterPath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mobileservices_1_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mobileservices_1_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="Gallery4Glass.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +214,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -78,115 +263,31 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" line="291" class="com.w9jds.glassshare.MainActivity$3" package="com.w9jds.glassshare">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="autoscrollToSource" value="true" />
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="GlassShare" />
+    <favorites_list name="Gallery4Glass" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="50" selection-start="9670" selection-end="9670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6750">
+            <state line="53" column="13" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="7785">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageService.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
+      <file leaf-file-name="SliderView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/widget/SliderView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.5927052" vertical-offset="0" max-vertical-offset="2070">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="csaAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="55" selection-start="2584" selection-end="2584" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3360">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VignetteActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="17" selection-start="8703" selection-end="8703" vertical-scroll-proportion="0.0" vertical-offset="2325" max-vertical-offset="2970">
+            <state line="76" column="0" selection-start="2475" selection-end="2475" vertical-scroll-proportion="1.773399" vertical-offset="420" max-vertical-offset="5010">
               <folding>
-                <element signature="e#8463#8717#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_voice_trigger.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/xml/my_voice_trigger.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="22" selection-start="314" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="885">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="84" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="870">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cPaths.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="57" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2115">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -198,17 +299,20 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
-  <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../../KeyStore.jks" />
-    <option name="KEY_ALIAS" value="w9jds" />
-    <option name="REMEMBER_PASSWORDS" value="true" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
       <map>
         <entry key="" value="true" />
-        <entry key=":GlassShare/GlassShare/" value="true" />
-        <entry key="GlassShare/" value="true" />
+        <entry key=":gallery4glass/Gallery4Glass/" value="true" />
+        <entry key="Gallery4Glass/" value="true" />
       </map>
     </option>
     <option name="availableProjects">
@@ -216,19 +320,19 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="GlassShare" />
+              <option name="name" value="Gallery4Glass" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value=":GlassShare" />
-                <option name="path" value="$PROJECT_DIR$/GlassShare" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
                 <option name="name" value=":" />
                 <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":gallery4glass" />
+                <option name="path" value="$PROJECT_DIR$/gallery4glass" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -237,356 +341,369 @@
     </option>
     <option name="availableTasks">
       <map>
-        <entry key="$PROJECT_DIR$/GlassShare">
+        <entry key="$PROJECT_DIR$/gallery4glass">
           <value>
             <list>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the Android dependencies of the project" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="androidDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all variants of all applications and secondary packages." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assemble" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all Debug builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all builds for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleDefaultFlavor" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles the Release build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all Release builds" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles all the Test applications" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="assembleTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="build" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="check" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
+                <option name="name" value="checkDefaultFlavorDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
+                <option name="name" value="checkDefaultFlavorReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugRenderscript" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugTestAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugTestNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorDebugTestRenderscript" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorReleaseAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorReleaseJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorReleaseNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileDefaultFlavorReleaseRenderscript" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="compileLint" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all device checks on currently connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="connectedCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs and runs instrumentation tests for all flavors on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="connectedInstrumentTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs and runs the tests for Build 'defaultFlavorDebug' on connected devices." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="connectedInstrumentTestDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs and runs instrumentation tests using all Device Providers." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="deviceInstrumentTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="dexDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="dexDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="dexDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorDebugBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorDebugSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorDebugTestBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorDebugTestSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorReleaseBuildConfig" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="generateDefaultFlavorReleaseSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="installDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Installs the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="installDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="lint" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="lintDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the DefaultFlavorRelease build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="lintDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="description" value="Runs lint on just the fatal issues in the DefaultFlavorRelease build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
+                <option name="name" value="lintVitalDefaultFlavorRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorDebugAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorDebugResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorDebugTestAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorDebugTestResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorReleaseAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="mergeDefaultFlavorReleaseResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="packageDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="packageDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="packageDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDefaultFlavorDebugBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDefaultFlavorDebugTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDefaultFlavorReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDexDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDexDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="preDexDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="prepareDefaultFlavorDebugDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="prepareDefaultFlavorDebugTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="prepareDefaultFlavorReleaseDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugTestJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugTestManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorDebugTestResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorReleaseJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorReleaseManifest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="processDefaultFlavorReleaseResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the signing info for each variant" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="signingReport" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstall all applications." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="uninstallAll" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Debug build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="uninstallDefaultFlavorDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Test build for the DefaultFlavorDebug build" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="uninstallDefaultFlavorDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build for flavor DefaultFlavor" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="uninstallDefaultFlavorRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/GlassShare" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/gallery4glass" />
                 <option name="name" value="validateDebugSigning" />
               </ExternalTaskPojo>
             </list>
@@ -595,97 +712,48 @@
       </map>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/gallery4glass/src/main/AndroidManifest.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/composite/CompositeBuilder.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/VignetteHelper.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Assert.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Files.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Picture.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Size.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/SliderView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/GlassError.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/GlassApplication.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/GlassFragment.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/VoiceMenuDialog.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/GlassVoiceActivity.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/GlassActivity.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/app/DelegatingVoiceListener.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/Files.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/vignette/VignetteHelper.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/composite/CompositeBuilder.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/integers.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/build/BuildHelper.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/predicates/Assert.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/option_menu_item.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/anim/menu_enter.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/anim/menu_exit.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/ImageLoaders.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/GlasswareIconBinder.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/DynamicSizeTextView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/MosaicView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/horizontalscroll/BaseHorizontalScrollView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/SliderView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/FillBar.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/google/glass/widget/ProgressBar.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_bar_determinate.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/drawable/slider_indeterminate.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/ProgressBar.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/VisibleForTesting.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/BuildHelper.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java" />
-        <option value="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Adapters/csaAdapter.java" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/gallery4glass/build.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="804" />
+    <option name="height" value="792" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
-  <component name="ProjectStructureProblems">
-    <ignored-problems>
-      <problem id="unused-library(library:project:google-play-services)" />
-      <problem id="unused-library(library:project:gson-2.2.2)" />
-      <problem id="unused-library(library:project:mobileservices-1.1.0)" />
-    </ignored-problems>
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
+      <flattenPackages ProjectPane="false" />
+      <showMembers ProjectPane="true" />
       <showModules />
       <showLibraryContents />
-      <hideEmptyPackages />
+      <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
-      <autoscrollToSource />
+      <autoscrollToSource ProjectPane="false" />
       <autoscrollFromSource />
       <sortByType />
     </navigator>
@@ -696,45 +764,45 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="gallery4glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="gallery4glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -748,221 +816,15 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="Gallery4Glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values-w820dp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
+              <option name="myItemId" value="gallery4glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -978,75 +840,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="glassshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glassshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GlassShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="glassshare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Adapters" />
+              <option name="myItemId" value="gallery4glass" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1061,7 +855,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.lastSelected" value="preferences.updates" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1069,34 +863,17 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gdk-waveform-sample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Gallery4Glass" />
     <property name="FullScreen" value="false" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="AndroidTargetDevices" value="015ECD710300400C" />
-    <property name="ExportedModule" value="GlassShare-GlassShare" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/GlassShare/GlassShare.apk" />
-    <property name="AndroidRunProguardForReleaseBuild" value="true" />
-    <property name="AndroidProguardConfigPaths" value="$APPLICATION_HOME_DIR$/sdk/tools/proguard/proguard-android.txt" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="false" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.SHOW" value="true" />
-    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/values" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/java/com" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes" />
-      <recent name="$PROJECT_DIR$/gradle" />
+      <recent name="$PROJECT_DIR$/gallery4glass" />
+      <recent name="$PROJECT_DIR$/gallery4glass/src/main/res" />
+      <recent name="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.GlassShare">
+  <component name="RunManager" selected="Android Application.gallery4glass">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -1213,7 +990,6 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -1227,12 +1003,11 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="false" name="GlassShare" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="GlassShare-GlassShare" />
-      <option name="ACTIVITY_CLASS" value="com.w9jds.glassshare.MainActivity" />
+    <configuration default="false" name="gallery4glass" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="gallery4glass" />
+      <option name="ACTIVITY_CLASS" value="com.w9jds.gallery4glass.MainActivity" />
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -1242,26 +1017,24 @@
       <option name="DISABLE_BOOT_ANIMATION" value="false" />
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <RunnerSettings RunnerId="AndroidDebugRunner" />
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.GlassShare" />
+      <item index="0" class="java.lang.String" itemvalue="Android Application.gallery4glass" />
     </list>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SliceManager">
-    <option name="analysisUIOptions">
-      <AnalysisUIOptions />
-    </option>
-  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -1281,9 +1054,9 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af5dbb29-d6a0-474d-97fb-58945db054b4" name="Default" comment="" />
-      <created>1387000186969</created>
-      <updated>1387000186969</updated>
+      <changelist id="10cceac4-7030-45e5-9818-949adbf614e2" name="Default" comment="" />
+      <created>1390762956643</created>
+      <updated>1390762956643</updated>
     </task>
     <servers />
   </component>
@@ -1308,36 +1081,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="804" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="792" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3850837" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24928367" sideWeight="0.50151056" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3189911" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31570998" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831326" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33482143" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24892704" sideWeight="0.49848944" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33531156" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33086053" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33284023" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1357,358 +1130,94 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="38" selection-start="8463" selection-end="8463" vertical-scroll-proportion="0.0" vertical-offset="3180" max-vertical-offset="3510">
-          <folding>
-            <element signature="e#8463#8717#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="84" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="57" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="27" selection-start="5422" selection-end="5422" vertical-scroll-proportion="0.0" vertical-offset="2505" max-vertical-offset="7185">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="55" selection-start="2584" selection-end="2584" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="3615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="38" selection-start="8463" selection-end="8463" vertical-scroll-proportion="0.0" vertical-offset="3180" max-vertical-offset="3510">
-          <folding>
-            <element signature="e#8463#8717#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="84" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="57" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="0" selection-start="8183" selection-end="10260" vertical-scroll-proportion="0.0" vertical-offset="3765" max-vertical-offset="8820">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="42" selection-start="1358" selection-end="1358" vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="195" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="47" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="225" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="39" selection-start="8867" selection-end="8867" vertical-scroll-proportion="0.0" vertical-offset="4455" max-vertical-offset="5055" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="42" selection-start="11240" selection-end="11240" vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="8640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="21" selection-start="1496" selection-end="1496" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="430" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare.iml">
+    <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="421" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="430" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/GlassShare-GlassShare.iml">
+    <entry file="file://$PROJECT_DIR$/gradlew.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.8352181" vertical-offset="1136" max-vertical-offset="1755" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="430" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gallery4Glass.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="407" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/proguard-rules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/gallery4glass.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="32" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.44226044" vertical-offset="15" max-vertical-offset="1740" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="7" selection-end="7" vertical-scroll-proportion="0.024767801" vertical-offset="0" max-vertical-offset="646" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="129" selection-end="129" vertical-scroll-proportion="0.17337461" vertical-offset="0" max-vertical-offset="646" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="31" selection-start="8199" selection-end="8199" vertical-scroll-proportion="0.2922591" vertical-offset="3111" max-vertical-offset="3744">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/vignette_overlay.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-15/android/graphics/Canvas.java">
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="0" selection-start="4652" selection-end="4652" vertical-scroll-proportion="0.33333334" vertical-offset="1690" max-vertical-offset="26370" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="50" selection-start="550" selection-end="550" vertical-scroll-proportion="0.32624114" vertical-offset="87" max-vertical-offset="510">
+        <state line="38" column="15" selection-start="1414" selection-end="1414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/gallery4glass/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="47" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
+        <state line="18" column="25" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="928" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/ids.xml">
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="60" selection-start="304" selection-end="304" vertical-scroll-proportion="0.13677812" vertical-offset="0" max-vertical-offset="658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/progress_bar_determinate.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="213" selection-end="213" vertical-scroll-proportion="0.09287926" vertical-offset="0" max-vertical-offset="646">
+        <state line="53" column="13" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7536">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable-hdpi/bar_candy0000.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/drawable/slider_indeterminate.xml">
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/widget/SliderView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="147" selection-end="147" vertical-scroll-proportion="0.13856813" vertical-offset="0" max-vertical-offset="1065">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="0.11829653" vertical-offset="0" max-vertical-offset="634" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="47" selection-start="185" selection-end="185" vertical-scroll-proportion="0.07097792" vertical-offset="0" max-vertical-offset="634" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/widget/SliderView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="39" selection-start="8867" selection-end="8867" vertical-scroll-proportion="1.5974236" vertical-offset="3418" max-vertical-offset="5010" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="49" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="42" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/Size.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="231" selection-end="231" vertical-scroll-proportion="0.43650794" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/card_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/slider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="630" selection-end="630" vertical-scroll-proportion="-8.888889" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/layout/menu_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="39" selection-end="338" vertical-scroll-proportion="-0.5555556" vertical-offset="0" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-15/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="0" selection-start="4861" selection-end="4861" vertical-scroll-proportion="0.33333334" vertical-offset="1615" max-vertical-offset="3510" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-15/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="4112" selection-end="4112" vertical-scroll-proportion="0.33333334" vertical-offset="1330" max-vertical-offset="9195" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/cPaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="57" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="2115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Adapters/csaAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="55" selection-start="2584" selection-end="2584" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/VignetteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="17" selection-start="8703" selection-end="8703" vertical-scroll-proportion="0.0" vertical-offset="2289" max-vertical-offset="2970">
+        <state line="76" column="0" selection-start="2475" selection-end="2475" vertical-scroll-proportion="1.773399" vertical-offset="420" max-vertical-offset="5010">
           <folding>
-            <element signature="e#8463#8717#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/res/xml/my_voice_trigger.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="22" selection-start="314" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="84" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="50" selection-start="9670" selection-end="9670" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GlassShare/src/main/java/com/w9jds/glassshare/Classes/StorageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.5927052" vertical-offset="0" max-vertical-offset="2070">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1727,9 +1236,20 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android-Gradle</last-edited>
+          <last-edited>Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1764,7 +1284,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>GlassShare</last-edited>
+          <last-edited>gallery4glass</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1788,7 +1308,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>protobuf-java-2.4.1</last-edited>
+          <last-edited>google-api-client-1.17.0-rc</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

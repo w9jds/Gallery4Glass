@@ -1,4 +1,4 @@
-package com.w9jds.glassshare;
+package com.w9jds.gallery4glass;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,10 +25,10 @@ import android.widget.TextView;
 
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
-import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.w9jds.glassshare.Classes.Size;
-import com.w9jds.glassshare.Classes.cPaths;
-import com.w9jds.glassshare.widget.SliderView;
+import com.w9jds.gallery4glass.Adapters.csaAdapter;
+import com.w9jds.gallery4glass.Classes.Size;
+import com.w9jds.gallery4glass.Classes.cPaths;
+import com.w9jds.gallery4glass.widget.SliderView;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;

@@ -1,4 +1,4 @@
-package com.w9jds.glassshare;
+package com.w9jds.gallery4glass;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -35,11 +35,11 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
-import com.w9jds.glassshare.Adapters.csaAdapter;
-import com.w9jds.glassshare.Classes.StorageApplication;
-import com.w9jds.glassshare.Classes.StorageService;
-import com.w9jds.glassshare.Classes.cPaths;
-import com.w9jds.glassshare.widget.SliderView;
+import com.w9jds.gallery4glass.Adapters.csaAdapter;
+import com.w9jds.gallery4glass.Classes.StorageApplication;
+import com.w9jds.gallery4glass.Classes.StorageService;
+import com.w9jds.gallery4glass.Classes.cPaths;
+import com.w9jds.gallery4glass.widget.SliderView;
 
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
@@ -82,14 +82,6 @@ public class MainActivity extends Activity
 
 
         CreatePictureView();
-    }
-
-    @Override
-    protected void onStop()
-    {
-//        Log.d("GlassShare", "Closing Application");
-//        finish();
-        super.onStop();
     }
 
     private void CreatePictureView()
@@ -369,7 +361,7 @@ public class MainActivity extends Activity
      */
     private BroadcastReceiver receiver = new BroadcastReceiver()
     {
-        public void onReceive(Context context, android.content.Intent intent)
+        public void onReceive(Context context, Intent intent)
         {
             String intentAction = intent.getAction();
 
@@ -438,7 +430,7 @@ public class MainActivity extends Activity
 
             catch (Exception ex)
             {
-                Log.e("GlassShareImageUploadTask", ex.getMessage());
+                Log.e("Gallery4GlassImageUploadTask", ex.getMessage());
             }
             return false;
         }
