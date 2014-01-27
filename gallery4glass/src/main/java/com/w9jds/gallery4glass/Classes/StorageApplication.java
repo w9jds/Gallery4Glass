@@ -7,7 +7,6 @@ import android.app.Application;
  */
 public class StorageApplication extends Application
 {
-
     private StorageService mStorageService;
 
     public StorageApplication() {}

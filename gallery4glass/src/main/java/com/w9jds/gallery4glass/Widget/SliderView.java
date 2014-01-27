@@ -1,4 +1,4 @@
-package com.w9jds.gallery4glass.widget;
+package com.w9jds.gallery4glass.Widget;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -13,7 +13,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.w9jds.glassshare.R;
+import com.w9jds.gallery4glass.R;
 
 public class SliderView extends FrameLayout
 {
@@ -59,8 +59,9 @@ public class SliderView extends FrameLayout
 
     private void animateCountTo(float paramFloat)
     {
-        if ((this.countAnimator != null) && (this.countAnimator.isRunning()))
+        if ( ( this.countAnimator != null ) && ( this.countAnimator.isRunning() ) ) {
             this.countAnimator.cancel();
+        }
 
         float[] arrayOfFloat = new float[2];
         arrayOfFloat[0] = this.animatedCount;
@@ -90,14 +91,16 @@ public class SliderView extends FrameLayout
 
     private void hideSlider(boolean paramBoolean)
     {
-        if (!this.sliderShowing)
+        if ( ! this.sliderShowing ) {
             return;
+        }
 
         int i = getResources().getDimensionPixelSize(R.dimen.slider_bar_height);
         this.slider.animate().cancel();
 
-        if (paramBoolean)
-            this.slider.animate().translationY(i).setDuration(getResources().getInteger(R.integer.slider_in_out_animation_duration_ms));
+        if ( paramBoolean ) {
+            this.slider.animate().translationY( i ).setDuration( getResources().getInteger( R.integer.slider_in_out_animation_duration_ms ) );
+        }
 
         while (true)
         {
@@ -115,16 +118,18 @@ public class SliderView extends FrameLayout
 
     private void setProportionalIndex(float paramFloat, int paramInt, boolean paramBoolean)
     {
-        if (this.count < 2)
-            hideSlider(true);
+        if ( this.count < 2 ) {
+            hideSlider( true );
+        }
 
         while (true)
         {
             this.index = paramFloat;
             float f1 = 1.0F / this.slideableScale;
             float f2 = (0.5F + this.index - f1 / 2.0F) * (getResources().getDisplayMetrics().widthPixels / this.count);
-            if (paramInt != 0)
-            this.slider.animate().translationX(f2).setDuration(paramInt).setInterpolator(new AccelerateDecelerateInterpolator());
+            if ( paramInt != 0 ) {
+                this.slider.animate().translationX( f2 ).setDuration( paramInt ).setInterpolator( new AccelerateDecelerateInterpolator() );
+            }
 
             while (paramBoolean)
             {
@@ -150,13 +155,15 @@ public class SliderView extends FrameLayout
     {
         removeCallbacks(this.hideSliderRunnable);
 
-        if (this.sliderShowing)
+        if ( this.sliderShowing ) {
             return;
+        }
 
         this.slider.animate().cancel();
 
-        if (paramBoolean)
-            this.slider.animate().translationY(0.0F).setDuration(getResources().getInteger(R.integer.slider_in_out_animation_duration_ms));
+        if ( paramBoolean ) {
+            this.slider.animate().translationY( 0.0F ).setDuration( getResources().getInteger( R.integer.slider_in_out_animation_duration_ms ) );
+        }
 
         while (true)
         {
@@ -179,8 +186,9 @@ public class SliderView extends FrameLayout
         localLayoutParams.leftMargin = 0;
         this.slider.setLayoutParams(localLayoutParams);
 
-        if (paramBoolean)
-            showSlider(true);
+        if ( paramBoolean ) {
+            showSlider( true );
+        }
 
         setProportionalIndex(this.index, 0, paramBoolean);
     }
@@ -315,8 +323,9 @@ public class SliderView extends FrameLayout
 
     public void stopIndeterminate()
     {
-        if (this.sliderWasShowing)
-            showSlider(true);
+        if ( this.sliderWasShowing ) {
+            showSlider( true );
+        }
 
         ((AnimationDrawable)this.indeterminateSlider.getBackground()).stop();
         hideIndeterminateSlider(true);
@@ -324,8 +333,9 @@ public class SliderView extends FrameLayout
 
     public void stopProgress()
     {
-        if (this.progressAnimator != null)
+        if ( this.progressAnimator != null ) {
             this.progressAnimator.cancel();
+        }
 
         hideSlider(true);
     }

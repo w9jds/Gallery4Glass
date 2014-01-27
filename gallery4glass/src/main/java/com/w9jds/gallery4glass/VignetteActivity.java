@@ -28,7 +28,7 @@ import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
 import com.w9jds.gallery4glass.Classes.Size;
 import com.w9jds.gallery4glass.Classes.cPaths;
-import com.w9jds.gallery4glass.widget.SliderView;
+import com.w9jds.gallery4glass.Widget.SliderView;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
