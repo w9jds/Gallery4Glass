@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.glass.app.Card;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
@@ -43,6 +44,8 @@ public class VignetteActivity extends Activity
     private static final Paint SCALE_PAINT;
     private static final Paint SCREEN_PAINT;
     private static final RectF SCREEN_POSITION = new RectF(0.645833F, 0.037037F, 0.979167F, 0.37037F);
+
+    private String msSpoken;
 
     //create an adapter for the cardscrollviewer
     private csaAdapter mcvAdapter;
@@ -66,12 +69,14 @@ public class VignetteActivity extends Activity
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
         mcpPaths.insertString("Select Second Image for Vignette", 0);
+        mcpPaths.insertString("Use text for second Image", 1);
 
         CreatePictureView();
     }
 
     private void displaySpeechRecognizer()
     {
+
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         startActivityForResult(intent, SPEECH_REQUEST);
     }
@@ -81,10 +86,10 @@ public class VignetteActivity extends Activity
     {
         if (requestCode == SPEECH_REQUEST && resultCode == RESULT_OK)
         {
-            List<String> results = data.getStringArrayListExtra(
-                    RecognizerIntent.EXTRA_RESULTS);
-            String spokenText = results.get(0);
+            List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            msSpoken = results.get(0);
             // Do something with spokenText.
+            startCompositeCreation();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -93,8 +98,6 @@ public class VignetteActivity extends Activity
     {
         (new CreateComposite(mcpPaths, miVignettePosition, this)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
-
-
 
     private void CreatePictureView()
     {
@@ -118,7 +121,7 @@ public class VignetteActivity extends Activity
                         maManager.playSoundEffect(Sounds.DISALLOWED);
                         break;
                     case 1:
-
+                        displaySpeechRecognizer();
                         break;
                     default:
                         maManager.playSoundEffect(Sounds.TAP);
@@ -182,7 +185,10 @@ public class VignetteActivity extends Activity
             Canvas cBuild = new Canvas(bitWhole);
 
             cBuild.drawBitmap(BitmapFactory.decodeResource(mcContext.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
-            cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+            if (msSpoken != null || msSpoken != "")
+                cBuild.drawBitmap(loadBitmapFromView(), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+            else
+                cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
 
             try
             {
@@ -206,8 +212,13 @@ public class VignetteActivity extends Activity
             return false;
         }
 
-        public Bitmap loadBitmapFromView(View v)
+        public Bitmap loadBitmapFromView()
         {
+            Card txtCard = new Card(mcContext);
+            txtCard.setText(msSpoken);
+
+            View v = txtCard.toView();
+
             Bitmap bView = Bitmap.createBitmap( v.getLayoutParams().width, v.getLayoutParams().height, Bitmap.Config.ARGB_8888);
             Canvas cView = new Canvas(bView);
             v.layout(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());

@@ -7,12 +7,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -88,14 +86,10 @@ public class csaAdapter extends CardScrollAdapter
         }
         else
         {
-            LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            vCard = inflater.inflate(R.layout.textcard_layout, parent, false);
+            Card txtCard = new Card(mcContext);
+            txtCard.setText(mlsPaths.get(iPosition));
 
-            //get the textview we are going to populate
-            TextView txtView = (TextView) vCard.findViewById(R.id.cardText);
-            txtView.setText(mlsPaths.get(iPosition));
-
-//            vCard = txtCard.toView();
+            vCard = txtCard.toView();
         }
 
         return vCard;
