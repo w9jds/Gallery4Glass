@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,9 +33,12 @@ import com.w9jds.gallery4glass.Widget.SliderView;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.util.List;
 
 public class VignetteActivity extends Activity
 {
+    private static final int SPEECH_REQUEST = 0;
+
     static final Size FULL_COMPOSITE_SIZE = new Size(1920, 1080);
     private static final Paint SCALE_PAINT;
     private static final Paint SCREEN_PAINT;
@@ -66,10 +70,31 @@ public class VignetteActivity extends Activity
         CreatePictureView();
     }
 
+    private void displaySpeechRecognizer()
+    {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        startActivityForResult(intent, SPEECH_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == SPEECH_REQUEST && resultCode == RESULT_OK)
+        {
+            List<String> results = data.getStringArrayListExtra(
+                    RecognizerIntent.EXTRA_RESULTS);
+            String spokenText = results.get(0);
+            // Do something with spokenText.
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     private void startCompositeCreation()
     {
         (new CreateComposite(mcpPaths, miVignettePosition, this)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
+
+
 
     private void CreatePictureView()
     {
@@ -87,24 +112,30 @@ public class VignetteActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                if (position != 0)
+                switch(position)
                 {
-                    maManager.playSoundEffect(Sounds.TAP);
-                    //save the card index that was selected
-                    miVignettePosition = position;
+                    case 0:
+                        maManager.playSoundEffect(Sounds.DISALLOWED);
+                        break;
+                    case 1:
 
-                    setContentView(R.layout.menu_layout);
-                    ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
-                    ((TextView)findViewById(R.id.label)).setText("Making Vignette");
+                        break;
+                    default:
+                        maManager.playSoundEffect(Sounds.TAP);
+                        //save the card index that was selected
+                        miVignettePosition = position;
 
-                    SliderView svProgress = (SliderView)findViewById(R.id.slider);
-                    svProgress.startIndeterminate();
+                        setContentView(R.layout.menu_layout);
+                        ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+                        ((TextView)findViewById(R.id.label)).setText("Making Vignette");
 
-                    //create the vignette and save it
-                    startCompositeCreation();
+                        SliderView svProgress = (SliderView)findViewById(R.id.slider);
+                        svProgress.startIndeterminate();
+
+                        //create the vignette and save it
+                        startCompositeCreation();
+                        break;
                 }
-                else
-                    maManager.playSoundEffect(Sounds.DISALLOWED);
             }
         });
 
@@ -173,6 +204,15 @@ public class VignetteActivity extends Activity
             }
 
             return false;
+        }
+
+        public Bitmap loadBitmapFromView(View v)
+        {
+            Bitmap bView = Bitmap.createBitmap( v.getLayoutParams().width, v.getLayoutParams().height, Bitmap.Config.ARGB_8888);
+            Canvas cView = new Canvas(bView);
+            v.layout(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
+            v.draw(cView);
+            return bView;
         }
 
         public int calculateInSampleSize(BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)

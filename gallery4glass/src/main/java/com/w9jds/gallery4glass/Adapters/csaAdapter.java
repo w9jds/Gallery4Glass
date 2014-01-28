@@ -7,10 +7,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -64,7 +66,7 @@ public class csaAdapter extends CardScrollAdapter
     {
         View vCard;
 
-        if (mlsPaths.get(iPosition).contains("."))
+        if (mlsPaths.get(iPosition).contains("/"))
         {
             LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             vCard = inflater.inflate(R.layout.card_layout, parent, false);
@@ -86,9 +88,14 @@ public class csaAdapter extends CardScrollAdapter
         }
         else
         {
-            Card firstCard = new Card(mcContext);
-            firstCard.setText(mlsPaths.get(iPosition));
-            vCard = firstCard.toView();
+            LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            vCard = inflater.inflate(R.layout.textcard_layout, parent, false);
+
+            //get the textview we are going to populate
+            TextView txtView = (TextView) vCard.findViewById(R.id.cardText);
+            txtView.setText(mlsPaths.get(iPosition));
+
+//            vCard = txtCard.toView();
         }
 
         return vCard;
