@@ -16,7 +16,11 @@
             android:id="@+id/cardText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:padding="40px"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="35sp"/>
 
     </LinearLayout>
 

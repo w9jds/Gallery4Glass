@@ -68,7 +68,7 @@ public class VignetteActivity extends Activity
         iThis.getExtras();
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
-        mcpPaths.insertString("Select what to use for second image.", 0);
+        mcpPaths.insertString("Select what to use for the second image.", 0);
         mcpPaths.insertString("Text", 1);
 
         CreatePictureView();
@@ -89,11 +89,16 @@ public class VignetteActivity extends Activity
             List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             msSpoken = results.get(0);
 
+            //set the view to a new menu layout
             setContentView(R.layout.menu_layout);
+            //set the icon to the vignette icon
             ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+            //and set the label
             ((TextView)findViewById(R.id.label)).setText("Making Vignette");
 
+            //make sure it has the slider view in it
             SliderView svProgress = (SliderView)findViewById(R.id.slider);
+            //and start the progressbar as indeterminate
             svProgress.startIndeterminate();
 
             //create composite
@@ -138,8 +143,6 @@ public class VignetteActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                SliderView svProgress;
-
                 switch(position)
                 {
                     case 0:
@@ -158,11 +161,16 @@ public class VignetteActivity extends Activity
                         //save the card index that was selected
                         miVignettePosition = position;
 
+                        //set the view to a new menu layout
                         setContentView(R.layout.menu_layout);
+                        //set the icon to the vignette icon
                         ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+                        //and set the label
                         ((TextView)findViewById(R.id.label)).setText("Making Vignette");
 
-                        svProgress = (SliderView)findViewById(R.id.slider);
+                        //make sure it has the slider view in it
+                        SliderView svProgress = (SliderView)findViewById(R.id.slider);
+                        //and start the progressbar as indeterminate
                         svProgress.startIndeterminate();
 
                         //create the vignette and save it
@@ -192,6 +200,7 @@ public class VignetteActivity extends Activity
         private int miVignettePosition;
         private Context mcContext;
 
+        //Constructor
         public CreateComposite(cPaths cpPaths, int iVignettePosition, Context cContext)
         {
             mcpPaths = cpPaths;
@@ -208,31 +217,46 @@ public class VignetteActivity extends Activity
             //calculate the sample size and set it in the options
             bfoOptions.inSampleSize = calculateInSampleSize(bfoOptions, FULL_COMPOSITE_SIZE.Height, FULL_COMPOSITE_SIZE.Width);
 
+            //pull in just the info for the main image of the vignette
             Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2), bfoOptions);
+            //set the size on the image
             Size sWhole = FULL_COMPOSITE_SIZE;
 
+            //now pull the whole image at the scaled size
             Bitmap bitWhole = Bitmap.createScaledBitmap(bitMain, sWhole.Width, sWhole.Height, false);
+            //create a canvas with the bitmap we just pulled
             Canvas cBuild = new Canvas(bitWhole);
 
+            //draw the vignette overlay on top of that main image
             cBuild.drawBitmap(BitmapFactory.decodeResource(mcContext.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
 
+            //if user selected the text option
             if (miVignettePosition == 1)
+                //turn the view into a bitmap and draw it in the top right hand corner
                 cBuild.drawBitmap(loadBitmapFromView(), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+            //otherwise
             else
+                //take the second image and draw it in the top right hand corner
                 cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
 
             try
             {
+                //get the path to the camera directory
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
+                //create a new output stream
                 OutputStream fOut;
 
+                //create a new file with the added _x for the vignette to be stored in
                 java.io.File file = new java.io.File(path, mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.")[5] + "_x.jpg");
+                //create an output stream with the new file
                 fOut = new FileOutputStream(file);
 
+                //compress the image we just made
                 bitWhole.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
                 fOut.flush();
                 fOut.close();
 
+                //store the new file
                 MediaStore.Images.Media.insertImage(mcContext.getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
             }
             catch (Exception e)
