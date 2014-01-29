@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -62,11 +63,13 @@ public class csaAdapter extends CardScrollAdapter
     @Override
     public View getView(int iPosition, View convertView, ViewGroup parent)
     {
-        View vCard;
+        View vCard = null;
+        LayoutInflater inflater;
+        TextView tvText;
 
         if (mlsPaths.get(iPosition).contains("/"))
         {
-            LayoutInflater inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             vCard = inflater.inflate(R.layout.card_layout, parent, false);
 
             //get the imageview we are going to populate
@@ -86,10 +89,30 @@ public class csaAdapter extends CardScrollAdapter
         }
         else
         {
-            Card txtCard = new Card(mcContext);
-            txtCard.setText(mlsPaths.get(iPosition));
+            switch(iPosition)
+            {
+                case 0:
+                    inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    vCard = inflater.inflate(R.layout.textcard_layout, parent, false);
 
-            vCard = txtCard.toView();
+                    //get the textview we are going to populate
+                    tvText = (TextView) vCard.findViewById(R.id.cardText);
+
+                    tvText.setText(mlsPaths.get(iPosition));
+                    break;
+                case 1:
+                    inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    vCard = inflater.inflate(R.layout.menu_layout, parent, false);
+
+                    //get the textview we are going to populate
+                    tvText = (TextView) vCard.findViewById(R.id.label);
+                    //get the icon we are going to set
+                    ImageView ivImage = (ImageView) vCard.findViewById(R.id.icon);
+
+                    tvText.setText(mlsPaths.get(iPosition));
+                    ivImage.setImageResource(R.drawable.ic_document_50);
+                    break;
+            }
         }
 
         return vCard;

@@ -68,8 +68,8 @@ public class VignetteActivity extends Activity
         iThis.getExtras();
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
-        mcpPaths.insertString("Select Second Image for Vignette", 0);
-        mcpPaths.insertString("Use text for second Image", 1);
+        mcpPaths.insertString("Select what to use for second image.", 0);
+        mcpPaths.insertString("Text", 1);
 
         CreatePictureView();
     }
@@ -88,10 +88,33 @@ public class VignetteActivity extends Activity
         {
             List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             msSpoken = results.get(0);
-            // Do something with spokenText.
+
+            setContentView(R.layout.menu_layout);
+            ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+            ((TextView)findViewById(R.id.label)).setText("Making Vignette");
+
+            SliderView svProgress = (SliderView)findViewById(R.id.slider);
+            svProgress.startIndeterminate();
+
+            //create composite
             startCompositeCreation();
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public Bitmap loadBitmapFromView()
+    {
+        Card txtCard = new Card(this);
+        txtCard.setText(msSpoken);
+
+        View v = txtCard.toView();
+
+        Bitmap bView = Bitmap.createBitmap( 640, 360, Bitmap.Config.ARGB_8888);
+        Canvas cView = new Canvas(bView);
+
+        v.layout(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
+        v.draw(cView);
+        return bView;
     }
 
     private void startCompositeCreation()
@@ -115,12 +138,19 @@ public class VignetteActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                SliderView svProgress;
+
                 switch(position)
                 {
                     case 0:
                         maManager.playSoundEffect(Sounds.DISALLOWED);
                         break;
                     case 1:
+                        maManager.playSoundEffect(Sounds.TAP);
+                        //save the card index that was selected
+                        miVignettePosition = position;
+
+                        //display speech recognition screen
                         displaySpeechRecognizer();
                         break;
                     default:
@@ -132,7 +162,7 @@ public class VignetteActivity extends Activity
                         ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
                         ((TextView)findViewById(R.id.label)).setText("Making Vignette");
 
-                        SliderView svProgress = (SliderView)findViewById(R.id.slider);
+                        svProgress = (SliderView)findViewById(R.id.slider);
                         svProgress.startIndeterminate();
 
                         //create the vignette and save it
@@ -178,14 +208,15 @@ public class VignetteActivity extends Activity
             //calculate the sample size and set it in the options
             bfoOptions.inSampleSize = calculateInSampleSize(bfoOptions, FULL_COMPOSITE_SIZE.Height, FULL_COMPOSITE_SIZE.Width);
 
-            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1), bfoOptions);
+            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2), bfoOptions);
             Size sWhole = FULL_COMPOSITE_SIZE;
 
             Bitmap bitWhole = Bitmap.createScaledBitmap(bitMain, sWhole.Width, sWhole.Height, false);
             Canvas cBuild = new Canvas(bitWhole);
 
             cBuild.drawBitmap(BitmapFactory.decodeResource(mcContext.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
-            if (msSpoken != null || msSpoken != "")
+
+            if (miVignettePosition == 1)
                 cBuild.drawBitmap(loadBitmapFromView(), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
             else
                 cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
@@ -212,19 +243,7 @@ public class VignetteActivity extends Activity
             return false;
         }
 
-        public Bitmap loadBitmapFromView()
-        {
-            Card txtCard = new Card(mcContext);
-            txtCard.setText(msSpoken);
 
-            View v = txtCard.toView();
-
-            Bitmap bView = Bitmap.createBitmap( v.getLayoutParams().width, v.getLayoutParams().height, Bitmap.Config.ARGB_8888);
-            Canvas cView = new Canvas(bView);
-            v.layout(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
-            v.draw(cView);
-            return bView;
-        }
 
         public int calculateInSampleSize(BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)
         {

@@ -30,7 +30,7 @@
 
     </LinearLayout>
 
-    <com.w9jds.glassshare.widget.SliderView
+    <com.w9jds.gallery4glass.Widget.SliderView
         android:id="@id/slider"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
