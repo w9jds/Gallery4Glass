@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.w9jds.gallery4glass.R;
 
@@ -70,7 +69,7 @@ public class csaAdapter extends CardScrollAdapter
         if (mlsPaths.get(iPosition).contains("/"))
         {
             inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            vCard = inflater.inflate(R.layout.card_layout, parent, false);
+            vCard = inflater.inflate(R.layout.imagecard_layout, parent, false);
 
             //get the imageview we are going to populate
             ImageView ivPic = (ImageView) vCard.findViewById(R.id.cardImage);

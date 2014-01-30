@@ -107,21 +107,6 @@ public class VignetteActivity extends Activity
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public Bitmap loadBitmapFromView()
-    {
-        Card txtCard = new Card(this);
-        txtCard.setText(msSpoken);
-
-        View v = txtCard.toView();
-
-        Bitmap bView = Bitmap.createBitmap( 640, 360, Bitmap.Config.ARGB_8888);
-        Canvas cView = new Canvas(bView);
-
-        v.layout(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
-        v.draw(cView);
-        return bView;
-    }
-
     private void startCompositeCreation()
     {
         (new CreateComposite(mcpPaths, miVignettePosition, this)).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -246,8 +231,10 @@ public class VignetteActivity extends Activity
                 //create a new output stream
                 OutputStream fOut;
 
+                String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.");
+
                 //create a new file with the added _x for the vignette to be stored in
-                java.io.File file = new java.io.File(path, mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.")[5] + "_x.jpg");
+                java.io.File file = new java.io.File(path, saPath[saPath.length - 1] + "_x.jpg");
                 //create an output stream with the new file
                 fOut = new FileOutputStream(file);
 
@@ -267,7 +254,23 @@ public class VignetteActivity extends Activity
             return false;
         }
 
+        public Bitmap loadBitmapFromView()
+        {
+            Card txtCard = new Card(mcContext);
+            txtCard.setText(msSpoken);
 
+            View vCard = txtCard.toView();
+
+            vCard.setDrawingCacheEnabled(true);
+            vCard.layout(0,0,640,360);
+            vCard.buildDrawingCache();
+
+            Bitmap bView = Bitmap.createBitmap(vCard.getDrawingCache());
+//            Canvas cView = new Canvas(bView);
+
+//            txtCard.toView().draw(cView);
+            return bView;
+        }
 
         public int calculateInSampleSize(BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)
         {
