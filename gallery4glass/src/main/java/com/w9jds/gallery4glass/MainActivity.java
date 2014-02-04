@@ -33,6 +33,7 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecovera
 import com.google.api.client.http.FileContent;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
@@ -292,6 +293,7 @@ public class MainActivity extends Activity
                 });
 
                 return true;
+
 //            case R.id.upload_menu_item:
 //
 //                if (mcmCon.getActiveNetworkInfo().isConnected())
@@ -310,7 +312,7 @@ public class MainActivity extends Activity
 //                    //get the drive service
 //                    mdService = getDriveService(mgacCredential);
 //                    //save the selected item to google drive
-//                    saveFileToDrive(mlsPaths.get(miPosition));
+//                    saveFileToDrive(mcpPaths.getCurrentPositionPath());
 //                }
 //
 //                return true;

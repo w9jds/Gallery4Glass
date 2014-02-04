@@ -15,6 +15,11 @@
         android:title="@string/vignette_label"
         android:icon="@drawable/ic_vignette_medium"/>
 
+    <!--<item-->
+        <!--android:id="@+id/upload_menu_item"-->
+        <!--android:title="@string/upload_label"-->
+        <!--android:icon="@drawable/ic_googledrive_50"/>-->
+
     <item
         android:id="@+id/uploadphone_menu_item"
         android:title="@string/uploadphone_label"
