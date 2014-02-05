@@ -12,38 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10cceac4-7030-45e5-9818-949adbf614e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gallery4glass/src/main/res/drawable-hdpi/ic_googledrive_50.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_api_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_api_client_android_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_api_services_drive_v2_rev108_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_http_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_http_client_android_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_http_client_gson_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_oauth_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__google_play_services.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__gson_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jackson_core_2_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jackson_core_asl_1_9_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jsr305_1_3_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__mobileservices_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__protobuf_java_2_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_client_android_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_services_drive_v2_rev108_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_http_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_http_client_android_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_http_client_gson_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_oauth_client_1_17_0_rc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_asl_1_9_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_1_3_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mobileservices_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/protobuf_java_2_4_1.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java" afterPath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageService.java" afterPath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/gallery4glass/src/main/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java" afterPath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/cPaths.java" afterPath="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/cPaths.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -105,7 +76,23 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java" line="158" class="com.w9jds.gallery4glass.MainActivity" package="com.w9jds.gallery4glass">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -115,12 +102,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="0" selection-start="10227" selection-end="10227" vertical-scroll-proportion="0.0" vertical-offset="5141" max-vertical-offset="6256">
+            <state line="98" column="0" selection-start="3473" selection-end="3473" vertical-scroll-proportion="0.3314917" vertical-offset="648" max-vertical-offset="6528">
               <folding>
-                <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#6506#6514#0" expanded="true" />
                 <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
               </folding>
@@ -128,10 +115,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VignetteActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="cPaths.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/cPaths.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="2176">
+              <folding>
+                <element signature="e#294#302#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VignetteActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="40" selection-start="12107" selection-end="12107" vertical-scroll-proportion="8.618785" vertical-offset="992" max-vertical-offset="4608">
+            <state line="265" column="42" selection-start="10876" selection-end="10876" vertical-scroll-proportion="0.0" vertical-offset="3184" max-vertical-offset="4528">
+              <folding>
+                <element signature="e#2317#2360#0" expanded="true" />
+                <element signature="e#2397#2435#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="83" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
               <folding />
             </state>
           </provider>
@@ -567,10 +577,11 @@
         <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Adapters/csaAdapter.java" />
         <option value="$PROJECT_DIR$/gallery4glass/src/main/res/layout/textcard_layout.xml" />
         <option value="$PROJECT_DIR$/gallery4glass/src/main/res/layout/card_layout.xml" />
-        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java" />
         <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageService.java" />
-        <option value="$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/gallery4glass/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java" />
+        <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/cPaths.java" />
         <option value="$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java" />
       </list>
     </option>
@@ -762,6 +773,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gallery4glass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gallery4Glass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gallery4Glass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery4glass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gallery4glass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1046,7 +1091,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="788" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1095,18 +1140,12 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/StorageApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="420" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="37" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7785">
           <folding>
-            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5337#5587#0" expanded="false" />
-            <element signature="e#5576#5577#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#9828#9829#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1137,9 +1176,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="13" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="7065">
           <folding>
-            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5337#5587#0" expanded="false" />
-            <element signature="e#5576#5577#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#9828#9829#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1170,9 +1208,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="13" selection-start="1938" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7785">
           <folding>
-            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#5337#5587#0" expanded="false" />
-            <element signature="e#5576#5577#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#9828#9829#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1410,13 +1447,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="478" selection-end="478" vertical-scroll-proportion="0.46933332" vertical-offset="0" max-vertical-offset="400">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="49" selection-start="860" selection-end="860" vertical-scroll-proportion="0.44533333" vertical-offset="137" max-vertical-offset="848">
@@ -1452,21 +1482,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="0" selection-start="10227" selection-end="10227" vertical-scroll-proportion="0.0" vertical-offset="5141" max-vertical-offset="6256">
-          <folding>
-            <element signature="method#sortPaths#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
-          </folding>
+        <state line="14" column="83" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/VignetteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="40" selection-start="12107" selection-end="12107" vertical-scroll-proportion="8.618785" vertical-offset="992" max-vertical-offset="4608">
-          <folding />
+        <state line="265" column="42" selection-start="10876" selection-end="10876" vertical-scroll-proportion="0.0" vertical-offset="3184" max-vertical-offset="4528">
+          <folding>
+            <element signature="e#2317#2360#0" expanded="true" />
+            <element signature="e#2397#2435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/Classes/cPaths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="2176">
+          <folding>
+            <element signature="e#294#302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery4glass/src/main/java/com/w9jds/gallery4glass/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="0" selection-start="3473" selection-end="3473" vertical-scroll-proportion="0.3314917" vertical-offset="648" max-vertical-offset="6528">
+          <folding>
+            <element signature="e#6506#6514#0" expanded="true" />
+            <element signature="method#saveFileToDrive#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getDriveService#0;class#MainActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

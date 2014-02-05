@@ -49,6 +49,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 @SuppressLint("DefaultLocale")
@@ -80,8 +81,6 @@ public class MainActivity extends Activity
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-
-
         CreatePictureView();
     }
 
@@ -96,7 +95,8 @@ public class MainActivity extends Activity
         //get all the images from the camera folder (paths)
         mcpPaths.setImagePaths(getCameraImages());
         //sort the paths of pictures
-        sortPaths(mcpPaths.getImagePaths());
+//        sortPaths(mcpPaths.getImagePaths());
+        Collections.reverse(mcpPaths.getImagePaths());
 
         //create a new card scroll viewer for this context
         CardScrollView csvCardsView = new CardScrollView(this);
@@ -149,27 +149,26 @@ public class MainActivity extends Activity
     /***
      * Sort the file paths so that the images are in order from most resent first
      */
-    private void sortPaths(ArrayList<String> lsPaths)
-    {
-        java.io.File[] fPics = new java.io.File[lsPaths.size()];
-
-        for (int i = 0; i < lsPaths.size(); i++)
-            fPics[i] = new java.io.File(lsPaths.get(i));
-
-        lsPaths.clear();
-
-        Arrays.sort(fPics, new Comparator<java.io.File>()
-        {
-            @Override
-            public int compare(java.io.File o1, java.io.File o2)
-            {
-                return Long.valueOf(o1.lastModified()).compareTo(o2.lastModified());
-            }
-        });
-
-        for (int i = fPics.length - 1; i >= 0; i--)
-            lsPaths.add(fPics[i].getAbsolutePath());
-    }
+//    private void sortPaths(ArrayList<String> lsPaths)
+//    {
+//        ArrayList<java.io.File> fPics = new ArrayList<java.io.File>();
+//
+//        for (String x : lsPaths)
+//            fPics.add(new java.io.File(x));
+//
+//        lsPaths.clear();
+//
+//        Collections.sort(fPics, new Comparator<java.io.File>(){
+//            @Override
+//            public int compare(java.io.File o1, java.io.File o2)
+//            {
+//                return Long.valueOf(o1.lastModified()).compareTo(o2.lastModified());
+//            }
+//        });
+//
+//        for (java.io.File x : fPics)
+//            lsPaths.add(x.getAbsolutePath());
+//    }
 
     public String getBucketId(String path)
     {

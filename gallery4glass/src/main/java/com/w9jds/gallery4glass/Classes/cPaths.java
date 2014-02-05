@@ -131,5 +131,4 @@ public class cPaths implements Parcelable
             return new cPaths[size];
         }
     };
-
 }

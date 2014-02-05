@@ -68,8 +68,8 @@ public class VignetteActivity extends Activity
         iThis.getExtras();
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
-        mcpPaths.insertString("Select what to use for the second image.", 0);
-        mcpPaths.insertString("Text", 1);
+        mcpPaths.insertString( getString(R.string.vignette_activity_label), 0);
+        mcpPaths.insertString( getString(R.string.vignette_text_card) , 1);
 
         CreatePictureView();
     }
@@ -261,14 +261,9 @@ public class VignetteActivity extends Activity
 
             View vCard = txtCard.toView();
 
-            vCard.setDrawingCacheEnabled(true);
-            vCard.layout(0,0,640,360);
-            vCard.buildDrawingCache();
+            Bitmap bView = Bitmap.createBitmap(vCard.getWidth(), vCard.getHeight(), Bitmap.Config.RGB_565);
 
-            Bitmap bView = Bitmap.createBitmap(vCard.getDrawingCache());
-//            Canvas cView = new Canvas(bView);
-
-//            txtCard.toView().draw(cView);
+            vCard.draw(new Canvas(bView));
             return bView;
         }
 
