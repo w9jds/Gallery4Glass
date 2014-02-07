@@ -196,21 +196,16 @@ public class VignetteActivity extends Activity
         @Override
         protected Boolean doInBackground(Void... params)
         {
-            BitmapFactory.Options bfoOptions = new BitmapFactory.Options();
-            //turn off the bounds only so you get the pixels this time
-            bfoOptions.inJustDecodeBounds = false;
-            //calculate the sample size and set it in the options
-            bfoOptions.inSampleSize = calculateInSampleSize(bfoOptions, FULL_COMPOSITE_SIZE.Height, FULL_COMPOSITE_SIZE.Width);
-
             //pull in just the info for the main image of the vignette
-            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2), bfoOptions);
+            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2));
             //set the size on the image
             Size sWhole = FULL_COMPOSITE_SIZE;
 
-            //now pull the whole image at the scaled size
-            Bitmap bitWhole = Bitmap.createScaledBitmap(bitMain, sWhole.Width, sWhole.Height, false);
-            //create a canvas with the bitmap we just pulled
+            Bitmap bitWhole = Bitmap.createBitmap(sWhole.Width, sWhole.Height, Bitmap.Config.ARGB_8888);
             Canvas cBuild = new Canvas(bitWhole);
+
+            int i = (int)((sWhole.Height - bitMain.getHeight() * sWhole.Width / bitMain.getWidth()) / 2.0F);
+            cBuild.drawBitmap(bitMain, null, new Rect(0, i, sWhole.Width, sWhole.Height - i), SCALE_PAINT);
 
             //draw the vignette overlay on top of that main image
             cBuild.drawBitmap(BitmapFactory.decodeResource(mcContext.getResources(), R.drawable.vignette_overlay), null, new Rect(0, 0, sWhole.Width, sWhole.Height), SCALE_PAINT);
@@ -221,8 +216,19 @@ public class VignetteActivity extends Activity
                 cBuild.drawBitmap(loadBitmapFromView(), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
             //otherwise
             else
+            {
+                Bitmap bVig = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition));
+
+                Bitmap bMini = Bitmap.createBitmap(640, 360, Bitmap.Config.ARGB_8888);
+                Canvas cMini = new Canvas(bMini);
+
+                i = (int)((360 - bVig.getHeight() * 640 / bVig.getWidth()) / 2.0F);
+
+                cMini.drawBitmap(bVig, null, new Rect(0, i, 640, 360 - i), SCALE_PAINT);
+
                 //take the second image and draw it in the top right hand corner
-                cBuild.drawBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+                cBuild.drawBitmap(bMini, null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+            }
 
             try
             {
