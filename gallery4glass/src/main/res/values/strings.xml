@@ -26,5 +26,6 @@
 
     <string name="glass_voice_trigger">Pictures</string>
     <string name="title_activity_vignette">VignetteActivity</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
