@@ -146,30 +146,6 @@ public class MainActivity extends Activity
         super.onPause();
     }
 
-    /***
-     * Sort the file paths so that the images are in order from most resent first
-     */
-//    private void sortPaths(ArrayList<String> lsPaths)
-//    {
-//        ArrayList<java.io.File> fPics = new ArrayList<java.io.File>();
-//
-//        for (String x : lsPaths)
-//            fPics.add(new java.io.File(x));
-//
-//        lsPaths.clear();
-//
-//        Collections.sort(fPics, new Comparator<java.io.File>(){
-//            @Override
-//            public int compare(java.io.File o1, java.io.File o2)
-//            {
-//                return Long.valueOf(o1.lastModified()).compareTo(o2.lastModified());
-//            }
-//        });
-//
-//        for (java.io.File x : fPics)
-//            lsPaths.add(x.getAbsolutePath());
-//    }
-
     public String getBucketId(String path)
     {
         return String.valueOf(path.toLowerCase().hashCode());
@@ -237,7 +213,7 @@ public class MainActivity extends Activity
                 //set the text as deleting
                 setContentView(R.layout.menu_layout);
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_delete_50);
-                ((TextView)findViewById(R.id.label)).setText("Deleting");
+                ((TextView)findViewById(R.id.label)).setText(getString(R.string.deleting_label));
 
                 svProgress = (SliderView)findViewById(R.id.slider);
                 svProgress.startProgress(1000, new Animator.AnimatorListener()
@@ -265,7 +241,7 @@ public class MainActivity extends Activity
 
                         setContentView(R.layout.menu_layout);
                         ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-                        ((TextView)findViewById(R.id.label)).setText("Deleted");
+                        ((TextView)findViewById(R.id.label)).setText(getString(R.string.deleted_label));
 
                         maManager.playSoundEffect(Sounds.SUCCESS);
 
@@ -327,7 +303,7 @@ public class MainActivity extends Activity
                     svProgress.startIndeterminate();
 
                     ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_mobile_phone_50);
-                    ((TextView)findViewById(R.id.label)).setText("Uploading");
+                    ((TextView)findViewById(R.id.label)).setText(getString(R.string.uploading_label));
 
                     String sContainer = "";
                     String[] saImage = mcpPaths.getCurrentPositionPath().split("/|\\.");
@@ -401,31 +377,22 @@ public class MainActivity extends Activity
                 fisStream.read(byteArray);
 
                 // Post our image data (byte array) to the server
-                Log.d("ImageUpload", "Byte Array Finished " + byteArray.length);
                 URL url = new URL(mUrl.replace("\"", ""));
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setDoOutput(true);
                 urlConnection.setRequestMethod("PUT");
                 urlConnection.addRequestProperty("Content-Type", "image/jpeg");
                 urlConnection.setRequestProperty("Content-Length", ""+ byteArray.length);
-                Log.d("ImageUpload", "Connection Created");
                 // Write image data to server
                 DataOutputStream wr = new DataOutputStream(urlConnection.getOutputStream());
                 wr.write(byteArray);
-                Log.d("ImageUpload", "Writing of byte array finished.");
                 wr.flush();
                 wr.close();
-                Log.d("ImageUpload", "DataOutputStream Closed");
                 int response = urlConnection.getResponseCode();
-                Log.d("ImageUpload", "Got response code " + response);
                 urlConnection.disconnect();
-                Log.d("ImageUpload", "Disconnected Connection");
                 //If we successfully uploaded, return true
                 if (response == 201 && urlConnection.getResponseMessage().equals("Created"))
-                {
-                    Log.d("ImageUpload", "Image uploaded");
                     return true;
-                }
 
             }
 
@@ -441,10 +408,9 @@ public class MainActivity extends Activity
         {
             if (uploaded)
             {
-
                 setContentView(R.layout.menu_layout);
                 ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-                ((TextView)findViewById(R.id.label)).setText("Uploaded");
+                ((TextView)findViewById(R.id.label)).setText(getString(R.string.uploaded_label));
 
                 maManager.playSoundEffect(Sounds.SUCCESS);
             }

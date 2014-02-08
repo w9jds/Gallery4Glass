@@ -20,6 +20,7 @@ import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -94,7 +95,7 @@ public class VignetteActivity extends Activity
             //set the icon to the vignette icon
             ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
             //and set the label
-            ((TextView)findViewById(R.id.label)).setText("Making Vignette");
+            ((TextView)findViewById(R.id.label)).setText(getString(R.string.making_vignette_label));
 
             //make sure it has the slider view in it
             SliderView svProgress = (SliderView)findViewById(R.id.slider);
@@ -151,7 +152,7 @@ public class VignetteActivity extends Activity
                         //set the icon to the vignette icon
                         ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
                         //and set the label
-                        ((TextView)findViewById(R.id.label)).setText("Making Vignette");
+                        ((TextView)findViewById(R.id.label)).setText(getString(R.string.making_vignette_label));
 
                         //make sure it has the slider view in it
                         SliderView svProgress = (SliderView)findViewById(R.id.slider);
@@ -204,6 +205,7 @@ public class VignetteActivity extends Activity
             Bitmap bitWhole = Bitmap.createBitmap(sWhole.Width, sWhole.Height, Bitmap.Config.ARGB_8888);
             Canvas cBuild = new Canvas(bitWhole);
 
+            //calculate the position to start into the top of the image so that the aspect ratio is preserved
             int i = (int)((sWhole.Height - bitMain.getHeight() * sWhole.Width / bitMain.getWidth()) / 2.0F);
             cBuild.drawBitmap(bitMain, null, new Rect(0, i, sWhole.Width, sWhole.Height - i), SCALE_PAINT);
 
@@ -212,19 +214,18 @@ public class VignetteActivity extends Activity
 
             //if user selected the text option
             if (miVignettePosition == 1)
+            {
+                //resize the bitmap to 640 x 360
+                Bitmap bView = resizeBitmap(loadBitmapFromView());
+
                 //turn the view into a bitmap and draw it in the top right hand corner
-                cBuild.drawBitmap(loadBitmapFromView(), null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+                cBuild.drawBitmap(bView, null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
+            }
             //otherwise
             else
             {
-                Bitmap bVig = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition));
-
-                Bitmap bMini = Bitmap.createBitmap(640, 360, Bitmap.Config.ARGB_8888);
-                Canvas cMini = new Canvas(bMini);
-
-                i = (int)((360 - bVig.getHeight() * 640 / bVig.getWidth()) / 2.0F);
-
-                cMini.drawBitmap(bVig, null, new Rect(0, i, 640, 360 - i), SCALE_PAINT);
+                //resize the bitmap to 640 x 360
+                Bitmap bMini = resizeBitmap(BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(miVignettePosition)));
 
                 //take the second image and draw it in the top right hand corner
                 cBuild.drawBitmap(bMini, null, new Rect(Math.round(SCREEN_POSITION.left * sWhole.Width), Math.round(SCREEN_POSITION.top * sWhole.Height), Math.round(SCREEN_POSITION.right * sWhole.Width), Math.round(SCREEN_POSITION.bottom * sWhole.Height)), SCREEN_PAINT);
@@ -260,43 +261,41 @@ public class VignetteActivity extends Activity
             return false;
         }
 
+        public Bitmap resizeBitmap(Bitmap bVig)
+        {
+            //make a new bitmap for the aspect ratio resize
+            Bitmap bMini = Bitmap.createBitmap(640, 360, Bitmap.Config.ARGB_8888);
+            Canvas cMini = new Canvas(bMini);
+
+            //calculate the position to start into the top of the image so that the aspect ratio is preserved
+            int i = (int)((360 - bVig.getHeight() * 640 / bVig.getWidth()) / 2.0F);
+            //draw the new version of this image
+            cMini.drawBitmap(bVig, null, new Rect(0, i, 640, 360 - i), SCALE_PAINT);
+
+            return bMini;
+        }
+
         public Bitmap loadBitmapFromView()
         {
+            //create a new card and place the input text in it
             Card txtCard = new Card(mcContext);
             txtCard.setText(msSpoken);
 
+            //change the card into a view
             View vCard = txtCard.toView();
 
-            Bitmap bView = Bitmap.createBitmap(vCard.getWidth(), vCard.getHeight(), Bitmap.Config.RGB_565);
+            //get the measurements for the view (since it hasn't been displayed)
+            vCard.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            //create a new bitmap matching the size of the view
+            Bitmap bView = Bitmap.createBitmap(vCard.getMeasuredWidth(), vCard.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+            //create a new canvas for the bitmap
+            Canvas cView = new Canvas(bView);
+            //set up the layout for the view
+            vCard.layout(0, 0, vCard.getMeasuredWidth(), vCard.getMeasuredHeight());
+            //and draw it
+            vCard.draw(cView);
 
-            vCard.draw(new Canvas(bView));
             return bView;
-        }
-
-        public int calculateInSampleSize(BitmapFactory.Options bfoOptions, int iReqWidth, int iReqHeight)
-        {
-            //pull out the images height
-            final int height = bfoOptions.outHeight;
-            //pull out the images width
-            final int width = bfoOptions.outWidth;
-            //set the samle size to 1 for initialization
-            int inSampleSize = 1;
-
-            //if te height or the width of the image is greater than the requested sizes
-            if (height > iReqHeight || width > iReqWidth)
-            {
-                //set the half dimensions for the image
-                final int iHalfHeight = height / 2;
-                final int iHalfWidth = width / 2;
-
-                //white both half dimensions divided by the sample size are still greater than the requested dimensions
-                while ((iHalfHeight / inSampleSize) > iReqHeight && (iHalfWidth / inSampleSize) > iReqWidth)
-                    //multiply the sample size by 2
-                    inSampleSize *= 2;
-            }
-
-            //once the loop is done return the sample size
-            return inSampleSize;
         }
 
         @Override
@@ -304,7 +303,7 @@ public class VignetteActivity extends Activity
         {
             setContentView(R.layout.menu_layout);
             ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-            ((TextView)findViewById(R.id.label)).setText("Made Vignette");
+            ((TextView)findViewById(R.id.label)).setText(getString(R.string.made_vignette_label));
 
             maManager.playSoundEffect(Sounds.SUCCESS);
 

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">GlassShare</string>
+    <string name="app_name">Gallery for Glass</string>
+
     <string name="delete_label">Delete</string>
     <string name="deleted_label">Deleted</string>
     <string name="deleting_label">Deleting</string>
-    <string name="upload_label">Push to Drive</string>
-    <string name="uploadphone_label">Upload Image</string>
+
+    <string name="drive_label">Push to Drive</string>
+
+    <string name="upload_label">Upload Image</string>
+    <string name="uploading_label">Uploading</string>
+    <string name="uploaded_label">Uploaded</string>
+
     <string name="vignette_label">Make Vignette</string>
+    <string name="making_vignette_label">Making Vignette</string>
+    <string name="made_vignette_label">Made Vignette</string>
 
     <integer name="google_play_services_version">4132500</integer>
 
@@ -15,9 +23,8 @@
     <string name="vignette_activity_label">Select what to use for the second image.</string>
 
     <string name="app_id">551585648263023</string>
+
     <string name="glass_voice_trigger">Pictures</string>
     <string name="title_activity_vignette">VignetteActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
 </resources>
