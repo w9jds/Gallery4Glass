@@ -1,97 +1,367 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="javascripts/main.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+      
     <title>Gallery For Glass by w9jds</title>
   </head>
-  
+
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          
+          
+          <ul class="nav navbar-nav navbar-right">
+<!--
+            <li>
+              <a href="/index.html#whatisit" >What Is It</a>
+            </li>
+-->
+            <li>
+              <a href="/index.html#features" >Available Features</a>
+            </li>
+            <li>
+              <a href="/index.html#install" >How to Install</a>
+            </li>
+            <li>
+              <a href="/index.html#changes" >What's New</a>
+            </li>
+            <li>
+              <a href="/index.html#download" >Download </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
     <header>
-      <div class="inner">
-        <h1>Gallery For Glass</h1>
-        <h2>Manage, Upload, and Create Vignettes with your pictures.</h2>
-        <a href="https://github.com/w9jds/GlassShare" class="button"><small>View project on</small>GitHub</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-1">
+            <h1>Gallery For Glass</h1>
+
+            <h2>Manage, Upload, and Create Vignettes with your pictures.</h2>
+          </div>
+
+          <div class="col-xs-4">
+            <a href="https://github.com/w9jds/GlassShare" class="button">
+              <small>View project on</small>GitHub
+            </a>
+          </div>
+        </div>
       </div>
     </header>
     
-    	
+
+<!--
+    <section id="whatisit" class="site-section site-section-dark">
+      <div class="container">      
+        <div class="row">
+
+        
+        </div>
+      </div>
+    </section>
+-->
     
+    
+    <section id="features" class="site-section site-section-light">
+      <div class="container">
+      
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+        
+            <h2><b>Features</b></h2>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3> This is a GDK application.</h3>
-            
-            <p> In order to install this onto your Google Glass you need to sideload it. In order to do that you need to install adb onto your computer. 
-                The following video will show you how to install it onto a windows computer since the drive is broken. If you own a Mac you don't need to mess
-                with the driver it will just work.</p>
-            
-            <h3>Installing Drivers</h3>
-            <iframe width="640" height="360" src="//www.youtube.com/embed/rfpKyj7fJCM?list=UUkopP0Gk-wSE9HHrVH8izFw" frameborder="0" allowfullscreen></iframe>
-            
-            <h3>Sideloading APKs</h3>
-            <iframe width="640" height="360" src="//www.youtube.com/embed/TYJQhebDvRE" frameborder="0" allowfullscreen></iframe>
-                  
-            <h3>Starting up Gallery for Glass</h3>
-            <p>Once you have successfully installed Gallery for Glass you can start it with the voice command "okay, glass" and then "pictures" 
-                or you can find the following card in the glass menu.</p>
-            
-            <img src="images/pictures-card.png" />
-            
-            <h3>Available Picture Options</h3>
-            <p>You can now see all of the images available on your device. Each image has 3 options (at the moment) Make Vignette, Upload, and Delete. 
-                Make Vignette does exactly what it says, you are asked to select a second image and it will generate a Vignette and save it for you. When you select
-            upload, the image is uploaded to a server. You then open up the companion application on your android device and download the images. After they have been
-            downloaded they will be removed from the server. Finally, you have delete which removes the image from you Google Glass Device.</p>
-            
-            </section>
-            
 
-        <aside id="sidebar">
+            <h3>Picture Options</h3>
             
+            <p>
+              When you click a picture from your device you will have three options:
+            </p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="images/vignette-option.png" width="100%"/>
+          </div>
+          <div class="col-xs-4">
+            <img src="images/upload-option.png" width="100%"/>
+          </div>
+          <div class="col-xs-4">
+            <img src="images/delete-option.png" width="100%"/>
+          </div> 
+        </div>
+        
+        <br>
+        
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+        
+            <h3>Vignettes</h3>
+            <p>
+              Vignettes are a feature that are already built into the standard Google Glass system. However, 
+              they only allow you to make it the second after you take the, and only with the card that you were
+              looking at when you took the picture. For more info on how to make vignettes officially look
+              <a href="https://support.google.com/glass/answer/3405215?hl=en">Here</a>.
+            </p>
+            <br>
+            <p>
+              Gallery for Glass allows you to create the same exact experiance, but with pictures that you already
+              on your device. You can sideload images for this system or just use images you have already taken! You can
+              do voice input and place the text inside of the vignette.
+            </p>
+            <br>
+            <p>
+              Blow are an example of the same exact vignette. However, the one on the left is the one generated by the
+              official way to make it (right after it is taken) and the one on the right is created from my Gallery for Glass
+              application.
+            </p>
+            
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-6">
+            <img src="images/Official.jpg" width="100%"/>
+          </div>
+          <div class="col-xs-6">
+            <img src="images/Gallery4Glass.jpeg" width="100%"/>
+          </div> 
+        </div>
+        
+        <br>
+        
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            
+            <h3>Sending to Phone</h3>
+            <p>
+              The second option will upload the image to a server and be stored there. You then need to run the
+              companion application (currently only available for Android) to download it to your phone. This 
+              feature will most like get replaced when Google Play Services are available and I can just enable 
+              uploading it to Google Drive. Downloading the image from your phone will require you to be logged 
+              into the same Google account glass it connected to. It will then download the image, and store it 
+              to the camera folder on your phone. If you select to delete the image off the server, then when it 
+              has finished downloading it will be permanently removed.
+            </p>
+            
+            <br>
+            
+            <p>
+              I opted for this option because I didn't want to be limited by only 1000 calls from the Mirror API.
+            </p>
+          </div>
+        </div>
+        
+        <br>
+        
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            
+            <h3>Deleting</h3>
+            
+            <p>
+              The final option that is available on each picture is delete. This allows you to permanently delete the
+              photo off of your device without having to plug it into the computer.
+            </p>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+      
+      
+    <section id="install" class="site-section site-section-dark">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <h2><b> How to Install </b></h2>
+            <p> 
+              This application uses the Glass Development Kit, or GDK, which means it requires you to sideload it onto your Glass.
+              Below are a couple videos that will walk you through the process of setting up the environment, and then how to sideload
+              an application using the *.APK file.
+            </p>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <h3> Installing Drivers </h3>
+            <p>
+              This tutorial will show you how to install Google Glass drivers on Windows. If you are running MAC OS or Linux, you 
+              do not have to worry about this. For those running Windows 8, there is an additional step which is to Disable Driver 
+              Signature Verification.
+            </p>
+            <br>
+            <p>
+              NOTE: Enable Debug Mode before connecting to ADB. Swipe to Settings, Click on Device Info, and Turn on Debug Mode. This 
+              will allow communication between your ADB and Glass.
+            </p>
+            
+            <br>
+            
+            <center>
+              <iframe width="640" height="360" src="//www.youtube.com/embed/rfpKyj7fJCM?list=UUkopP0Gk-wSE9HHrVH8izFw" frameborder="0" allowfullscreen></iframe>
+            </center>
+
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+        
+            <h3> Sideloading APKs </h3>
+            <p>
+              This tutorial will show you how to Sideload (Install) and Uninstall any application to your Google Glass
+              that are not listed under the MyGlass web page. For demonstration purpose Andrew will walk you through 
+              installing GlassCopter,a popular remake of a web based helicopter survival game.
+            </p>
+              
+            <br>
+            
+            <div class="row">
+              <div align="right" class="col-xs-6">
+                <b>Check your Glass connectivity:</b>
+              </div>
+              <div class="col-xs-6">
+                <kbd>adb devices</kbd> 
+              </div>
+            </div>
+            <div class="row">
+              <div align="right" class="col-xs-6">
+                <b>Install application:</b>
+              </div>
+              <div class="col-xs-6">
+                <kbd>adb install [application.apk]</kbd>
+              </div>
+            </div>
+            <div class="row">
+              <div align="right" class="col-xs-6">
+                <b>List of packages:</b>
+              </div>
+              <div class="col-xs-6">
+                <kbd>adb shell pm list packages</kbd>
+              </div>
+            </div>  
+            <div class="row">
+              <div align="right" class="col-xs-6">
+                <b>Uninstall:</b>
+              </div>
+              <div class="col-xs-6">
+                <kbd>adb uninstall [package name]</kbd>
+              </div>
+            </div>  
+
+            <br>
+            <center>
+              <iframe width="640" height="360" src="//www.youtube.com/embed/TYJQhebDvRE" frameborder="0" allowfullscreen></iframe>
+            </center>
+
+          </div>
+        </div> 
+      </div>
+    </section>
+    
+        
+        
+    <section id="changes" class="site-section site-section-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            
+            <h2><b>What's New in v1.0 Beta?</b></h2>
+          
+            <br>
+            
+            <ul>
+              <li>
+                New package name!
+                <ul>
+                  <li>
+                    WARNING!! You need to uninstall the older version manually!
+                  </li>
+                  <li>
+                    <kbd>adb uninstall com.w9jds.glassshare</kbd>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Updated compiling version
+              </li>
+              <li>
+                Vignette's ratios are now correct
+              </li>
+              <li>
+                You can now use text for the vignette image
+              </li>
+              <li>
+                Performance Improvements
+              </li>
+              <li>
+                UX Improvements
+              </li>
+              <li>
+                Finally out of Alpha
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+        
+    <section id="download" class="site-section site-section-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-3">
             <a href="https://github.com/w9jds/GlassShare/zipball/master" class="button">
                 <small>Download Source</small>
                 .zip file
             </a>
-            
+          </div>
+          <div class="col-xs-3">
             <a href="https://github.com/w9jds/GlassShare/tarball/master" class="button">
                 <small>Download Source</small>
                 .tar.gz file
             </a>
-            
-            <a href="https://github.com/w9jds/GlassShare/releases/download/v0.13-alpha/GlassShare.apk" class="button">
-                <small>Download v0.13 App</small>
+          </div>
+          <div class="col-xs-3">
+            <a href="https://github.com/w9jds/Gallery4Glass/releases/download/v0.1.0-beta/gallery4glass.apk" class="button">
+                <small>Download v1.0 Beta</small>
                 .apk file
             </a>
-            
+          </div>
+          <div class="col-xs-3">
             <a href="https://play.google.com/store/apps/details?id=com.w9jds.glasssharecomp" class="button">
                 <small>Android Companion App</small>
                 Play Store
             </a>
-            
-
-            <p class="repo-owner">
-              <a href="https://github.com/w9jds/GlassShare"></a> is maintained by <a href="https://github.com/w9jds">w9jds</a>.
-            </p>
-
-            <p>This page was generated by 
-                <a href="https://pages.github.com">GitHub Pages</a> 
-                using the Architect theme by 
-                <a href="https://twitter.com/jasonlong">Jason Long</a>.
-                Videos are supplied by
-                <a href="https://plus.google.com/u/0/+AndrewPritykin/posts">Andrew Pritykin</a>.
-            </p>
-        </aside>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+      
+      
 
-  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

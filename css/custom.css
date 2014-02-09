@@ -1,0 +1,135 @@
+article, aside, figure, footer, 
+header, hgroup, menu, nav, section { 
+  display:block; 
+}
+
+/*#features, #install,*/
+#changes {
+  font-size: 15px;
+  line-height: 1.5; 
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-weight: 400;
+}
+
+header
+{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+  border-bottom: solid 1px #275da1;
+  margin-top: 50px;
+}
+
+header h1 
+{
+  letter-spacing: -1px;
+  font-size: 72px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.2em;
+  width: 540px;
+}
+
+header h2 {
+  color: #9ddcff;
+}
+
+body h2 {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+body h3 {
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 8px;
+} 
+
+a.button {
+  width: 202px;
+  height: 80px;
+  line-height: 1.2;
+  font-size: 23px;
+  color: #fff;
+  padding-left: 68px;
+  padding-top: 22px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+}
+
+a.button small {
+  display: block;
+  font-size: 11px;
+}
+
+header a.button {
+  margin-top: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent url(../images/github-button.png) 0 0 no-repeat;
+}
+
+#download a.button {
+  width: 202px;
+  padding-left: 65px;
+  display: block;
+  background: transparent url(../images/download-button.png) 0 0 no-repeat;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+#changes, #install, #features {
+  font-size: 15px;
+  line-height: 1.5; 
+/*  font-family: 'Helvetica Neue', Helvetica, Arial, serif;*/
+  font-weight: 400; 
+}
+
+#download a.button:hover {
+  width: 202px;
+  padding-left: 65px;
+  display: block;
+  background: transparent url(../images/download-button-up.png) 0 0 no-repeat;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+#download a.button:active {
+  width: 202px;
+  padding-left: 65px;
+  display: block;
+  background: transparent url(../images/download-button-down.png) 0 0 no-repeat;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+.site-section
+{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.site-section-dark
+{
+  background-color: #2e7bcf;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  color: #fff;
+  text-align: justify;
+  border-top: solid 1px #275da1;
+  border-bottom: solid 1px #275da1;
+}
+
+.site-section-light
+{
+  
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  color: #474747;
+  text-align: justify;
+}
+
+ 
