@@ -11,6 +11,11 @@ header, hgroup, menu, nav, section {
   font-weight: 400;
 }
 
+#install a, #download a 
+{
+ color: #00ffff; 
+}
+
 header
 {
   padding-top: 40px;
@@ -81,6 +86,7 @@ header a.button {
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
   margin-bottom: 20px;
   font-size: 21px;
+  color: #fff;
 }
 
 #changes, #install, #features {
