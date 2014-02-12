@@ -1,1 +1,45 @@
-<manifest    xmlns:android="http://schemas.android.com/apk/res/android"    package="com.w9jds.gallery4glass">    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />    <uses-permission android:name="android.permission.GET_ACCOUNTS" />    <uses-permission android:name="android.permission.USE_CREDENTIALS" />    <uses-permission android:name="android.permission.INTERNET" />    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />    <application        android:name="com.w9jds.gallery4glass.Classes.StorageApplication"        android:allowBackup="true"        android:debuggable="false"        android:icon="@drawable/ic_photo_50"        android:label="@string/app_name">        <meta-data            android:name="com.google.android.gms.version"            android:value="@integer/google_play_services_version"/>        <activity            android:name="com.w9jds.gallery4glass.MainActivity"            android:label="@string/app_name">            <intent-filter>                <action android:name="com.google.android.glass.action.VOICE_TRIGGER"/>            </intent-filter>            <meta-data                android:name="com.google.android.glass.VoiceTrigger"                android:resource="@xml/my_voice_trigger" />            <receiver android:name="com.w9jds.gallery4glass.MainActivity" />        </activity>        <activity            android:name="com.w9jds.gallery4glass.VignetteActivity"            android:label="@string/title_activity_vignette">            <receiver android:name="com.w9jds.gallery4glass.VignetteActivity" />        </activity>    </application></manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.w9jds.gallery4glass" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.w9jds.gallery4glass.Classes.StorageApplication"
+        android:allowBackup="true"
+        android:debuggable="false"
+        android:icon="@drawable/ic_photo_50"
+        android:label="@string/app_name" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.w9jds.gallery4glass.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/my_voice_trigger" />
+
+            <receiver android:name="com.w9jds.gallery4glass.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.w9jds.gallery4glass.VignetteActivity"
+            android:label="@string/title_activity_vignette" >
+            <receiver android:name="com.w9jds.gallery4glass.VignetteActivity" />
+        </activity>
+        <activity
+            android:name=".EffectActivity"
+            android:label="@string/title_activity_effect" >
+        </activity>
+    </application>
+
+</manifest>

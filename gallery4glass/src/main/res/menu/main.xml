@@ -21,6 +21,10 @@
         <!--android:icon="@drawable/ic_googledrive_50"/>-->
 
     <item
+        android:id="@+id/effects_menu_item"
+        android:title="@string/effects_label"/>
+
+    <item
         android:id="@+id/uploadphone_menu_item"
         android:title="@string/upload_label"
         android:icon="@drawable/ic_mobile_phone_50"/>

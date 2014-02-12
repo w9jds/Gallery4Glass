@@ -42,7 +42,6 @@ public class StorageService
         mContext = context;
         try
         {
-
             mTableContainers = mClient.getTable("blobcontainers");
             mTableBlobs = mClient.getTable("blobs");
         }

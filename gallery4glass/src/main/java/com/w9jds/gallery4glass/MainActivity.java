@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
 import android.media.AudioManager;
+import android.media.effect.Effect;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -206,6 +207,14 @@ public class MainActivity extends Activity
                 Intent iVignette = new Intent(this, VignetteActivity.class);
                 iVignette.putExtra("PathsObject", mcpPaths);
                 startActivityForResult(iVignette, 1);
+
+                return true;
+
+            case R.id.effects_menu_item:
+
+                Intent iEffects = new Intent(this, EffectActivity.class);
+                iEffects.putExtra("PathsObject", mcpPaths);
+                startActivityForResult(iEffects, 1);
 
                 return true;
 
