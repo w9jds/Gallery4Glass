@@ -88,29 +88,28 @@ public class csaAdapter extends CardScrollAdapter
         }
         else
         {
-            switch(iPosition)
+            if (mlsPaths.get(iPosition) == "Text")
             {
-                case 0:
-                    inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    vCard = inflater.inflate(R.layout.textcard_layout, parent, false);
+                inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                vCard = inflater.inflate(R.layout.menu_layout, parent, false);
 
-                    //get the textview we are going to populate
-                    tvText = (TextView) vCard.findViewById(R.id.cardText);
+                //get the textview we are going to populate
+                tvText = (TextView) vCard.findViewById(R.id.label);
+                //get the icon we are going to set
+                ImageView ivImage = (ImageView) vCard.findViewById(R.id.icon);
 
-                    tvText.setText(mlsPaths.get(iPosition));
-                    break;
-                case 1:
-                    inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    vCard = inflater.inflate(R.layout.menu_layout, parent, false);
+                tvText.setText(mlsPaths.get(iPosition));
+                ivImage.setImageResource(R.drawable.ic_document_50);
+            }
+            else
+            {
+                inflater = (LayoutInflater) mcContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                vCard = inflater.inflate(R.layout.textcard_layout, parent, false);
 
-                    //get the textview we are going to populate
-                    tvText = (TextView) vCard.findViewById(R.id.label);
-                    //get the icon we are going to set
-                    ImageView ivImage = (ImageView) vCard.findViewById(R.id.icon);
+                //get the textview we are going to populate
+                tvText = (TextView) vCard.findViewById(R.id.cardText);
 
-                    tvText.setText(mlsPaths.get(iPosition));
-                    ivImage.setImageResource(R.drawable.ic_document_50);
-                    break;
+                tvText.setText(mlsPaths.get(iPosition));
             }
         }
 
