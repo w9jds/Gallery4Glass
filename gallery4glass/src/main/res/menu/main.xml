@@ -18,7 +18,7 @@
     <!--<item-->
         <!--android:id="@+id/upload_menu_item"-->
         <!--android:title="@string/drive_label"-->
-        <!--android:icon="@drawable/ic_googledrive_50"/>-->
+        <!--android:icon="@drawable/ic_drive_badge_48"/>-->
 
     <!--<item-->
         <!--android:id="@+id/share_menu_item"-->

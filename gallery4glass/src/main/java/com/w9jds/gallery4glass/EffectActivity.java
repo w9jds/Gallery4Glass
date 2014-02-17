@@ -140,10 +140,6 @@ public class EffectActivity extends Activity
                     bitMain = toSephia(mcpPaths.getCurrentPositionPath());
                 default:
                     break;
-
-
-
-
             }
 
             if (bitMain != null)
@@ -152,15 +148,17 @@ public class EffectActivity extends Activity
                 {
                     //get the path to the camera directory
                     String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
-                    //create a new output stream
-                    OutputStream fOut;
+//                    //create a new output stream
+//                    OutputStream fOut;
 
-                    String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.");
+                    String[] saPath = mcpPaths.getCurrentPositionPath().split("/|\\.");
 
                     //create a new file with the added _x for the vignette to be stored in
-                    java.io.File file = new java.io.File(path, saPath[saPath.length - 1] + "_" + mnEffect + ".jpg");
+                    java.io.File fImage = new java.io.File(path, saPath[saPath.length - 2] + "_" + malsEffects.get(mnEffect) + ".jpg");
+                    //create the file
+                    fImage.createNewFile();
                     //create an output stream with the new file
-                    fOut = new FileOutputStream(file);
+                    FileOutputStream fOut = new FileOutputStream(fImage);
 
                     //compress the image we just made
                     bitMain.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
@@ -168,7 +166,7 @@ public class EffectActivity extends Activity
                     fOut.close();
 
                     //store the new file
-                    MediaStore.Images.Media.insertImage(mcContext.getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
+                    MediaStore.Images.Media.insertImage(mcContext.getContentResolver(), fImage.getAbsolutePath(), fImage.getName(), fImage.getName());
                 }
                 catch (Exception e)
                 {

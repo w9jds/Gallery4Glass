@@ -241,7 +241,7 @@ public class VignetteActivity extends Activity
                 String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.");
 
                 //create a new file with the added _x for the vignette to be stored in
-                java.io.File file = new java.io.File(path, saPath[saPath.length - 1] + "_x.jpg");
+                java.io.File file = new java.io.File(path, saPath[saPath.length - 2] + "_x.jpg");
                 //create an output stream with the new file
                 fOut = new FileOutputStream(file);
 
