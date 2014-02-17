@@ -20,9 +20,15 @@
         <!--android:title="@string/drive_label"-->
         <!--android:icon="@drawable/ic_googledrive_50"/>-->
 
+    <!--<item-->
+        <!--android:id="@+id/share_menu_item"-->
+        <!--android:title="@string/share_label"-->
+        <!--android:icon="@drawable/ic_share_50"/>-->
+
     <item
         android:id="@+id/effects_menu_item"
-        android:title="@string/effects_label"/>
+        android:title="@string/effects_label"
+        android:icon="@drawable/ic_effects_50"/>
 
     <item
         android:id="@+id/uploadphone_menu_item"

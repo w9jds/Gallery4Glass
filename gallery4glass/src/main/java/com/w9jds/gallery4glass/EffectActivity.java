@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,22 +18,19 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.glass.app.Card;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
-import com.w9jds.gallery4glass.Classes.Size;
 import com.w9jds.gallery4glass.Classes.cPaths;
+import com.w9jds.gallery4glass.Widget.SliderView;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class EffectActivity extends Activity
@@ -45,6 +42,8 @@ public class EffectActivity extends Activity
     private cPaths mcpPaths = new cPaths();
     //create an audio manager for sounds
     private AudioManager maManager;
+    //create ArrayList for all the effect names
+    private ArrayList<String> malsEffects = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,28 +62,15 @@ public class EffectActivity extends Activity
 
     private void setMainView()
     {
-        ArrayList<String> alsEffects = new ArrayList<String>(Arrays.asList(
-            "AutoFix",
-            "Back Dropper",
-            "Black White",
-            "Fill Light",
-            "Fisheye",
-            "Flip",
-            "Grain",
-            "GrayScale",
-            "Lomoish",
-            "Negative",
-            "Posterize",
-            "Rotate",
-            "Saturate",
-            "Sepia",
-            "Sharpen",
-            "Tint" ));
+
+        malsEffects.add(getString(R.string.grayscale_effect));
+        malsEffects.add(getString(R.string.sepia_effect));
+
 
         //create a new card scroll viewer for this context
         CardScrollView csvCardsView = new CardScrollView(this);
         //create a new adapter for the scroll viewer
-        mcvAdapter = new csaAdapter(this, alsEffects);
+        mcvAdapter = new csaAdapter(this, malsEffects);
         //set this adapter as the adapter for the scroll viewer
         csvCardsView.setAdapter(mcvAdapter);
         //activate this scroll viewer
@@ -97,9 +83,21 @@ public class EffectActivity extends Activity
             {
                 //play the tap sound
                 maManager.playSoundEffect(Sounds.TAP);
+
+                //set the view to a new menu layout
+                setContentView(R.layout.menu_layout);
+                //set the icon to the effects icon
+                ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_effects_50);
+                //and set the label
+                ((TextView)findViewById(R.id.label)).setText(getString(R.string.apply_label));
+
+                //make sure it has the slider view in it
+                SliderView svProgress = (SliderView)findViewById(R.id.slider);
+                //and start the progressbar as indeterminate
+                svProgress.startIndeterminate();
+
                 //pass in the index of the selected item and start making the new bitmap
                 startEffectCompositeCreation(position);
-
             }
         });
 
@@ -135,11 +133,11 @@ public class EffectActivity extends Activity
 
             switch(mnEffect)
             {
-                case 7:
-
+                case 0:
                     bitMain = toGrayscale(mcpPaths.getCurrentPositionPath());
-
                     break;
+                case 1:
+                    bitMain = toSephia(mcpPaths.getCurrentPositionPath());
                 default:
                     break;
 
@@ -183,26 +181,69 @@ public class EffectActivity extends Activity
 
         public Bitmap toGrayscale(String sPath)
         {
-            Bitmap bmpOriginal = BitmapFactory.decodeFile(sPath);
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
 
-            Bitmap bmpGrayscale = Bitmap.createBitmap(bmpOriginal.getWidth(), bmpOriginal.getHeight(), Bitmap.Config.RGB_565);
-            Canvas c = new Canvas(bmpGrayscale);
-            Paint paint = new Paint();
+            Bitmap bGrayscale = Bitmap.createBitmap(bOriginal.getWidth(), bOriginal.getHeight(), Bitmap.Config.RGB_565);
+            Canvas cCanvas = new Canvas(bGrayscale);
+            Paint pPaint = new Paint();
             ColorMatrix cmMatrix = new ColorMatrix();
             cmMatrix.setSaturation(0);
             ColorMatrixColorFilter cmcFilter = new ColorMatrixColorFilter(cmMatrix);
-            paint.setColorFilter(cmcFilter);
-            c.drawBitmap(bmpOriginal, 0, 0, paint);
-            return bmpGrayscale;
+            pPaint.setColorFilter(cmcFilter);
+            cCanvas.drawBitmap(bOriginal, 0, 0, pPaint);
+            return bGrayscale;
         }
 
+        public Bitmap toSephia(String sPath)
+        {
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+
+            Bitmap bSephia = Bitmap.createBitmap(bOriginal.getWidth(), bOriginal.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas cCanvas = new Canvas(bSephia);
+            Paint pPaint = new Paint();
+            ColorMatrix cmMatrix = new ColorMatrix();
+            cmMatrix.setScale(.3f, .3f, .3f, 1.0f);
+            ColorMatrixColorFilter cmcFilter = new ColorMatrixColorFilter(cmMatrix);
+            pPaint.setColorFilter(cmcFilter);
+            cCanvas.drawBitmap(bOriginal, 0, 0, pPaint);
+
+            int [] naPixels  = new int [bOriginal.getWidth() * bOriginal.getHeight()] ;
+            bOriginal.getPixels(naPixels, 0, bOriginal.getWidth(), 0, 0, bOriginal.getWidth(), bOriginal.getHeight());
+            int nPixelLength = naPixels.length;
+
+            int nR, nG, nB, nGry;
+            int nDepth = 20;
+
+            for (int i = 0; i < nPixelLength; i++)
+            {
+                nR = (naPixels[i] >> 16) & 0xFF; //Isolate Red Channel value...
+                nG = (naPixels[i] >> 8) & 0xFF; //Isolate Green Channel value...
+                nB = naPixels[i] & 0xFF; //Isolate Blue Channel value...
+
+                nGry = (nR + nG + nB) / 3;
+                nR = nG = nB = nGry;
+
+                nR = nR + (nDepth * 2);
+                nG = nG + nDepth;
+
+                if (nR > 255)
+                    nR = 255;
+
+                if (nG > 255)
+                    nG = 255;
+
+                naPixels[i] =  Color.rgb(nR, nG, nB) ;
+            }
+
+            return Bitmap.createBitmap(naPixels, bOriginal.getWidth(), bOriginal.getHeight(), Bitmap.Config.ARGB_8888) ;
+        }
 
         @Override
         protected void onPostExecute(Boolean uploaded)
         {
             setContentView(R.layout.menu_layout);
             ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_done_50);
-            ((TextView)findViewById(R.id.label)).setText(getString(R.string.made_vignette_label));
+            ((TextView)findViewById(R.id.label)).setText(getString(R.string.applied_label));
 
             maManager.playSoundEffect(Sounds.SUCCESS);
 

@@ -38,6 +38,7 @@ import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.gson.JsonObject;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
+import com.w9jds.gallery4glass.Classes.ShareActivityHelper;
 import com.w9jds.gallery4glass.Classes.StorageApplication;
 import com.w9jds.gallery4glass.Classes.StorageService;
 import com.w9jds.gallery4glass.Classes.cPaths;
@@ -217,6 +218,18 @@ public class MainActivity extends Activity
                 startActivityForResult(iEffects, 1);
 
                 return true;
+
+//            case R.id.share_menu_item:
+//                    TimelineNano.Entity localEntity = EntityMenuItem.ShareTargetMenuItem.this.getEntity();
+//                    Uri localUri = TimelineProvider.TIMELINE_URI.buildUpon().appendPath(EntityMenuItem.ShareTargetMenuItem.this.timelineItem.getId()).build();
+//                    Intent localIntent = ShareActivityHelper.getBaseShareActivityIntent(paramVoiceMenuEnvironment.getContext(), localUri);
+//                    localIntent.putExtra("item_id", new TimelineItemId(EntityMenuItem.ShareTargetMenuItem.this.timelineItem));
+//                    localIntent.putExtra("update_timeline_share", true);
+//                    localIntent.putExtra("voice_annotation", Ints.contains(EntityMenuItem.ShareTargetMenuItem.this.timelineItem.sharingFeature, 0));
+//                    localIntent.putExtra("chosen_share_target", MessageNano.toByteArray(localEntity));
+//                    localIntent.putExtra("animateToTimelineItem", true);
+//                    paramVoiceMenuEnvironment.getContext().startActivityForResult(localIntent, 1);
+//                return true;
 
             case R.id.delete_menu_item:
                 //set the text as deleting
