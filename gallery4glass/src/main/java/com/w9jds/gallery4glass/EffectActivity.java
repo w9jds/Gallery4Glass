@@ -11,6 +11,11 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.media.AudioManager;
+import android.media.effect.Effect;
+import android.media.effect.EffectContext;
+import android.media.effect.EffectFactory;
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,11 +30,11 @@ import android.widget.TextView;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
+import com.w9jds.gallery4glass.Classes.ConvolutionMatrix;
 import com.w9jds.gallery4glass.Classes.cPaths;
 import com.w9jds.gallery4glass.Widget.SliderView;
 
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 
@@ -65,6 +70,10 @@ public class EffectActivity extends Activity
 
         malsEffects.add(getString(R.string.grayscale_effect));
         malsEffects.add(getString(R.string.sepia_effect));
+        malsEffects.add(getString(R.string.invert_effect));
+        malsEffects.add(getString(R.string.emboss_effect));
+        malsEffects.add(getString(R.string.engrave_effect));
+        malsEffects.add(getString(R.string.sharpen_effect));
 
 
         //create a new card scroll viewer for this context
@@ -138,6 +147,19 @@ public class EffectActivity extends Activity
                     break;
                 case 1:
                     bitMain = toSephia(mcpPaths.getCurrentPositionPath());
+                    break;
+                case 2:
+                    bitMain = toInvert(mcpPaths.getCurrentPositionPath());
+                    break;
+                case 3:
+                    bitMain = toEmboss(mcpPaths.getCurrentPositionPath());
+                    break;
+                case 4:
+                    bitMain = toEngrave(mcpPaths.getCurrentPositionPath());
+                    break;
+                case 5:
+                    bitMain = toSharpen(mcpPaths.getCurrentPositionPath());
+                    break;
                 default:
                     break;
             }
@@ -148,8 +170,6 @@ public class EffectActivity extends Activity
                 {
                     //get the path to the camera directory
                     String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
-//                    //create a new output stream
-//                    OutputStream fOut;
 
                     String[] saPath = mcpPaths.getCurrentPositionPath().split("/|\\.");
 
@@ -195,8 +215,10 @@ public class EffectActivity extends Activity
         public Bitmap toSephia(String sPath)
         {
             Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+            int nWidth = bOriginal.getWidth();
+            int nHeight = bOriginal.getHeight();
 
-            Bitmap bSephia = Bitmap.createBitmap(bOriginal.getWidth(), bOriginal.getHeight(), Bitmap.Config.ARGB_8888);
+            Bitmap bSephia = Bitmap.createBitmap(nWidth, nHeight, Bitmap.Config.RGB_565);
             Canvas cCanvas = new Canvas(bSephia);
             Paint pPaint = new Paint();
             ColorMatrix cmMatrix = new ColorMatrix();
@@ -205,20 +227,19 @@ public class EffectActivity extends Activity
             pPaint.setColorFilter(cmcFilter);
             cCanvas.drawBitmap(bOriginal, 0, 0, pPaint);
 
-            int [] naPixels  = new int [bOriginal.getWidth() * bOriginal.getHeight()] ;
-            bOriginal.getPixels(naPixels, 0, bOriginal.getWidth(), 0, 0, bOriginal.getWidth(), bOriginal.getHeight());
+            int [] naPixels  = new int [nWidth * nHeight] ;
+            bOriginal.getPixels(naPixels, 0, nWidth, 0, 0, nWidth, nHeight);
             int nPixelLength = naPixels.length;
 
-            int nR, nG, nB, nGry;
             int nDepth = 20;
 
             for (int i = 0; i < nPixelLength; i++)
             {
-                nR = (naPixels[i] >> 16) & 0xFF; //Isolate Red Channel value...
-                nG = (naPixels[i] >> 8) & 0xFF; //Isolate Green Channel value...
-                nB = naPixels[i] & 0xFF; //Isolate Blue Channel value...
+                int nR = (naPixels[i] >> 16) & 0xFF;
+                int nG = (naPixels[i] >> 8) & 0xFF;
+                int nB = naPixels[i] & 0xFF;
 
-                nGry = (nR + nG + nB) / 3;
+                int nGry = (nR + nG + nB) / 3;
                 nR = nG = nB = nGry;
 
                 nR = nR + (nDepth * 2);
@@ -233,7 +254,138 @@ public class EffectActivity extends Activity
                 naPixels[i] =  Color.rgb(nR, nG, nB) ;
             }
 
-            return Bitmap.createBitmap(naPixels, bOriginal.getWidth(), bOriginal.getHeight(), Bitmap.Config.ARGB_8888) ;
+            return Bitmap.createBitmap(naPixels, nWidth, nHeight, Bitmap.Config.ARGB_8888) ;
+        }
+
+        public int loadTexture(Bitmap bOriginal)
+        {
+            final int[] textureHandle = new int[1];
+
+            GLES20.glGenTextures(1, textureHandle, 0);
+
+            if (textureHandle[0] != 0)
+            {
+                // Bind to the texture in OpenGL
+                GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, textureHandle[0]);
+
+                // Set filtering
+                GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
+                GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
+
+                // Load the bitmap into the bound texture.
+                GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bOriginal, 0);
+
+                // Recycle the bitmap, since its data has been loaded into OpenGL.
+                bOriginal.recycle();
+            }
+
+            if (textureHandle[0] == 0)
+            {
+                throw new RuntimeException("Error loading texture.");
+            }
+
+            return textureHandle[0];
+        }
+
+        public Bitmap toInvert(String sPath)
+        {
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+
+            // image size
+            int nHeight = bOriginal.getHeight();
+            int nWidth = bOriginal.getWidth();
+
+            int nTexId = loadTexture(bOriginal);
+
+
+
+            EffectContext ecContext = EffectContext.createWithCurrentGlContext();
+            EffectFactory efFactory = ecContext.getFactory();
+            Effect eInvert = efFactory.createEffect(EffectFactory.EFFECT_NEGATIVE);
+            eInvert.apply(nTexId, nWidth, nHeight, nTexId);
+
+            GLES20.
+
+            // create new bitmap with the same settings as source bitmap
+            Bitmap bInvert = Bitmap.createBitmap(nWidth, nHeight, bOriginal.getConfig());
+            // color info
+            int nA, nR, nG, nB;
+            int nPixelColor;
+
+            // scan through every pixel
+            for (int y = 0; y < nHeight; y++)
+            {
+                for (int x = 0; x < nWidth; x++)
+                {
+                    // get one pixel
+                    nPixelColor = bOriginal.getPixel(x, y);
+                    // saving alpha channel
+                    nA = Color.alpha(nPixelColor);
+                    // inverting byte for each R/G/B channel
+                    nR = 255 - Color.red(nPixelColor);
+                    nG = 255 - Color.green(nPixelColor);
+                    nB = 255 - Color.blue(nPixelColor);
+                    // set newly-inverted pixel to output image
+                    bInvert.setPixel(x, y, Color.argb(nA, nR, nG, nB));
+                }
+            }
+
+            // return final bitmap
+            return bInvert;
+        }
+
+        public Bitmap toEmboss(String sPath)
+        {
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+
+            double[][] naEmbossMatrix = new double[][]
+            {
+                    { -1 ,  0, -1 },
+                    {  0 ,  4,  0 },
+                    { -1 ,  0, -1 }
+            };
+
+            ConvolutionMatrix cmMatrix = new ConvolutionMatrix(3);
+            cmMatrix.applyConfig(naEmbossMatrix);
+            cmMatrix.Factor = 1;
+            cmMatrix.Offset = 127;
+            return ConvolutionMatrix.computeConvolution3x3(bOriginal, cmMatrix);
+        }
+
+        public Bitmap toEngrave(String sPath)
+        {
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+
+            //configure the convolution matrix
+            ConvolutionMatrix cmMatrix = new ConvolutionMatrix(3);
+            cmMatrix.setAll(0);
+            cmMatrix.Matrix[0][0] = -2;
+            cmMatrix.Matrix[1][1] = 2;
+            cmMatrix.Factor = 1;
+            cmMatrix.Offset = 95;
+
+            //use it to create the new image
+            return ConvolutionMatrix.computeConvolution3x3(bOriginal, cmMatrix);
+        }
+
+        public Bitmap toSharpen(String sPath)
+        {
+            Bitmap bOriginal = BitmapFactory.decodeFile(sPath);
+
+            double[][] daSharpenMatrix = new double[][]
+            {
+//            { 0 , -2    , 0  },
+//            { -2, weight, -2 },
+//            { 0 , -2    , 0  }
+            {0, -1, 0},
+            {-1, 5, -1},
+            {0, -1, 0}
+            };
+
+            ConvolutionMatrix cmMatrix = new ConvolutionMatrix(3);
+            cmMatrix.applyConfig(daSharpenMatrix);
+            cmMatrix.Factor = 5 - 8;
+            return ConvolutionMatrix.computeConvolution3x3(bOriginal, cmMatrix);
         }
 
         @Override

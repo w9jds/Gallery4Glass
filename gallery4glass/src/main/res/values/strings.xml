@@ -29,5 +29,9 @@
 
     <string name="grayscale_effect">Grayscale</string>
     <string name="sepia_effect">Sepia</string>
+    <string name="invert_effect">Invert</string>
+    <string name="emboss_effect">Emboss</string>
+    <string name="engrave_effect">Engrave</string>
+    <string name="sharpen_effect">Sharpen</string>
 
 </resources>
