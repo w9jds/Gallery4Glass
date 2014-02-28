@@ -1,5 +1,0 @@
-<resources>
-
-    <style name="CustomTheme" parent="@android:style/Theme.DeviceDefault" />
-
-</resources>
