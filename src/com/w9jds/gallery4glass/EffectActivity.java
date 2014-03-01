@@ -32,6 +32,7 @@ import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
@@ -62,8 +63,9 @@ public class EffectActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_effect);
 
-//        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_2, this, mLoaderCallback);
+        //start openCV manager
         OpenCVLoader.initDebug();
+
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         Intent iThis = getIntent();
@@ -99,8 +101,8 @@ public class EffectActivity extends Activity
         malsEffects.add(getString(R.string.grayscale_effect));
         malsEffects.add(getString(R.string.sepia_effect));
         malsEffects.add(getString(R.string.invert_effect));
-        malsEffects.add(getString(R.string.emboss_effect));
-        malsEffects.add(getString(R.string.engrave_effect));
+        malsEffects.add("Canny");
+        malsEffects.add("Pixelize");
         malsEffects.add(getString(R.string.sharpen_effect));
 
 
@@ -177,12 +179,14 @@ public class EffectActivity extends Activity
                 case 2:
                     bitMain = toInvert(mcpPaths.getCurrentPositionPath());
                     break;
-//                case 3:
+                case 3:
+                    bitMain = toCanny(mcpPaths.getCurrentPositionPath());
 //                    bitMain = toEmboss(mcpPaths.getCurrentPositionPath());
-//                    break;
-//                case 4:
+                    break;
+                case 4:
+                    bitMain = toPixelize(mcpPaths.getCurrentPositionPath());
 //                    bitMain = toEngrave(mcpPaths.getCurrentPositionPath());
-//                    break;
+                    break;
                 case 5:
                     bitMain = toSharpen(mcpPaths.getCurrentPositionPath());
                     break;
@@ -199,8 +203,16 @@ public class EffectActivity extends Activity
 
                     String[] saPath = mcpPaths.getCurrentPositionPath().split("/|\\.");
 
-                    //create a new file with the added _x for the vignette to be stored in
-                    java.io.File fImage = new java.io.File(path, saPath[saPath.length - 2] + "_" + malsEffects.get(mnEffect) + ".jpg");
+                    //create new file
+                    File fImage;
+
+                    if (malsEffects.get(mnEffect).length() > 6)
+                        //create a new file with the added _effectname for the vignette to be stored in
+                        fImage = new File(path, saPath[saPath.length - 2] + "_" + malsEffects.get(mnEffect).substring(0,6) + ".jpg");
+                    else
+                        //create a new file with the added _effectname for the vignette to be stored in
+                        fImage = new File(path, saPath[saPath.length - 2] + "_" + malsEffects.get(mnEffect) + ".jpg");
+
                     //create an output stream with the new file
                     FileOutputStream fOut = new FileOutputStream(fImage);
 
@@ -208,9 +220,6 @@ public class EffectActivity extends Activity
                     bitMain.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
                     fOut.flush();
                     fOut.close();
-
-                    //store the new file
-                    MediaStore.Images.Media.insertImage(mcContext.getContentResolver(), fImage.getAbsolutePath(), fImage.getName(), fImage.getName());
 
                     //add to media scanner
                     new SingleMediaScanner(mcContext, fImage);
@@ -292,6 +301,105 @@ public class EffectActivity extends Activity
             return bSharpen;
         }
 
+        public Bitmap toCanny(String sPath)
+        {
+            Mat mOriginal = new Mat();
+
+            Utils.bitmapToMat(BitmapFactory.decodeFile(sPath), mOriginal);
+
+            Mat mIntermediateMat = new Mat();
+
+            Imgproc.Canny(mOriginal, mIntermediateMat, 80, 90);
+            Imgproc.cvtColor(mIntermediateMat, mOriginal, Imgproc.COLOR_GRAY2BGRA, 4);
+
+            Bitmap bCanny = Bitmap.createBitmap(mOriginal.width(), mOriginal.height(), Bitmap.Config.RGB_565);
+
+            Utils.matToBitmap(mOriginal, bCanny);
+
+            return bCanny;
+        }
+
+        public Bitmap toPixelize(String sPath)
+        {
+            Mat mOriginal = new Mat();
+            //bring in the bitmap into the mat
+            Utils.bitmapToMat(BitmapFactory.decodeFile(sPath), mOriginal);
+            //intermediate mat
+            Mat mIntermediateMat = new Mat();
+
+            Imgproc.resize(mOriginal, mIntermediateMat, new Size(), 0.1, 0.1, Imgproc.INTER_NEAREST);
+            Imgproc.resize(mIntermediateMat, mOriginal, mOriginal.size(), 0., 0., Imgproc.INTER_NEAREST);
+
+            Bitmap bPixelize = Bitmap.createBitmap(mOriginal.width(), mOriginal.height(), Bitmap.Config.RGB_565);
+
+            Utils.matToBitmap(mOriginal, bPixelize);
+
+            return bPixelize;
+
+        }
+
+//        public Bitmap toPosterize(String sPath)
+//        {
+//            Mat mOriginal = new Mat();
+//
+//            Utils.bitmapToMat(BitmapFactory.decodeFile(sPath), mOriginal);
+//
+//            Mat mIntermediateMat = new Mat();
+//
+//            Imgproc.Canny(mOriginal, mIntermediateMat, 80, 90);
+//            mOriginal.setTo(new Scalar(0, 0, 0, 255), mIntermediateMat);
+//            Core.convertScaleAbs(mOriginal, mIntermediateMat, 1./16, 0);
+//            Core.convertScaleAbs(mIntermediateMat, mOriginal, 16, 0);
+//
+//            Bitmap bPosterize = Bitmap.createBitmap(mOriginal.width(), mOriginal.height(), Bitmap.Config.RGB_565);
+//
+//            Utils.matToBitmap(mOriginal, bPosterize);
+//
+//            return bPosterize;
+//        }
+
+//        public Bitmap toHist(String sPath)
+//        {
+//            Mat hist = new Mat();
+//            int thikness = (int) (sizeRgba.width / (mHistSizeNum + 10) / 5);
+//            if(thikness > 5) thikness = 5;
+//            int offset = (int) ((sizeRgba.width - (5*mHistSizeNum + 4*10)*thikness)/2);
+//            // RGB
+//            for(int c=0; c<3; c++) {
+//                Imgproc.calcHist(Arrays.asList(rgba), mChannels[c], mMat0, hist, mHistSize, mRanges);
+//                Core.normalize(hist, hist, sizeRgba.height/2, 0, Core.NORM_INF);
+//                hist.get(0, 0, mBuff);
+//                for(int h=0; h<mHistSizeNum; h++) {
+//                    mP1.x = mP2.x = offset + (c * (mHistSizeNum + 10) + h) * thikness;
+//                    mP1.y = sizeRgba.height-1;
+//                    mP2.y = mP1.y - 2 - (int)mBuff[h];
+//                    Core.line(rgba, mP1, mP2, mColorsRGB[c], thikness);
+//                }
+//            }
+//            // Value and Hue
+//            Imgproc.cvtColor(rgba, mIntermediateMat, Imgproc.COLOR_RGB2HSV_FULL);
+//            // Value
+//            Imgproc.calcHist(Arrays.asList(mIntermediateMat), mChannels[2], mMat0, hist, mHistSize, mRanges);
+//            Core.normalize(hist, hist, sizeRgba.height/2, 0, Core.NORM_INF);
+//            hist.get(0, 0, mBuff);
+//            for(int h=0; h<mHistSizeNum; h++) {
+//                mP1.x = mP2.x = offset + (3 * (mHistSizeNum + 10) + h) * thikness;
+//                mP1.y = sizeRgba.height-1;
+//                mP2.y = mP1.y - 2 - (int)mBuff[h];
+//                Core.line(rgba, mP1, mP2, mWhilte, thikness);
+//            }
+//            // Hue
+//            Imgproc.calcHist(Arrays.asList(mIntermediateMat), mChannels[0], mMat0, hist, mHistSize, mRanges);
+//            Core.normalize(hist, hist, sizeRgba.height/2, 0, Core.NORM_INF);
+//            hist.get(0, 0, mBuff);
+//            for(int h=0; h<mHistSizeNum; h++) {
+//                mP1.x = mP2.x = offset + (4 * (mHistSizeNum + 10) + h) * thikness;
+//                mP1.y = sizeRgba.height-1;
+//                mP2.y = mP1.y - 2 - (int)mBuff[h];
+//                Core.line(rgba, mP1, mP2, mColorsHue[h], thikness);
+//            }
+//
+//        }
 
         @Override
         protected void onPostExecute(Boolean uploaded)

@@ -251,9 +251,6 @@ public class VignetteActivity extends Activity
                 fOut.flush();
                 fOut.close();
 
-                //store the new file
-                MediaStore.Images.Media.insertImage(mcContext.getContentResolver(), fImage.getAbsolutePath(), fImage.getName(),fImage.getName());
-
                 //add to media scanner
                 new SingleMediaScanner(mcContext, fImage);
             }
