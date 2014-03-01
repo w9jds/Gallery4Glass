@@ -234,12 +234,15 @@ public class VignetteActivity extends Activity
 
             try
             {
+
+
+
                 //get the path to the camera directory
                 String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + "/Camera";
                 //create a new output stream
                 OutputStream fOut;
 
-                String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 1).split("/|\\.");
+                String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2).split("/|\\.");
 
                 //create a new file with the added _x for the vignette to be stored in
                 java.io.File fImage = new java.io.File(path, saPath[saPath.length - 2] + "_x.jpg");
