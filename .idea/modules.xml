@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Gallery4Glass.iml" filepath="$PROJECT_DIR$/Gallery4Glass.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../SDKs/OpenCV-2.4.8-android-sdk/sdk/java/OpenCV-2.4.8.iml" filepath="$PROJECT_DIR$/../../SDKs/OpenCV-2.4.8-android-sdk/sdk/java/OpenCV-2.4.8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gallery4Glass/Gallery4Glass-Gallery4Glass.iml" filepath="$PROJECT_DIR$/Gallery4Glass/Gallery4Glass-Gallery4Glass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCV-2.4.8/OpenCV-2.4.8.iml" filepath="$PROJECT_DIR$/OpenCV-2.4.8/OpenCV-2.4.8.iml" />
     </modules>
   </component>
 </project>

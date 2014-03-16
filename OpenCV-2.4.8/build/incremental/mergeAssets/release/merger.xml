@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/src/release/assets" />
+    </dataSet>
+
+</merger>

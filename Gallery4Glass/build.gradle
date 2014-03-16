@@ -1,0 +1,31 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion "Google Inc.:Glass Development Kit Sneak Peek:15"
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 15
+        versionCode 18
+        versionName "0.4.0-beta"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+//    compile files('libs/androidasync-1.2.4.jar')
+    compile files('libs/google-play-services.jar')
+    compile files('libs/gson-2.2.2.jar')
+//    compile files('libs/ion-1.2.4.jar')
+//    compile files('libs/httpclient-4.3.3.jar')
+//    compile files('libs/httpcore-4.3.2.jar')
+//    compile files('libs/httpmime-4.3.3.jar')
+    compile project(':OpenCV-2.4.8')
+
+}
