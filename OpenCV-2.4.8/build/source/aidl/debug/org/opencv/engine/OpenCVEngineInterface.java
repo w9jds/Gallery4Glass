@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/src/org/opencv/engine/OpenCVEngineInterface.aidl
+ * Original file: /Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/src/org/opencv/engine/OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**

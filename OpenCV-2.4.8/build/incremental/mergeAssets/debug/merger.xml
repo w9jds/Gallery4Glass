@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/assets" />
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/src/debug/assets" />
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/src/debug/assets" />
     </dataSet>
 
 </merger>

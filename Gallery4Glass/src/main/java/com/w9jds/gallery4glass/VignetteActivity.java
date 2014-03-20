@@ -61,7 +61,6 @@ public class VignetteActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vignette);
 
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
@@ -71,13 +70,13 @@ public class VignetteActivity extends Activity
 
         mcpPaths.insertString( getString(R.string.vignette_activity_label), 0);
         mcpPaths.insertString( getString(R.string.vignette_text_card) , 1);
+        mcpPaths.insertString( getString(R.string.vignette_camera_card), 2);
 
         CreatePictureView();
     }
 
     private void displaySpeechRecognizer()
     {
-
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         startActivityForResult(intent, SPEECH_REQUEST);
     }
@@ -85,25 +84,31 @@ public class VignetteActivity extends Activity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == SPEECH_REQUEST && resultCode == RESULT_OK)
+        if (resultCode == RESULT_OK)
         {
-            List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            msSpoken = results.get(0);
+            switch (requestCode)
+            {
+                case SPEECH_REQUEST:
+                    List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    msSpoken = results.get(0);
 
-            //set the view to a new menu layout
-            setContentView(R.layout.menu_layout);
-            //set the icon to the vignette icon
-            ((ImageView)findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
-            //and set the label
-            ((TextView)findViewById(R.id.label)).setText(getString(R.string.making_vignette_label));
+                    //set the view to a new menu layout
+                    setContentView(R.layout.menu_layout);
+                    //set the icon to the vignette icon
+                    ((ImageView) findViewById(R.id.icon)).setImageResource(R.drawable.ic_vignette_medium);
+                    //and set the label
+                    ((TextView) findViewById(R.id.label)).setText(getString(R.string.making_vignette_label));
 
-            //make sure it has the slider view in it
-            SliderView svProgress = (SliderView)findViewById(R.id.slider);
-            //and start the progressbar as indeterminate
-            svProgress.startIndeterminate();
+                    //make sure it has the slider view in it
+                    SliderView svProgress = (SliderView) findViewById(R.id.slider);
+                    //and start the progressbar as indeterminate
+                    svProgress.startIndeterminate();
 
-            //create composite
-            startCompositeCreation();
+                    //create composite
+                    startCompositeCreation();
+
+                    break;
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -198,7 +203,7 @@ public class VignetteActivity extends Activity
         protected Boolean doInBackground(Void... params)
         {
             //pull in just the info for the main image of the vignette
-            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2));
+            Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 3));
             //set the size on the image
             Size sWhole = FULL_COMPOSITE_SIZE;
 
@@ -241,7 +246,7 @@ public class VignetteActivity extends Activity
                 //create a new output stream
                 OutputStream fOut;
 
-                String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2).split("/|\\.");
+                String[] saPath = mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 3).split("/|\\.");
 
                 //create a new file with the added _x for the vignette to be stored in
                 java.io.File fImage = new java.io.File(path, saPath[saPath.length - 2] + "_x.jpg");
@@ -320,9 +325,7 @@ public class VignetteActivity extends Activity
                 }
             }, 1000);
         }
+
     }
-
-
-
 
 }

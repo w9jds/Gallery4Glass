@@ -20,12 +20,15 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.glass.media.Sounds;
+import com.google.android.glass.touchpad.Gesture;
+import com.google.android.glass.touchpad.GestureDetector;
 import com.google.android.glass.widget.CardScrollView;
 import com.google.gson.JsonObject;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
@@ -41,15 +44,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//import com.google.api.client.extensions.android.http.AndroidHttp;
-//import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
-//import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
-//import com.google.api.client.http.FileContent;
-//import com.google.api.client.json.gson.GsonFactory;
-//import com.google.api.services.drive.Drive;
-//import com.google.api.services.drive.DriveScopes;
-//import com.google.api.services.drive.model.File;
-
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity
 {
@@ -61,10 +55,11 @@ public class MainActivity extends Activity
 
     //create member variables for Azure
     private StorageService mStorageService;
+    //gesture detector
+    private GestureDetector mGestureDetector;
+    //cardscrollview
+    private CardScrollView mcsvCardsView;
 
-//    //create member variables for google drive
-//    private Drive mdService;
-//    private GoogleAccountCredential mgacCredential;
 
     //custom adapter
     private csaAdapter mcvAdapter;
@@ -78,6 +73,8 @@ public class MainActivity extends Activity
 
         mcmCon = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        // Turn on Gestures
+        mGestureDetector = createGestureDetector(this);
 
         CreatePictureView();
     }
@@ -97,15 +94,15 @@ public class MainActivity extends Activity
         Collections.reverse(mcpPaths.getImagePaths());
 
         //create a new card scroll viewer for this context
-        CardScrollView csvCardsView = new CardScrollView(this);
+        mcsvCardsView = new CardScrollView(this);
         //create a new adapter for the scroll viewer
         mcvAdapter = new csaAdapter(this, mcpPaths.getImagePaths());
         //set this adapter as the adapter for the scroll viewer
-        csvCardsView.setAdapter(mcvAdapter);
+        mcsvCardsView.setAdapter(mcvAdapter);
         //activate this scroll viewer
-        csvCardsView.activate();
+        mcsvCardsView.activate();
         //add a listener to the scroll viewer that is fired when an item is clicked
-        csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        mcsvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
@@ -119,7 +116,7 @@ public class MainActivity extends Activity
         });
 
         //set the view of this activity
-        setContentView(csvCardsView);
+        setContentView(mcsvCardsView);
     }
 
     /***
@@ -144,6 +141,46 @@ public class MainActivity extends Activity
         super.onPause();
     }
 
+    @Override
+    public boolean onGenericMotionEvent(MotionEvent event)
+    {
+        if (mGestureDetector != null)
+            return mGestureDetector.onMotionEvent(event);
+
+        return false;
+    }
+
+    private GestureDetector createGestureDetector(Context cContext)
+    {
+        GestureDetector gestureDetector = new GestureDetector(cContext);
+
+        //Create a base listener for generic gestures
+        gestureDetector.setBaseListener( new GestureDetector.BaseListener()
+        {
+            @Override
+            public boolean onGesture(Gesture gesture)
+            {
+
+//                if (mcsvCardsView.getSelectedItemPosition() == 0)
+//                {
+                if (gesture == Gesture.TWO_SWIPE_LEFT)
+                {
+                    Intent iCamera = new Intent(getApplicationContext(), CameraActivity.class);
+                    finish();
+                    startActivity(iCamera);
+                }
+//                }
+
+                return false;
+            }
+        });
+
+        return gestureDetector;
+    }
+
+
+
+
     public String getBucketId(String path)
     {
         return String.valueOf(path.toLowerCase().hashCode());
@@ -155,23 +192,25 @@ public class MainActivity extends Activity
      */
     public ArrayList<String> getCameraImages()
     {
-        final String[] projection = {MediaStore.Images.Media.DATA};
-        final String selection = MediaStore.Images.Media.BUCKET_ID + " = ?";
-        final String[] selectionArgs = { CAMERA_IMAGE_BUCKET_ID };
-        final Cursor cursor = this.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, selection, selectionArgs, null);
-        ArrayList<String> result = new ArrayList<String>(cursor.getCount());
+        final String[] saProj = {MediaStore.Images.Media.DATA};
+        final String sSelection = MediaStore.Images.Media.BUCKET_ID + " = ?";
+        final String[] saSelectionArgs = { CAMERA_IMAGE_BUCKET_ID };
+        final Cursor cCursor = this.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, saProj, sSelection, saSelectionArgs, null);
+        ArrayList<String> result = new ArrayList<String>(cCursor.getCount());
 
-        if (cursor.moveToFirst())
+        if (cCursor.moveToFirst())
         {
-            final int dataColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            final int dataColumn = cCursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             do
             {
-                final String data = cursor.getString(dataColumn);
+                final String data = cCursor.getString(dataColumn);
                 result.add(data);
-            } while (cursor.moveToNext());
+            }
+
+            while (cCursor.moveToNext());
         }
 
-        cursor.close();
+        cCursor.close();
         return result;
     }
 
@@ -185,10 +224,14 @@ public class MainActivity extends Activity
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == 1)
+        if (resultCode == RESULT_OK)
         {
-            if (resultCode == RESULT_OK)
-                CreatePictureView();
+            switch(requestCode)
+            {
+                case 1:
+                    CreatePictureView();
+                    break;
+            }
         }
     }
 
@@ -214,18 +257,6 @@ public class MainActivity extends Activity
                 startActivityForResult(iEffects, 1);
 
                 return true;
-
-//            case R.id.share_menu_item:
-//                    TimelineNano.Entity localEntity = EntityMenuItem.ShareTargetMenuItem.this.getEntity();
-//                    Uri localUri = TimelineProvider.TIMELINE_URI.buildUpon().appendPath(EntityMenuItem.ShareTargetMenuItem.this.timelineItem.getId()).build();
-//                    Intent localIntent = ShareActivityHelper.getBaseShareActivityIntent(paramVoiceMenuEnvironment.getContext(), localUri);
-//                    localIntent.putExtra("item_id", new TimelineItemId(EntityMenuItem.ShareTargetMenuItem.this.timelineItem));
-//                    localIntent.putExtra("update_timeline_share", true);
-//                    localIntent.putExtra("voice_annotation", Ints.contains(EntityMenuItem.ShareTargetMenuItem.this.timelineItem.sharingFeature, 0));
-//                    localIntent.putExtra("chosen_share_target", MessageNano.toByteArray(localEntity));
-//                    localIntent.putExtra("animateToTimelineItem", true);
-//                    paramVoiceMenuEnvironment.getContext().startActivityForResult(localIntent, 1);
-//                return true;
 
             case R.id.delete_menu_item:
                 //set the text as deleting
@@ -442,55 +473,6 @@ public class MainActivity extends Activity
             }, 1000);
         }
     }
-
-//    private void saveFileToDrive(String sPath)
-//    {
-//        final String msPath = sPath;
-//
-//        Thread t = new Thread(new Runnable()
-//        {
-//            @Override
-//            public void run()
-//            {
-//                try
-//                {
-//                    // File's binary content
-//                    java.io.File fImage = new java.io.File(msPath);
-//                    FileContent fcContent = new FileContent("image/jpeg", fImage);
-//
-//                    // File's metadata.
-//                    File gdfBody = new File();
-//                    gdfBody.setTitle(fImage.getName());
-//                    gdfBody.setMimeType("image/jpeg");
-//
-//                    File gdfFile = mdService.files().insert(gdfBody, fcContent).execute();
-//                    if (gdfFile != null)
-//                    {
-//                        Log.d("GlassShareUploadTask", "Uploaded");
-//                    }
-//
-//                }
-//                catch (UserRecoverableAuthIOException e) {
-//                    Log.d("GlassShareUploadTask", e.toString());
-////                    startActivityForResult(e.getIntent(), REQUEST_AUTHORIZATION);
-//                }
-//                catch (IOException e) {
-//                    Log.d("GlassShareUploadTask", e.toString());
-////                    e.printStackTrace();
-//                }
-//                catch (Exception e) {
-//                    Log.d("GlassShareUploadTask", e.toString());
-//                }
-//            }
-//        });
-//        t.start();
-//
-//    }
-//
-//    private Drive getDriveService(GoogleAccountCredential credential)
-//    {
-//        return new Drive.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credential).build();
-//    }
 
 }
 

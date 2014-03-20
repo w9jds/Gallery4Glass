@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mobileservices-1.1.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Gallery4Glass/libs/mobileservices-1.1.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

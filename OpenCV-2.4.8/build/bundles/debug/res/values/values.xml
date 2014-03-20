@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/res/values/attrs.xml -->
+    <!-- From: file:/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/res/values/attrs.xml -->
     <eat-comment />
 
     <declare-styleable name="CameraBridgeViewBase">

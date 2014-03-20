@@ -56,7 +56,6 @@ public class EffectActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_effect);
 
         //start openCV manager
         OpenCVLoader.initDebug();

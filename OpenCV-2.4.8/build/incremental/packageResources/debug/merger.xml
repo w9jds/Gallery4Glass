@@ -2,9 +2,9 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/res" >
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/res" >
             <file
-                path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/res/values/attrs.xml"
+                path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/res/values/attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="CameraBridgeViewBase" >
                     <attr
@@ -26,11 +26,11 @@
                 </declare-styleable>
             </file>
         </source>
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/build/res/rs/debug" />
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/build/res/generated/debug" />
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/build/res/rs/debug" />
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/build/res/generated/debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/w9jds/Documents/Gallery4Glass/OpenCV-2.4.8/src/debug/res" />
+        <source path="/Users/w9jds/Documents/Projects/Gallery4Glass/OpenCV-2.4.8/src/debug/res" />
     </dataSet>
 
 </merger>

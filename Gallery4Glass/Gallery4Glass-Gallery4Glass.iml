@@ -71,6 +71,7 @@
     <orderEntry type="jdk" jdkName="Android 4.0.3 Glass Development Kit Sneak Peek" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="gson-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="mobileservices-1.1.3" level="project" />
     <orderEntry type="library" exported="" name="google-play-services" level="project" />
     <orderEntry type="module" module-name="OpenCV-2.4.8" exported="" />
   </component>
