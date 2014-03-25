@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item-->
+    <!--android:id="@+id/share_menu_item"-->
+    <!--android:title="@string/share"-->
+    <!--android:icon="@drawable/ic_share_50" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/upload_menu_item"-->
+        <!--android:title="@string/upload_label"-->
+        <!--android:icon="@drawable/ic_archive_50"/>-->
+
+    <item
+        android:id="@+id/vignette_menu_item"
+        android:title="@string/vignette_label"
+        android:icon="@drawable/ic_vignette_medium"/>
+
+    <!--<item-->
+        <!--android:id="@+id/upload_menu_item"-->
+        <!--android:title="@string/drive_label"-->
+        <!--android:icon="@drawable/ic_drive_badge_48"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/share_menu_item"-->
+        <!--android:title="@string/share_label"-->
+        <!--android:icon="@drawable/ic_share_50"/>-->
+
+    <item
+        android:id="@+id/effects_menu_item"
+        android:title="@string/effects_label"
+        android:icon="@drawable/ic_effects_50"/>
+
+    <item
+        android:id="@+id/uploadphone_menu_item"
+        android:title="@string/upload_label"
+        android:icon="@drawable/ic_mobile_phone_50"/>
+
+    <item
+        android:id="@+id/delete_menu_item"
+        android:title="@string/delete_label"
+        android:icon="@drawable/ic_delete_50" />
+
+</menu>
