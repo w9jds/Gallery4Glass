@@ -2,11 +2,9 @@ package com.w9jds.gallery4glass;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
@@ -23,21 +21,26 @@ import com.google.android.glass.touchpad.Gesture;
 import com.google.android.glass.touchpad.GestureDetector;
 import com.w9jds.gallery4glass.Classes.Gallery4Glass;
 import com.w9jds.gallery4glass.Classes.SingleMediaScanner;
-import com.w9jds.gallery4glass.Widget.PreviewSurface;
+import com.w9jds.gallery4glass.Widget.OpenCVSurface;
+
+
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CameraActivity extends Activity
+public class CameraActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2
 {
     public static final String ACTION_WINK = "com.google.glass.action.EYE_GESTURE";
 
     // Declare a new Gesture Detector
     private GestureDetector mGestureDetector;
     // Declare a new Camera Preview Surface
-    private PreviewSurface mPreviewSurface;
+    private OpenCVSurface mPreviewSurface;
     //create an audio manager for sounds
     private AudioManager maManager;
     // Zoom level of the camera
@@ -49,6 +52,9 @@ public class CameraActivity extends Activity
         super.onCreate(bSavedInstanceState);
 
         Gallery4Glass.CameraOpened();
+
+        //start openCV manager
+        OpenCVLoader.initDebug();
 
         // Turn on Gestures
         mGestureDetector = createGestureDetector(this);
@@ -63,11 +69,13 @@ public class CameraActivity extends Activity
 
     private void setPreviewSurface()
     {
-        // Initiate CameraView
-        mPreviewSurface = new PreviewSurface(this);
+        setContentView(R.layout.opencvpreview_layout);
 
-        setContentView(mPreviewSurface);
+        mPreviewSurface = (OpenCVSurface) findViewById(R.id.camera_preview_opencv);
 
+        mPreviewSurface.setCvCameraViewListener(this);
+
+        mPreviewSurface.enableView();
     }
 
     @Override
@@ -77,7 +85,7 @@ public class CameraActivity extends Activity
 
         // Do not hold the camera during onResume
         if (mPreviewSurface != null)
-            mPreviewSurface.releaseCamera();
+            mPreviewSurface.disableView();
 
         // Set the view
         setPreviewSurface();
@@ -89,8 +97,11 @@ public class CameraActivity extends Activity
         super.onPause();
 
         // Do not hold the camera during onPause
+//        if (mPreviewSurface != null)
+//            mPreviewSurface.releaseCamera();
+
         if (mPreviewSurface != null)
-            mPreviewSurface.releaseCamera();
+            mPreviewSurface.disableView();
     }
 
     private GestureDetector createGestureDetector(final Context cContext)
@@ -122,7 +133,7 @@ public class CameraActivity extends Activity
                         maManager.playSoundEffect(Sounds.DISMISSED);
                         // If the preview surface isn't null release the camera
                         if (mPreviewSurface != null)
-                            mPreviewSurface.releaseCamera();
+                            mPreviewSurface.disableView();
                         // Close activity
                         finish();
                     }
@@ -150,7 +161,7 @@ public class CameraActivity extends Activity
                     else if (gGesture == Gesture.TWO_SWIPE_RIGHT)
                     {
                         if (mPreviewSurface != null)
-                            mPreviewSurface.releaseCamera();
+                            mPreviewSurface.disableView();
 
                         Gallery4Glass.CameraClosed();
 
@@ -174,9 +185,6 @@ public class CameraActivity extends Activity
         }
     };
 
-    /**
-     * This will be called after taking picture from camera.
-     */
     final transient private Camera.PictureCallback jpgPictureCallback = new Camera.PictureCallback()
     {
         /**
@@ -189,7 +197,6 @@ public class CameraActivity extends Activity
             new SavePhotoTask().execute(data);
             setPreviewSurface();
         }
-
     };
 
     @Override
@@ -255,13 +262,37 @@ public class CameraActivity extends Activity
     @Override
     public void onDestroy()
     {
+
+        if (mPreviewSurface != null)
+            mPreviewSurface.disableView();
+
         // Unregister the Receiver
         unregisterReceiver(mReceiver);
+        //close activity
+        finish();
         // Run normal onDestroy
         super.onDestroy();
     }
 
-    class SavePhotoTask extends AsyncTask<byte[], String, String>
+    @Override
+    public void onCameraViewStarted(int width, int height)
+    {
+
+    }
+
+    @Override
+    public void onCameraViewStopped()
+    {
+
+    }
+
+    @Override
+    public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame)
+    {
+        return inputFrame.rgba();
+    }
+
+    private class SavePhotoTask extends AsyncTask<byte[], String, String>
     {
         @Override
         protected String doInBackground(byte[]... jpeg)
