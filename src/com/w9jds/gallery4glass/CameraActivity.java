@@ -12,21 +12,24 @@ import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.touchpad.Gesture;
 import com.google.android.glass.touchpad.GestureDetector;
+import com.google.android.glass.widget.CardScrollView;
+import com.w9jds.gallery4glass.Adapters.csaAdapter;
 import com.w9jds.gallery4glass.Classes.Gallery4Glass;
 import com.w9jds.gallery4glass.Classes.SingleMediaScanner;
 import com.w9jds.gallery4glass.Widget.OpenCVSurface;
-import com.w9jds.gallery4glass.Widget.SliderView;
-
 
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.OpenCVLoader;
@@ -35,6 +38,7 @@ import org.opencv.core.Mat;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -42,6 +46,8 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 {
     public static final String ACTION_WINK = "com.google.glass.action.EYE_GESTURE";
 
+    //create an adapter for the cardscrollviewer
+    private csaAdapter mcvAdapter;
     // Declare a new Gesture Detector
     private GestureDetector mGestureDetector;
     // Declare a new Camera Preview Surface
@@ -85,15 +91,108 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem iItem)
     {
-        SliderView svProgress;
+        CardScrollView csvCardsView;
+        final Camera cCamera;
+        Camera.Parameters params;
 
         switch (iItem.getItemId())
         {
             case R.id.scene_menu_item:
 
+                cCamera = mPreviewSurface.getCamera();
+
+                params = cCamera.getParameters();
+                mPreviewSurface.disableView();
+
+                //add a card to the card scroll view for each supported Scenes that is available
+                final List<String> lsScenes = params.getSupportedSceneModes();
+
+                //create a new card scroll viewer for this context
+                csvCardsView = new CardScrollView(this);
+                //create a new adapter for the scroll viewer
+                mcvAdapter = new csaAdapter(this, (ArrayList<String>)lsScenes);
+                //set this adapter as the adapter for the scroll viewer
+                csvCardsView.setAdapter(mcvAdapter);
+                //activate this scroll viewer
+                csvCardsView.activate();
+                //add a listener to the scroll viewer that is fired when an item is clicked
+                csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
+                    {
+
+                        //play the tap sound
+                        maManager.playSoundEffect(Sounds.TAP);
+
+                        setPreviewSurface();
+
+                        new Handler().postDelayed(new Runnable()
+                        {
+                            public void run()
+                            {
+                                Camera cCamera = mPreviewSurface.getCamera();
+
+                                Camera.Parameters cParams = cCamera.getParameters();
+
+                                cParams.setSceneMode(lsScenes.get(position));
+                            }
+                        }, 2000);
+
+                    }
+                });
+
+                //set the view of this activity
+                setContentView(csvCardsView);
+
                 return true;
 
             case R.id.white_balance_menu_item:
+
+                cCamera = mPreviewSurface.getCamera();
+
+                params = cCamera.getParameters();
+                mPreviewSurface.disableView();
+                //add a card to the card scroll view for each supported White Balances that is available
+                final List<String> lsWhites = params.getSupportedWhiteBalance();
+
+
+                //create a new card scroll viewer for this context
+                csvCardsView = new CardScrollView(this);
+                //create a new adapter for the scroll viewer
+                mcvAdapter = new csaAdapter(this, (ArrayList<String>)lsWhites);
+                //set this adapter as the adapter for the scroll viewer
+                csvCardsView.setAdapter(mcvAdapter);
+                //activate this scroll viewer
+                csvCardsView.activate();
+                //add a listener to the scroll viewer that is fired when an item is clicked
+                csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
+                    {
+                        //play the tap sound
+                        maManager.playSoundEffect(Sounds.TAP);
+
+                        setPreviewSurface();
+
+                        new Handler().postDelayed(new Runnable()
+                        {
+                            public void run()
+                            {
+                                Camera cCamera = mPreviewSurface.getCamera();
+
+                                Camera.Parameters cParams = cCamera.getParameters();
+
+                                cParams.setWhiteBalance(lsWhites.get(position));
+                            }
+                        }, 2000);
+
+                    }
+                });
+
+                //set the view of this activity
+                setContentView(csvCardsView);
 
                 return true;
 
@@ -160,7 +259,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
         GestureDetector gestureDetector = new GestureDetector(cContext);
 
         //Create a base listener for generic gestures
-        gestureDetector.setBaseListener( new GestureDetector.BaseListener()
+        gestureDetector.setBaseListener(new GestureDetector.BaseListener()
         {
             @Override
             public boolean onGesture(Gesture gGesture)
@@ -185,14 +284,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                     }
 
                     else if (gGesture == Gesture.TWO_LONG_PRESS)
-                    {
-                        Camera cCamera = mPreviewSurface.getCamera();
-
-                        Camera.Parameters params = cCamera.getParameters();
-
-                        List<String> test = params.getSupportedSceneModes();
-                        List<String> test3 = params.getSupportedWhiteBalance();
-                    }
+                        openOptionsMenu();
 
                     else if (gGesture == Gesture.SWIPE_DOWN)
                     {
