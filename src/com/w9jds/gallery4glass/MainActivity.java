@@ -12,7 +12,6 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,8 +32,10 @@ import com.google.android.glass.widget.CardScrollView;
 import com.google.gson.JsonObject;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
 import com.w9jds.gallery4glass.Classes.Gallery4Glass;
+import com.w9jds.gallery4glass.Classes.SingleMediaScanner;
 import com.w9jds.gallery4glass.Classes.StorageService;
 import com.w9jds.gallery4glass.Classes.cPaths;
+import com.w9jds.gallery4glass.Services.LiveCardService;
 import com.w9jds.gallery4glass.Widget.SliderView;
 
 import java.io.DataOutputStream;
@@ -43,6 +44,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity
@@ -66,6 +69,46 @@ public class MainActivity extends Activity
     //custom object
     private cPaths mcpPaths = new cPaths();
 
+//    private boolean mIsBound = false;
+//    private LiveCardService mliveCardService;
+
+//    private ServiceConnection serviceConnection = new ServiceConnection()
+//    {
+//        public void onServiceConnected(ComponentName componentName, IBinder service)
+//        {
+//            mliveCardService = ((LiveCardService.LiveCardBinder)service).getService();
+//        }
+//        public void onServiceDisconnected(ComponentName className)
+//        {
+//            mliveCardService = null;
+//        }
+//    };
+
+//    private void bindService()
+//    {
+//        bindService(new Intent(this, LiveCardService.class), serviceConnection, Context.BIND_AUTO_CREATE);
+//        mIsBound = true;
+//    }
+//
+//    private void unbindService()
+//    {
+//        if (mIsBound)
+//        {
+//            unbindService(serviceConnection);
+//            mIsBound = false;
+//        }
+//    }
+
+//    private void startService()
+//    {
+//        startService(new Intent(this, LiveCardService.class));
+//    }
+//
+//    private void stopService()
+//    {
+//        stopService(new Intent(this, LiveCardService.class));
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -76,7 +119,32 @@ public class MainActivity extends Activity
         // Turn on Gestures
         mGestureDetector = createGestureDetector(this);
 
+//        startService();
         CreatePictureView();
+
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        // The rest of your onStart() code.
+        EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        // The rest of your onStop() code.
+        EasyTracker.getInstance(this).activityStop(this);  // Add this method.
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+//        unbindService();
+        super.onDestroy();
     }
 
     private void CreatePictureView()
@@ -141,14 +209,6 @@ public class MainActivity extends Activity
         super.onPause();
     }
 
-//    @Override
-//    protected void onStop()
-//    {
-//        super.onStop();
-//
-//        finish();
-//    }
-
     @Override
     public boolean onGenericMotionEvent(MotionEvent event)
     {
@@ -182,9 +242,6 @@ public class MainActivity extends Activity
 
         return gestureDetector;
     }
-
-
-
 
     public String getBucketId(String path)
     {
@@ -286,7 +343,7 @@ public class MainActivity extends Activity
                         //delete the image
                         fPic.delete();
                         //refresh the folder
-                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+                        new SingleMediaScanner(getApplicationContext(), fPic);
                         //remove the selected item from the list of images
                         mcpPaths.removeCurrentPositionPath();
                         //let the adapter know that the list of images has changed

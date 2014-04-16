@@ -14,14 +14,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MotionEvent;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.touchpad.Gesture;
 import com.google.android.glass.touchpad.GestureDetector;
 import com.w9jds.gallery4glass.Classes.Gallery4Glass;
 import com.w9jds.gallery4glass.Classes.SingleMediaScanner;
 import com.w9jds.gallery4glass.Widget.OpenCVSurface;
+import com.w9jds.gallery4glass.Widget.SliderView;
 
 
 import org.opencv.android.CameraBridgeViewBase;
@@ -32,6 +36,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class CameraActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2
 {
@@ -59,12 +64,58 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
         // Turn on Gestures
         mGestureDetector = createGestureDetector(this);
 
+        //create audio manager
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
+        //set up the
         setupReceivers();
 
         setPreviewSurface();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.camera_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem iItem)
+    {
+        SliderView svProgress;
+
+        switch (iItem.getItemId())
+        {
+            case R.id.scene_menu_item:
+
+                return true;
+
+            case R.id.white_balance_menu_item:
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(iItem);
+        }
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        // The rest of your onStart() code.
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        // The rest of your onStop() code.
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
     private void setPreviewSurface()
@@ -119,12 +170,28 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                 {
                     if (gGesture == Gesture.TAP)
                     {
+                        EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                                "Camera",
+                                "Taken",
+                                "picture_taken",
+                                null).build());
+
                         // Play the tap sound
                         maManager.playSoundEffect(Sounds.TAP);
                         // Get the camera from the preview surface
                         Camera cCamera = mPreviewSurface.getCamera();
                         // Take a picture
                         cCamera.takePicture(shutterCallback, null, jpgPictureCallback);
+                    }
+
+                    else if (gGesture == Gesture.TWO_LONG_PRESS)
+                    {
+                        Camera cCamera = mPreviewSurface.getCamera();
+
+                        Camera.Parameters params = cCamera.getParameters();
+
+                        List<String> test = params.getSupportedSceneModes();
+                        List<String> test3 = params.getSupportedWhiteBalance();
                     }
 
                     else if (gGesture == Gesture.SWIPE_DOWN)
@@ -140,22 +207,26 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
                     else if (gGesture == Gesture.SWIPE_RIGHT)
                     {
-                        // Get the camera from the preview surface
-                        Camera cCamera = mPreviewSurface.getCamera();
-
-                        if ((mnZoom + 5) < cCamera.getParameters().getMaxZoom())
-                            // Zoom the camera in 5
-                            cCamera.startSmoothZoom(mnZoom += 5);
+//                        // Get the camera from the preview surface
+//                        Camera cCamera = mPreviewSurface.getCamera();
+//
+//                        if ((mnZoom + 5) < cCamera.getParameters().getMaxZoom())
+//                        {
+//                            // Zoom the camera in 5
+//                            Camera.Parameters camParms = cCamera.getParameters();
+//                            camParms.setZoom(mnZoom += 5);
+//                            cCamera.setParameters(camParms);
+//                        }
                     }
 
                     else if (gGesture == Gesture.SWIPE_LEFT)
                     {
-                        // Get the camera from the preview surface
-                        Camera cCamera = mPreviewSurface.getCamera();
-
-                        if (mnZoom != 0)
-                            //zoom the camera out 5
-                            cCamera.startSmoothZoom(mnZoom -= 5);
+//                        // Get the camera from the preview surface
+//                        Camera cCamera = mPreviewSurface.getCamera();
+//
+//                        if (mnZoom != 0)
+//                            //zoom the camera out 5
+//                            cCamera.startSmoothZoom(mnZoom -= 1);
                     }
 
                     else if (gGesture == Gesture.TWO_SWIPE_RIGHT)

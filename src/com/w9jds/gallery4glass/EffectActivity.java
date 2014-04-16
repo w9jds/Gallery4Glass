@@ -16,6 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
 import com.w9jds.gallery4glass.Adapters.csaAdapter;
@@ -64,6 +66,22 @@ public class EffectActivity extends Activity
         mcpPaths = iThis.getParcelableExtra("PathsObject");
 
         setMainView();
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        // The rest of your onStart() code.
+        EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        // The rest of your onStop() code.
+        EasyTracker.getInstance(this).activityStop(this);  // Add this method.
     }
 
     private void setMainView()
@@ -147,21 +165,51 @@ public class EffectActivity extends Activity
             switch(mnEffect)
             {
                 case 0:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "grayscale_effect",
+                            null).build());
                     bitMain = toGrayscale(mcpPaths.getCurrentPositionPath());
                     break;
                 case 1:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "sepia_effect",
+                            null).build());
                     bitMain = toSepia(mcpPaths.getCurrentPositionPath());
                     break;
                 case 2:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "invert_effect",
+                            null).build());
                     bitMain = toInvert(mcpPaths.getCurrentPositionPath());
                     break;
                 case 3:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "canny_effect",
+                            null).build());
                     bitMain = toCanny(mcpPaths.getCurrentPositionPath());
                     break;
                 case 4:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "pixelize_effect",
+                            null).build());
                     bitMain = toPixelize(mcpPaths.getCurrentPositionPath());
                     break;
                 case 5:
+                    EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                            "Effects",
+                            "Made",
+                            "sharpen_effect",
+                            null).build());
                     bitMain = toSharpen(mcpPaths.getCurrentPositionPath());
                     break;
                 default:

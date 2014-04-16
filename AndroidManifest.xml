@@ -2,16 +2,19 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.w9jds.gallery4glass"
-    android:versionCode="18"
-    android:versionName="0.4.0-beta">
+    android:versionCode="19"
+    android:versionName="0.5.0-beta">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -26,31 +29,31 @@
             android:name="com.w9jds.gallery4glass.MainActivity"
             android:immersive="true"
             android:launchMode="singleTop"
-            android:icon="@drawable/ic_photo_50" >
+            android:icon="@drawable/ic_photo_50">
 
             <intent-filter>
-                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER"/>
             </intent-filter>
 
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/gallery_voice_trigger" />
+                android:resource="@xml/gallery_voice_trigger"/>
 
-            <receiver android:name="com.w9jds.gallery4glass.MainActivity" />
+            <receiver android:name="com.w9jds.gallery4glass.MainActivity"/>
 
         </activity>
 
         <activity
             android:name="com.w9jds.gallery4glass.VignetteActivity"
-            android:immersive="true" >
+            android:immersive="true">
 
-            <receiver android:name="com.w9jds.gallery4glass.VignetteActivity" />
+            <receiver android:name="com.w9jds.gallery4glass.VignetteActivity"/>
 
         </activity>
 
         <activity
             android:name="com.w9jds.gallery4glass.EffectActivity"
-            android:immersive="true" >
+            android:immersive="true">
 
         </activity>
 
@@ -58,17 +61,19 @@
             android:name="com.w9jds.gallery4glass.CameraActivity"
             android:noHistory="true"
             android:launchMode="singleTop"
-            android:icon="@drawable/ic_camera_50" >
+            android:icon="@drawable/ic_camera_50">
 
             <intent-filter>
-                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER"/>
             </intent-filter>
 
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/camera_voice_trigger" />
+                android:resource="@xml/camera_voice_trigger"/>
 
         </activity>
+
+        <!--<activity android:name=".Services.LiveCardService"/>-->
 
     </application>
 

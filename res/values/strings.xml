@@ -16,6 +16,8 @@
     <string name="apply_label">Applying</string>
     <string name="applied_label">Applied</string>
     <string name="share_label">Share</string>
+    <string name="scene_label">Set Scene Mode</string>
+    <string name="white_balance_label">Set White Balance</string>
 
     <integer name="google_play_services_version">4242000</integer>
 

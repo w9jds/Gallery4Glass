@@ -35,17 +35,17 @@ public class csaAdapter extends CardScrollAdapter
         mPlaceHolderBitmap = BitmapFactory.decodeResource(mcContext.getResources(), R.drawable.ic_placeholder_photo_150);
     }
 
-    @Override
-    public int findIdPosition(Object id)
-    {
-        return -1;
-    }
-
-    @Override
-    public int findItemPosition(Object oItem)
-    {
-        return mlsPaths.indexOf(oItem);
-    }
+//    @Override
+//    public int findIdPosition(Object id)
+//    {
+//        return -1;
+//    }
+//
+//    @Override
+//    public int findItemPosition(Object oItem)
+//    {
+//        return mlsPaths.indexOf(oItem);
+//    }
 
     @Override
     public int getCount()
@@ -114,6 +114,12 @@ public class csaAdapter extends CardScrollAdapter
         }
 
         return vCard;
+    }
+
+    @Override
+    public int getPosition(Object o)
+    {
+        return 0;
     }
 
     public static boolean cancelPotentialWork(int iPosition, ImageView ivCard)

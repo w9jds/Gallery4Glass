@@ -24,6 +24,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 import com.google.android.glass.app.Card;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardScrollView;
@@ -73,6 +75,22 @@ public class VignetteActivity extends Activity
 //        mcpPaths.insertString( getString(R.string.vignette_camera_card), 2);
 
         CreatePictureView();
+    }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        // The rest of your onStart() code.
+        EasyTracker.getInstance(this).activityStart(this);  // Add this method.
+    }
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        // The rest of your onStop() code.
+        EasyTracker.getInstance(this).activityStop(this);  // Add this method.
     }
 
     private void displaySpeechRecognizer()
@@ -202,6 +220,12 @@ public class VignetteActivity extends Activity
         @Override
         protected Boolean doInBackground(Void... params)
         {
+            EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                    "Creation",     // Event category (required)
+                    "Made",  // Event action (required)
+                    "Vignette_Made",   // Event label
+                    null).build());
+
             //pull in just the info for the main image of the vignette
             Bitmap bitMain = BitmapFactory.decodeFile(mcpPaths.getImagePathsIndex(mcpPaths.getMainPosition() + 2));
             //set the size on the image
@@ -290,7 +314,7 @@ public class VignetteActivity extends Activity
             txtCard.setText(msSpoken);
 
             //change the card into a view
-            View vCard = txtCard.toView();
+            View vCard = txtCard.getView();
 
             //get the measurements for the view (since it hasn't been displayed)
             vCard.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);

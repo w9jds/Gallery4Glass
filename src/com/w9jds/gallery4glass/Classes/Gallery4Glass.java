@@ -4,8 +4,6 @@ import android.app.Application;
 
 public class Gallery4Glass extends Application
 {
-
-
     private StorageService mStorageService;
 
     public StorageService getStorageService()

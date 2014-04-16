@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/scene_menu_item"
+        android:title="@string/scene_label"/>
+
+    <item
+        android:id="@+id/white_balance_menu_item"
+        android:title="@string/white_balance_label"/>
+
+</menu>
