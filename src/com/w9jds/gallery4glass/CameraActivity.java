@@ -46,6 +46,8 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 {
     public static final String ACTION_WINK = "com.google.glass.action.EYE_GESTURE";
 
+
+    public static String msColorEffect = Camera.Parameters.EFFECT_NONE;
     //create an adapter for the cardscrollviewer
     private csaAdapter mcvAdapter;
     // Declare a new Gesture Detector
@@ -136,6 +138,8 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                                 Camera.Parameters cParams = cCamera.getParameters();
 
                                 cParams.setSceneMode(lsScenes.get(position));
+
+                                cCamera.setParameters(cParams);
                             }
                         }, 2000);
 
@@ -185,6 +189,8 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                                 Camera.Parameters cParams = cCamera.getParameters();
 
                                 cParams.setWhiteBalance(lsWhites.get(position));
+
+                                cCamera.setParameters(cParams);
                             }
                         }, 2000);
 
@@ -195,6 +201,60 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                 setContentView(csvCardsView);
 
                 return true;
+
+//            case R.id.color_effect_menu_item:
+//
+//                cCamera = mPreviewSurface.getCamera();
+//
+//                params = cCamera.getParameters();
+//                mPreviewSurface.disableView();
+//
+//                //add a card to the card scroll view for each supported Scenes that is available
+//                final List<String> lsEffects = params.getSupportedColorEffects();
+//
+//                //create a new card scroll viewer for this context
+//                csvCardsView = new CardScrollView(this);
+//                //create a new adapter for the scroll viewer
+//                mcvAdapter = new csaAdapter(this, (ArrayList<String>)lsEffects);
+//                //set this adapter as the adapter for the scroll viewer
+//                csvCardsView.setAdapter(mcvAdapter);
+//                //activate this scroll viewer
+//                csvCardsView.activate();
+//                //add a listener to the scroll viewer that is fired when an item is clicked
+//                csvCardsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+//                {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
+//                    {
+//
+//                        //play the tap sound
+//                        maManager.playSoundEffect(Sounds.TAP);
+//
+//                        setPreviewSurface();
+//
+//                        new Handler().postDelayed(new Runnable()
+//                        {
+//                            public void run()
+//                            {
+//                                Camera cCamera = mPreviewSurface.getCamera();
+//
+//                                Camera.Parameters cParams = cCamera.getParameters();
+//
+//                                cParams.setColorEffect(lsEffects.get(position));
+//
+//                                cCamera.setParameters(cParams);
+//                                cCamera.startPreview();
+//
+//                            }
+//                        }, 1000);
+//
+//                    }
+//                });
+//
+//                //set the view of this activity
+//                setContentView(csvCardsView);
+//
+//                return true;
 
             default:
                 return super.onOptionsItemSelected(iItem);
