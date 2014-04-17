@@ -6,9 +6,11 @@ import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
@@ -16,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.IBinder;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -46,6 +49,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.google.analytics.tracking.android.EasyTracker;
+
+import static com.google.android.gms.common.GooglePlayServicesUtil.isGooglePlayServicesAvailable;
 
 @SuppressLint("DefaultLocale")
 public class MainActivity extends Activity
@@ -83,7 +88,7 @@ public class MainActivity extends Activity
 //            mliveCardService = null;
 //        }
 //    };
-
+//
 //    private void bindService()
 //    {
 //        bindService(new Intent(this, LiveCardService.class), serviceConnection, Context.BIND_AUTO_CREATE);
@@ -98,7 +103,7 @@ public class MainActivity extends Activity
 //            mIsBound = false;
 //        }
 //    }
-
+//
 //    private void startService()
 //    {
 //        startService(new Intent(this, LiveCardService.class));

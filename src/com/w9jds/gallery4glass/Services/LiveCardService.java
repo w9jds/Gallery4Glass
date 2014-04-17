@@ -74,14 +74,14 @@ public class LiveCardService extends Service
         return true;
     }
 
-//    private boolean servicePause()
-//    {
-//        return true;
-//    }
-//    private boolean serviceResume()
-//    {
-//        return true;
-//    }
+    private boolean servicePause()
+    {
+        return true;
+    }
+    private boolean serviceResume()
+    {
+        return true;
+    }
 
     private boolean serviceStop()
     {

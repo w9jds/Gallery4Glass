@@ -12,7 +12,9 @@ import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.FileObserver;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -22,6 +24,7 @@ import android.widget.AdapterView;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.glass.media.CameraManager;
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.touchpad.Gesture;
 import com.google.android.glass.touchpad.GestureDetector;
@@ -46,18 +49,18 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 {
     public static final String ACTION_WINK = "com.google.glass.action.EYE_GESTURE";
 
-
-    public static String msColorEffect = Camera.Parameters.EFFECT_NONE;
+    private boolean inSettings = false;
+    private Camera.Parameters mcpParams;
     //create an adapter for the cardscrollviewer
     private csaAdapter mcvAdapter;
     // Declare a new Gesture Detector
-    private GestureDetector mGestureDetector;
+    private GestureDetector mCameraGestureDetector;
     // Declare a new Camera Preview Surface
     private OpenCVSurface mPreviewSurface;
     //create an audio manager for sounds
     private AudioManager maManager;
     // Zoom level of the camera
-    private int mnZoom = 0;
+//    private int mnZoom = 0;
 
     @Override
     public void onCreate(Bundle bSavedInstanceState)
@@ -70,7 +73,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
         OpenCVLoader.initDebug();
 
         // Turn on Gestures
-        mGestureDetector = createGestureDetector(this);
+        mCameraGestureDetector = createCameraGestureDetector(this);
 
         //create audio manager
         maManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -94,20 +97,16 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
     public boolean onOptionsItemSelected(android.view.MenuItem iItem)
     {
         CardScrollView csvCardsView;
-        final Camera cCamera;
-        Camera.Parameters params;
 
         switch (iItem.getItemId())
         {
             case R.id.scene_menu_item:
-
-                cCamera = mPreviewSurface.getCamera();
-
-                params = cCamera.getParameters();
+                //disable preview
+                inSettings = true;
                 mPreviewSurface.disableView();
 
                 //add a card to the card scroll view for each supported Scenes that is available
-                final List<String> lsScenes = params.getSupportedSceneModes();
+                final List<String> lsScenes = mcpParams.getSupportedSceneModes();
 
                 //create a new card scroll viewer for this context
                 csvCardsView = new CardScrollView(this);
@@ -135,13 +134,11 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                             {
                                 Camera cCamera = mPreviewSurface.getCamera();
 
-                                Camera.Parameters cParams = cCamera.getParameters();
+                                mcpParams.setSceneMode(lsScenes.get(position));
 
-                                cParams.setSceneMode(lsScenes.get(position));
-
-                                cCamera.setParameters(cParams);
+                                cCamera.setParameters(mcpParams);
                             }
-                        }, 2000);
+                        }, 200);
 
                     }
                 });
@@ -153,13 +150,10 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
             case R.id.white_balance_menu_item:
 
-                cCamera = mPreviewSurface.getCamera();
-
-                params = cCamera.getParameters();
+                inSettings = true;
                 mPreviewSurface.disableView();
                 //add a card to the card scroll view for each supported White Balances that is available
-                final List<String> lsWhites = params.getSupportedWhiteBalance();
-
+                final List<String> lsWhites = mcpParams.getSupportedWhiteBalance();
 
                 //create a new card scroll viewer for this context
                 csvCardsView = new CardScrollView(this);
@@ -186,13 +180,11 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                             {
                                 Camera cCamera = mPreviewSurface.getCamera();
 
-                                Camera.Parameters cParams = cCamera.getParameters();
+                                mcpParams.setWhiteBalance(lsWhites.get(position));
 
-                                cParams.setWhiteBalance(lsWhites.get(position));
-
-                                cCamera.setParameters(cParams);
+                                cCamera.setParameters(mcpParams);
                             }
-                        }, 2000);
+                        }, 200);
 
                     }
                 });
@@ -206,11 +198,11 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 //
 //                cCamera = mPreviewSurface.getCamera();
 //
-//                params = cCamera.getParameters();
+//                mcpParams = cCamera.getParameters();
 //                mPreviewSurface.disableView();
 //
 //                //add a card to the card scroll view for each supported Scenes that is available
-//                final List<String> lsEffects = params.getSupportedColorEffects();
+//                final List<String> lsEffects = mcpParams.getSupportedColorEffects();
 //
 //                //create a new card scroll viewer for this context
 //                csvCardsView = new CardScrollView(this);
@@ -238,15 +230,11 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 //                            {
 //                                Camera cCamera = mPreviewSurface.getCamera();
 //
-//                                Camera.Parameters cParams = cCamera.getParameters();
+//                                mcpParams.setColorEffect(lsEffects.get(position));
 //
-//                                cParams.setColorEffect(lsEffects.get(position));
-//
-//                                cCamera.setParameters(cParams);
-//                                cCamera.startPreview();
-//
+//                                cCamera.setParameters(mcpParams);
 //                            }
-//                        }, 1000);
+//                        }, 200);
 //
 //                    }
 //                });
@@ -255,7 +243,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 //                setContentView(csvCardsView);
 //
 //                return true;
-
+//
             default:
                 return super.onOptionsItemSelected(iItem);
         }
@@ -279,6 +267,9 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
     private void setPreviewSurface()
     {
+        if (inSettings)
+            inSettings = false;
+
         setContentView(R.layout.opencvpreview_layout);
 
         mPreviewSurface = (OpenCVSurface) findViewById(R.id.camera_preview_opencv);
@@ -314,7 +305,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
             mPreviewSurface.disableView();
     }
 
-    private GestureDetector createGestureDetector(final Context cContext)
+    private GestureDetector createCameraGestureDetector(final Context cContext)
     {
         GestureDetector gestureDetector = new GestureDetector(cContext);
 
@@ -329,12 +320,6 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                 {
                     if (gGesture == Gesture.TAP)
                     {
-                        EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
-                                "Camera",
-                                "Taken",
-                                "picture_taken",
-                                null).build());
-
                         // Play the tap sound
                         maManager.playSoundEffect(Sounds.TAP);
                         // Get the camera from the preview surface
@@ -350,36 +335,43 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
                     {
                         // Play the dismiss sound
                         maManager.playSoundEffect(Sounds.DISMISSED);
-                        // If the preview surface isn't null release the camera
-                        if (mPreviewSurface != null)
-                            mPreviewSurface.disableView();
-                        // Close activity
-                        finish();
+
+                        if (!inSettings)
+                        {
+                            // If the preview surface isn't null release the camera
+                            if (mPreviewSurface != null)
+                                mPreviewSurface.disableView();
+                            // Close activity
+                            finish();
+                        }
+                        else
+                            setPreviewSurface();
+
+                        return true;
+
                     }
 
-                    else if (gGesture == Gesture.SWIPE_RIGHT)
-                    {
-//                        // Get the camera from the preview surface
-//                        Camera cCamera = mPreviewSurface.getCamera();
-//
-//                        if ((mnZoom + 5) < cCamera.getParameters().getMaxZoom())
+//                    else if (gGesture == Gesture.SWIPE_RIGHT)
+//                    {
+//                        if ((mnZoom + 5) < mcpParams.getMaxZoom())
 //                        {
-//                            // Zoom the camera in 5
-//                            Camera.Parameters camParms = cCamera.getParameters();
-//                            camParms.setZoom(mnZoom += 5);
-//                            cCamera.setParameters(camParms);
+//                            // Get the camera from the preview surface
+//                            Camera cCamera = mPreviewSurface.getCamera();
+//
+//                            mcpParams.setZoom(mnZoom += 5);
+//                            cCamera.setParameters(mcpParams);
 //                        }
-                    }
+//                    }
 
-                    else if (gGesture == Gesture.SWIPE_LEFT)
-                    {
+//                    else if (gGesture == Gesture.SWIPE_LEFT)
+//                    {
 //                        // Get the camera from the preview surface
 //                        Camera cCamera = mPreviewSurface.getCamera();
 //
 //                        if (mnZoom != 0)
 //                            //zoom the camera out 5
 //                            cCamera.startSmoothZoom(mnZoom -= 1);
-                    }
+//                    }
 
                     else if (gGesture == Gesture.TWO_SWIPE_RIGHT)
                     {
@@ -410,13 +402,15 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
     final transient private Camera.PictureCallback jpgPictureCallback = new Camera.PictureCallback()
     {
-        /**
-         * After taking picture, onPictureTaken() will be called where image
-         * will be saved.
-         */
         @Override
         public void onPictureTaken(final byte[] data, final Camera camera)
         {
+            EasyTracker.getInstance(getApplicationContext()).send(MapBuilder.createEvent(
+                    "Camera",
+                    "Taken",
+                    "picture_taken",
+                    null).build());
+
             new SavePhotoTask().execute(data);
             setPreviewSurface();
         }
@@ -425,8 +419,8 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
     @Override
     public boolean onGenericMotionEvent(MotionEvent event)
     {
-        if (mGestureDetector != null)
-            return mGestureDetector.onMotionEvent(event);
+        if (mCameraGestureDetector != null)
+            return mCameraGestureDetector.onMotionEvent(event);
 
         return false;
     }
@@ -446,7 +440,6 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
             return true;
         }
-
         else
             return super.onKeyDown(keyCode, event);
     }
@@ -500,7 +493,31 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
     @Override
     public void onCameraViewStarted(int width, int height)
     {
+        if (mcpParams != null)
+        {
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Camera cCamera = mPreviewSurface.getCamera();
+                    cCamera.setParameters(mcpParams);
+                }
+            }, 200);
+        }
 
+        else
+        {
+            new Handler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Camera cCamera = mPreviewSurface.getCamera();
+                    mcpParams = cCamera.getParameters();
+                }
+            }, 200);
+        }
     }
 
     @Override
