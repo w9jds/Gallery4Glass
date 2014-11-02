@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GDK-ProgressBar/GDK-ProgressBar.iml" filepath="$PROJECT_DIR$/GDK-ProgressBar/GDK-ProgressBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gallery4Glass.iml" filepath="$PROJECT_DIR$/Gallery4Glass.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../OpenCV Library - 2.4.8/OpenCV Library - 2.4.8.iml" filepath="$PROJECT_DIR$/../OpenCV Library - 2.4.8/OpenCV Library - 2.4.8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary249/openCVLibrary249.iml" filepath="$PROJECT_DIR$/openCVLibrary249/openCVLibrary249.iml" />
     </modules>
   </component>
 </project>

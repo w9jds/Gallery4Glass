@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+repositories {
+        jcenter()
+    flatDir {
+        dirs 'prebuilt-libs'
+    }
+}
+
+android {
+    compileSdkVersion 'Google Inc.:Glass Development Kit Preview:19'
+    buildToolsVersion "21.1.0"
+
+    defaultConfig {
+        applicationId "com.w9jds.gallery4glass"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 22
+        versionName "0.6.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':GDK-ProgressBar')
+    compile project(':openCVLibrary249')
+}

@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.w9jds.gallery4glass">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
+
+    <application android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher">
+
+        <activity
+            android:name="com.w9jds.gallery4glass.Activities.MainActivity"
+            android:immersive="true"
+            android:launchMode="singleTop"
+            android:icon="@drawable/ic_photo_50">
+
+            <intent-filter>
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/gallery_voice_trigger"/>
+
+        </activity>
+
+    </application>
+
+</manifest>
