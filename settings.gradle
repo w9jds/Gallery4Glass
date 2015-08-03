@@ -1,2 +1,1 @@
-include ':app', ':GDK-ProgressBar'
-include ':openCVLibrary249'
+include ':app'
